@@ -5,7 +5,6 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <OrchardCoreVersion>2.1.7</OrchardCoreVersion>
-    <OrchardCoreCommerceVersion>3.0.0</OrchardCoreCommerceVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -14,38 +13,19 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="OrchardCore.Commerce" Version="$(OrchardCoreCommerceVersion)" />
-    <PackageReference Include="OrchardCore.Commerce.ContentFields" Version="$(OrchardCoreCommerceVersion)" />
-    <PackageReference Include="OrchardCore.Commerce.MoneyDataType" Version="$(OrchardCoreCommerceVersion)" />
-    <PackageReference Include="OrchardCore.Commerce.Tax" Version="$(OrchardCoreCommerceVersion)" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="TheBootstrapTheme" Version="2.1.7" />
-    <PackageReference Include="TheClassLessTheme" Version="2.1.7" />
-    <PackageReference Include="TheResumeTheme" Version="2.1.7" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Lombiq.BaseTheme" Version="9.0.0" />
     <PackageReference Include="Lombiq.Analyzers.OrchardCore" Version="5.2.0" />
     <PackageReference Include="Lombiq.HelpfulExtensions" Version="10.0.1-alpha.0.osoe-935" />
     <PackageReference Include="Lombiq.HelpfulLibraries" Version="12.2.0" />
     <PackageReference Include="Lombiq.Hosting.Azure.ApplicationInsights" Version="10.0.0" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.Admin.Login" Version="9.0.0" />
     <PackageReference Include="Lombiq.Hosting.Tenants.Management" Version="9.0.0" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.FeaturesGuard" Version="9.0.0" />
-    <PackageReference Include="Lombiq.Hosting.Tenants.IdleTenantManagement" Version="9.0.0" />
     <PackageReference Include="Lombiq.Privacy" Version="10.0.0" />
-    <PackageReference Include="Lombiq.SetupExtensions" Version="7.0.0" />
     <PackageReference Include="Lombiq.Hosting.MediaTheme" Version="8.0.1-alpha.3.nest-562" />
     <PackageReference Include="Lombiq.Hosting.MediaTheme.Bridge" Version="8.0.1-alpha.3.nest-562" />
     <PackageReference Include="Lombiq.Tests.UI.AppExtensions" Version="13.0.0" />
     <PackageReference Include="Lombiq.Tests.UI.Shortcuts" Version="13.0.0" />
-    <PackageReference Include="Lombiq.Walkthroughs" Version="3.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Themes\Sample.Theme\Sample.Theme.csproj" />
+    <ProjectReference Include="..\Themes\PersonalSite.Theme\PersonalSite.Theme.csproj" />
   </ItemGroup>
 </Project>

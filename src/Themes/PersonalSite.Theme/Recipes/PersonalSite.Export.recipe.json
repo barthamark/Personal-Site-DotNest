@@ -1,0 +1,439 @@
+{
+  "name": "PersonalSite.Export",
+  "displayName": "Personal Site - Export",
+  "description": "Contents exported from the DotNest site.",
+  "author": "Márk Bartha",
+  "website": "https://markbartha.com",
+  "version": "1.0",
+  "categories": [],
+  "tags": [],
+  "steps": [
+    {
+      "name": "Settings",
+      "MaxPagedCount": 0,
+      "MaxPageSize": 100,
+      "PageSize": 10,
+      "SiteName": "Márk Bartha",
+      "PageTitleFormat": "{% page_title Site.SiteName, position: \u0022after\u0022, separator: \u0022 - \u0022 %}",
+      "HomeRoute": {
+        "Area": "OrchardCore.Contents",
+        "Controller": "Item",
+        "Action": "Display",
+        "contentItemId": "04z27cg5sbd54n6w0qnxzb4h92"
+      },
+      "AppendVersion": true,
+      "CacheMode": "FromConfiguration",
+      "AdminSettings": {
+        "DisplayThemeToggler": true,
+        "DisplayMenuFilter": false,
+        "DisplayNewMenu": false,
+        "DisplayTitlesInTopbar": false
+      }
+    },
+    {
+      "name": "deployment",
+      "Plans": [
+        {
+          "Name": "Export",
+          "Steps": [
+            {
+              "Type": "SiteSettingsDeploymentStep",
+              "Step": {
+                "$type": "OrchardCore.Settings.Deployment.SiteSettingsDeploymentStep, OrchardCore.Settings",
+                "Settings": [
+                  "MaxPagedCount",
+                  "MaxPageSize",
+                  "PageSize",
+                  "SiteName",
+                  "PageTitleFormat",
+                  "HomeRoute",
+                  "AppendVersion",
+                  "CacheMode"
+                ],
+                "Id": "679962efadb643b5b599b7d99aa4be76",
+                "Name": "SiteSettings"
+              }
+            },
+            {
+              "Type": "AdminSettings_SiteSettingsPropertyDeploymentStep",
+              "Step": {
+                "$type": "OrchardCore.Settings.Deployment.SiteSettingsPropertyDeploymentStep\u00601[[OrchardCore.Admin.Models.AdminSettings, OrchardCore.Admin.Abstractions]], OrchardCore.Settings.Core",
+                "Id": "316b4adcad9046639a75fb21827ec835",
+                "Name": "AdminSettings_SiteSettingsPropertyDeploymentStep"
+              }
+            },
+            {
+              "Type": "DeploymentPlanDeploymentStep",
+              "Step": {
+                "$type": "OrchardCore.Deployment.Deployment.DeploymentPlanDeploymentStep, OrchardCore.Deployment",
+                "IncludeAll": true,
+                "DeploymentPlanNames": [],
+                "Id": "e61f40396da0462d872565d76a3ede27",
+                "Name": "DeploymentPlan"
+              }
+            },
+            {
+              "Type": "AllWorkflowTypeDeploymentStep",
+              "Step": {
+                "$type": "OrchardCore.Workflows.Deployment.AllWorkflowTypeDeploymentStep, OrchardCore.Workflows",
+                "Id": "fd11a2856f5840699310ca5409282ef6",
+                "Name": "AllWorkflowType"
+              }
+            },
+            {
+              "Type": "AllQueriesDeploymentStep",
+              "Step": {
+                "$type": "OrchardCore.Queries.Deployment.AllQueriesDeploymentStep, OrchardCore.Queries",
+                "Id": "87d3f48aa9c549c997e7107b0c7bca37",
+                "Name": "AllQueries"
+              }
+            },
+            {
+              "Type": "AllLayersDeploymentStep",
+              "Step": {
+                "$type": "OrchardCore.Layers.Deployment.AllLayersDeploymentStep, OrchardCore.Layers",
+                "Id": "5f9f65d217b441ad89dca06a6a5b87c9",
+                "Name": "AllLayers"
+              }
+            },
+            {
+              "Type": "ContentDefinitionDeploymentStep",
+              "Step": {
+                "$type": "OrchardCore.ContentTypes.Deployment.ContentDefinitionDeploymentStep, OrchardCore.ContentTypes",
+                "IncludeAll": false,
+                "ContentTypes": [],
+                "ContentParts": [],
+                "Id": "8b9df93d34a9496097ee2128941cfb8b",
+                "Name": "ContentDefinition"
+              }
+            },
+            {
+              "Type": "ContentDeploymentStep",
+              "Step": {
+                "$type": "OrchardCore.Contents.Deployment.ContentDeploymentStep, OrchardCore.Contents",
+                "ContentTypes": [
+                  "Menu",
+                  "Page"
+                ],
+                "ExportAsSetupRecipe": false,
+                "Id": "c2f72459c9ee4f4e8e522fba11088e5e",
+                "Name": "ContentDeploymentStep"
+              }
+            },
+            {
+              "Type": "MediaDeploymentStep",
+              "Step": {
+                "$type": "OrchardCore.Media.Deployment.MediaDeploymentStep, OrchardCore.Media",
+                "IncludeAll": false,
+                "FilePaths": [],
+                "DirectoryPaths": [
+                  "Site"
+                ],
+                "Id": "d23a50c9a09b4fc88afee09461be1301",
+                "Name": "Media"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "WorkflowType",
+      "data": []
+    },
+    {
+      "name": "Queries",
+      "Queries": []
+    },
+    {
+      "name": "Layers",
+      "Layers": [
+        {
+          "Name": "Anonymous",
+          "Description": "The widgets in this layer are displayed for anonymous users.",
+          "LayerRule": {
+            "Conditions": [
+              {
+                "$type": "OrchardCore.Rules.Models.IsAnonymousCondition, OrchardCore.Rules",
+                "Name": "IsAnonymousCondition",
+                "ConditionId": "4bnbwg5g0t90qs2t2ktnaenkmh"
+              }
+            ],
+            "ConditionId": "483njpvbtakje0ht041trsgmwm"
+          }
+        },
+        {
+          "Name": "Authenticated",
+          "Description": "The widgets in this layer are displayed for authenticated users.",
+          "LayerRule": {
+            "Conditions": [
+              {
+                "$type": "OrchardCore.Rules.Models.IsAuthenticatedCondition, OrchardCore.Rules",
+                "Name": "IsAuthenticatedCondition",
+                "ConditionId": "4ca3yeypsr57hxsq4swj4xj95e"
+              }
+            ],
+            "ConditionId": "4ec27g5as3fp61861vaw8t5kmq"
+          }
+        },
+        {
+          "Name": "Always",
+          "Description": "The widgets in this layer are displayed on any page of this site.",
+          "LayerRule": {
+            "Conditions": [
+              {
+                "$type": "OrchardCore.Rules.Models.BooleanCondition, OrchardCore.Rules",
+                "Value": true,
+                "Name": "BooleanCondition",
+                "ConditionId": "4w4vmrmz9mf0hv3a7v9qpm72xg"
+              }
+            ],
+            "ConditionId": "4jrrhmb4a1pmv4whx5rvyh14na"
+          }
+        },
+        {
+          "Name": "Homepage",
+          "Description": "The widgets in this layer are only displayed on the homepage.",
+          "LayerRule": {
+            "Conditions": [
+              {
+                "$type": "OrchardCore.Rules.Models.HomepageCondition, OrchardCore.Rules",
+                "Value": true,
+                "Name": "HomepageCondition",
+                "ConditionId": "4fs2pce845jm867cvzf0cpw856"
+              }
+            ],
+            "ConditionId": "4rdf2ykd6qx8s3ey03gg8hmv4h"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Settings",
+      "LayerSettings": {
+        "Zones": [
+          "Header",
+          "Messages",
+          "BeforeContent",
+          "Content",
+          "AfterContent",
+          "Footer"
+        ]
+      }
+    },
+    {
+      "name": "ContentDefinition",
+      "ContentTypes": [],
+      "ContentParts": []
+    },
+    {
+      "name": "content",
+      "data": [
+        {
+          "ContentItemId": "04z27cg5sbd54n6w0qnxzb4h92",
+          "ContentItemVersionId": "494p1s0568hc06jntheq1cy5nz",
+          "ContentType": "Page",
+          "DisplayText": "Home",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2025-05-13T18:13:06.1191107Z",
+          "PublishedUtc": "2025-05-13T18:13:06.1385142Z",
+          "CreatedUtc": "2025-05-13T18:13:01.8102834Z",
+          "Owner": "40c18z9hsp8pa0m0hp60xrmsxn",
+          "Author": "admin",
+          "TitlePart": {
+            "Title": "Home"
+          },
+          "AutoroutePart": {
+            "SetHomepage": false,
+            "Disabled": false,
+            "RouteContainedItems": false,
+            "Absolute": false,
+            "Path": "home"
+          },
+          "FlowPart": {
+            "Widgets": [
+              {
+                "ContentItemId": "4v9avrkxyy12a4cy5p18ppzemr",
+                "ContentItemVersionId": null,
+                "ContentType": "HtmlWidget",
+                "DisplayText": null,
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2025-05-13T18:13:06.1283087Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "admin",
+                "HtmlBodyPart": {
+                  "Html": "\u003Cp\u003EHome page\u003C/p\u003E"
+                },
+                "FlowMetadata": {
+                  "Alignment": "Justify",
+                  "Size": 100
+                }
+              }
+            ]
+          }
+        },
+        {
+          "ContentItemId": "4bzne3q3qbm37x7c6ky8yz63d4",
+          "ContentItemVersionId": "4t9ynvnwn269e07a3sg3ksmbx5",
+          "ContentType": "Menu",
+          "DisplayText": "Header Menu",
+          "Latest": false,
+          "Published": true,
+          "ModifiedUtc": "2025-05-13T18:14:59.7616722Z",
+          "PublishedUtc": "2025-05-13T18:14:59.7682181Z",
+          "CreatedUtc": "2025-05-13T18:14:59.7616722Z",
+          "Owner": "40c18z9hsp8pa0m0hp60xrmsxn",
+          "Author": "admin",
+          "TitlePart": {
+            "Title": "Header Menu"
+          },
+          "AliasPart": {
+            "Alias": "header-menu"
+          },
+          "MenuPart": {},
+          "MenuItemsListPart": {
+            "MenuItems": []
+          },
+          "@WeldedPartSettings": {
+            "MenuPart": {
+              "Position": "3"
+            },
+            "MenuItemsListPart": {
+              "Position": "4"
+            }
+          }
+        },
+        {
+          "ContentItemId": "4ywdf4ezztjaa1rheear7fd1w4",
+          "ContentItemVersionId": "4d902sezt0778reqj382qd8amx",
+          "ContentType": "Menu",
+          "DisplayText": "Footer Menu",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2025-05-13T18:18:24.7769707Z",
+          "PublishedUtc": "2025-05-13T18:18:24.7845981Z",
+          "CreatedUtc": "2025-05-13T18:15:46.4073032Z",
+          "Owner": "40c18z9hsp8pa0m0hp60xrmsxn",
+          "Author": "admin",
+          "TitlePart": {
+            "Title": "Footer Menu"
+          },
+          "AliasPart": {
+            "Alias": "footer-menu"
+          },
+          "MenuPart": {},
+          "MenuItemsListPart": {
+            "MenuItems": [
+              {
+                "ContentItemId": "4swy9tgq4be79232az264842x2",
+                "ContentItemVersionId": null,
+                "ContentType": "LinkMenuItem",
+                "DisplayText": "About",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2025-05-13T18:15:56.3660135Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "admin",
+                "LinkMenuItemPart": {
+                  "Url": "~/about",
+                  "Target": null
+                },
+                "LinkMenuItem": {}
+              },
+              {
+                "ContentItemId": "4ndzd2rf7dwky42xam80za1cch",
+                "ContentItemVersionId": null,
+                "ContentType": "LinkMenuItem",
+                "DisplayText": "Services",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2025-05-13T18:16:26.3912855Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "admin",
+                "LinkMenuItemPart": {
+                  "Url": "~/services",
+                  "Target": null
+                },
+                "LinkMenuItem": {}
+              },
+              {
+                "ContentItemId": "4xyv6w3ghpa1gwayhh05ape54h",
+                "ContentItemVersionId": null,
+                "ContentType": "LinkMenuItem",
+                "DisplayText": "Projects",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2025-05-13T18:16:36.9553489Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "admin",
+                "LinkMenuItemPart": {
+                  "Url": "~/projects",
+                  "Target": null
+                },
+                "LinkMenuItem": {}
+              },
+              {
+                "ContentItemId": "49x9mq4sp2ccdy8r50bwz6xj44",
+                "ContentItemVersionId": null,
+                "ContentType": "LinkMenuItem",
+                "DisplayText": "Blog",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2025-05-13T18:16:47.9386953Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "admin",
+                "LinkMenuItemPart": {
+                  "Url": "~/blog",
+                  "Target": null
+                },
+                "LinkMenuItem": {}
+              },
+              {
+                "ContentItemId": "48y8hy0ewsyqa14khgkb7natmc",
+                "ContentItemVersionId": null,
+                "ContentType": "LinkMenuItem",
+                "DisplayText": "Contact Us",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2025-05-13T18:17:09.4312256Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "admin",
+                "LinkMenuItemPart": {
+                  "Url": "~/contact-us",
+                  "Target": null
+                },
+                "LinkMenuItem": {}
+              }
+            ]
+          },
+          "@WeldedPartSettings": {
+            "MenuPart": {
+              "Position": "3"
+            },
+            "MenuItemsListPart": {
+              "Position": "4"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "media",
+      "Files": []
+    }
+  ]
+}

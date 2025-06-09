@@ -1,0 +1,126 @@
+{
+  "name": "PersonalSite.Development.Setup",
+  "displayName": "Personal Site - Development - Setup",
+  "description": "Settings and features required only for development.",
+  "author": "Márk Bartha",
+  "website": "https://markbartha.com",
+  "version": "1.0",
+  "issetuprecipe": true,
+  "categories": [],
+  "tags": [],
+  "steps": [
+    {
+      "name": "feature",
+      "disable": [],
+      "enable": [
+        // Orchard Core
+        "OrchardCore.Admin",
+        "OrchardCore.Alias",
+        "OrchardCore.Autoroute",
+        "OrchardCore.ContentFields",
+        "OrchardCore.ContentFields.Indexing.SQL",
+        "OrchardCore.ContentTypes",
+        "OrchardCore.Contents",
+        "OrchardCore.Contents.Deployment.Download",
+        "OrchardCore.Deployment",
+        "OrchardCore.Deployment.Remote",
+        "OrchardCore.Diagnostics",
+        "OrchardCore.DynamicCache",
+        "OrchardCore.Features",
+        "OrchardCore.Flows",
+        "OrchardCore.HealthChecks",
+        "OrchardCore.HomeRoute",
+        "OrchardCore.Html",
+        "OrchardCore.Https",
+        "OrchardCore.Indexing",
+        "OrchardCore.Layers",
+        "OrchardCore.Liquid",
+        "OrchardCore.Lists",
+        "OrchardCore.Media",
+        "OrchardCore.Media.Cache",
+        "OrchardCore.Menu",
+        "OrchardCore.Navigation",
+        "OrchardCore.Placements",
+        "OrchardCore.Placements.FileStorage",
+        "OrchardCore.Queries",
+        "OrchardCore.Queries.Sql",
+        "OrchardCore.ReCaptcha",
+        "OrchardCore.ReCaptcha.Users",
+        "OrchardCore.Recipes",
+        "OrchardCore.Resources",
+        "OrchardCore.ReverseProxy",
+        "OrchardCore.Roles",
+        "OrchardCore.Rules",
+        "OrchardCore.Scripting",
+        "OrchardCore.Seo",
+        "OrchardCore.Settings",
+        "OrchardCore.Taxonomies",
+        "OrchardCore.Templates",
+        "OrchardCore.Themes",
+        "OrchardCore.Title",
+        "OrchardCore.Users",
+        "OrchardCore.Widgets",
+        "OrchardCore.Workflows",
+        "OrchardCore.Workflows.Http",
+
+        // Lombiq
+        "Lombiq.HelpfulExtensions.ContentTypes",
+        "Lombiq.HelpfulExtensions.Widgets",
+        "Lombiq.Hosting.MediaTheme",
+
+        // Themes
+        "TheAdmin",
+        "PersonalSite.Theme"
+      ]
+    },
+    {
+      "name": "themes",
+      "admin": "TheAdmin",
+      "site": "PersonalSite.Theme"
+    },
+    {
+      "name": "mediatheme",
+      "ClearMediaThemeFolder": false
+    },
+    {
+      "name": "Roles",
+      "Roles": [
+        {
+          "Name": "Authenticated",
+          "Description": "Authenticated role",
+          "Permissions": [
+            "ViewContent"
+          ]
+        },
+        {
+          "Name": "Anonymous",
+          "Description": "Anonymous role",
+          "Permissions": [
+            "ViewContent"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "recipes",
+      "Values": [
+        {
+          "executionid": "PersonalSite.Theme",
+          "name": "PersonalSite.Export"
+        },
+        {
+          "executionid": "PersonalSite.Theme",
+          "name": "PersonalSite.MediaTheme"
+        }
+      ]
+    },
+    {
+      "name": "settings",
+      "BaseThemeSettings": {
+        "HideMenu": false,
+        "Icon": "_MediaTheme/Assets/icons/favicon.ico",
+        "TimeStamp": 638840415767767793
+      }
+    }
+  ]
+}
