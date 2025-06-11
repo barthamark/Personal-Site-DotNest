@@ -1,0 +1,38 @@
+﻿{% assign title = Model.ContentItem.DisplayText %}
+{% assign excerpt = Model.ContentItem.Content.MarkdownBodyPart.Markdown | truncate: 150 %}
+{% assign date = Model.ContentItem.PublishedUtc | date: "%b %d, %Y" %}
+{% assign slug = Model.ContentItem.Content.AutoroutePart.Path %}
+
+<div class="group relative bg-white dark:bg-gray-800 rounded-xl overflow-hidden shadow-md transition-all duration-300 hover:shadow-xl border border-gray-200 dark:border-gray-700 p-6">
+    <!-- Decorative circles -->
+    <div class="absolute top-0 right-0 w-32 h-32 bg-gray-50 dark:bg-gray-700/50 rounded-full -mr-16 -mt-16 transition-transform group-hover:scale-110"></div>
+    <div class="absolute bottom-0 left-0 w-24 h-24 bg-gray-100 dark:bg-gray-700/30 rounded-full -ml-12 -mb-12 transition-transform group-hover:scale-110"></div>
+
+    <div class="relative">
+        <div class="flex items-center justify-between mb-4">
+            <div class="flex items-center text-sm text-gray-500 dark:text-gray-400">
+                <i class="icon-calendar mr-1"></i>
+                <span>{{ date }}</span>
+            </div>
+            <div class="w-10 h-10 flex items-center justify-center bg-gray-100 dark:bg-gray-700 rounded-lg">
+                <i class="icon-book-open w-5 h-5 text-gray-600 dark:text-gray-400"></i>
+            </div>
+        </div>
+
+        <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-gray-100 line-clamp-2 min-h-[3.5rem]">
+            {{ title }}
+        </h3>
+
+        <p class="text-gray-600 dark:text-gray-300 mb-4 line-clamp-3">
+            {{ excerpt }}
+        </p>
+
+        <a
+            href="{{ Model.ContentItem | display_url }}"
+            class="inline-flex items-center text-purple-600 dark:text-purple-400 font-medium group-hover:text-purple-700 dark:group-hover:text-purple-300 transition-colors"
+        >
+            Read article
+            <i class="icon-arrow-right ml-1 transition-transform group-hover:translate-x-1"></i>
+        </a>
+    </div>
+</div>
