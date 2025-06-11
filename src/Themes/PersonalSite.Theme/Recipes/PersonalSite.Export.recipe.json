@@ -212,7 +212,6 @@
       "name": "Settings",
       "LayerSettings": {
         "Zones": [
-          "Header",
           "Messages",
           "BeforeContent",
           "Content",
@@ -281,7 +280,7 @@
           "ContentItemVersionId": "4t9ynvnwn269e07a3sg3ksmbx5",
           "ContentType": "Menu",
           "DisplayText": "Header Menu",
-          "Latest": false,
+          "Latest": true,
           "Published": true,
           "ModifiedUtc": "2025-05-13T18:14:59.7616722Z",
           "PublishedUtc": "2025-05-13T18:14:59.7682181Z",

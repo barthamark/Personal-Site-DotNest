@@ -25,11 +25,21 @@
 
   <ItemGroup>
     <Content Include=".config\dotnet-tools.json" />
+    <Content Include="tailwind.config.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\favicon\site.webmanifest">
+      <CopyToPublishDirectory>Never</CopyToPublishDirectory>
+    </None>
   </ItemGroup>
 
   <PropertyGroup>
     <!-- This must be defined after the Lombiq.Hosting.MediaTheme.Targets import to override the property. -->
     <MediaThemeRecipeFileName>PersonalSite.MediaTheme</MediaThemeRecipeFileName>
   </PropertyGroup>
+
+  <Import Project=".\Targets\AutoCopyAssets.targets" />
+  <Import Project=".\Targets\RunTailwindBuild.targets" />
 
 </Project>

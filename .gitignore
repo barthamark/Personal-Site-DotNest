@@ -29,3 +29,4 @@ src/*.Web/Localization
 .editorconfig
 _MediaTheme/
 *.MediaTheme.recipe.json
+wwwroot/

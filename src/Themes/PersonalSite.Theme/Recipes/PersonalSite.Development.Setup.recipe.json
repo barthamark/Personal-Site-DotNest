@@ -115,12 +115,8 @@
       ]
     },
     {
-      "name": "settings",
-      "BaseThemeSettings": {
-        "HideMenu": false,
-        "Icon": "_MediaTheme/Assets/icons/favicon.ico",
-        "TimeStamp": 638840415767767793
-      }
+      "name": "Themes",
+      "Site": "PersonalSite.Theme"
     }
   ]
 }

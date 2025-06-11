@@ -1,0 +1,12 @@
+<Project>
+
+  <PropertyGroup>
+    <TailwindBuildCommand>dotnet tailwind exec -i ./Assets/css/site.css -o ./wwwroot/css/site.css --minify</TailwindBuildCommand>
+  </PropertyGroup>
+
+  <Target Name="RunTailwindBuild" AfterTargets="RestoreDotnetTool" BeforeTargets="DeleteTempMediaThemeFolderBefore;EmbeddModuleAssets;OrchardCoreEmbedModuleAssets;Compile">
+    <Message Text="Running Tailwind build for project: $(MSBuildProjectName)" Importance="high" />
+    <Exec Command="$(TailwindBuildCommand)" />
+  </Target>
+
+</Project>

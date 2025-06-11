@@ -1,0 +1,64 @@
+<Project>
+
+  <PropertyGroup>
+    <LocalAssetsFolder>$(ProjectDir)Assets\</LocalAssetsFolder>
+    <AssetsDestinationFolder>$(ProjectDir)wwwroot\</AssetsDestinationFolder>
+
+    <AssetsIncludePattern>**\*</AssetsIncludePattern>
+    <AssetsExcludePattern>css\**\*</AssetsExcludePattern>
+
+    <AutoCopyOverwriteReadOnlyFiles>true</AutoCopyOverwriteReadOnlyFiles>
+    <AutoCopyFailOnError>true</AutoCopyFailOnError>
+  </PropertyGroup>
+
+  <Target Name="AutoCopyAssets" BeforeTargets="MediaThemeDeploymentBeforeTargets;EmbeddModuleAssets;OrchardCoreEmbedModuleAssets;Compile">
+    <Message Text="Starting AutoCopyAssets for project: $(MSBuildProjectName)" Importance="high"/>
+
+    <ItemGroup>
+      <LocalFilesRaw Include="$(LocalAssetsFolder)$(AssetsIncludePattern)"
+                     Exclude="$(LocalAssetsFolder)$(AssetsExcludePattern)"
+                     Condition="Exists('$(LocalAssetsFolder)')"/>
+    </ItemGroup>
+
+    <ItemGroup>
+      <FilesToCopyFiltered Include="@(LocalFilesRaw)" Condition="Exists('%(LocalFilesRaw.FullPath)')">
+        <RelativePath>$([System.IO.Path]::GetRelativePath('$(LocalAssetsFolder)', '%(LocalFilesRaw.FullPath)'))</RelativePath>
+      </FilesToCopyFiltered>
+    </ItemGroup>
+
+    <Message Text="Files identified for auto-copy:" Importance="low"/>
+    <Message Text="  - %(FilesToCopyFiltered.Identity)" Importance="low"/>
+
+    <MakeDir Directories="$(AssetsDestinationFolder)" Condition="!Exists('$(AssetsDestinationFolder)')"/>
+
+    <Copy
+      SourceFiles="@(FilesToCopyFiltered)"
+      DestinationFiles="@(FilesToCopyFiltered->'$(AssetsDestinationFolder)%(RelativePath)')"
+      OverwriteReadOnlyFiles="$(AutoCopyOverwriteReadOnlyFiles)"
+      ContinueOnError="$(AutoCopyFailOnError)"/>
+
+    <Message Text="Auto-copy complete for project: $(MSBuildProjectName)" Importance="high"/>
+  </Target>
+
+  <Target Name="CleanAutoCopiedAssets" AfterTargets="Clean">
+    <Message Text="Starting CleanAutoCopiedAssets for project: $(MSBuildProjectName)" Importance="high"/>
+    <Message Text="  Cleaning destination: $(AssetsDestinationFolder)" Importance="high"/>
+    <Message Text="  Patterns to clean: $(AssetsIncludePattern)" Importance="high"/>
+    <Message Text="  Excluding from clean: $(AssetsExcludePattern)" Importance="high"/>
+
+    <ItemGroup>
+      <AllDestinationFilesToClean Include="$(AssetsDestinationFolder)$(AssetsIncludePattern)"/>
+      <FilesToCleanFiltered
+        Include="@(AllDestinationFilesToClean)"
+        Exclude="$(AssetsDestinationFolder)$(AssetsExcludePattern)"/>
+    </ItemGroup>
+
+    <Message Text="Files identified for auto-cleanup:" Importance="low"/>
+    <Message Text="  - %(FilesToCleanFiltered.Identity)" Importance="low"/>
+
+    <Delete Files="@(FilesToCleanFiltered)" ContinueOnError="false"/>
+
+    <Message Text="Auto-cleanup complete for project: $(MSBuildProjectName)" Importance="high"/>
+  </Target>
+
+</Project>

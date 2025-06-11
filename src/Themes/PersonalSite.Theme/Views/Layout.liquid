@@ -1,1 +1,197 @@
-test
+<!DOCTYPE html>
+<html lang="{{ Culture.Name }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{{ "PageTitle" | shape_new | shape_stringify }}</title>
+
+    {% resources type: "Meta" %}
+
+    {% link type:"image/png", rel: "icon", href: "~/mediatheme/favicon/favicon-96x96.png" %}
+    {% link type:"image/svg+xml", rel: "icon", href: "~/mediatheme/favicon/favicon.svg" %}
+    {% link type:"image/x-icon", rel: "shortcut icon", href: "~/mediatheme/favicon/favicon.ico" %}
+    {% link type:"image/png", rel: "apple-touch-icon", href: "~/mediatheme/favicon/apple-touch-icon.png" %}
+    {% link rel:"manifest", href: "~/mediatheme/favicon/site.webmanifest" %}
+
+    {% style name: "personal-site", src: "~/mediatheme/css/site.css" %}
+
+    {% resources type: "HeadScript" %}
+    {% resources type: "HeadLink" %}
+    {% resources type: "Stylesheet" %}
+    {% render_section "HeadMeta", required: false %}
+</head>
+<body id="page-top" dir="{{ Culture.Dir }}">
+<div class="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors">
+    <header class="w-full bg-white dark:bg-gray-800 shadow-sm sticky top-0 z-10 transition-colors">
+        {% assign headerMenu = Content["alias:header-menu"] %}
+        {% assign menuItems = headerMenu.Content.MenuItemsListPart.MenuItems %}
+
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <h1 class="text-xl font-bold text-gray-800 dark:text-gray-200">
+                    Márk Bartha
+                </h1>
+            </div>
+            <div class="flex items-center gap-4">
+                <button
+                    class="p-2 text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
+                    aria-label="Toggle theme"
+                >
+                    <i class="icon-moon"></i>
+                </button>
+                <button
+                    id="menu-toggle"
+                    class="md:hidden p-2 text-gray-600 dark:text-gray-300"
+                    aria-label="Open menu"
+                >
+                    <i class="icon-menu"></i>
+                </button>
+            </div>
+            <nav class="hidden md:flex space-x-8">
+                {% for item in menuItems %}
+                    <a href="{{ item.LinkMenuItemPart.Url | href }}"
+                       class="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
+                        {{ item.DisplayText }}
+                    </a>
+                {% endfor %}
+            </nav>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 shadow-lg absolute w-full">
+            <nav class="flex flex-col p-4">
+                {% for item in menuItems %}
+                    <a href="{{ item.LinkMenuItemPart.Url | href }}"
+                       class="py-2 px-4 text-gray-700 dark:text-gray-300 hover:bg-purple-50 dark:hover:bg-gray-700 rounded transition-colors">
+                        {{ item.DisplayText }}
+                    </a>
+                {% endfor %}
+            </nav>
+        </div>
+    </header>
+
+
+    <main class="w-full">
+        <section
+            id="about"
+            class="w-full bg-white dark:bg-gray-800 py-20 transition-colors"
+        >
+            <div class="container mx-auto px-4">
+                <div class="flex flex-col md:flex-row items-center gap-12 max-w-4xl mx-auto">
+                    <div class="w-40 h-40 md:w-48 md:h-48 flex-shrink-0 transition-transform hover:scale-105 duration-300">
+                        <img
+                            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80"
+                            alt="John Developer"
+                            class="w-full h-full object-cover rounded-full border-4 border-white dark:border-gray-700 shadow-lg"
+                        />
+                    </div>
+                    <div class="text-center md:text-left space-y-6">
+                        <div class="space-y-3">
+                            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100">
+                                Hi, I'm Márk Bartha
+                            </h2>
+                            <p class="text-xl text-gray-600 dark:text-gray-300">
+                                Freelance Software Developer specializing in Orchard Core and
+                                Blazor applications.
+                            </p>
+                        </div>
+
+                        <!-- Replace these skills or generate dynamically -->
+                        <div class="flex flex-wrap gap-3 justify-center md:justify-start">
+                            <span class="px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-gray-100 rounded-lg text-base font-medium transition-transform hover:scale-105">Orchard Core</span>
+                            <span class="px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-gray-100 rounded-lg text-base font-medium transition-transform hover:scale-105">Blazor</span>
+                            <span class="px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-gray-100 rounded-lg text-base font-medium transition-transform hover:scale-105">.NET</span>
+                        </div>
+
+                        <div class="flex gap-6 justify-center md:justify-start items-center">
+                            <a
+                                href="https://github.com"
+                                class="p-3 bg-gray-100 dark:bg-gray-700 rounded-full text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-all hover:scale-110"
+                                aria-label="GitHub"
+                            >
+                                <i class="icon-github"></i>
+                            </a>
+                            <a
+                                href="https://linkedin.com"
+                                class="p-3 bg-gray-100 dark:bg-gray-700 rounded-full text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-all hover:scale-110"
+                                aria-label="LinkedIn"
+                            >
+                                <i class="icon-linkedin"></i>
+                            </a>
+                            <a
+                                href="mailto:john@example.com"
+                                class="p-3 bg-gray-100 dark:bg-gray-700 rounded-full text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-all hover:scale-110"
+                                aria-label="Email"
+                            >
+                                <i class="icon-mail"></i>
+                            </a>
+                            <a
+                                href="https://linkedin.com/in/johndeveloper"
+                                class="text-lg text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 transition-colors ml-2 font-medium"
+                            >
+                                View full experience →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="w-full bg-gray-800 text-gray-300 py-8">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0 text-center md:text-left">
+                    <p class="text-lg font-semibold">John Developer</p>
+                    <p class="text-sm">Orchard Core & Blazor Specialist</p>
+                </div>
+
+                <nav class="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-4 md:mb-0">
+                    <a href="#about" class="text-sm hover:text-white transition-colors">About</a>
+                    <a href="#skills" class="text-sm hover:text-white transition-colors">Skills</a>
+                    <a href="#blog" class="text-sm hover:text-white transition-colors">Blog</a>
+                    <a href="#connect" class="text-sm hover:text-white transition-colors">Connect</a>
+                    <a href="/privacy" class="text-sm hover:text-white transition-colors">Privacy Policy</a>
+                </nav>
+
+                <div class="text-sm text-center md:text-right">
+                    <p>&copy; {{ "now" | local | date: "%Y" }} John Developer. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    {% render_section "Messages", required: false %}
+    {% render_section "BeforeContent", required: false %}
+    {% render_section "Content" %}
+    {% render_section "AfterContent", required: false %}
+    {% render_section "Footer", required: false %}
+
+    {% resources type: "FootScript" %}
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const toggle = document.getElementById('menu-toggle');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            toggle.addEventListener('click', function () {
+                const icon = this.querySelector('i');
+                const isOpen = mobileMenu.classList.contains('block');
+
+                if (isOpen) {
+                    mobileMenu.classList.remove('block');
+                    mobileMenu.classList.add('hidden');
+                    icon.classList.remove('icon-x');
+                    icon.classList.add('icon-menu');
+                } else {
+                    mobileMenu.classList.remove('hidden');
+                    mobileMenu.classList.add('block');
+                    icon.classList.remove('icon-menu');
+                    icon.classList.add('icon-x');
+                }
+            });
+        });
+    </script>
+</div>
+</body>
+</html>
