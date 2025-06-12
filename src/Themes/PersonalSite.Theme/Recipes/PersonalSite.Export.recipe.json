@@ -154,6 +154,14 @@
                 "Id": "a1139f3ac2364925a978ed914b229594",
                 "Name": "Placements"
               }
+            },
+            {
+              "Type": "AdminMenuDeploymentStep",
+              "Step": {
+                "$type": "OrchardCore.AdminMenu.Deployment.AdminMenuDeploymentStep, OrchardCore.AdminMenu",
+                "Id": "317942daa49947289dc6b43cefe5097d",
+                "Name": "AdminMenu"
+              }
             }
           ]
         }
@@ -381,10 +389,15 @@
           "Settings": {
             "ContentTypeSettings": {
               "Creatable": true,
+              "Listable": true,
               "Draftable": true,
               "Versionable": true,
-              "Listable": true,
               "Securable": true
+            },
+            "FullTextAspectSettings": {
+              "IncludeFullTextTemplate": false,
+              "IncludeBodyAspect": true,
+              "IncludeDisplayText": true
             }
           },
           "ContentTypePartDefinitionRecords": [
@@ -442,10 +455,12 @@
                   "Position": "4"
                 },
                 "ListPartSettings": {
-                  "PageSize": 10,
+                  "PageSize": 12,
                   "ContainedContentTypes": [
                     "BlogPost"
-                  ]
+                  ],
+                  "EnableOrdering": false,
+                  "ShowHeader": false
                 }
               }
             }
@@ -605,156 +620,6 @@
       "name": "content",
       "data": [
         {
-          "ContentItemId": "47acgkkt1r84dznmwe115w1ydq",
-          "ContentItemVersionId": "4x33fcmgcea7v2ge8w40m329cm",
-          "ContentType": "Blog",
-          "DisplayText": "Blog",
-          "Latest": true,
-          "Published": true,
-          "ModifiedUtc": "2025-06-11T17:49:51.3736542Z",
-          "PublishedUtc": "2025-06-11T17:49:51.378086Z",
-          "CreatedUtc": "2025-06-11T17:49:51.3686924Z",
-          "Owner": "4mq0s941naattznephrvv4854g",
-          "Author": "mark.bartha",
-          "TitlePart": {
-            "Title": "Blog"
-          },
-          "HtmlBodyPart": {
-            "Html": "This is the description of your blog"
-          },
-          "AutoroutePart": {
-            "Path": "blog"
-          },
-          "ListPart": {},
-          "Blog": {
-            "Image": {
-              "Paths": [
-                "home-bg.jpg"
-              ],
-              "MediaTexts": [
-                ""
-              ],
-              "Anchors": [
-                {
-                  "X": 0.5,
-                  "Y": 0.5
-                }
-              ]
-            }
-          }
-        },
-        {
-          "ContentItemId": "4z5518rq0gzj5xyh2whtf4f0nk",
-          "ContentItemVersionId": "4nyzgh2b148c961t7nv6b8yxcp",
-          "ContentType": "BlogPost",
-          "DisplayText": "Man must explore, and this is exploration at its greatest",
-          "Latest": true,
-          "Published": true,
-          "ModifiedUtc": "2025-06-11T17:49:51.413434Z",
-          "PublishedUtc": "2025-06-11T17:49:51.4238796Z",
-          "CreatedUtc": "2025-06-11T17:49:51.3846278Z",
-          "Owner": "4mq0s941naattznephrvv4854g",
-          "Author": "mark.bartha",
-          "TitlePart": {
-            "Title": "Man must explore, and this is exploration at its greatest"
-          },
-          "ContainedPart": {
-            "ListContentItemId": "47acgkkt1r84dznmwe115w1ydq",
-            "Order": 0
-          },
-          "MarkdownBodyPart": {
-            "Markdown": "Never in all their history have men been able truly to conceive of the world as one: a single sphere, a globe, having the qualities of a globe, a round earth in which all the directions eventually meet, in which there is no center because every point, or none, is center \u2014 an equal earth which all men occupy as equals. The airman\u0027s earth, if free men make it, will be truly round: a globe in practice, not in theory.\n\nScience cuts two ways, of course; its products can be used for both good and evil. But there\u0027s no turning back from science. The early warnings about technological dangers also come from science.\n\nWhat was most significant about the lunar voyage was not that man set foot on the Moon but that they set eye on the earth.\n\nA Chinese tale tells of some men sent to harm a young girl who, upon seeing her beauty, become her protectors rather than her violators. That\u0027s how I felt seeing the Earth for the first time. I could not help but love and cherish her.\n\nFor those who have seen the Earth from space, and for the hundreds and perhaps thousands more who will, the experience most certainly changes your perspective. The things that we share in our world are far more valuable than those which divide us."
-          },
-          "AutoroutePart": {
-            "Path": "blog/post-1"
-          },
-          "BlogPost": {
-            "Subtitle": {
-              "Text": "Problems look mighty small from 150 miles up"
-            },
-            "Image": {
-              "Paths": [
-                "post-bg.jpg"
-              ],
-              "MediaTexts": [
-                ""
-              ],
-              "Anchors": [
-                {
-                  "X": 0.5,
-                  "Y": 0.5
-                }
-              ]
-            },
-            "Tags": {
-              "TermContentItemIds": [
-                "4nfr4xckvs2nwtzcsd15hkbbd1",
-                "4n8jr09cw6rv117zpphhmwsbdz",
-                "4j56wm75kke733dk7bq9zb1k55"
-              ],
-              "TaxonomyContentItemId": "4r16ajz81jb8zx9whna5283tm5",
-              "TagNames": [
-                "Earth",
-                "Exploration",
-                "Space"
-              ]
-            },
-            "Category": {
-              "TermContentItemIds": [
-                "4ayc00hytrc1st0r5ehtk7sqn4"
-              ],
-              "TaxonomyContentItemId": "49k3bsgj3d6kxwwdkhrf7berd3"
-            }
-          }
-        },
-        {
-          "ContentItemId": "04z27cg5sbd54n6w0qnxzb4h92",
-          "ContentItemVersionId": "494p1s0568hc06jntheq1cy5nz",
-          "ContentType": "Page",
-          "DisplayText": "Home",
-          "Latest": true,
-          "Published": true,
-          "ModifiedUtc": "2025-05-13T18:13:06.1191107Z",
-          "PublishedUtc": "2025-05-13T18:13:06.1385142Z",
-          "CreatedUtc": "2025-05-13T18:13:01.8102834Z",
-          "Owner": "40c18z9hsp8pa0m0hp60xrmsxn",
-          "Author": "admin",
-          "TitlePart": {
-            "Title": "Home"
-          },
-          "AutoroutePart": {
-            "SetHomepage": false,
-            "Disabled": false,
-            "RouteContainedItems": false,
-            "Absolute": false,
-            "Path": "home"
-          },
-          "FlowPart": {
-            "Widgets": [
-              {
-                "ContentItemId": "4v9avrkxyy12a4cy5p18ppzemr",
-                "ContentItemVersionId": null,
-                "ContentType": "HtmlWidget",
-                "DisplayText": null,
-                "Latest": false,
-                "Published": false,
-                "ModifiedUtc": "2025-05-13T18:13:06.1283087Z",
-                "PublishedUtc": null,
-                "CreatedUtc": null,
-                "Owner": null,
-                "Author": "admin",
-                "HtmlBodyPart": {
-                  "Html": "\u003Cp\u003EHome page\u003C/p\u003E"
-                },
-                "FlowMetadata": {
-                  "Alignment": "Justify",
-                  "Size": 100
-                }
-              }
-            ]
-          }
-        },
-        {
           "ContentItemId": "4bzne3q3qbm37x7c6ky8yz63d4",
           "ContentItemVersionId": "4t9ynvnwn269e07a3sg3ksmbx5",
           "ContentType": "Menu",
@@ -775,128 +640,6 @@
           "MenuPart": {},
           "MenuItemsListPart": {
             "MenuItems": []
-          },
-          "@WeldedPartSettings": {
-            "MenuPart": {
-              "Position": "3"
-            },
-            "MenuItemsListPart": {
-              "Position": "4"
-            }
-          }
-        },
-        {
-          "ContentItemId": "4ywdf4ezztjaa1rheear7fd1w4",
-          "ContentItemVersionId": "4d902sezt0778reqj382qd8amx",
-          "ContentType": "Menu",
-          "DisplayText": "Footer Menu",
-          "Latest": true,
-          "Published": true,
-          "ModifiedUtc": "2025-05-13T18:18:24.7769707Z",
-          "PublishedUtc": "2025-05-13T18:18:24.7845981Z",
-          "CreatedUtc": "2025-05-13T18:15:46.4073032Z",
-          "Owner": "40c18z9hsp8pa0m0hp60xrmsxn",
-          "Author": "admin",
-          "TitlePart": {
-            "Title": "Footer Menu"
-          },
-          "AliasPart": {
-            "Alias": "footer-menu"
-          },
-          "MenuPart": {},
-          "MenuItemsListPart": {
-            "MenuItems": [
-              {
-                "ContentItemId": "4swy9tgq4be79232az264842x2",
-                "ContentItemVersionId": null,
-                "ContentType": "LinkMenuItem",
-                "DisplayText": "About",
-                "Latest": false,
-                "Published": false,
-                "ModifiedUtc": "2025-05-13T18:15:56.3660135Z",
-                "PublishedUtc": null,
-                "CreatedUtc": null,
-                "Owner": null,
-                "Author": "admin",
-                "LinkMenuItemPart": {
-                  "Url": "~/about",
-                  "Target": null
-                },
-                "LinkMenuItem": {}
-              },
-              {
-                "ContentItemId": "4ndzd2rf7dwky42xam80za1cch",
-                "ContentItemVersionId": null,
-                "ContentType": "LinkMenuItem",
-                "DisplayText": "Services",
-                "Latest": false,
-                "Published": false,
-                "ModifiedUtc": "2025-05-13T18:16:26.3912855Z",
-                "PublishedUtc": null,
-                "CreatedUtc": null,
-                "Owner": null,
-                "Author": "admin",
-                "LinkMenuItemPart": {
-                  "Url": "~/services",
-                  "Target": null
-                },
-                "LinkMenuItem": {}
-              },
-              {
-                "ContentItemId": "4xyv6w3ghpa1gwayhh05ape54h",
-                "ContentItemVersionId": null,
-                "ContentType": "LinkMenuItem",
-                "DisplayText": "Projects",
-                "Latest": false,
-                "Published": false,
-                "ModifiedUtc": "2025-05-13T18:16:36.9553489Z",
-                "PublishedUtc": null,
-                "CreatedUtc": null,
-                "Owner": null,
-                "Author": "admin",
-                "LinkMenuItemPart": {
-                  "Url": "~/projects",
-                  "Target": null
-                },
-                "LinkMenuItem": {}
-              },
-              {
-                "ContentItemId": "49x9mq4sp2ccdy8r50bwz6xj44",
-                "ContentItemVersionId": null,
-                "ContentType": "LinkMenuItem",
-                "DisplayText": "Blog",
-                "Latest": false,
-                "Published": false,
-                "ModifiedUtc": "2025-05-13T18:16:47.9386953Z",
-                "PublishedUtc": null,
-                "CreatedUtc": null,
-                "Owner": null,
-                "Author": "admin",
-                "LinkMenuItemPart": {
-                  "Url": "~/blog",
-                  "Target": null
-                },
-                "LinkMenuItem": {}
-              },
-              {
-                "ContentItemId": "48y8hy0ewsyqa14khgkb7natmc",
-                "ContentItemVersionId": null,
-                "ContentType": "LinkMenuItem",
-                "DisplayText": "Contact Us",
-                "Latest": false,
-                "Published": false,
-                "ModifiedUtc": "2025-05-13T18:17:09.4312256Z",
-                "PublishedUtc": null,
-                "CreatedUtc": null,
-                "Owner": null,
-                "Author": "admin",
-                "LinkMenuItemPart": {
-                  "Url": "~/contact-us",
-                  "Target": null
-                },
-                "LinkMenuItem": {}
-              }
-            ]
           },
           "@WeldedPartSettings": {
             "MenuPart": {
@@ -983,6 +726,400 @@
             ],
             "TermContentType": "Tag"
           }
+        },
+        {
+          "ContentItemId": "4p9wb2farv3507mdpkv1fqxzmz",
+          "ContentItemVersionId": "4cpeym4k3chf91xqgws0h133ww",
+          "ContentType": "BlogPost",
+          "DisplayText": "Test Blog Post 2",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2025-06-12T04:54:55.2806884Z",
+          "PublishedUtc": "2025-06-12T04:54:55.3030893Z",
+          "CreatedUtc": "2025-06-12T04:50:14.6647152Z",
+          "Owner": "48by87ty6x2sp20gs80my1ahnd",
+          "Author": "mark.bartha",
+          "TitlePart": {
+            "Title": "Test Blog Post 2"
+          },
+          "AutoroutePart": {
+            "SetHomepage": false,
+            "Disabled": false,
+            "RouteContainedItems": false,
+            "Absolute": false,
+            "Path": "blog/test-blog-post-2"
+          },
+          "BlogPost": {
+            "Subtitle": {
+              "Text": null
+            },
+            "Image": {
+              "Anchors": [],
+              "Paths": [],
+              "MediaTexts": []
+            },
+            "Tags": {
+              "TermContentItemIds": [
+                "4g87e6dhh0rmht01x1qhey0ymy"
+              ],
+              "TagNames": [
+                "Orchard Core"
+              ],
+              "TaxonomyContentItemId": "4cjjtn6m0rvpay8qh54yzwy0ds"
+            }
+          },
+          "MarkdownBodyPart": {
+            "Markdown": "sdfgdsfgdsfg\r\ndfg\r\nsdfg\r\ndsfgsdfgdsfg\r\n\r\n\r\nsdfgdsfg\r\ndgfsd\r\nfg"
+          },
+          "ContainedPart": {
+            "ListContentItemId": "47acgkkt1r84dznmwe115w1ydq",
+            "ListContentType": "Blog",
+            "Order": 0
+          }
+        },
+        {
+          "ContentItemId": "4r6yjrwsyev0m2bcqvex7d5fxy",
+          "ContentItemVersionId": "4mh10tqg9zxjmwspkdhkcvq94v",
+          "ContentType": "BlogPost",
+          "DisplayText": "Test Blog Post 3",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2025-06-12T04:55:08.5040805Z",
+          "PublishedUtc": "2025-06-12T04:55:08.5121214Z",
+          "CreatedUtc": "2025-06-12T04:55:08.5040805Z",
+          "Owner": "48by87ty6x2sp20gs80my1ahnd",
+          "Author": "mark.bartha",
+          "TitlePart": {
+            "Title": "Test Blog Post 3"
+          },
+          "AutoroutePart": {
+            "SetHomepage": false,
+            "Disabled": false,
+            "RouteContainedItems": false,
+            "Absolute": false,
+            "Path": "blog/test-blog-post-3"
+          },
+          "BlogPost": {
+            "Subtitle": {
+              "Text": null
+            },
+            "Image": {
+              "Anchors": [],
+              "Paths": [],
+              "MediaTexts": []
+            },
+            "Tags": {
+              "TermContentItemIds": [],
+              "TagNames": [],
+              "TaxonomyContentItemId": "4cjjtn6m0rvpay8qh54yzwy0ds"
+            }
+          },
+          "MarkdownBodyPart": {
+            "Markdown": "fsgsfdgsdfgsdfgsdfgadsgsdfg\r\ndsfgdsfgsd\r\nfgd\r\nsfgsdfg\r\n\r\n\r\nsdgfsdfgsdfgsdfgdsf"
+          },
+          "ContainedPart": {
+            "ListContentItemId": "47acgkkt1r84dznmwe115w1ydq",
+            "ListContentType": "Blog",
+            "Order": 0
+          }
+        },
+        {
+          "ContentItemId": "4c06jfvqpcza221ew1kjvwwfnx",
+          "ContentItemVersionId": "40hkbz87mtda03b9kec7cs1p4n",
+          "ContentType": "BlogPost",
+          "DisplayText": "Test Blog Post 4",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2025-06-12T04:55:20.9481956Z",
+          "PublishedUtc": "2025-06-12T04:55:20.9573106Z",
+          "CreatedUtc": "2025-06-12T04:55:20.9481956Z",
+          "Owner": "48by87ty6x2sp20gs80my1ahnd",
+          "Author": "mark.bartha",
+          "TitlePart": {
+            "Title": "Test Blog Post 4"
+          },
+          "AutoroutePart": {
+            "SetHomepage": false,
+            "Disabled": false,
+            "RouteContainedItems": false,
+            "Absolute": false,
+            "Path": "blog/test-blog-post-4"
+          },
+          "BlogPost": {
+            "Subtitle": {
+              "Text": null
+            },
+            "Image": {
+              "Anchors": [],
+              "Paths": [],
+              "MediaTexts": []
+            },
+            "Tags": {
+              "TermContentItemIds": [],
+              "TagNames": [],
+              "TaxonomyContentItemId": "4cjjtn6m0rvpay8qh54yzwy0ds"
+            }
+          },
+          "MarkdownBodyPart": {
+            "Markdown": "fdghdfghdfghdfg\r\nasdf\r\nsdgsdfg\r\nsdgf\r\nsdg\r\nsd\r\ngfs\r\ndgdsfg"
+          },
+          "ContainedPart": {
+            "ListContentItemId": "47acgkkt1r84dznmwe115w1ydq",
+            "ListContentType": "Blog",
+            "Order": 0
+          }
+        },
+        {
+          "ContentItemId": "4z5518rq0gzj5xyh2whtf4f0nk",
+          "ContentItemVersionId": "48yk1hr8k371527yf9edgr0qdm",
+          "ContentType": "BlogPost",
+          "DisplayText": "Man must explore, and this is exploration at its greatest",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2025-06-12T13:21:51.7088815Z",
+          "PublishedUtc": "2025-06-12T13:21:51.876115Z",
+          "CreatedUtc": "2025-06-11T17:49:51.3846278Z",
+          "Owner": "4mq0s941naattznephrvv4854g",
+          "Author": "mark.bartha",
+          "TitlePart": {
+            "Title": "Man must explore, and this is exploration at its greatest"
+          },
+          "ContainedPart": {
+            "ListContentItemId": "47acgkkt1r84dznmwe115w1ydq",
+            "Order": 0,
+            "ListContentType": null
+          },
+          "MarkdownBodyPart": {
+            "Markdown": "## asd\r\nNever in all their history have men been able truly to conceive of the world as one: a single sphere, a globe, having the qualities of a globe, a round earth in which all the directions eventually meet, in which there is no center because every point, or none, is center \u2014 an equal earth which all men occupy as equals. The airman\u0027s earth, if free men make it, will be truly round: a globe in practice, not in theory.\r\n\r\n## bsd\r\nScience cuts two ways, of course; its products can be used for both good and evil. But there\u0027s no turning back from science. The early warnings about technological dangers also come from science.\r\n\r\nWhat was most significant about the lunar voyage was not that man set foot on the Moon but that they set eye on the earth.\r\n\r\nA Chinese tale tells of some men sent to harm a young girl who, upon seeing her beauty, become her protectors rather than her violators. That\u0027s how I felt seeing the Earth for the first time. I could not help but love and cherish her.\r\n\r\nFor those who have seen the Earth from space, and for the hundreds and perhaps thousands more who will, the experience most certainly changes your perspective. The things that we share in our world are far more valuable than those which divide us."
+          },
+          "AutoroutePart": {
+            "Path": "blog/post-1",
+            "SetHomepage": false,
+            "Disabled": false,
+            "RouteContainedItems": false,
+            "Absolute": false
+          },
+          "BlogPost": {
+            "Subtitle": {
+              "Text": "Problems look mighty small from 150 miles up"
+            },
+            "Image": {
+              "Paths": [],
+              "MediaTexts": [],
+              "Anchors": []
+            },
+            "Tags": {
+              "TermContentItemIds": [],
+              "TaxonomyContentItemId": "4cjjtn6m0rvpay8qh54yzwy0ds",
+              "TagNames": []
+            },
+            "Category": {
+              "TermContentItemIds": [
+                "4ayc00hytrc1st0r5ehtk7sqn4"
+              ],
+              "TaxonomyContentItemId": "49k3bsgj3d6kxwwdkhrf7berd3"
+            }
+          }
+        },
+        {
+          "ContentItemId": "4ywdf4ezztjaa1rheear7fd1w4",
+          "ContentItemVersionId": "423949nn0hhdprcyxfq67wb2w2",
+          "ContentType": "Menu",
+          "DisplayText": "Main Menu",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2025-06-12T14:03:09.2850281Z",
+          "PublishedUtc": "2025-06-12T14:03:09.2944147Z",
+          "CreatedUtc": "2025-05-13T18:15:46.4073032Z",
+          "Owner": "40c18z9hsp8pa0m0hp60xrmsxn",
+          "Author": "mark.bartha",
+          "TitlePart": {
+            "Title": "Main Menu"
+          },
+          "AliasPart": {
+            "Alias": "main-menu"
+          },
+          "MenuPart": {},
+          "MenuItemsListPart": {
+            "MenuItems": [
+              {
+                "ContentItemId": "4wkcytysckjwv49wpms3zea64x",
+                "ContentItemVersionId": null,
+                "ContentType": "LinkMenuItem",
+                "DisplayText": "About Me",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2025-06-12T14:00:33.9324357Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "mark.bartha",
+                "LinkMenuItemPart": {
+                  "Url": "~/",
+                  "Target": null
+                },
+                "LinkMenuItem": {}
+              },
+              {
+                "ContentItemId": "48y8hy0ewsyqa14khgkb7natmc",
+                "ContentItemVersionId": null,
+                "ContentType": "LinkMenuItem",
+                "DisplayText": "Blog",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2025-05-13T18:17:09.4312256Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "admin",
+                "LinkMenuItemPart": {
+                  "Url": "~/blog",
+                  "Target": null
+                },
+                "LinkMenuItem": {}
+              },
+              {
+                "ContentItemId": "4px0jjys8b9fm7dxqfypvr8vmy",
+                "ContentItemVersionId": null,
+                "ContentType": "LinkMenuItem",
+                "DisplayText": "Contact",
+                "Latest": false,
+                "Published": false,
+                "ModifiedUtc": "2025-06-12T14:02:38.4649702Z",
+                "PublishedUtc": null,
+                "CreatedUtc": null,
+                "Owner": null,
+                "Author": "mark.bartha",
+                "LinkMenuItemPart": {
+                  "Url": "#connect",
+                  "Target": null
+                },
+                "LinkMenuItem": {}
+              }
+            ]
+          },
+          "@WeldedPartSettings": {
+            "MenuPart": {
+              "Position": "3"
+            },
+            "MenuItemsListPart": {
+              "Position": "4"
+            }
+          }
+        },
+        {
+          "ContentItemId": "47acgkkt1r84dznmwe115w1ydq",
+          "ContentItemVersionId": "40nmd7309r3dfwym9spwy7sadh",
+          "ContentType": "Blog",
+          "DisplayText": "Blog",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2025-06-12T14:47:20.5188952Z",
+          "PublishedUtc": "2025-06-12T14:47:20.5299889Z",
+          "CreatedUtc": "2025-06-11T17:49:51.3686924Z",
+          "Owner": "4mq0s941naattznephrvv4854g",
+          "Author": "mark.bartha",
+          "TitlePart": {
+            "Title": "Blog"
+          },
+          "HtmlBodyPart": {
+            "Html": "This is the description of your blog"
+          },
+          "AutoroutePart": {
+            "Path": "blog",
+            "SetHomepage": false,
+            "Disabled": false,
+            "RouteContainedItems": false,
+            "Absolute": false
+          },
+          "ListPart": {
+            "DisableRssFeed": false,
+            "FeedProxyUrl": null,
+            "FeedItemsCount": 20
+          },
+          "Blog": {
+            "Image": {
+              "Paths": [],
+              "MediaTexts": [],
+              "Anchors": []
+            }
+          }
+        },
+        {
+          "ContentItemId": "04z27cg5sbd54n6w0qnxzb4h92",
+          "ContentItemVersionId": "4913j09wpmbgwstnmwxhrnc8d8",
+          "ContentType": "Page",
+          "DisplayText": "Home",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2025-06-12T18:19:48.1520834Z",
+          "PublishedUtc": "2025-06-12T18:19:48.2520559Z",
+          "CreatedUtc": "2025-05-13T18:13:01.8102834Z",
+          "Owner": "40c18z9hsp8pa0m0hp60xrmsxn",
+          "Author": "mark.bartha",
+          "TitlePart": {
+            "Title": "Home"
+          },
+          "AutoroutePart": {
+            "SetHomepage": false,
+            "Disabled": false,
+            "RouteContainedItems": false,
+            "Absolute": false,
+            "Path": "home"
+          },
+          "FlowPart": {
+            "Widgets": []
+          }
+        },
+        {
+          "ContentItemId": "4rr75mv9jkf5gwgkdfn8arj2w4",
+          "ContentItemVersionId": "4jbmecgryn0q2436ggzmgj1dwg",
+          "ContentType": "BlogPost",
+          "DisplayText": "Building Modular Applications with Orchard Core (AI-generated)",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2025-06-12T19:14:34.0363669Z",
+          "PublishedUtc": "2025-06-12T19:14:34.1761627Z",
+          "CreatedUtc": "2025-06-12T19:14:34.0363669Z",
+          "Owner": "4g09qhq1z6kybyh29gwvrxwc58",
+          "Author": "mark.bartha",
+          "TitlePart": {
+            "Title": "Building Modular Applications with Orchard Core (AI-generated)"
+          },
+          "AutoroutePart": {
+            "SetHomepage": false,
+            "Disabled": false,
+            "RouteContainedItems": false,
+            "Absolute": false,
+            "Path": "blog/building-modular-applications-with-orchard-core-ai-generated"
+          },
+          "BlogPost": {
+            "Subtitle": {
+              "Text": null
+            },
+            "Image": {
+              "Anchors": [],
+              "Paths": [],
+              "MediaTexts": []
+            },
+            "Tags": {
+              "TermContentItemIds": [
+                "4g87e6dhh0rmht01x1qhey0ymy"
+              ],
+              "TagNames": [
+                "Orchard Core"
+              ],
+              "TaxonomyContentItemId": "4cjjtn6m0rvpay8qh54yzwy0ds"
+            }
+          },
+          "MarkdownBodyPart": {
+            "Markdown": "Orchard Core is a powerful framework for building modular, multi-tenant applications. In this comprehensive guide, we\u0027ll explore how to leverage its architecture to create flexible, maintainable web applications that can scale with your business needs.\r\n\r\n## Why Choose Orchard Core?\r\n\r\nOrchard Core provides a robust foundation for building modern web applications. Its modular architecture allows developers to create reusable components that can be shared across different projects. Here are some key benefits:\r\n\r\n- Modular architecture for better code organization  \r\n- Built-in multi-tenancy support  \r\n- Flexible content management capabilities  \r\n- Active community and extensive documentation  \r\n\r\n## Getting Started with Orchard Core\r\n\r\nBefore diving into development, you\u0027ll need to set up your environment. Let\u0027s walk through the initial setup process.\r\n\r\n### Prerequisites\r\n\r\nMake sure you have the following tools installed:\r\n\r\n\u0060\u0060\u0060\r\n.NET SDK 6.0 or later  \r\nVisual Studio 2022 or VS Code  \r\nSQL Server (LocalDB is fine for development)\r\n\u0060\u0060\u0060\r\n\r\n### Creating Your First Project\r\n\r\nTo create a new Orchard Core project, run the following commands in your terminal:\r\n\r\n\u0060\u0060\u0060\r\ndotnet new install OrchardCore.Templates  \r\ndotnet new oc-web -n MyOrchardProject  \r\ncd MyOrchardProject  \r\ndotnet run\r\n\u0060\u0060\u0060\r\n\r\nVisit [the official documentation](https://docs.orchardcore.net) for more detailed installation instructions.\r\n\r\n## Understanding the Architecture\r\n\r\n![Architecture Diagram showing modular system design](https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?ixlib=rb-4.0.3\u0026auto=format\u0026fit=crop\u0026w=2070\u0026q=80)  \r\n*Image: Visual representation of modular architecture in modern web applications*\r\n\r\n### Key Components\r\n\r\nThe framework consists of several key components working together:\r\n\r\n\u003E Orchard Core\u0027s modular architecture is built on the principle of loose coupling and high cohesion, allowing developers to create maintainable and scalable applications.\r\n\r\n## Building Your First Module\r\n\r\nLet\u0027s create a simple module that adds a custom content type. Here\u0027s the basic structure:\r\n\r\n\u0060\u0060\u0060csharp\r\npublic class Startup : StartupBase\r\n{\r\n    public override void ConfigureServices(IServiceCollection services)\r\n    {\r\n        services.AddContentPart\u003CMyCustomPart\u003E();\r\n        services.AddScoped\u003CIContentPartHandler, MyCustomPartHandler\u003E();\r\n    }\r\n}\r\n\u0060\u0060\u0060\r\n\r\n### Testing Your Module\r\n\r\nHere\u0027s how you can test your new module:\r\n\r\n1. Enable the module in the admin dashboard  \r\n2. Create a new content type using your custom part  \r\n3. Test the content type\u0027s functionality  \r\n\r\n## Best Practices and Tips\r\n\r\nWhen building Orchard Core applications, consider these best practices:\r\n\r\n| Practice                      | Benefit                                 |\r\n|------------------------------|-----------------------------------------|\r\n| Use dependency injection      | Improves testability and maintainability |\r\n| Create small, focused modules | Better reusability and easier maintenance |\r\n\r\n## Conclusion\r\n\r\nOrchard Core provides a powerful foundation for building modern web applications. By following the principles and practices outlined in this guide, you\u0027ll be well-equipped to create robust, scalable applications.\r\n\r\nFor more advanced topics, check out these resources:\r\n\r\n- [Advanced Module Development Guide](#)  \r\n- [Performance Optimization Tips](#)  \r\n- [Security Best Practices](#)"
+          },
+          "ContainedPart": {
+            "ListContentItemId": "47acgkkt1r84dznmwe115w1ydq",
+            "ListContentType": "Blog",
+            "Order": 0
+          }
         }
       ]
     },
@@ -1002,6 +1139,32 @@
           }
         ]
       }
+    },
+    {
+      "name": "AdminMenu",
+      "data": [
+        {
+          "Id": "0f0b20d3a57b436b9e5edbbc053d50b5",
+          "Name": "Blog",
+          "Enabled": true,
+          "MenuItems": [
+            {
+              "$type": "OrchardCore.AdminMenu.AdminNodes.LinkAdminNode, OrchardCore.AdminMenu",
+              "LinkText": "Blog",
+              "LinkUrl": "~/Admin/Contents/ContentItems/47acgkkt1r84dznmwe115w1ydq/Display",
+              "IconClass": "fas fa-marker",
+              "PermissionNames": [],
+              "UniqueId": "f245f506f00c408e93f29a8a4df159ba",
+              "Enabled": true,
+              "Priority": 0,
+              "LinkToFirstChild": true,
+              "LocalNav": false,
+              "Items": [],
+              "Classes": []
+            }
+          ]
+        }
+      ]
     }
   ]
 }

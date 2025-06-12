@@ -37,8 +37,9 @@
                 </div>
                 <div class="flex items-center">
                     <i class="icon-clock mr-2 text-base"></i>
-                    {% assign wordCount = Model.ContentItem.Content.MarkdownBodyPart.Markdown | markdownify | strip_html | split: ' ' | size | divided_by: 200 %}
-                    {{ wordCount | ceil }} min read
+                    {% assign wordCount = Model.ContentItem.Content.MarkdownBodyPart.Markdown | markdownify | strip_html | split: ' ' | size %}
+                    {% assign readDuration = wordCount | divided_by: 200 | plus:1 %}
+                    {{ readDuration }} min read
                 </div>
             </div>
 

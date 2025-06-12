@@ -10,29 +10,57 @@
                 </h1>
             </a>
         </div>
+
         <div class="flex items-center gap-4">
-            <button
-                class="p-2 text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
-                aria-label="Toggle theme"
-            >
-                <i class="icon-moon"></i>
-            </button>
-            <button
-                id="menu-toggle"
-                class="md:hidden p-2 text-gray-600 dark:text-gray-300"
-                aria-label="Open menu"
-            >
-                <i class="icon-menu"></i>
-            </button>
+            <nav class="hidden md:flex items-center space-x-8">
+                {% for item in menuItems %}
+                    <a href="{{ item.LinkMenuItemPart.Url | href }}"
+                       class="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
+                        {{ item.DisplayText }}
+                    </a>
+                {% endfor %}
+            </nav>
+
+            <div class="flex items-center gap-2">
+                <div class="hidden md:block h-5 w-px bg-gray-300 dark:bg-gray-600"></div>
+
+                <div class="relative" id="theme-toggle">
+                    <button
+                        class="p-2 text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
+                        aria-label="Toggle theme"
+                        onclick="toggleThemeMenu()"
+                    >
+                        <i id="theme-icon" class="icon-moon"></i>
+                    </button>
+                    <div id="theme-menu"
+                         class="absolute right-0 mt-2 w-40 bg-white dark:bg-gray-800 rounded shadow-lg text-sm hidden z-50">
+                        <button class="w-full px-4 py-2 text-left flex items-center gap-2 hover:bg-gray-100 dark:hover:bg-gray-700"
+                                onclick="setTheme('light')">
+                            <i class="icon-sun text-base"></i>
+                            Light
+                        </button>
+                        <button class="w-full px-4 py-2 text-left flex items-center gap-2 hover:bg-gray-100 dark:hover:bg-gray-700"
+                                onclick="setTheme('dark')">
+                            <i class="icon-moon text-base"></i>
+                            Dark
+                        </button>
+                        <button class="w-full px-4 py-2 text-left flex items-center gap-2 hover:bg-gray-100 dark:hover:bg-gray-700"
+                                onclick="setTheme('system')">
+                            <i class="icon-monitor text-base"></i>
+                            System
+                        </button>
+                    </div>
+                </div>
+
+                <button
+                    id="menu-toggle"
+                    class="md:hidden p-2 text-gray-600 dark:text-gray-300"
+                    aria-label="Open menu"
+                >
+                    <i class="icon-menu"></i>
+                </button>
+            </div>
         </div>
-        <nav class="hidden md:flex space-x-8">
-            {% for item in menuItems %}
-                <a href="{{ item.LinkMenuItemPart.Url | href }}"
-                   class="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
-                    {{ item.DisplayText }}
-                </a>
-            {% endfor %}
-        </nav>
     </div>
 
     <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 shadow-lg absolute w-full">
@@ -46,3 +74,59 @@
         </nav>
     </div>
 </header>
+
+{% scriptblock at: "Foot" %}
+    const themeKey = 'theme-preference';
+
+    function setTheme(mode) {
+        localStorage.setItem(themeKey, mode);
+        applyTheme(mode);
+        document.getElementById('theme-menu').classList.add('hidden');
+    }
+
+    function applyTheme(mode) {
+        const html = document.documentElement;
+        if (mode === 'system') {
+            html.classList.remove('dark');
+            if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                html.classList.add('dark');
+                updateIcon('dark');
+            } else {
+                updateIcon('light');
+            }
+        } else if (mode === 'dark') {
+            html.classList.add('dark');
+            updateIcon('dark');
+        } else {
+            html.classList.remove('dark');
+            updateIcon('light');
+        }
+    }
+
+    function updateIcon(mode) {
+        const icon = document.getElementById('theme-icon');
+        if (!icon) return;
+        icon.className = mode === 'dark' ? 'icon-moon' : 'icon-sun';
+    }
+
+    function toggleThemeMenu() {
+        document.getElementById('theme-menu').classList.toggle('hidden');
+    }
+
+    const stored = localStorage.getItem(themeKey) || 'system';
+    applyTheme(stored);
+
+    if (stored === 'system') {
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+            applyTheme('system');
+        });
+    }
+
+    document.addEventListener('click', function (e) {
+        const toggle = document.getElementById('theme-toggle');
+        const menu = document.getElementById('theme-menu');
+        if (toggle && !toggle.contains(e.target)) {
+            menu.classList.add('hidden');
+        }
+    });
+{% endscriptblock %}
