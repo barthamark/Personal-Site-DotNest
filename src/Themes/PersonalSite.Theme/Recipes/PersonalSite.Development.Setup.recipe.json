@@ -15,6 +15,7 @@
       "enable": [
         // Orchard Core
         "OrchardCore.Admin",
+        "OrchardCore.AdminMenu",
         "OrchardCore.Alias",
         "OrchardCore.Autoroute",
         "OrchardCore.ContentFields",
@@ -27,6 +28,7 @@
         "OrchardCore.Diagnostics",
         "OrchardCore.DynamicCache",
         "OrchardCore.Features",
+        "OrchardCore.Feeds",
         "OrchardCore.Flows",
         "OrchardCore.HealthChecks",
         "OrchardCore.HomeRoute",
@@ -36,6 +38,7 @@
         "OrchardCore.Layers",
         "OrchardCore.Liquid",
         "OrchardCore.Lists",
+        "OrchardCore.Markdown",
         "OrchardCore.Media",
         "OrchardCore.Media.Cache",
         "OrchardCore.Menu",

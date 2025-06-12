@@ -34,6 +34,12 @@
     </None>
   </ItemGroup>
 
+  <ItemGroup>
+    <EmbeddedResource Update="Views\Blog__ListPart.liquid">
+      <CopyToPublishDirectory>Never</CopyToPublishDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+
   <PropertyGroup>
     <!-- This must be defined after the Lombiq.Hosting.MediaTheme.Targets import to override the property. -->
     <MediaThemeRecipeFileName>PersonalSite.MediaTheme</MediaThemeRecipeFileName>

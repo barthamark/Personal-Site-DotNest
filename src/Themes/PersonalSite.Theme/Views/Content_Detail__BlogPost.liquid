@@ -1,0 +1,113 @@
+﻿{% zone "Header" %}
+{% assign imagePath = Model.ContentItem.Content.BlogPost.Image.Paths.first %}
+{% assign anchor = Model.ContentItem.Content.BlogPost.Image.Anchors.first %}
+
+<header class="w-full h-96 bg-cover bg-center bg-no-repeat flex items-end"
+        style="background-image: url('{{ imagePath | default: "~/TheBlogTheme/assets/img/post-bg.jpg" | href | asset_url | resize_url: profile: "banner", anchor: anchor }}')">
+    <div class="container mx-auto px-4 md:px-6 pb-8">
+        <h1 class="text-4xl font-bold text-white drop-shadow-lg">
+            {{ Model.ContentItem.DisplayText }}
+        </h1>
+    </div>
+</header>
+{% endzone %}
+
+<article class="w-full bg-white dark:bg-gray-800 min-h-screen transition-colors">
+    <div class="container mx-auto px-4 md:px-6 py-8">
+
+        <a href="/blog" class="inline-flex items-center text-gray-600 dark:text-gray-400 hover:text-purple-600 dark:hover:text-purple-400 transition-colors mb-8">
+            <i class="icon-arrow-left mr-2"></i> Back to Blog
+        </a>
+
+        <div class="max-w-3xl mx-auto mb-8">
+            <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-6 leading-tight">
+                {{ Model.ContentItem.DisplayText }}
+            </h1>
+
+            <div class="flex flex-wrap gap-6 text-gray-600 dark:text-gray-400 mb-6 text-sm">
+                <div class="flex items-center">
+                    <i class="icon-calendar mr-2 text-base"></i>
+                    {% assign format = "MMMM dd, yyyy" | t %}
+                    {% assign dateTime = "DateTime" | shape_new: utc: Model.ContentItem.CreatedUtc, format: format | shape_stringify %}
+                    {{ dateTime }}
+                </div>
+                <div class="flex items-center">
+                    <i class="icon-user mr-2 text-base"></i>
+                    Márk Bartha
+                </div>
+                <div class="flex items-center">
+                    <i class="icon-clock mr-2 text-base"></i>
+                    {% assign wordCount = Model.ContentItem.Content.MarkdownBodyPart.Markdown | markdownify | strip_html | split: ' ' | size | divided_by: 200 %}
+                    {{ wordCount | ceil }} min read
+                </div>
+            </div>
+
+            <div class="flex flex-wrap gap-2 mb-8">
+                {% for tag in Model.ContentItem.Content["BlogPost.Tags"].TaxonomyField.Terms %}
+                    <div class="flex items-center text-sm bg-gray-100 dark:bg-gray-700 text-gray-900 dark:text-gray-100 px-3 py-1 rounded-full">
+                        <i class="icon-tag mr-1 text-xs"></i>{{ tag.displayText }}
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+        {% if imagePath %}
+            <div class="max-w-4xl mx-auto mb-12">
+                <div class="rounded-xl overflow-hidden shadow-lg">
+                    <img src="{{ imagePath | asset_url | resize_url: width: 1200 }}" alt="{{ Model.ContentItem.DisplayText }}" class="w-full h-auto object-cover" />
+                </div>
+            </div>
+        {% endif %}
+
+        <div class="max-w-3xl mx-auto mb-12 p-6 bg-gray-50 dark:bg-gray-700/50 rounded-lg">
+            <h2 class="text-lg font-semibold mb-4 text-gray-900 dark:text-gray-100">Quick Navigation</h2>
+            <div id="quick-nav" class="space-y-2 text-purple-600 dark:text-purple-400">
+                <!-- Populated dynamically -->
+            </div>
+        </div>
+
+        <div class="max-w-3xl mx-auto">
+            <div class="prose dark:prose-invert prose-lg max-w-none prose-headings:scroll-mt-20 prose-h2:text-2xl prose-h2:font-bold prose-p:text-gray-600 dark:prose-p:text-gray-300 prose-a:text-purple-600 dark:prose-a:text-purple-400 prose-img:rounded-xl">
+                {{ Model.Content.MarkdownBodyPart.Markdown | markdownify | raw }}
+            </div>
+        </div>
+
+        <!-- Author Section -->
+        <div class="mt-16 p-8 bg-gray-50 dark:bg-gray-700/50 rounded-xl max-w-3xl mx-auto">
+            <div class="flex items-center gap-6">
+                <img src="{{ "~/mediatheme/images/profile.png" | href }}"
+                     alt="Márk Bartha"
+                     class="w-20 h-20 rounded-full object-cover border-4 border-white dark:border-gray-800" />
+                <div>
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-gray-100 mb-2">Márk Bartha</h3>
+                    <p class="text-gray-600 dark:text-gray-300">
+                        Freelance Software Developer specializing in Orchard Core and Blazor applications.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</article>
+
+{% scriptblock at: "Foot" %}
+    document.addEventListener("DOMContentLoaded", function () {
+        const toc = document.getElementById("quick-nav");
+        if (!toc) return;
+
+        const headings = document.querySelectorAll(".prose h2");
+        headings.forEach(heading => {
+            const text = heading.textContent.trim();
+            const slug = text.toLowerCase().replace(/[^\w\s]/g, '').replace(/\s+/g, '-');
+            heading.id = slug;
+
+            const link = document.createElement("a");
+            link.href = `#${slug}`;
+            link.className = "block hover:text-purple-700 dark:hover:text-purple-300";
+            link.textContent = text;
+
+            toc.appendChild(link);
+        });
+    });
+{% endscriptblock %}
+

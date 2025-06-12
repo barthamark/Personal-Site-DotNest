@@ -1,0 +1,48 @@
+﻿<header class="w-full bg-white dark:bg-gray-800 shadow-sm sticky top-0 z-10 transition-colors">
+    {% assign headerMenu = Content["alias:main-menu"] %}
+    {% assign menuItems = headerMenu.Content.MenuItemsListPart.MenuItems %}
+
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+        <div class="flex items-center">
+            <a href="{{ "~/" | href }}">
+                <h1 class="text-xl font-bold text-gray-800 dark:text-gray-200">
+                    Márk Bartha
+                </h1>
+            </a>
+        </div>
+        <div class="flex items-center gap-4">
+            <button
+                class="p-2 text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors"
+                aria-label="Toggle theme"
+            >
+                <i class="icon-moon"></i>
+            </button>
+            <button
+                id="menu-toggle"
+                class="md:hidden p-2 text-gray-600 dark:text-gray-300"
+                aria-label="Open menu"
+            >
+                <i class="icon-menu"></i>
+            </button>
+        </div>
+        <nav class="hidden md:flex space-x-8">
+            {% for item in menuItems %}
+                <a href="{{ item.LinkMenuItemPart.Url | href }}"
+                   class="text-gray-600 dark:text-gray-300 hover:text-purple-600 dark:hover:text-purple-400 transition-colors">
+                    {{ item.DisplayText }}
+                </a>
+            {% endfor %}
+        </nav>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-gray-800 shadow-lg absolute w-full">
+        <nav class="flex flex-col p-4">
+            {% for item in menuItems %}
+                <a href="{{ item.LinkMenuItemPart.Url | href }}"
+                   class="py-2 px-4 text-gray-700 dark:text-gray-300 hover:bg-purple-50 dark:hover:bg-gray-700 rounded transition-colors">
+                    {{ item.DisplayText }}
+                </a>
+            {% endfor %}
+        </nav>
+    </div>
+</header>
