@@ -1,0 +1,43 @@
+{% assign title = Model.ContentItem.Content.ServiceCard.Title.Text %}
+{% assign summary = Model.ContentItem.Content.ServiceCard.Summary.Html %}
+{% assign link = Model.ContentItem.Content.ServiceCard.Link %}
+{% assign bullets = Model.ContentItem.Content.Bullets.ContentItems %}
+
+<div class="card-surface p-8 flex flex-col h-full">
+    {% if title != blank %}
+        <h3 class="text-2xl font-bold mb-4 min-h-16 theme-dark-blue:text-white theme-dark-panel:text-white">{{ title }}</h3>
+    {% endif %}
+
+    {% if summary != blank %}
+        <div class="rich-text text-sm theme-dark-blue:text-light-text/70 theme-dark-panel:text-light-text/70 theme-light-gray:text-dark-blue/80 theme-white:text-dark-blue/80 mb-8 font-medium">
+            {{ summary | raw }}
+        </div>
+    {% endif %}
+
+    {% if bullets %}
+        <ul class="space-y-3 mb-8 flex-1">
+            {% for bullet in bullets %}
+                {% assign bullet_text = bullet.BulletItem.Text.Text %}
+                <li class="flex items-start text-sm theme-dark-blue:text-light-text/70 theme-dark-panel:text-light-text/70 theme-light-gray:text-dark-blue/70 theme-white:text-dark-blue/70">
+                    <i data-lucide="check" class="w-5 h-5 text-light-blue mr-3 flex-shrink-0" aria-hidden="true"></i>
+                    <span>{{ bullet_text }}</span>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    {% if link and link.Url != blank %}
+        {% assign raw_url = link.Url %}
+        {% assign link_url = raw_url %}
+        {% if raw_url %}
+            {% assign url_prefix = raw_url | slice: 0, 2 %}
+            {% if url_prefix == "~/" %}
+                {% assign link_url = raw_url | href %}
+            {% endif %}
+        {% endif %}
+        <a href="{{ link_url }}" class="btn btn-outline btn-md w-full justify-between group">
+            <span>{{ link.Text }}</span>
+            <i data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" aria-hidden="true"></i>
+        </a>
+    {% endif %}
+</div>

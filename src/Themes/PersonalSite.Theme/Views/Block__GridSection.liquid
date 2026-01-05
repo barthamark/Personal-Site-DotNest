@@ -1,0 +1,37 @@
+{% assign header_items = Model.ContentItem.Content.Header.ContentItems %}
+{% assign items = Model.ContentItem.Content.Items.ContentItems %}
+{% assign columns = Model.ContentItem.Content.GridSection.Columns.Text %}
+{% assign alignment = Model.ContentItem.Content.GridSection.HeaderAlignment.Text %}
+
+{% assign grid_class = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" %}
+{% case columns %}
+    {% when "Two" %}
+        {% assign grid_class = "grid grid-cols-1 md:grid-cols-2 gap-8" %}
+    {% when "Four" %}
+        {% assign grid_class = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" %}
+{% endcase %}
+
+{% assign header_class = "mb-12 max-w-2xl" %}
+{% if alignment == "Center" %}
+    {% assign header_class = "text-center max-w-3xl mx-auto mb-16" %}
+{% endif %}
+
+<section class="w-full py-24">
+    <div class="page-container">
+        {% if header_items %}
+            <div class="{{ header_class }}">
+                {% for item in header_items %}
+                    {{ item | shape_build_display: "Detail" | shape_render }}
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        {% if items %}
+            <div class="{{ grid_class }}">
+                {% for item in items %}
+                    {{ item | shape_build_display: "Detail" | shape_render }}
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+</section>

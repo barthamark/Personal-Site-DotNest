@@ -1,0 +1,21 @@
+{% assign number = Model.ContentItem.Content.ProcessStep.Number.Text %}
+{% assign title = Model.ContentItem.Content.ProcessStep.Title.Text %}
+{% assign body = Model.ContentItem.Content.ProcessStep.Body.Html %}
+
+<div class="relative">
+    {% if number != blank %}
+        <div class="text-6xl font-mono font-bold theme-dark-blue:text-white/5 theme-dark-panel:text-white/5 text-dark-blue/5 mb-4 absolute -top-8 -left-4 select-none">
+            {{ number }}
+        </div>
+    {% endif %}
+    <div class="relative z-10">
+        {% if title != blank %}
+            <h3 class="text-xl font-bold mb-3 theme-dark-blue:text-white theme-dark-panel:text-white">{{ title }}</h3>
+        {% endif %}
+        {% if body != blank %}
+            <div class="rich-text text-sm theme-dark-blue:text-light-text/60 theme-dark-panel:text-light-text/60 theme-light-gray:text-dark-blue/60 theme-white:text-dark-blue/60">
+                {{ body | raw }}
+            </div>
+        {% endif %}
+    </div>
+</div>

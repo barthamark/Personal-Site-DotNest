@@ -1,0 +1,29 @@
+{% assign header_items = Model.ContentItem.Content.Header.ContentItems %}
+{% assign steps = Model.ContentItem.Content.Steps.ContentItems %}
+{% assign callout_items = Model.ContentItem.Content.Callout.ContentItems %}
+
+<section class="w-full py-24">
+    <div class="page-container">
+        {% if header_items %}
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                {% for item in header_items %}
+                    {{ item | shape_build_display: "Detail" | shape_render }}
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        {% if steps %}
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                {% for item in steps %}
+                    {{ item | shape_build_display: "Detail" | shape_render }}
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        {% if callout_items %}
+            {% for item in callout_items %}
+                {{ item | shape_build_display: "Detail" | shape_render }}
+            {% endfor %}
+        {% endif %}
+    </div>
+</section>

@@ -1,0 +1,13 @@
+{% assign title = Model.ContentItem.Content.HighlightCard.Title.Text %}
+{% assign body = Model.ContentItem.Content.HighlightCard.Body.Html %}
+
+<div class="card-surface p-6">
+    {% if title != blank %}
+        <h3 class="font-bold text-xl mb-2 theme-dark-blue:text-white theme-dark-panel:text-white">{{ title }}</h3>
+    {% endif %}
+    {% if body != blank %}
+        <div class="rich-text text-sm theme-dark-blue:text-light-text/70 theme-dark-panel:text-light-text/70 theme-light-gray:text-dark-blue/70 theme-white:text-dark-blue/70">
+            {{ body | raw }}
+        </div>
+    {% endif %}
+</div>

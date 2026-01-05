@@ -1,9 +1,16 @@
 {% assign buttons = Model.ContentItem.Content.BagPart.ContentItems %}
+{% assign alignment = Model.ContentItem.Content.ButtonGroup.Alignment.Text %}
+{% assign wrapper_class = "flex flex-col sm:flex-row gap-4" %}
+{% assign button_extra_class = "" %}
+{% if alignment == "Center" %}
+    {% assign wrapper_class = "flex flex-col items-center gap-4 sm:flex-row sm:justify-center" %}
+    {% assign button_extra_class = "w-full sm:w-auto" %}
+{% endif %}
 
 {% if buttons %}
-    <div class="flex flex-col sm:flex-row gap-4 mb-16">
+    <div class="{{ wrapper_class }}">
         {% for button in buttons %}
-            {% assign button_part = button.Content.Button %}
+            {% assign button_part = button.Button %}
             {% if button_part and button_part.Content and button_part.Content.Url != blank %}
                 {% assign raw_url = button_part.Content.Url %}
                 {% assign link_url = raw_url %}
@@ -25,7 +32,7 @@
                     {% assign button_class = "btn btn-ghost-inverse btn-lg" %}
                 {% endif %}
 
-                <a href="{{ link_url }}" class="{{ button_class }}"{% if link_target %} target="{{ link_target }}"{% endif %}>
+                <a href="{{ link_url }}" class="{{ button_class }} {{ button_extra_class }}"{% if link_target %} target="{{ link_target }}"{% endif %}>
                     {{ link_text }}
                     {% if button_part.Icon.Text != blank %}
                         <i data-lucide="{{ button_part.Icon.Text }}" class="ml-2 h-4 w-4" aria-hidden="true"></i>

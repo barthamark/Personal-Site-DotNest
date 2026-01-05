@@ -2,6 +2,19 @@
 
 {% if bag_items %}
     {% for item in bag_items %}
-        {{ item | shape_build_display: "Detail" | shape_render }}
+        {% assign theme_value = item.BlockCommon.Theme.Text %}
+        {% assign theme_key = "dark-blue" %}
+        {% case theme_value %}
+            {% when "DarkPanel" %}
+                {% assign theme_key = "dark-panel" %}
+            {% when "LightGray" %}
+                {% assign theme_key = "light-gray" %}
+            {% when "White" %}
+                {% assign theme_key = "white" %}
+        {% endcase %}
+
+        <div data-theme="{{ theme_key }}">
+            {{ item | shape_build_display: "Detail" | shape_render }}
+        </div>
     {% endfor %}
 {% endif %}

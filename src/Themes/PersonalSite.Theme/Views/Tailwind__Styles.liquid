@@ -1,6 +1,11 @@
 <style type="text/tailwindcss">
 @import "tailwindcss";
 
+@custom-variant theme-dark-blue (&:where([data-theme="dark-blue"] *));
+@custom-variant theme-dark-panel (&:where([data-theme="dark-panel"] *));
+@custom-variant theme-light-gray (&:where([data-theme="light-gray"] *));
+@custom-variant theme-white (&:where([data-theme="white"] *));
+
 @theme {
   --color-dark-blue: #151927;
   --color-dark-panel: #1a1f30;
@@ -26,6 +31,22 @@ h1, h2, h3, h4, h5, h6 {
   code,
   pre {
     @apply font-mono;
+  }
+
+  [data-theme="dark-blue"] {
+    @apply bg-dark-blue text-light-text;
+  }
+
+  [data-theme="dark-panel"] {
+    @apply bg-dark-panel text-light-text;
+  }
+
+  [data-theme="light-gray"] {
+    @apply bg-light-bg text-dark-blue;
+  }
+
+  [data-theme="white"] {
+    @apply bg-white text-dark-blue;
   }
 }
 
@@ -112,14 +133,22 @@ summary::-webkit-details-marker {
 
   .card {
     @apply bg-white border border-gray-100 rounded-xl shadow-xs;
+    @apply theme-dark-blue:bg-white/5 theme-dark-blue:border-white/10 theme-dark-panel:bg-white/5 theme-dark-panel:border-white/10;
   }
 
   .card-compact {
     @apply bg-white border border-gray-100 rounded-lg shadow-xs;
+    @apply theme-dark-blue:bg-white/5 theme-dark-blue:border-white/10 theme-dark-panel:bg-white/5 theme-dark-panel:border-white/10;
   }
 
   .card-dark {
     @apply bg-white/5 border border-white/10 rounded-xl p-6 transition-colors duration-300 hover:bg-white/10;
+  }
+
+  .card-surface {
+    @apply bg-white border border-gray-100 rounded-xl shadow-xs transition-colors duration-300;
+    @apply theme-dark-blue:bg-white/5 theme-dark-blue:border-white/10 theme-dark-blue:hover:bg-white/10;
+    @apply theme-dark-panel:bg-white/5 theme-dark-panel:border-white/10 theme-dark-panel:hover:bg-white/10;
   }
 
   .pill {

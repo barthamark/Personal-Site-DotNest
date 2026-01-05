@@ -1,0 +1,21 @@
+{% assign icon = Model.ContentItem.Content.FeatureCard.Icon.Text %}
+{% assign title = Model.ContentItem.Content.FeatureCard.Title.Text %}
+{% assign body = Model.ContentItem.Content.FeatureCard.Body.Html %}
+
+<div class="card-surface p-6">
+    {% if icon != blank %}
+        <div class="w-12 h-12 bg-light-blue/10 rounded-lg flex items-center justify-center mb-4">
+            <i data-lucide="{{ icon }}" class="w-6 h-6 text-light-blue" aria-hidden="true"></i>
+        </div>
+    {% endif %}
+
+    {% if title != blank %}
+        <h3 class="text-xl font-bold mb-3 theme-dark-blue:text-white theme-dark-panel:text-white">{{ title }}</h3>
+    {% endif %}
+
+    {% if body != blank %}
+        <div class="rich-text text-sm theme-dark-blue:text-light-text/70 theme-dark-panel:text-light-text/70 theme-light-gray:text-dark-blue/70 theme-white:text-dark-blue/70">
+            {{ body | raw }}
+        </div>
+    {% endif %}
+</div>

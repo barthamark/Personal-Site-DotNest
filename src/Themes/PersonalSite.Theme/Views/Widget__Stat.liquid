@@ -1,0 +1,13 @@
+{% assign value = Model.ContentItem.Content.Stat.Value.Text %}
+{% assign label = Model.ContentItem.Content.Stat.Label.Text %}
+
+<div class="text-center">
+    {% if value != blank %}
+        <div class="text-4xl md:text-5xl font-bold text-light-blue mb-2 font-mono">{{ value }}</div>
+    {% endif %}
+    {% if label != blank %}
+        <div class="text-sm md:text-base theme-dark-blue:text-light-text/60 theme-dark-panel:text-light-text/60 theme-light-gray:text-dark-blue/70 theme-white:text-dark-blue/70">
+            {{ label }}
+        </div>
+    {% endif %}
+</div>

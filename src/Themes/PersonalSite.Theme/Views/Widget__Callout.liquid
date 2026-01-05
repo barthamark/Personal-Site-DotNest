@@ -1,0 +1,15 @@
+{% assign icon = Model.ContentItem.Content.Callout.Icon.Text %}
+{% assign body = Model.ContentItem.Content.Callout.Body.Html %}
+
+<div class="bg-linear-to-r from-light-blue/10 to-transparent border border-light-blue/20 rounded-xl p-6 flex items-start md:items-center gap-4 max-w-3xl mx-auto">
+    <div class="bg-light-blue/20 p-2 rounded-lg flex-shrink-0">
+        {% if icon != blank %}
+            <i data-lucide="{{ icon }}" class="w-5 h-5 text-light-blue" aria-hidden="true"></i>
+        {% endif %}
+    </div>
+    {% if body != blank %}
+        <div class="rich-text text-sm md:text-base theme-dark-blue:text-light-text/90 theme-dark-panel:text-light-text/90 theme-light-gray:text-dark-blue/90 theme-white:text-dark-blue/90">
+            {{ body | raw }}
+        </div>
+    {% endif %}
+</div>

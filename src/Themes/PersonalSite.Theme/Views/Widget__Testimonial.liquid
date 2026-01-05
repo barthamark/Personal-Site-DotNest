@@ -1,0 +1,33 @@
+{% assign quote = Model.ContentItem.Content.Testimonial.Quote.Html %}
+{% assign name = Model.ContentItem.Content.Testimonial.Name.Text %}
+{% assign role = Model.ContentItem.Content.Testimonial.Role.Text %}
+{% assign company = Model.ContentItem.Content.Testimonial.Company.Text %}
+{% assign avatar_path = Model.ContentItem.Content.Testimonial.Avatar.Paths | first %}
+
+<div class="card-surface p-8">
+    {% if quote != blank %}
+        <div class="rich-text text-lg theme-dark-blue:text-light-text/90 theme-dark-panel:text-light-text/90 theme-light-gray:text-dark-blue">
+            {{ quote | raw }}
+        </div>
+    {% endif %}
+
+    <div class="flex items-center mt-6">
+        {% if avatar_path %}
+            <div class="w-10 h-10 rounded-full overflow-hidden mr-4">
+                <img src="{{ avatar_path | asset_url }}" alt="{{ name }}" class="w-full h-full object-cover">
+            </div>
+        {% else %}
+            <div class="w-10 h-10 bg-light-blue rounded-full mr-4"></div>
+        {% endif %}
+        <div>
+            {% if name != blank %}
+                <div class="font-bold theme-dark-blue:text-white theme-dark-panel:text-white">{{ name }}</div>
+            {% endif %}
+            {% if role != blank or company != blank %}
+                <div class="text-sm theme-dark-blue:text-light-text/60 theme-dark-panel:text-light-text/60 theme-light-gray:text-dark-blue/60 theme-white:text-dark-blue/60">
+                    {% if role != blank %}{{ role }}{% endif %}{% if role != blank and company != blank %}, {% endif %}{% if company != blank %}{{ company }}{% endif %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>

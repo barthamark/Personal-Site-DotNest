@@ -1,0 +1,23 @@
+{% assign left_items = Model.ContentItem.Content.LeftColumn.ContentItems %}
+{% assign right_items = Model.ContentItem.Content.RightColumn.ContentItems %}
+
+<section class="w-full py-20">
+    <div class="page-container">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div class="space-y-6">
+                {% if left_items %}
+                    {% for item in left_items %}
+                        {{ item | shape_build_display: "Detail" | shape_render }}
+                    {% endfor %}
+                {% endif %}
+            </div>
+            <div class="space-y-4 md:space-y-6">
+                {% if right_items %}
+                    {% for item in right_items %}
+                        {{ item | shape_build_display: "Detail" | shape_render }}
+                    {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</section>

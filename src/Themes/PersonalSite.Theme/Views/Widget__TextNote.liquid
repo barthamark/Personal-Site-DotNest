@@ -1,0 +1,7 @@
+{% assign note_text = Model.ContentItem.Content.TextNote.Text.Text %}
+
+{% if note_text != blank %}
+    <p class="text-sm theme-dark-blue:text-light-text/60 theme-dark-panel:text-light-text/60 theme-light-gray:text-dark-blue/50 theme-white:text-dark-blue/50">
+        {{ note_text }}
+    </p>
+{% endif %}
