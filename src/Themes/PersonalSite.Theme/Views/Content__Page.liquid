@@ -1,0 +1,7 @@
+{% assign bag_items = Model.ContentItem.Content.BagPart.ContentItems %}
+
+{% if bag_items %}
+    {% for item in bag_items %}
+        {{ item | shape_build_display: "Detail" | shape_render }}
+    {% endfor %}
+{% endif %}

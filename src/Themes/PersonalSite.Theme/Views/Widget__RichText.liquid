@@ -1,0 +1,7 @@
+{% assign rich_text = Model.ContentItem.Content.RichText.Text.Html %}
+
+{% if rich_text != blank %}
+    <div class="rich-text">
+        {{ rich_text | raw }}
+    </div>
+{% endif %}

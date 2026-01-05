@@ -67,8 +67,6 @@
         "OrchardCore.Workflows.Http",
 
         // Lombiq
-        "Lombiq.HelpfulExtensions.ContentTypes",
-        "Lombiq.HelpfulExtensions.Widgets",
         "Lombiq.Hosting.MediaTheme",
 
         // Themes
@@ -110,11 +108,11 @@
         {
           "executionid": "PersonalSite.Theme",
           "name": "PersonalSite.Export"
-        },
-        {
-          "executionid": "PersonalSite.Theme",
-          "name": "PersonalSite.MediaTheme"
         }
+//        {
+//          "executionid": "PersonalSite.Theme",
+//          "name": "PersonalSite.MediaTheme"
+//        }
       ]
     },
     {

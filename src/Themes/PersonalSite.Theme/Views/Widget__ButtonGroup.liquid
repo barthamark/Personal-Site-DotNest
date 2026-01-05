@@ -1,0 +1,37 @@
+{% assign buttons = Model.ContentItem.Content.BagPart.ContentItems %}
+
+{% if buttons %}
+    <div class="flex flex-col sm:flex-row gap-4 mb-16">
+        {% for button in buttons %}
+            {% assign button_part = button.Content.Button %}
+            {% if button_part and button_part.Content and button_part.Content.Url != blank %}
+                {% assign raw_url = button_part.Content.Url %}
+                {% assign link_url = raw_url %}
+                {% if raw_url != blank %}
+                    {% assign url_prefix = raw_url | slice: 0, 2 %}
+                    {% if url_prefix == "~/" %}
+                        {% assign link_url = raw_url | href %}
+                    {% endif %}
+                {% endif %}
+
+                {% assign link_text = button_part.Content.Text %}
+                {% assign link_target = button_part.Content.Target %}
+                {% assign button_type = button_part.Type.Text %}
+                {% assign button_class = "btn btn-lg" %}
+
+                {% if button_type == "Primary" %}
+                    {% assign button_class = "btn btn-primary btn-lg" %}
+                {% elsif button_type == "Secondary" %}
+                    {% assign button_class = "btn btn-ghost-inverse btn-lg" %}
+                {% endif %}
+
+                <a href="{{ link_url }}" class="{{ button_class }}"{% if link_target %} target="{{ link_target }}"{% endif %}>
+                    {{ link_text }}
+                    {% if button_part.Icon.Text != blank %}
+                        <i data-lucide="{{ button_part.Icon.Text }}" class="ml-2 h-4 w-4" aria-hidden="true"></i>
+                    {% endif %}
+                </a>
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endif %}

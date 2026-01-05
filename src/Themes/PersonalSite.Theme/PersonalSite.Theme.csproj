@@ -20,24 +20,11 @@
 
   <ItemGroup>
     <PackageReference Include="Lombiq.Hosting.MediaTheme" Version="8.0.1-alpha.3.nest-562" />
-    <PackageReference Include="Lombiq.Hosting.MediaTheme.Targets" Version="8.0.1-alpha.3.nest-562" />
+<!--    <PackageReference Include="Lombiq.Hosting.MediaTheme.Targets" Version="8.0.1-alpha.3.nest-562" />-->
   </ItemGroup>
 
   <ItemGroup>
     <Content Include=".config\dotnet-tools.json" />
-    <Content Include="tailwind.config.js" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="wwwroot\favicon\site.webmanifest">
-      <CopyToPublishDirectory>Never</CopyToPublishDirectory>
-    </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Update="Views\Blog__ListPart.liquid">
-      <CopyToPublishDirectory>Never</CopyToPublishDirectory>
-    </EmbeddedResource>
   </ItemGroup>
 
   <PropertyGroup>
@@ -45,7 +32,7 @@
     <MediaThemeRecipeFileName>PersonalSite.MediaTheme</MediaThemeRecipeFileName>
   </PropertyGroup>
 
-  <Import Project=".\Targets\AutoCopyAssets.targets" />
-  <Import Project=".\Targets\RunTailwindBuild.targets" />
+<!--  <Import Project=".\Targets\AutoCopyAssets.targets" />-->
+<!--  <Import Project=".\Targets\RunTailwindBuild.targets" />-->
 
 </Project>

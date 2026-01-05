@@ -1,14 +1,14 @@
-﻿<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
     {% for post in Model.ContentItems %}
         {{ post | shape_build_display: "Summary" | shape_render }}
     {% endfor %}
 </div>
 
 <div class="pager-wrapper mt-12">
-    {% assign previousText = "← Newer Posts" | t %}
-    {% assign nextText = "Older Posts →" | t %}
-    {% assign previousClass = "inline-flex items-center px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded hover:bg-purple-50 dark:hover:bg-gray-600 transition-colors" %}
-    {% assign nextClass = "inline-flex items-center px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded hover:bg-purple-50 dark:hover:bg-gray-600 transition-colors" %}
+    {% assign previousText = "Newer Posts" | t %}
+    {% assign nextText = "Older Posts" | t %}
+    {% assign previousClass = "inline-flex items-center px-4 py-2 bg-light-bg text-dark-blue/70 rounded hover:bg-light-blue/10 transition-colors" %}
+    {% assign nextClass = "inline-flex items-center px-4 py-2 bg-light-bg text-dark-blue/70 rounded hover:bg-light-blue/10 transition-colors" %}
 
     {% shape_pager Model.Pager
         previous_text: previousText,

@@ -1,0 +1,241 @@
+<style type="text/tailwindcss">
+@import "tailwindcss";
+
+@theme {
+  --color-dark-blue: #151927;
+  --color-dark-panel: #1a1f30;
+  --color-light-blue: #20b7f3;
+  --color-light-blue-strong: #1aa3d9;
+  --color-light-bg: #edeef7;
+  --color-light-text: #dddfed;
+
+  --aspect-4-5: 4 / 5;
+
+  --leading-hero: 1.1;
+
+  --font-sans: "DM Sans", sans-serif;
+  --font-mono: "DM Mono", monospace;
+  --font-figtree: "Figtree", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-figtree);
+}
+
+@layer base {
+  code,
+  pre {
+    @apply font-mono;
+  }
+}
+
+summary::-webkit-details-marker {
+  display: none;
+}
+
+@utility page-container {
+  @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+}
+
+@utility form-field {
+  @apply w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-light-blue focus:ring-2 focus:ring-light-blue/20 outline-none transition-all font-sans placeholder:text-gray-400;
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border-2 border-transparent font-medium no-underline transition-colors duration-200 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-light-blue disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-primary {
+    @apply bg-light-blue text-dark-blue hover:bg-light-blue-strong;
+  }
+
+  .btn-outline {
+    @apply border-dark-blue text-dark-blue hover:bg-dark-blue hover:text-white;
+  }
+
+  .btn-ghost {
+    @apply text-light-blue hover:bg-light-blue/10;
+  }
+
+  .btn-ghost-inverse {
+    @apply text-white border-white/20 hover:bg-white/10 hover:border-white/40;
+  }
+
+  .btn-sm {
+    @apply px-4 py-2 text-sm;
+  }
+
+  .btn-md {
+    @apply px-6 py-3 text-base;
+  }
+
+  .btn-lg {
+    @apply px-8 py-4 text-lg;
+  }
+
+  .hero-backdrop {
+    @apply relative overflow-hidden;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    &::before {
+      top: 0;
+      right: 0;
+      width: 33.333333%;
+      height: 100%;
+      background: linear-gradient(
+        to left,
+        color-mix(in oklab, var(--color-light-blue) 5%, transparent),
+        transparent
+      );
+    }
+
+    &::after {
+      bottom: 0;
+      left: 0;
+      width: 25%;
+      height: 50%;
+      background: linear-gradient(
+        to top,
+        color-mix(in oklab, var(--color-light-blue) 5%, transparent),
+        transparent
+      );
+    }
+  }
+
+  .card {
+    @apply bg-white border border-gray-100 rounded-xl shadow-xs;
+  }
+
+  .card-compact {
+    @apply bg-white border border-gray-100 rounded-lg shadow-xs;
+  }
+
+  .card-dark {
+    @apply bg-white/5 border border-white/10 rounded-xl p-6 transition-colors duration-300 hover:bg-white/10;
+  }
+
+  .pill {
+    @apply inline-block px-3 py-1 rounded-full bg-light-blue/10 text-light-blue border border-light-blue/20 font-mono text-sm;
+  }
+
+  .tag {
+    @apply inline-block px-3 py-1 rounded-full bg-light-blue/10 text-light-blue border border-light-blue/20 text-xs font-bold uppercase tracking-wider;
+  }
+
+  .rich-text {
+    @apply text-base md:text-lg leading-relaxed text-current;
+  }
+
+  .rich-text > :first-child {
+    @apply mt-0;
+  }
+
+  .rich-text > :last-child {
+    @apply mb-0;
+  }
+
+  .rich-text h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl font-bold leading-hero mb-6 tracking-tight text-balance;
+  }
+
+  .rich-text h2 {
+    @apply text-3xl md:text-4xl font-bold mt-10 mb-4 text-balance;
+  }
+
+  .rich-text h3 {
+    @apply text-2xl md:text-3xl font-bold mt-8 mb-4 text-balance;
+  }
+
+  .rich-text h4 {
+    @apply text-xl md:text-2xl font-semibold mt-6 mb-3 text-balance;
+  }
+
+  .rich-text h5 {
+    @apply text-lg md:text-xl font-semibold mt-6 mb-3;
+  }
+
+  .rich-text h6 {
+    @apply text-base md:text-lg font-semibold mt-6 mb-3 uppercase tracking-wide;
+  }
+
+  .rich-text p {
+    @apply mb-6 text-pretty;
+  }
+
+  .rich-text a {
+    @apply text-light-blue underline underline-offset-2 hover:text-light-blue-strong transition-colors;
+  }
+
+  .rich-text strong {
+    @apply font-semibold;
+  }
+
+  .rich-text em {
+    @apply italic;
+  }
+
+  .rich-text mark {
+    @apply bg-transparent text-light-blue font-semibold;
+  }
+
+  .rich-text ul {
+    @apply list-disc list-outside ml-6 mb-6 space-y-2;
+  }
+
+  .rich-text ol {
+    @apply list-decimal list-outside ml-6 mb-6 space-y-2;
+  }
+
+  .rich-text li {
+    @apply text-pretty;
+  }
+
+  .rich-text blockquote {
+    @apply border-l-4 border-light-blue/40 pl-5 my-8 italic text-pretty;
+  }
+
+  .rich-text hr {
+    @apply border-t border-light-blue/20 my-10;
+  }
+
+  .rich-text code {
+    @apply font-mono text-sm bg-light-blue/10 px-1.5 py-0.5 rounded;
+  }
+
+  .rich-text pre {
+    @apply font-mono text-sm bg-light-blue/10 p-4 rounded-lg overflow-x-auto mb-6;
+  }
+
+  .rich-text table {
+    @apply w-full text-left border-collapse mb-6;
+  }
+
+  .rich-text th {
+    @apply border-b border-light-blue/20 pb-2 font-semibold;
+  }
+
+  .rich-text td {
+    @apply border-b border-light-blue/10 py-2;
+  }
+
+  .rich-text img {
+    @apply rounded-xl border border-light-blue/10;
+  }
+
+  .rich-text figure {
+    @apply my-8;
+  }
+
+  .rich-text figcaption {
+    @apply text-sm opacity-70 mt-3 text-center;
+  }
+}
+</style>

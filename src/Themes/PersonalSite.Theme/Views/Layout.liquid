@@ -1,6 +1,5 @@
-<!DOCTYPE html>
-<html lang="{{ Culture.Name }}">
-
+<!doctype html>
+<html lang="{{ Culture.Name }}" class="scroll-smooth">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -14,7 +13,16 @@
     {% link type:"image/png", rel: "apple-touch-icon", href: "~/mediatheme/favicon/apple-touch-icon.png" %}
     {% link rel:"manifest", href: "~/mediatheme/favicon/site.webmanifest" %}
 
-    {% style name: "personal-site", src: "~/mediatheme/css/site.css" %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Figtree:ital,wght@0,300..900;1,300..900&display=swap"
+        rel="stylesheet"
+    >
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    {% shape "Tailwind__Styles" %}
 
     {% resources type: "HeadScript" %}
     {% resources type: "HeadLink" %}
@@ -22,55 +30,100 @@
     {% render_section "HeadMeta", required: false %}
 </head>
 
-<body id="page-top" dir="{{ Culture.Dir }}">
-<div class="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors">
+<body id="page-top" dir="{{ Culture.Dir }}" class="bg-dark-blue text-light-text font-sans antialiased">
+    {% assign main_menu = Content["alias:main-menu"] %}
+    {% assign menu_items = main_menu.Content.MenuItemsListPart.MenuItems %}
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-dark-blue/95 backdrop-blur-md shadow-lg py-4">
+        <div class="page-container">
+            <div class="flex items-center justify-between">
+                <a href="{{ "~/" | href }}" class="text-2xl font-bold text-white font-figtree tracking-tight">
+                    Mark Bartha
+                </a>
 
-    {% shape "Section__Header" %}
+                <div class="hidden md:flex items-center space-x-8" aria-label="Primary">
+                    {% if menu_items %}
+                        {% for item in menu_items %}
+                            {% assign link_text = item.DisplayText %}
+                            {% assign raw_url = item.Content.LinkMenuItemPart.Url %}
+                            {% assign link_url = raw_url %}
+                            {% if raw_url %}
+                                {% assign url_prefix = raw_url | slice: 0, 2 %}
+                                {% if url_prefix == "~/" %}
+                                    {% assign link_url = raw_url | href %}
+                                {% endif %}
+                            {% endif %}
+                            {% assign link_target = item.Content.LinkMenuItemPart.Target %}
 
-    <main class="w-full">
+                            {% if link_text == "Contact" %}
+                                <a href="{{ link_url }}" class="btn btn-primary btn-sm"{% if link_target %} target="{{ link_target }}"{% endif %}>
+                                    {{ link_text }}
+                                </a>
+                            {% else %}
+                                <a href="{{ link_url }}" class="text-sm font-medium text-light-text/80 hover:text-light-blue transition-colors"{% if link_target %} target="{{ link_target }}"{% endif %}>
+                                    {{ link_text }}
+                                </a>
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                </div>
+
+                <details class="md:hidden">
+                    <summary class="list-none text-white p-2 cursor-pointer">
+                        <span class="sr-only">Toggle menu</span>
+                        <i data-lucide="menu" class="w-6 h-6" aria-hidden="true"></i>
+                    </summary>
+                    <div class="mt-4 border-t border-white/10 pt-4 space-y-4">
+                        {% if menu_items %}
+                            {% for item in menu_items %}
+                                {% assign link_text = item.DisplayText %}
+                                {% assign raw_url = item.Content.LinkMenuItemPart.Url %}
+                                {% assign link_url = raw_url %}
+                                {% if raw_url %}
+                                    {% assign url_prefix = raw_url | slice: 0, 2 %}
+                                    {% if url_prefix == "~/" %}
+                                        {% assign link_url = raw_url | href %}
+                                    {% endif %}
+                                {% endif %}
+                                {% assign link_target = item.Content.LinkMenuItemPart.Target %}
+
+                                {% if link_text == "Contact" %}
+                                    <div class="pt-2">
+                                        <a href="{{ link_url }}" class="btn btn-primary btn-sm w-full"{% if link_target %} target="{{ link_target }}"{% endif %}>
+                                            {{ link_text }}
+                                        </a>
+                                    </div>
+                                {% else %}
+                                    <a href="{{ link_url }}" class="block py-2 text-lg font-medium text-light-text hover:text-light-blue transition-colors"{% if link_target %} target="{{ link_target }}"{% endif %}>
+                                        {{ link_text }}
+                                    </a>
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
+                    </div>
+                </details>
+            </div>
+        </div>
+    </nav>
+
+    <main id="top" class="min-h-screen w-full overflow-x-hidden bg-dark-blue">
         {% render_section "Messages", required: false %}
         {% render_section "BeforeContent", required: false %}
 
-        {% if request.Path == "/" %}
-            {% shape "Section__Hero" %}
-
-            {% shape "Section__RecentBlogPosts" %}
-        {% endif %}
-
         {% render_section "Content" %}
         {% render_section "AfterContent", required: false %}
-
-        {% shape "Section__CallToAction" %}
     </main>
 
-    {% shape "Section__Footer" %}
+    <footer class="bg-dark-blue text-light-text/40 py-8 text-center text-sm border-t border-white/10">
+        <div class="page-container">
+            <p>&copy; 2025 Mark Bartha. All rights reserved.</p>
+        </div>
+    </footer>
 
+    <script src="https://unpkg.com/lucide@latest"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const toggle = document.getElementById('menu-toggle');
-            const mobileMenu = document.getElementById('mobile-menu');
-
-            toggle.addEventListener('click', function () {
-                const icon = this.querySelector('i');
-                const isOpen = mobileMenu.classList.contains('block');
-
-                if (isOpen) {
-                    mobileMenu.classList.remove('block');
-                    mobileMenu.classList.add('hidden');
-                    icon.classList.remove('icon-x');
-                    icon.classList.add('icon-menu');
-                } else {
-                    mobileMenu.classList.remove('hidden');
-                    mobileMenu.classList.add('block');
-                    icon.classList.remove('icon-menu');
-                    icon.classList.add('icon-x');
-                }
-            });
-        });
+        lucide.createIcons();
     </script>
 
     {% resources type: "FootScript" %}
-
-</div>
 </body>
 </html>

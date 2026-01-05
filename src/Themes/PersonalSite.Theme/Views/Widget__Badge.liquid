@@ -1,0 +1,5 @@
+{% assign badge_text = Model.ContentItem.Content.Badge.Text.Text %}
+
+{% if badge_text != blank %}
+    <span class="pill mb-6">{{ badge_text }}</span>
+{% endif %}
