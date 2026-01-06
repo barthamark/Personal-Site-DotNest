@@ -475,15 +475,6 @@
               "Name": "Blog",
               "Settings": {
                 "ContentTypePartSettings": {
-                  "Position": "3"
-                }
-              }
-            },
-            {
-              "PartName": "HtmlBodyPart",
-              "Name": "HtmlBodyPart",
-              "Settings": {
-                "ContentTypePartSettings": {
                   "Position": "2"
                 }
               }
@@ -493,7 +484,7 @@
               "Name": "ListPart",
               "Settings": {
                 "ContentTypePartSettings": {
-                  "Position": "4"
+                  "Position": "3"
                 },
                 "ListPartSettings": {
                   "PageSize": 12,
@@ -1448,6 +1439,24 @@
                 "MediaFieldSettings": {
                   "Multiple": false,
                   "AllowAnchors": true
+                }
+              }
+            },
+            {
+              "FieldName": "HtmlField",
+              "Name": "Summary",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Summary",
+                  "Editor": "Trumbowyg",
+                  "Position": "1"
+                },
+                "HtmlFieldSettings": {
+                  "SanitizeHtml": true
+                },
+                "HtmlFieldTrumbowygEditorSettings": {
+                  "Options": "{ \"autogrow\": true, \"removeformatPasted\": true, \"btns\": [[\"viewHTML\"],[\"undo\",\"redo\"],[\"formatting\"],[\"strong\",\"em\",\"del\"],[\"fontsize\"],[\"link\"],[\"align\"],[\"unorderedList\",\"orderedList\"],[\"removeformat\"]], \"btnsDef\": { \"align\": { \"dropdown\": [\"justifyLeft\",\"justifyCenter\",\"justifyRight\",\"justifyFull\"], \"ico\": \"justifyLeft\" } } }",
+                  "InsertMediaWithUrl": false
                 }
               }
             }
@@ -3319,6 +3328,171 @@
                 }
               }
             ]
+          }
+        },
+        {
+          "ContentItemId": "47acgkkt1r84dznmwe115w1ydq",
+          "ContentItemVersionId": "[js:uuid()]",
+          "ContentType": "Blog",
+          "DisplayText": "Insights and Resources",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2025-01-01T00:00:00Z",
+          "PublishedUtc": "2025-01-01T00:00:00Z",
+          "CreatedUtc": "2025-01-01T00:00:00Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "TitlePart": {
+            "Title": "Insights and Resources"
+          },
+          "AutoroutePart": {
+            "SetHomepage": false,
+            "Disabled": false,
+            "RouteContainedItems": false,
+            "Absolute": false,
+            "Path": "blog"
+          },
+          "Blog": {
+            "Summary": {
+              "Html": "<p>Practical guides on building content platforms, managing B2B websites, and scaling your knowledge hub.</p>"
+            },
+            "Image": {
+              "Paths": [],
+              "MediaTexts": [],
+              "Anchors": []
+            }
+          }
+        },
+        {
+          "ContentItemId": "[js:uuid()]",
+          "ContentItemVersionId": "[js:uuid()]",
+          "ContentType": "BlogPost",
+          "DisplayText": "When your B2B site stops being just a website",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2024-12-15T00:00:00Z",
+          "PublishedUtc": "2024-12-15T00:00:00Z",
+          "CreatedUtc": "2024-12-15T00:00:00Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "TitlePart": {
+            "Title": "When your B2B site stops being just a website"
+          },
+          "AutoroutePart": {
+            "SetHomepage": false,
+            "Disabled": false,
+            "RouteContainedItems": false,
+            "Absolute": false,
+            "Path": "blog/when-your-b2b-site-stops-being-just-a-website"
+          },
+          "ContainedPart": {
+            "ListContentItemId": "47acgkkt1r84dznmwe115w1ydq",
+            "ListContentType": "Blog",
+            "Order": 0
+          },
+          "BlogPost": {
+            "Excerpt": {
+              "Text": "Most B2B companies start with a simple website. But as you grow, that website becomes a bottleneck. Here is how to recognize the signs and what to do next."
+            },
+            "ReadTime": {
+              "Text": "8 min read"
+            },
+            "Image": {
+              "Paths": [],
+              "MediaTexts": [],
+              "Anchors": []
+            }
+          },
+          "MarkdownBodyPart": {
+            "Markdown": "Most B2B companies start with a simple website. But as you grow, that website becomes a bottleneck.\\r\\n\\r\\nThis article covers the warning signs and the playbook for turning your site into a predictable growth engine."
+          }
+        },
+        {
+          "ContentItemId": "[js:uuid()]",
+          "ContentItemVersionId": "[js:uuid()]",
+          "ContentType": "BlogPost",
+          "DisplayText": "How to structure case studies for trust and leads",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2024-12-10T00:00:00Z",
+          "PublishedUtc": "2024-12-10T00:00:00Z",
+          "CreatedUtc": "2024-12-10T00:00:00Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "TitlePart": {
+            "Title": "How to structure case studies for trust and leads"
+          },
+          "AutoroutePart": {
+            "SetHomepage": false,
+            "Disabled": false,
+            "RouteContainedItems": false,
+            "Absolute": false,
+            "Path": "blog/how-to-structure-case-studies-for-trust-and-leads"
+          },
+          "ContainedPart": {
+            "ListContentItemId": "47acgkkt1r84dznmwe115w1ydq",
+            "ListContentType": "Blog",
+            "Order": 1
+          },
+          "BlogPost": {
+            "Excerpt": {
+              "Text": "Case studies are powerful, but only if structured correctly. Learn the framework that converts prospects into qualified leads."
+            },
+            "ReadTime": {
+              "Text": "6 min read"
+            },
+            "Image": {
+              "Paths": [],
+              "MediaTexts": [],
+              "Anchors": []
+            }
+          },
+          "MarkdownBodyPart": {
+            "Markdown": "Case studies are powerful, but only if structured correctly. This framework turns success stories into sales assets.\\r\\n\\r\\nUse a clear challenge-approach-results arc so prospects can see themselves in the story."
+          }
+        },
+        {
+          "ContentItemId": "[js:uuid()]",
+          "ContentItemVersionId": "[js:uuid()]",
+          "ContentType": "BlogPost",
+          "DisplayText": "Knowledge base vs help center vs docs: what to build first",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2024-12-05T00:00:00Z",
+          "PublishedUtc": "2024-12-05T00:00:00Z",
+          "CreatedUtc": "2024-12-05T00:00:00Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "TitlePart": {
+            "Title": "Knowledge base vs help center vs docs: what to build first"
+          },
+          "AutoroutePart": {
+            "SetHomepage": false,
+            "Disabled": false,
+            "RouteContainedItems": false,
+            "Absolute": false,
+            "Path": "blog/knowledge-base-vs-help-center-vs-docs-what-to-build-first"
+          },
+          "ContainedPart": {
+            "ListContentItemId": "47acgkkt1r84dznmwe115w1ydq",
+            "ListContentType": "Blog",
+            "Order": 2
+          },
+          "BlogPost": {
+            "Excerpt": {
+              "Text": "These terms are often used interchangeably, but they serve different purposes. Here is how to decide what your team needs."
+            },
+            "ReadTime": {
+              "Text": "7 min read"
+            },
+            "Image": {
+              "Paths": [],
+              "MediaTexts": [],
+              "Anchors": []
+            }
+          },
+          "MarkdownBodyPart": {
+            "Markdown": "Knowledge bases, help centers, and docs each solve different problems. Start with the one that removes the most friction for your customers today.\\r\\n\\r\\nThis guide explains the decision criteria and what to build next."
           }
         },
         {

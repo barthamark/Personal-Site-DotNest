@@ -1,0 +1,26 @@
+{% assign content_item = Model.ContentItem %}
+{% assign title = content_item.DisplayText %}
+{% assign intro_html = content_item.Content.Blog.Summary.Html %}
+
+<section class="hero-backdrop w-full pt-32 pb-20" data-theme="dark-blue">
+    <div class="page-container relative z-10">
+        <div class="max-w-3xl">
+            <span class="pill mb-6">{{ "Blog" | t }}</span>
+
+            {% if title != blank %}
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-hero mb-6 tracking-tight text-balance">
+                    {{ title }}
+                </h1>
+            {% endif %}
+
+            {% if intro_html != blank %}
+                <div class="rich-text text-light-text/80 max-w-2xl">
+                    {{ intro_html | raw }}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+{% shape_remove_item Model.Content "Blog-Summary" %}
+{{ Model.Content | shape_render }}

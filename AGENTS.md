@@ -9,7 +9,7 @@ This repo is a DotNest Core SDK Orchard Core site with a custom Liquid theme and
 ## Key paths
 - `src/DotNest.Core.SDK.Web` is the host web app.
 - `src/Themes/PersonalSite.Theme` contains the theme (Liquid templates, assets, recipes).
-- `Site Design/` contains the Tailwind v4 HTML reference and `styles/tailwind.css`.
+- `src/Themes/PersonalSite.Theme/Design` contains the Tailwind v4 HTML reference and `styles/tailwind.css`.
 
 ## Theme workflow
 - Global layout: `src/Themes/PersonalSite.Theme/Views/Layout.liquid` renders header/footer directly and pulls the main menu via `Content["alias:main-menu"]`.
