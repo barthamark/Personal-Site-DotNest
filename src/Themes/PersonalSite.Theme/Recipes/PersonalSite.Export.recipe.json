@@ -2,7 +2,7 @@
   "name": "PersonalSite.Export",
   "displayName": "Personal Site - Export",
   "description": "Contents exported from the DotNest site.",
-  "author": "Márk Bartha",
+  "author": "M\u00e1rk Bartha",
   "website": "https://markbartha.com",
   "version": "1.0",
   "categories": [],
@@ -14,7 +14,7 @@
       "MaxPageSize": 100,
       "PageSize": 10,
       "SiteName": "Mark Bartha",
-      "PageTitleFormat": "{% page_title Site.SiteName, position: \u0022after\u0022, separator: \u0022 - \u0022 %}",
+      "PageTitleFormat": "{% page_title Site.SiteName, position: \"after\", separator: \" - \" %}",
       "HomeRoute": {
         "Area": "OrchardCore.Contents",
         "Controller": "Item",
@@ -57,7 +57,7 @@
             {
               "Type": "AdminSettings_SiteSettingsPropertyDeploymentStep",
               "Step": {
-                "$type": "OrchardCore.Settings.Deployment.SiteSettingsPropertyDeploymentStep\u00601[[OrchardCore.Admin.Models.AdminSettings, OrchardCore.Admin.Abstractions]], OrchardCore.Settings.Core",
+                "$type": "OrchardCore.Settings.Deployment.SiteSettingsPropertyDeploymentStep`1[[OrchardCore.Admin.Models.AdminSettings, OrchardCore.Admin.Abstractions]], OrchardCore.Settings.Core",
                 "Id": "316b4adcad9046639a75fb21827ec835",
                 "Name": "AdminSettings_SiteSettingsPropertyDeploymentStep"
               }
@@ -111,7 +111,6 @@
                   "Button",
                   "ButtonGroup",
                   "Callout",
-                  "CtaSection",
                   "FeatureCard",
                   "GridSection",
                   "Hero",
@@ -127,7 +126,8 @@
                   "Stat",
                   "Tag",
                   "Testimonial",
-                  "TextNote"
+                  "TextNote",
+                  "StackSection"
                 ],
                 "ContentParts": [
                   "Article",
@@ -151,7 +151,8 @@
                   "Stat",
                   "Tag",
                   "Testimonial",
-                  "TextNote"
+                  "TextNote",
+                  "StackSection"
                 ],
                 "Id": "8b9df93d34a9496097ee2128941cfb8b",
                 "Name": "ContentDefinition"
@@ -217,11 +218,11 @@
         {
           "Name": "RecentBlogPosts",
           "Source": "Sql",
-          "Schema": "{\r\n    \u0022type\u0022: \u0022ContentItem/BlogPost\u0022\r\n}",
+          "Schema": "{\r\n    \"type\": \"ContentItem/BlogPost\"\r\n}",
           "ReturnContentItems": true,
           "Properties": {
             "SqlQueryMetadata": {
-              "Template": "SELECT DocumentId FROM ContentItemIndex WHERE ContentType=\u0027BlogPost\u0027 AND Published = 1 ORDER BY CreatedUtc DESC LIMIT 3"
+              "Template": "SELECT DocumentId FROM ContentItemIndex WHERE ContentType='BlogPost' AND Published = 1 ORDER BY CreatedUtc DESC LIMIT 3"
             }
           }
         }
@@ -915,57 +916,6 @@
           ]
         },
         {
-          "Name": "CtaSection",
-          "DisplayName": "CTA Section",
-          "Settings": {
-            "ContentTypeSettings": {
-              "Creatable": false,
-              "Listable": false,
-              "Draftable": false,
-              "Versionable": false,
-              "Securable": false,
-              "Stereotype": "Block"
-            }
-          },
-          "ContentTypePartDefinitionRecords": [
-            {
-              "PartName": "TitlePart",
-              "Name": "TitlePart",
-              "Settings": {
-                "ContentTypePartSettings": {
-                  "Position": "0"
-                }
-              }
-            },
-            {
-              "PartName": "BlockCommon",
-              "Name": "BlockCommon",
-              "Settings": {
-                "ContentTypePartSettings": {
-                  "Position": "1"
-                }
-              }
-            },
-            {
-              "PartName": "BagPart",
-              "Name": "Content",
-              "Settings": {
-                "ContentTypePartSettings": {
-                  "DisplayName": "Content",
-                  "Position": "2"
-                },
-                "BagPartSettings": {
-                  "ContainedContentTypes": [
-                    "RichText",
-                    "ButtonGroup",
-                    "TextNote"
-                  ]
-                }
-              }
-            }
-          ]
-        },
-        {
           "Name": "Badge",
           "DisplayName": "Badge",
           "Settings": {
@@ -1398,6 +1348,79 @@
               "Settings": {
                 "ContentTypePartSettings": {
                   "Position": "0"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "StackSection",
+          "DisplayName": "Stack Section",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Creatable": false,
+              "Listable": false,
+              "Draftable": false,
+              "Versionable": false,
+              "Securable": false,
+              "Stereotype": "Block"
+            }
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "TitlePart",
+              "Name": "TitlePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            },
+            {
+              "PartName": "BlockCommon",
+              "Name": "BlockCommon",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "1"
+                }
+              }
+            },
+            {
+              "PartName": "StackSection",
+              "Name": "StackSection",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "2"
+                }
+              }
+            },
+            {
+              "PartName": "BagPart",
+              "Name": "Header",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "DisplayName": "Header",
+                  "Position": "3"
+                },
+                "BagPartSettings": {
+                  "ContainedContentTypes": [
+                    "RichText"
+                  ]
+                }
+              }
+            },
+            {
+              "PartName": "BagPart",
+              "Name": "Items",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "DisplayName": "Items",
+                  "Position": "4"
+                },
+                "BagPartSettings": {
+                  "ContainedStereotypes": [
+                    "Widget"
+                  ]
                 }
               }
             }
@@ -2141,6 +2164,37 @@
                   ],
                   "Editor": 1,
                   "DefaultValue": "Primary"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "StackSection",
+          "Settings": {},
+          "ContentPartFieldDefinitionRecords": [
+            {
+              "FieldName": "TextField",
+              "Name": "HeaderAlignment",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Header alignment",
+                  "Editor": "PredefinedList",
+                  "Position": "0"
+                },
+                "TextFieldPredefinedListEditorSettings": {
+                  "Options": [
+                    {
+                      "name": "Left",
+                      "value": "Left"
+                    },
+                    {
+                      "name": "Center",
+                      "value": "Center"
+                    }
+                  ],
+                  "Editor": 1,
+                  "DefaultValue": "Left"
                 }
               }
             }
@@ -3174,7 +3228,7 @@
               {
                 "ContentItemId": "[js:uuid()]",
                 "ContentItemVersionId": "[js:uuid()]",
-                "ContentType": "CtaSection",
+                "ContentType": "StackSection",
                 "DisplayText": "CTA Section",
                 "Latest": true,
                 "Published": true,
@@ -3186,7 +3240,7 @@
                     "Text": "LightGray"
                   }
                 },
-                "Content": {
+                "Header": {
                   "ContentItems": [
                     {
                       "ContentItemId": "[js:uuid()]",
@@ -3200,7 +3254,11 @@
                           "Html": "<h2>Ready to make your content platform predictable again?</h2><p>No obligation. I will share a clear next-step recommendation based on your current situation.</p>"
                         }
                       }
-                    },
+                    }
+                  ]
+                },
+                "Items": {
+                  "ContentItems": [
                     {
                       "ContentItemId": "[js:uuid()]",
                       "ContentItemVersionId": "[js:uuid()]",
@@ -3253,6 +3311,11 @@
                       }
                     }
                   ]
+                },
+                "StackSection": {
+                  "HeaderAlignment": {
+                    "Text": "Center"
+                  }
                 }
               }
             ]

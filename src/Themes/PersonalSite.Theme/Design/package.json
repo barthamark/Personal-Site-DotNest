@@ -1,0 +1,13 @@
+{
+  "name": "site-design-landingpage",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build:css": "tailwindcss -i ./styles/tailwind.css -o ./styles/tailwind.generated.css",
+    "watch:css": "tailwindcss -i ./styles/tailwind.css -o ./styles/tailwind.generated.css --watch"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.18",
+    "tailwindcss": "^4.1.18"
+  }
+}

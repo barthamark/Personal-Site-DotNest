@@ -18,6 +18,7 @@ This repo is a DotNest Core SDK Orchard Core site with a custom Liquid theme and
 - The legacy Tailwind v3 pipeline (`src/Themes/PersonalSite.Theme/Assets/css/site.css` and `src/Themes/PersonalSite.Theme/Targets/RunTailwindBuild.targets`) is unused while CDN is active.
 - Page output is driven by BagPart blocks: `src/Themes/PersonalSite.Theme/Views/Content__Page.liquid`.
 - Block and widget overrides live in `src/Themes/PersonalSite.Theme/Views/Block__*.liquid` and `src/Themes/PersonalSite.Theme/Views/Widget__*.liquid`.
+- Hero left column uses a flex column stack in `src/Themes/PersonalSite.Theme/Views/Block__Hero.liquid`; the badge widget is `self-start` with no bottom margin.
 - No light/dark toggle or `scheme-light` class; use data-theme wrappers instead of toggles.
 
 ## Styling notes
@@ -35,8 +36,10 @@ This repo is a DotNest Core SDK Orchard Core site with a custom Liquid theme and
 - Page BagPart uses `ContainedStereotypes: ["Block"]`.
 - BlockCommon part stores the theme (PredefinedList): `DarkBlue`, `DarkPanel`, `LightGray`, `White`, mapped to `data-theme` values `dark-blue`, `dark-panel`, `light-gray`, `white`.
 - ButtonGroup supports alignment via `ButtonGroup.Alignment` (Left/Center).
+- CTA uses `StackSection` with `StackSection.HeaderAlignment = Center`; items render stacked (not a grid).
+- GridSection columns are `Two`, `Three`, or `Four` only; use `StackSection` for single-column layouts.
 - Current key types in `PersonalSite.Export.recipe.json`:
-  - Blocks: `Hero`, `SplitSection`, `GridSection`, `ResultsSection`, `ProcessSection`, `CtaSection`.
+  - Blocks: `Hero`, `SplitSection`, `GridSection`, `StackSection`, `ResultsSection`, `ProcessSection`.
   - Widgets: `Badge`, `RichText`, `ButtonGroup`, `IconCard`, `FeatureCard`, `ServiceCard`, `BulletItem`, `Stat`, `Testimonial`, `HighlightCard`, `BenefitItem`, `ProcessStep`, `Callout`, `TextNote`.
   - Buttons: `Button` (no stereotype), used by `ButtonGroup`.
   - BlogPost summary field is named `Excerpt`.

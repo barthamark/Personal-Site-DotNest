@@ -1,0 +1,2074 @@
+﻿```App.tsx
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HomePage } from './pages/HomePage';
+import { BlogPage } from './pages/BlogPage';
+import { BlogPostPage } from './pages/BlogPostPage';
+import { ContactPage } from './pages/ContactPage';
+export function App() {
+  return <Router>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/blog" element={<BlogPage />} />
+        <Route path="/blog/:slug" element={<BlogPostPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+      </Routes>
+    </Router>;
+}
+```
+```components/BlogGrid.tsx
+import React from 'react'
+import { BlogPostCard, BlogPost } from './BlogPostCard'
+const SAMPLE_POSTS: BlogPost[] = [
+  {
+    id: '1',
+    title: "When your B2B site stops being 'just a website'",
+    category: 'Strategy',
+    excerpt:
+      "Most B2B companies start with a simple website. But as you grow, that website becomes a bottleneck. Here's how to recognize the signs and what to do next.",
+    date: 'Dec 15, 2024',
+    readTime: '8 min read',
+  },
+  {
+    id: '2',
+    title: 'How to structure case studies for trust and leads',
+    category: 'Content',
+    excerpt:
+      'Case studies are powerful, but only if structured correctly. Learn the framework that converts prospects into qualified leads.',
+    date: 'Dec 10, 2024',
+    readTime: '6 min read',
+  },
+  {
+    id: '3',
+    title: 'Knowledge base vs. help center vs. docs: what to build first',
+    category: 'Knowledge Management',
+    excerpt:
+      "These terms are often used interchangeably, but they serve different purposes. Here's how to decide what your team needs.",
+    date: 'Dec 5, 2024',
+    readTime: '7 min read',
+  },
+  {
+    id: '4',
+    title: 'CMS migration without chaos: a phased roadmap',
+    category: 'Technical',
+    excerpt:
+      "Migrating your CMS doesn't have to be a nightmare. Follow this phased approach to minimize risk and downtime.",
+    date: 'Nov 28, 2024',
+    readTime: '10 min read',
+  },
+  {
+    id: '5',
+    title: 'Content audit checklist for B2B websites',
+    category: 'Strategy',
+    excerpt:
+      'Before rebuilding your website, you need to know what you have. Use this checklist to audit your content effectively.',
+    date: 'Nov 20, 2024',
+    readTime: '5 min read',
+  },
+  {
+    id: '6',
+    title: 'Why your support team needs a knowledge hub',
+    category: 'Knowledge Management',
+    excerpt:
+      "Support teams waste hours answering the same questions. A knowledge hub changes that. Here's how to build one.",
+    date: 'Nov 15, 2024',
+    readTime: '6 min read',
+  },
+]
+export function BlogGrid() {
+  return (
+    <section className="py-20 bg-[#edeef7]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {SAMPLE_POSTS.map((post, index) => (
+            <BlogPostCard key={post.id} post={post} index={index} />
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+```
+```components/BlogHero.tsx
+import React from 'react'
+import { motion } from 'framer-motion'
+export function BlogHero() {
+  return (
+    <section className="relative w-full bg-[#151927] text-[#dddfed] pt-32 pb-20 overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-[#20B7F3]/5 to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-1/4 h-1/2 bg-gradient-to-t from-[#20B7F3]/5 to-transparent pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-3xl">
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: 20,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              duration: 0.6,
+            }}
+          >
+            <span className="inline-block py-1 px-3 rounded-full bg-[#20B7F3]/10 text-[#20B7F3] font-mono text-sm mb-6 border border-[#20B7F3]/20">
+              Blog
+            </span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1] mb-6 tracking-tight font-figtree">
+              Insights & Resources
+            </h1>
+            <p className="text-lg md:text-xl text-[#dddfed]/80 max-w-2xl leading-relaxed">
+              Practical guides on building content platforms, managing B2B
+              websites, and scaling your knowledge hub.
+            </p>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+```
+```components/BlogPostCard.tsx
+import React from 'react'
+import { motion } from 'framer-motion'
+import { Clock, Calendar } from 'lucide-react'
+import { Link } from 'react-router-dom'
+export interface BlogPost {
+  id: string
+  title: string
+  excerpt: string
+  category: string
+  date: string
+  readTime: string
+  imageUrl?: string
+}
+interface BlogPostCardProps {
+  post: BlogPost
+  index: number
+}
+export function BlogPostCard({ post, index }: BlogPostCardProps) {
+  return (
+    <Link to={`/blog/${post.id}`} className="block h-full">
+      <motion.article
+        initial={{
+          opacity: 0,
+          y: 20,
+        }}
+        whileInView={{
+          opacity: 1,
+          y: 0,
+        }}
+        viewport={{
+          once: true,
+        }}
+        transition={{
+          delay: index * 0.1,
+          duration: 0.5,
+        }}
+        whileHover={{
+          y: -4,
+        }}
+        className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-gray-100 flex flex-col h-full group cursor-pointer"
+      >
+        {/* Image Placeholder */}
+        <div className="aspect-video w-full bg-gray-100 relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-[#151927]/5 to-[#151927]/10 group-hover:scale-105 transition-transform duration-500" />
+          {/* Optional: Actual image would go here */}
+          <div className="absolute top-4 left-4">
+            <span className="inline-block px-3 py-1 rounded-full bg-[#20B7F3]/10 text-[#20B7F3] text-xs font-bold uppercase tracking-wider border border-[#20B7F3]/20">
+              {post.category}
+            </span>
+          </div>
+        </div>
+
+        <div className="p-6 flex flex-col flex-1">
+          <div className="flex items-center text-xs text-gray-500 mb-3 space-x-4 font-mono">
+            <div className="flex items-center">
+              <Calendar className="w-3 h-3 mr-1.5" />
+              {post.date}
+            </div>
+            <div className="flex items-center">
+              <Clock className="w-3 h-3 mr-1.5" />
+              {post.readTime}
+            </div>
+          </div>
+
+          <h3 className="text-xl font-bold text-[#151927] mb-3 group-hover:text-[#20B7F3] transition-colors line-clamp-2 font-figtree">
+            {post.title}
+          </h3>
+
+          <p className="text-gray-600 text-sm leading-relaxed mb-6 line-clamp-3 flex-1">
+            {post.excerpt}
+          </p>
+
+          <div className="mt-auto pt-4 border-t border-gray-100">
+            <span className="text-sm font-bold text-[#151927] group-hover:text-[#20B7F3] transition-colors flex items-center">
+              Read article
+              <svg
+                className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </svg>
+            </span>
+          </div>
+        </div>
+      </motion.article>
+    </Link>
+  )
+}
+
+```
+```components/ContactForm.tsx
+import React, { useState } from 'react'
+import { motion } from 'framer-motion'
+import { Button } from './ui/Button'
+import { CheckCircle, AlertCircle } from 'lucide-react'
+export function ContactForm() {
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<
+    'idle' | 'success' | 'error'
+  >('idle')
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault()
+    setIsSubmitting(true)
+    // Simulate API call
+    await new Promise((resolve) => setTimeout(resolve, 1500))
+    setIsSubmitting(false)
+    setSubmitStatus('success')
+    // In a real app, you would handle the actual submission here
+  }
+  if (submitStatus === 'success') {
+    return (
+      <motion.div
+        initial={{
+          opacity: 0,
+          scale: 0.95,
+        }}
+        animate={{
+          opacity: 1,
+          scale: 1,
+        }}
+        className="bg-white rounded-xl shadow-lg p-8 md:p-12 text-center border border-gray-100"
+      >
+        <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+          <CheckCircle className="w-8 h-8 text-green-600" />
+        </div>
+        <h3 className="text-2xl font-bold font-figtree text-[#151927] mb-4">
+          Message sent!
+        </h3>
+        <p className="text-gray-600 mb-8">
+          Thanks for reaching out. I'll get back to you within 1 business day.
+        </p>
+        <Button variant="outline" onClick={() => setSubmitStatus('idle')}>
+          Send another message
+        </Button>
+      </motion.div>
+    )
+  }
+  return (
+    <motion.div
+      initial={{
+        opacity: 0,
+        y: 20,
+      }}
+      animate={{
+        opacity: 1,
+        y: 0,
+      }}
+      transition={{
+        duration: 0.5,
+      }}
+      className="bg-white rounded-xl shadow-lg p-8 md:p-12 border border-gray-100"
+    >
+      <form onSubmit={handleSubmit} className="space-y-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="space-y-2">
+            <label
+              htmlFor="name"
+              className="block text-sm font-medium text-[#151927]"
+            >
+              Name <span className="text-red-500">*</span>
+            </label>
+            <input
+              type="text"
+              id="name"
+              required
+              className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#20B7F3] focus:ring-2 focus:ring-[#20B7F3]/20 outline-none transition-all font-dm-sans placeholder:text-gray-400"
+              placeholder="John Doe"
+            />
+          </div>
+
+          <div className="space-y-2">
+            <label
+              htmlFor="email"
+              className="block text-sm font-medium text-[#151927]"
+            >
+              Work Email <span className="text-red-500">*</span>
+            </label>
+            <input
+              type="email"
+              id="email"
+              required
+              className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#20B7F3] focus:ring-2 focus:ring-[#20B7F3]/20 outline-none transition-all font-dm-sans placeholder:text-gray-400"
+              placeholder="john@company.com"
+            />
+          </div>
+        </div>
+
+        <div className="space-y-2">
+          <label
+            htmlFor="company"
+            className="block text-sm font-medium text-[#151927]"
+          >
+            Company <span className="text-red-500">*</span>
+          </label>
+          <input
+            type="text"
+            id="company"
+            required
+            className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#20B7F3] focus:ring-2 focus:ring-[#20B7F3]/20 outline-none transition-all font-dm-sans placeholder:text-gray-400"
+            placeholder="Company Name Ltd."
+          />
+        </div>
+
+        <div className="space-y-2">
+          <label
+            htmlFor="interest"
+            className="block text-sm font-medium text-[#151927]"
+          >
+            What are you looking for?
+          </label>
+          <div className="relative">
+            <select
+              id="interest"
+              className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#20B7F3] focus:ring-2 focus:ring-[#20B7F3]/20 outline-none transition-all font-dm-sans appearance-none bg-white"
+              defaultValue=""
+            >
+              <option value="" disabled>
+                Select an option
+              </option>
+              <option value="website">Website Rebuild</option>
+              <option value="knowledge-hub">Knowledge Hub / Help Center</option>
+              <option value="roadmap">Content Architecture & Roadmap</option>
+              <option value="other">Other</option>
+            </select>
+            <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
+              <svg
+                className="w-4 h-4 text-gray-500"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <div className="space-y-2">
+          <label
+            htmlFor="message"
+            className="block text-sm font-medium text-[#151927]"
+          >
+            Message <span className="text-red-500">*</span>
+          </label>
+          <textarea
+            id="message"
+            required
+            rows={5}
+            className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-[#20B7F3] focus:ring-2 focus:ring-[#20B7F3]/20 outline-none transition-all font-dm-sans placeholder:text-gray-400 resize-none"
+            placeholder="Tell me about your project goals and timeline..."
+          />
+        </div>
+
+        <div className="pt-2">
+          <Button
+            type="submit"
+            variant="primary"
+            className="w-full justify-center"
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? (
+              <span className="flex items-center">
+                <svg
+                  className="animate-spin -ml-1 mr-3 h-5 w-5 text-[#151927]"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <circle
+                    className="opacity-25"
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    strokeWidth="4"
+                  ></circle>
+                  <path
+                    className="opacity-75"
+                    fill="currentColor"
+                    d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                  ></path>
+                </svg>
+                Sending...
+              </span>
+            ) : (
+              'Send Message'
+            )}
+          </Button>
+        </div>
+
+        <p className="text-xs text-center text-gray-500 mt-4">
+          I respect your privacy. No spam, ever.
+        </p>
+      </form>
+    </motion.div>
+  )
+}
+
+```
+```components/CTASection.tsx
+import React from 'react'
+import { motion } from 'framer-motion'
+import { Button } from './ui/Button'
+export function CTASection() {
+  return (
+    <section className="py-24 bg-[#edeef7]">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 20,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+          }}
+        >
+          <h2 className="text-3xl md:text-5xl font-bold text-[#151927] mb-6">
+            Ready to make your content platform predictable again?
+          </h2>
+          <p className="text-lg text-[#151927]/70 mb-10">
+            No obligation. I'll share a clear next-step recommendation based on
+            your current situation.
+          </p>
+
+          <div className="flex flex-col items-center gap-4">
+            <Button
+              variant="primary"
+              size="lg"
+              withArrow
+              className="w-full sm:w-auto"
+            >
+              Book a strategy call
+            </Button>
+            <p className="text-sm text-[#151927]/50">
+              Direct access to Márk's calendar
+            </p>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  )
+}
+
+```
+```components/Hero.tsx
+import React from 'react'
+import { motion } from 'framer-motion'
+import { Button } from './ui/Button'
+export function Hero() {
+  return (
+    <section className="relative w-full bg-[#151927] text-[#dddfed] pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-[#20B7F3]/5 to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-1/4 h-1/2 bg-gradient-to-t from-[#20B7F3]/5 to-transparent pointer-events-none" />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          {/* Content Column */}
+          <motion.div
+            className="lg:col-span-7"
+            initial={{
+              opacity: 0,
+              y: 20,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              duration: 0.6,
+            }}
+          >
+            <span className="inline-block py-1 px-3 rounded-full bg-[#20B7F3]/10 text-[#20B7F3] font-mono text-sm mb-6 border border-[#20B7F3]/20">
+              Independent B2B Software Partner
+            </span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.1] mb-6 tracking-tight">
+              Turn your B2B content into a{' '}
+              <span className="text-[#20B7F3]">scalable website</span> and
+              knowledge hub.
+            </h1>
+            <p className="text-lg md:text-xl text-[#dddfed]/80 mb-10 max-w-2xl leading-relaxed">
+              I help growing B2B teams move beyond "just a website" with a
+              content platform that is easy to manage, built to last, and
+              designed to support sales and support.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 mb-16">
+              <Button variant="primary" size="lg" withArrow>
+                Book a strategy call
+              </Button>
+              <Button
+                variant="ghost"
+                size="lg"
+                className="text-white hover:bg-white/10 hover:text-white border-white/20 hover:border-white/40"
+              >
+                See case studies
+              </Button>
+            </div>
+
+            <motion.div
+              initial={{
+                opacity: 0,
+              }}
+              animate={{
+                opacity: 1,
+              }}
+              transition={{
+                delay: 0.4,
+                duration: 0.6,
+              }}
+              className="border-t border-white/10 pt-8"
+            >
+              <p className="text-sm font-mono text-[#dddfed]/60 mb-4 uppercase tracking-wider">
+                Trusted by growing B2B teams across UK, EU, and North America
+              </p>
+              <div className="flex flex-wrap gap-x-8 gap-y-4 text-[#dddfed]/40 font-bold text-lg items-center">
+                <span>TECHFLOW</span>
+                <span>DATASTREAM</span>
+                <span>NEXUS CORP</span>
+                <span>VENTURE SCALE</span>
+                <span>CLOUD NINE</span>
+              </div>
+            </motion.div>
+          </motion.div>
+
+          {/* Image Column */}
+          <motion.div
+            className="lg:col-span-5 relative"
+            initial={{
+              opacity: 0,
+              x: 20,
+            }}
+            animate={{
+              opacity: 1,
+              x: 0,
+            }}
+            transition={{
+              delay: 0.2,
+              duration: 0.8,
+            }}
+          >
+            {/* Decorative elements behind image */}
+            <div className="absolute -top-4 -right-4 w-full h-full border-2 border-[#20B7F3]/20 rounded-2xl z-0 hidden md:block" />
+            <div className="absolute -bottom-4 -left-4 w-24 h-24 bg-[#20B7F3]/10 rounded-full blur-2xl z-0" />
+
+            {/* Image Container */}
+            <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl border border-white/10 bg-[#1a1f30] aspect-[4/5] md:aspect-square lg:aspect-[4/5] max-w-md mx-auto lg:mx-0">
+              <div className="absolute inset-0 bg-gradient-to-t from-[#151927]/80 via-transparent to-transparent z-20 opacity-60" />
+              <img
+                src="https://markbartha.com/mediatheme/images/profile.jpg"
+                alt="Márk Bartha"
+                className="w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-700 ease-out"
+              />
+
+              {/* Optional: Floating badge or overlay content */}
+              <div className="absolute bottom-6 left-6 z-30">
+                <div className="bg-[#151927]/90 backdrop-blur-sm border border-white/10 px-4 py-2 rounded-lg shadow-lg">
+                  <p className="text-white font-medium text-sm">Márk Bartha</p>
+                  <p className="text-[#20B7F3] text-xs font-mono">
+                    Independent Consultant
+                  </p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+```
+```components/Navigation.tsx
+import React, { useEffect, useState } from 'react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { Menu, X } from 'lucide-react'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
+import { Button } from './ui/Button'
+const navItems = [
+  {
+    name: 'Home',
+    href: '/',
+  },
+  {
+    name: 'Services',
+    href: '#services',
+  },
+  {
+    name: 'Case Studies',
+    href: '#work',
+  },
+  {
+    name: 'About',
+    href: '#about',
+  },
+  {
+    name: 'Blog',
+    href: '/blog',
+  },
+]
+export function Navigation() {
+  const [isScrolled, setIsScrolled] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const location = useLocation()
+  const navigate = useNavigate()
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+  const isActive = (href: string) => {
+    if (href === '/') return location.pathname === '/'
+    return location.pathname.startsWith(href)
+  }
+  const handleContactClick = () => {
+    navigate('/contact')
+    setIsMobileMenuOpen(false)
+  }
+  return (
+    <>
+      <motion.nav
+        initial={{
+          y: -100,
+        }}
+        animate={{
+          y: 0,
+        }}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 ${isScrolled ? 'bg-[#151927]/95 backdrop-blur-md shadow-lg' : 'bg-[#151927]/0'}`}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between">
+            {/* Logo */}
+            <Link
+              to="/"
+              className="text-2xl font-bold text-white font-figtree tracking-tight"
+            >
+              Márk Bartha
+            </Link>
+
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center space-x-8">
+              {navItems.map((item) =>
+                item.href.startsWith('#') ? (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    className="text-sm font-medium text-[#dddfed]/80 hover:text-[#20B7F3] transition-colors"
+                  >
+                    {item.name}
+                  </a>
+                ) : (
+                  <Link
+                    key={item.name}
+                    to={item.href}
+                    className={`text-sm font-medium transition-colors ${isActive(item.href) ? 'text-[#20B7F3]' : 'text-[#dddfed]/80 hover:text-[#20B7F3]'}`}
+                  >
+                    {item.name}
+                  </Link>
+                ),
+              )}
+              <Button variant="primary" size="sm" onClick={handleContactClick}>
+                Contact
+              </Button>
+            </div>
+
+            {/* Mobile Menu Button */}
+            <button
+              className="md:hidden text-white p-2"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
+        </div>
+      </motion.nav>
+
+      {/* Mobile Menu Overlay */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{
+              opacity: 0,
+              height: 0,
+            }}
+            animate={{
+              opacity: 1,
+              height: 'auto',
+            }}
+            exit={{
+              opacity: 0,
+              height: 0,
+            }}
+            className="fixed top-[70px] left-0 right-0 bg-[#151927] border-b border-white/10 z-40 md:hidden overflow-hidden"
+          >
+            <div className="px-4 py-6 space-y-4">
+              {navItems.map((item) =>
+                item.href.startsWith('#') ? (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    className="block text-lg font-medium text-[#dddfed] hover:text-[#20B7F3] py-2"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {item.name}
+                  </a>
+                ) : (
+                  <Link
+                    key={item.name}
+                    to={item.href}
+                    className={`block text-lg font-medium py-2 ${isActive(item.href) ? 'text-[#20B7F3]' : 'text-[#dddfed] hover:text-[#20B7F3]'}`}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {item.name}
+                  </Link>
+                ),
+              )}
+              <div className="pt-4">
+                <Button
+                  variant="primary"
+                  className="w-full justify-center"
+                  onClick={handleContactClick}
+                >
+                  Contact
+                </Button>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
+  )
+}
+
+```
+```components/ProblemSection.tsx
+import React from 'react'
+import { motion } from 'framer-motion'
+import { XCircle } from 'lucide-react'
+const problems = [
+  "Content lives everywhere, so customers and prospects can't find what matters",
+  'Publishing is slow, and the team avoids touching the CMS',
+  'Support answers the same questions repeatedly',
+  "The website doesn't reflect your expertise",
+]
+export function ProblemSection() {
+  return (
+    <section className="py-20 bg-[#edeef7] text-[#151927]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <motion.div
+            initial={{
+              opacity: 0,
+              x: -20,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+            }}
+            viewport={{
+              once: true,
+            }}
+            transition={{
+              duration: 0.6,
+            }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              The reality for most B2B teams
+            </h2>
+            <p className="text-lg text-[#151927]/70 mb-8">
+              You have great expertise, but your digital presence is holding you
+              back. The gap between what you know and what you show is costing
+              you leads and time.
+            </p>
+          </motion.div>
+
+          <div className="space-y-4">
+            {problems.map((problem, index) => (
+              <motion.div
+                key={index}
+                initial={{
+                  opacity: 0,
+                  y: 10,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                viewport={{
+                  once: true,
+                }}
+                transition={{
+                  delay: index * 0.1,
+                  duration: 0.5,
+                }}
+                className="flex items-start p-4 bg-white rounded-lg shadow-sm border border-gray-100"
+              >
+                <XCircle className="w-6 h-6 text-red-500 mr-4 flex-shrink-0 mt-0.5" />
+                <span className="text-lg font-medium">{problem}</span>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+```
+```components/ProcessSection.tsx
+import React from 'react'
+import { motion } from 'framer-motion'
+import { Sparkles } from 'lucide-react'
+const steps = [
+  {
+    number: '01',
+    title: 'Discovery & Content Audit',
+    description:
+      'AI-assisted analysis combined with human expertise to understand your current state and opportunities.',
+  },
+  {
+    number: '02',
+    title: 'Roadmap & Structure',
+    description:
+      'Defining the information architecture, content types, and technical roadmap for the project.',
+  },
+  {
+    number: '03',
+    title: 'Build & Iterate',
+    description:
+      'Developing the modular blocks, templates, and integrations in rapid, transparent sprints.',
+  },
+  {
+    number: '04',
+    title: 'Launch & Evolve',
+    description:
+      'Thorough testing, team training, and a plan for ongoing improvements and evolution.',
+  },
+]
+export function ProcessSection() {
+  return (
+    <section className="py-24 bg-[#151927] text-[#dddfed]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 20,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+          }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            How I work
+          </h2>
+          <p className="text-[#dddfed]/70 max-w-2xl mx-auto">
+            A structured, transparent process designed to reduce risk and
+            deliver value at every stage.
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+          {steps.map((step, index) => (
+            <motion.div
+              key={index}
+              initial={{
+                opacity: 0,
+                y: 20,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              viewport={{
+                once: true,
+              }}
+              transition={{
+                delay: index * 0.1,
+              }}
+              className="relative"
+            >
+              <div className="text-6xl font-mono font-bold text-white/5 mb-4 absolute -top-8 -left-4 select-none">
+                {step.number}
+              </div>
+              <div className="relative z-10">
+                <h3 className="text-xl font-bold text-white mb-3">
+                  {step.title}
+                </h3>
+                <p className="text-[#dddfed]/60 text-sm leading-relaxed">
+                  {step.description}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        <motion.div
+          initial={{
+            opacity: 0,
+            scale: 0.95,
+          }}
+          whileInView={{
+            opacity: 1,
+            scale: 1,
+          }}
+          viewport={{
+            once: true,
+          }}
+          className="bg-gradient-to-r from-[#20B7F3]/10 to-transparent border border-[#20B7F3]/20 rounded-xl p-6 flex items-start md:items-center gap-4 max-w-3xl mx-auto"
+        >
+          <div className="bg-[#20B7F3]/20 p-2 rounded-lg flex-shrink-0">
+            <Sparkles className="w-5 h-5 text-[#20B7F3]" />
+          </div>
+          <div>
+            <p className="text-sm md:text-base text-[#dddfed]/90">
+              <span className="font-bold text-[#20B7F3]">
+                AI-Assisted Workflow:
+              </span>{' '}
+              I use AI to speed up audits, spot content gaps, and accelerate
+              drafts—then I validate and refine everything with human judgment.
+            </p>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  )
+}
+
+```
+```components/ProofSection.tsx
+import React from 'react'
+import { motion } from 'framer-motion'
+const metrics = [
+  {
+    value: '3x',
+    label: 'Faster publishing',
+  },
+  {
+    value: '60%',
+    label: 'Fewer support tickets',
+  },
+  {
+    value: '2x',
+    label: 'Organic traffic',
+  },
+  {
+    value: '90%',
+    label: 'Editor satisfaction',
+  },
+]
+export function ProofSection() {
+  return (
+    <section className="py-24 bg-[#151927] text-[#dddfed]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{
+            opacity: 0,
+          }}
+          whileInView={{
+            opacity: 1,
+          }}
+          viewport={{
+            once: true,
+          }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+            Results that matter
+          </h2>
+        </motion.div>
+
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20 border-b border-white/10 pb-12">
+          {metrics.map((metric, index) => (
+            <motion.div
+              key={index}
+              initial={{
+                opacity: 0,
+                scale: 0.9,
+              }}
+              whileInView={{
+                opacity: 1,
+                scale: 1,
+              }}
+              viewport={{
+                once: true,
+              }}
+              transition={{
+                delay: index * 0.1,
+              }}
+              className="text-center"
+            >
+              <div className="text-4xl md:text-5xl font-bold text-[#20B7F3] mb-2 font-mono">
+                {metric.value}
+              </div>
+              <div className="text-sm md:text-base text-[#dddfed]/60">
+                {metric.label}
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <motion.div
+            initial={{
+              opacity: 0,
+              x: -20,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+            }}
+            viewport={{
+              once: true,
+            }}
+            className="bg-white/5 p-8 rounded-xl border border-white/10"
+          >
+            <p className="text-lg italic text-[#dddfed]/90 mb-6">
+              "Márk transformed our scattered documentation into a cohesive
+              knowledge hub. Our support team finally has a single source of
+              truth, and customers love the self-service experience."
+            </p>
+            <div className="flex items-center">
+              <div className="w-10 h-10 bg-[#20B7F3] rounded-full mr-4"></div>
+              <div>
+                <div className="font-bold text-white">Sarah Jenkins</div>
+                <div className="text-sm text-[#dddfed]/60">
+                  Head of Customer Success, TechFlow
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{
+              opacity: 0,
+              x: 20,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+            }}
+            viewport={{
+              once: true,
+            }}
+            transition={{
+              delay: 0.2,
+            }}
+            className="bg-white/5 p-8 rounded-xl border border-white/10"
+          >
+            <p className="text-lg italic text-[#dddfed]/90 mb-6">
+              "We were afraid of another long, painful redesign. Márk's process
+              was transparent, phased, and actually enjoyable. The new site is
+              blazing fast and easy to update."
+            </p>
+            <div className="flex items-center">
+              <div className="w-10 h-10 bg-[#20B7F3] rounded-full mr-4"></div>
+              <div>
+                <div className="font-bold text-white">David Chen</div>
+                <div className="text-sm text-[#dddfed]/60">CTO, Nexus Corp</div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+```
+```components/ServicesSection.tsx
+import React from 'react'
+import { motion } from 'framer-motion'
+import { Button } from './ui/Button'
+import { Check } from 'lucide-react'
+const services = [
+  {
+    title: 'Content-Heavy Website (Re)build',
+    outcome:
+      'Modern, maintainable site that communicates expertise and converts.',
+    features: [
+      'Content audit & strategy',
+      'Information architecture',
+      'Custom CMS setup',
+    ],
+    cta: 'Learn more',
+  },
+  {
+    title: 'Knowledge Hub / Help Center',
+    outcome: 'Searchable self-service content that reduces support load.',
+    features: [
+      'Content structure design',
+      'Advanced search implementation',
+      'Editorial workflow setup',
+    ],
+    cta: 'Learn more',
+  },
+  {
+    title: 'Content Architecture & CMS Roadmap',
+    outcome: 'Audit + structure + plan; reduces risk before a rebuild.',
+    features: [
+      'Deep content audit',
+      'IA design & mapping',
+      'Migration roadmap',
+    ],
+    cta: 'Learn more',
+  },
+]
+export function ServicesSection() {
+  return (
+    <section className="py-24 bg-[#edeef7] text-[#151927]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 20,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+          }}
+          className="mb-12"
+        >
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">How I help</h2>
+          <p className="text-lg text-[#151927]/70 max-w-2xl">
+            Specialized services for B2B companies that need to manage complex
+            content.
+          </p>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {services.map((service, index) => (
+            <motion.div
+              key={index}
+              initial={{
+                opacity: 0,
+                y: 20,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              viewport={{
+                once: true,
+              }}
+              transition={{
+                delay: index * 0.1,
+              }}
+              whileHover={{
+                y: -4,
+              }}
+              className="bg-white p-8 rounded-xl shadow-sm border border-gray-100 flex flex-col h-full"
+            >
+              <h3 className="text-2xl font-bold mb-4 min-h-[64px]">
+                {service.title}
+              </h3>
+              <p className="text-[#151927]/80 mb-8 font-medium">
+                {service.outcome}
+              </p>
+
+              <ul className="space-y-3 mb-8 flex-1">
+                {service.features.map((feature, idx) => (
+                  <li
+                    key={idx}
+                    className="flex items-start text-sm text-[#151927]/70"
+                  >
+                    <Check className="w-5 h-5 text-[#20B7F3] mr-3 flex-shrink-0" />
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+
+              <Button
+                variant="outline"
+                className="w-full justify-between group"
+              >
+                {service.cta}
+                <span className="group-hover:translate-x-1 transition-transform">
+                  →
+                </span>
+              </Button>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+```
+```components/SolutionSection.tsx
+import React from 'react'
+import { motion } from 'framer-motion'
+import { Layers, Layout, Search, PenTool } from 'lucide-react'
+const features = [
+  {
+    icon: Layers,
+    title: 'Structured Content',
+    description:
+      'Services, case studies, insights, and docs organized logically, not just dumped in pages.',
+  },
+  {
+    icon: Layout,
+    title: 'Modular Building Blocks',
+    description:
+      'Flexible page building components that maintain design consistency without code.',
+  },
+  {
+    icon: Search,
+    title: 'Intelligent Search',
+    description:
+      'Navigation patterns and search functionality that actually help users find answers.',
+  },
+  {
+    icon: PenTool,
+    title: 'Editorial Workflow',
+    description:
+      'A CMS setup designed for writers and editors, streamlining the publishing process.',
+  },
+]
+export function SolutionSection() {
+  return (
+    <section className="py-24 bg-[#151927] text-[#dddfed]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <motion.h2
+            initial={{
+              opacity: 0,
+              y: 20,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{
+              once: true,
+            }}
+            className="text-3xl md:text-5xl font-bold text-white mb-6"
+          >
+            A content platform built for growth
+          </motion.h2>
+          <motion.p
+            initial={{
+              opacity: 0,
+              y: 20,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{
+              once: true,
+            }}
+            transition={{
+              delay: 0.1,
+            }}
+            className="text-xl text-[#dddfed]/80"
+          >
+            Stop wrestling with rigid templates. I build systems that adapt to
+            your content strategy, not the other way around.
+          </motion.p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {features.map((feature, index) => (
+            <motion.div
+              key={index}
+              initial={{
+                opacity: 0,
+                y: 20,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              viewport={{
+                once: true,
+              }}
+              transition={{
+                delay: index * 0.1,
+              }}
+              className="bg-white/5 border border-white/10 p-6 rounded-xl hover:bg-white/10 transition-colors duration-300"
+            >
+              <div className="w-12 h-12 bg-[#20B7F3]/10 rounded-lg flex items-center justify-center mb-4">
+                <feature.icon className="w-6 h-6 text-[#20B7F3]" />
+              </div>
+              <h3 className="text-xl font-bold text-white mb-3">
+                {feature.title}
+              </h3>
+              <p className="text-[#dddfed]/70 leading-relaxed">
+                {feature.description}
+              </p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+```
+```components/ui/Button.tsx
+import React from 'react'
+import { motion } from 'framer-motion'
+import { ArrowRight } from 'lucide-react'
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: 'primary' | 'secondary' | 'outline' | 'ghost'
+  size?: 'sm' | 'md' | 'lg'
+  withArrow?: boolean
+}
+export function Button({
+  children,
+  variant = 'primary',
+  size = 'md',
+  className = '',
+  withArrow = false,
+  ...props
+}: ButtonProps) {
+  const baseStyles =
+    'inline-flex items-center justify-center font-medium transition-colors duration-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed'
+  const variants = {
+    primary:
+      'bg-[#20B7F3] text-[#151927] hover:bg-[#1aa3d9] focus:ring-[#20B7F3]',
+    secondary:
+      'bg-[#151927] text-white hover:bg-[#1f253a] focus:ring-[#151927]',
+    outline:
+      'border-2 border-[#151927] text-[#151927] hover:bg-[#151927] hover:text-white focus:ring-[#151927]',
+    ghost:
+      'text-[#20B7F3] hover:bg-[#20B7F3]/10 focus:ring-[#20B7F3] border border-transparent hover:border-[#20B7F3]/30',
+  }
+  // Special handling for dark mode contexts (passed via className if needed, but defaults here are for light bg)
+  // If used on dark bg, parent should override or we could add 'inverse' variants.
+  // For now, we'll stick to these and handle specific overrides in usage.
+  const sizes = {
+    sm: 'px-4 py-2 text-sm',
+    md: 'px-6 py-3 text-base',
+    lg: 'px-8 py-4 text-lg',
+  }
+  return (
+    <motion.button
+      whileHover={{
+        scale: 1.02,
+      }}
+      whileTap={{
+        scale: 0.98,
+      }}
+      className={`${baseStyles} ${variants[variant]} ${sizes[size]} ${className}`}
+      {...props}
+    >
+      {children}
+      {withArrow && <ArrowRight className="ml-2 h-4 w-4" />}
+    </motion.button>
+  )
+}
+
+```
+```components/WhyMarkSection.tsx
+import React from 'react'
+import { motion } from 'framer-motion'
+import { User, ShieldCheck, MessageSquare, Code2, Wrench } from 'lucide-react'
+const reasons = [
+  {
+    icon: User,
+    text: 'Direct senior execution (no hand-offs to juniors)',
+  },
+  {
+    icon: ShieldCheck,
+    text: 'Clear scope and phased delivery',
+  },
+  {
+    icon: MessageSquare,
+    text: 'Predictable communication cadence',
+  },
+  {
+    icon: Code2,
+    text: 'Built for editors, not just developers',
+  },
+  {
+    icon: Wrench,
+    text: 'Long-term maintainability focus',
+  },
+]
+export function WhyMarkSection() {
+  return (
+    <section className="py-24 bg-[#edeef7] text-[#151927]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <motion.div
+            initial={{
+              opacity: 0,
+              x: -20,
+            }}
+            whileInView={{
+              opacity: 1,
+              x: 0,
+            }}
+            viewport={{
+              once: true,
+            }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Why work with an independent consultant?
+            </h2>
+            <p className="text-lg text-[#151927]/70 mb-8">
+              Agencies are great for massive campaigns, but for specialized B2B
+              platforms, you need focus, expertise, and direct accountability.
+            </p>
+            <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+              <h3 className="font-bold text-xl mb-2">The Solo Advantage</h3>
+              <p className="text-[#151927]/70">
+                When you hire me, you get me. No account managers, no telephone
+                game, just direct collaboration with the person building your
+                solution.
+              </p>
+            </div>
+          </motion.div>
+
+          <div className="space-y-6">
+            {reasons.map((reason, index) => (
+              <motion.div
+                key={index}
+                initial={{
+                  opacity: 0,
+                  x: 20,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  x: 0,
+                }}
+                viewport={{
+                  once: true,
+                }}
+                transition={{
+                  delay: index * 0.1,
+                }}
+                className="flex items-center"
+              >
+                <div className="w-12 h-12 bg-[#20B7F3]/10 rounded-full flex items-center justify-center mr-6 flex-shrink-0">
+                  <reason.icon className="w-6 h-6 text-[#20B7F3]" />
+                </div>
+                <span className="text-lg font-medium text-[#151927]">
+                  {reason.text}
+                </span>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+```
+```index.css
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Figtree:ital,wght@0,300..900;1,300..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-dark-blue: #151927;
+  --color-light-blue: #20B7F3;
+  --color-light-bg: #edeef7;
+  --color-light-text: #dddfed;
+}
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background-color: var(--color-light-bg);
+  color: var(--color-dark-blue);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Figtree', sans-serif;
+}
+
+code, pre, .font-mono {
+  font-family: 'DM Mono', monospace;
+}
+
+```
+```index.tsx
+import './index.css'
+import React from "react";
+import { render } from "react-dom";
+import { App } from "./App";
+
+render(<App />, document.getElementById("root"));
+
+```
+```pages/BlogPage.tsx
+import React from 'react'
+import { Navigation } from '../components/Navigation'
+import { BlogHero } from '../components/BlogHero'
+import { BlogGrid } from '../components/BlogGrid'
+import { CTASection } from '../components/CTASection'
+export function BlogPage() {
+  return (
+    <main className="min-h-screen w-full overflow-x-hidden bg-[#edeef7]">
+      <Navigation />
+      <BlogHero />
+      <BlogGrid />
+      <CTASection />
+
+      {/* Simple Footer Placeholder (Reused from HomePage pattern) */}
+      <footer className="bg-[#151927] text-[#dddfed]/40 py-8 text-center text-sm border-t border-white/10">
+        <div className="max-w-7xl mx-auto px-4">
+          <p>
+            &copy; {new Date().getFullYear()} Márk Bartha. All rights reserved.
+          </p>
+        </div>
+      </footer>
+    </main>
+  )
+}
+
+```
+```pages/BlogPostPage.tsx
+import React, { useEffect } from 'react'
+import { motion } from 'framer-motion'
+import {
+  Clock,
+  Calendar,
+  User,
+  ArrowLeft,
+  Share2,
+  Linkedin,
+  Twitter,
+} from 'lucide-react'
+import { Link, useParams } from 'react-router-dom'
+import { Navigation } from '../components/Navigation'
+import { CTASection } from '../components/CTASection'
+import { Button } from '../components/ui/Button'
+export function BlogPostPage() {
+  const { slug } = useParams()
+  // Scroll to top on mount
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [slug])
+  return (
+    <main className="min-h-screen w-full bg-white">
+      <Navigation />
+
+      {/* Article Header */}
+      <header className="pt-32 pb-12 bg-[#151927] text-[#dddfed]">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: 20,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              duration: 0.6,
+            }}
+          >
+            <Link
+              to="/blog"
+              className="inline-flex items-center text-[#20B7F3] hover:text-white transition-colors mb-8 text-sm font-medium"
+            >
+              <ArrowLeft className="w-4 h-4 mr-2" />
+              Back to Blog
+            </Link>
+
+            <div className="mb-6">
+              <span className="inline-block py-1 px-3 rounded-full bg-[#20B7F3]/10 text-[#20B7F3] font-mono text-xs font-bold uppercase tracking-wider border border-[#20B7F3]/20">
+                Content Strategy
+              </span>
+            </div>
+
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 font-figtree leading-tight">
+              How to structure case studies for trust and leads
+            </h1>
+
+            <div className="flex flex-wrap items-center gap-6 text-sm text-[#dddfed]/60 font-mono">
+              <div className="flex items-center">
+                <User className="w-4 h-4 mr-2" />
+                Márk Bartha
+              </div>
+              <div className="flex items-center">
+                <Calendar className="w-4 h-4 mr-2" />
+                Dec 10, 2024
+              </div>
+              <div className="flex items-center">
+                <Clock className="w-4 h-4 mr-2" />6 min read
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </header>
+
+      {/* Article Content */}
+      <article className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <motion.div
+          initial={{
+            opacity: 0,
+          }}
+          animate={{
+            opacity: 1,
+          }}
+          transition={{
+            delay: 0.2,
+            duration: 0.6,
+          }}
+          className="font-dm-sans text-[#151927]"
+        >
+          {/* Introduction */}
+          <p className="text-xl leading-relaxed text-gray-600 mb-12 font-medium">
+            Case studies are powerful, but only if structured correctly. Most
+            B2B companies treat them as simple success stories, missing the
+            opportunity to convert prospects into qualified leads. Here is the
+            framework that changes that.
+          </p>
+
+          {/* H2 Heading */}
+          <h2 className="text-3xl font-bold font-figtree text-[#151927] mt-12 mb-6">
+            Why case studies matter
+          </h2>
+
+          <p className="text-lg leading-relaxed text-gray-700 mb-6">
+            In the B2B world, trust is the currency of conversion. Your
+            prospects aren't just buying a product; they are buying a
+            partnership and a promise of results. A well-structured case study
+            acts as <span className="font-bold">social proof</span> on steroids.
+          </p>
+
+          <p className="text-lg leading-relaxed text-gray-700 mb-6">
+            According to recent surveys, over 70% of B2B buyers cite case
+            studies as the most influential content format during their
+            decision-making process. Yet, many are dry, technical documents that
+            fail to tell a compelling story.
+          </p>
+
+          {/* Blockquote */}
+          <blockquote className="border-l-4 border-[#20B7F3] pl-6 my-10 italic text-xl text-gray-800 bg-gray-50 py-4 pr-4 rounded-r-lg">
+            "A great case study doesn't just say 'we are great'. It says 'we
+            understand your problem and here is exactly how we solve it'."
+          </blockquote>
+
+          {/* H2 Heading */}
+          <h2 className="text-3xl font-bold font-figtree text-[#151927] mt-12 mb-6">
+            The anatomy of a great case study
+          </h2>
+
+          <p className="text-lg leading-relaxed text-gray-700 mb-6">
+            To move beyond generic praise, your case studies need a structured
+            narrative arc. We recommend the "Challenge-Approach-Results"
+            framework, but with a twist.
+          </p>
+
+          {/* H3 Heading */}
+          <h3 className="text-2xl font-bold font-figtree text-[#151927] mt-8 mb-4">
+            1. The Challenge
+          </h3>
+
+          <p className="text-lg leading-relaxed text-gray-700 mb-4">
+            Don't just list the problem. Dive deep into the pain. What was at
+            stake?
+          </p>
+
+          <ul className="list-disc list-outside ml-6 mb-8 space-y-2 text-lg text-gray-700 marker:text-[#20B7F3]">
+            <li>
+              <strong>Operational inefficiencies:</strong> How much time was
+              being wasted?
+            </li>
+            <li>
+              <strong>Lost revenue:</strong> What was the financial impact of
+              the problem?
+            </li>
+            <li>
+              <strong>Team morale:</strong> How was the issue affecting the
+              people involved?
+            </li>
+          </ul>
+
+          {/* H3 Heading */}
+          <h3 className="text-2xl font-bold font-figtree text-[#151927] mt-8 mb-4">
+            2. The Approach
+          </h3>
+
+          <p className="text-lg leading-relaxed text-gray-700 mb-4">
+            This is where you show your expertise. Be specific about the
+            solution.
+          </p>
+
+          <ol className="list-decimal list-outside ml-6 mb-8 space-y-2 text-lg text-gray-700 marker:text-[#151927] marker:font-bold">
+            <li>
+              We conducted a thorough audit of the existing infrastructure.
+            </li>
+            <li>
+              We identified three key bottlenecks in the deployment pipeline.
+            </li>
+            <li>
+              We implemented a custom CI/CD solution using industry-standard
+              tools.
+            </li>
+          </ol>
+
+          {/* Image with Caption */}
+          <figure className="my-10">
+            <div className="bg-gray-100 rounded-xl overflow-hidden shadow-md aspect-video flex items-center justify-center relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-[#151927]/5 to-[#151927]/10" />
+              <span className="text-gray-400 font-mono">
+                Dashboard Screenshot Placeholder
+              </span>
+            </div>
+            <figcaption className="text-center text-sm text-gray-500 italic mt-3">
+              Figure 1: The analytics dashboard showing pre-optimization metrics
+              vs. post-optimization results.
+            </figcaption>
+          </figure>
+
+          {/* H2 Heading */}
+          <h2 className="text-3xl font-bold font-figtree text-[#151927] mt-12 mb-6">
+            Implementation tips
+          </h2>
+
+          <p className="text-lg leading-relaxed text-gray-700 mb-6">
+            When building your case study page, you might want to include
+            dynamic data. Here is a simple example of how you might structure
+            the data object in your code using{' '}
+            <code className="bg-gray-100 px-2 py-1 rounded font-mono text-sm text-[#151927]">
+              TypeScript
+            </code>
+            .
+          </p>
+
+          {/* Code Block */}
+          <div className="bg-[#151927] text-[#dddfed] p-6 rounded-lg font-mono text-sm overflow-x-auto mb-8 shadow-lg">
+            <pre>
+              {`interface CaseStudy {
+  id: string;
+  client: string;
+  industry: string;
+  metrics: {
+    label: string;
+    value: string;
+    growth: number;
+  }[];
+  tags: string[];
+}`}
+            </pre>
+          </div>
+
+          <p className="text-lg leading-relaxed text-gray-700 mb-6">
+            This structure allows you to programmatically generate the "Results"
+            section of your case study cards, ensuring consistency across your
+            site. You can learn more about structured content in our{' '}
+            <a
+              href="#"
+              className="text-[#20B7F3] underline hover:text-[#1aa3d9] transition-colors"
+            >
+              guide to content modeling
+            </a>
+            .
+          </p>
+
+          {/* H4 Heading */}
+          <h4 className="text-xl font-bold font-figtree text-[#151927] mt-8 mb-4">
+            Common mistakes to avoid
+          </h4>
+
+          <p className="text-lg leading-relaxed text-gray-700 mb-6">
+            Avoid using jargon that your audience might not understand. Keep it
+            simple, direct, and focused on the <em>business outcomes</em> rather
+            than just the technical implementation details.
+          </p>
+
+          <hr className="border-gray-200 my-12" />
+
+          {/* Conclusion */}
+          <p className="text-lg leading-relaxed text-gray-700 mb-8">
+            Ready to transform your case studies? Start by auditing your
+            existing success stories and applying this framework. The results
+            will speak for themselves.
+          </p>
+        </motion.div>
+
+        {/* Article Footer / Author Bio */}
+        <div className="mt-16 pt-8 border-t border-gray-100">
+          <div className="flex items-start gap-6">
+            <div className="w-16 h-16 rounded-full overflow-hidden flex-shrink-0 bg-gray-200">
+              <img
+                src="https://markbartha.com/mediatheme/images/profile.jpg"
+                alt="Márk Bartha"
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div>
+              <h3 className="text-lg font-bold font-figtree text-[#151927] mb-2">
+                About the Author
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                Márk Bartha is an independent software partner helping B2B teams
+                build scalable content platforms. He specializes in bridging the
+                gap between technical complexity and editorial needs.
+              </p>
+              <div className="flex gap-4">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="pl-0 hover:bg-transparent hover:text-[#151927]"
+                >
+                  <Linkedin className="w-4 h-4 mr-2" />
+                  LinkedIn
+                </Button>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  className="pl-0 hover:bg-transparent hover:text-[#151927]"
+                >
+                  <Twitter className="w-4 h-4 mr-2" />
+                  Twitter
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <CTASection />
+
+      <footer className="bg-[#151927] text-[#dddfed]/40 py-8 text-center text-sm border-t border-white/10">
+        <div className="max-w-7xl mx-auto px-4">
+          <p>
+            &copy; {new Date().getFullYear()} Márk Bartha. All rights reserved.
+          </p>
+        </div>
+      </footer>
+    </main>
+  )
+}
+
+```
+```pages/ContactPage.tsx
+import React from 'react'
+import { motion } from 'framer-motion'
+import { Mail, Linkedin, Calendar, ArrowRight } from 'lucide-react'
+import { Navigation } from '../components/Navigation'
+import { ContactForm } from '../components/ContactForm'
+export function ContactPage() {
+  return (
+    <main className="min-h-screen w-full bg-[#edeef7]">
+      <Navigation />
+
+      {/* Header Section */}
+      <section className="bg-[#151927] pt-32 pb-32 text-center px-4 relative overflow-hidden">
+        {/* Background decoration */}
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-[#20B7F3]/5 to-transparent pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-1/4 h-1/2 bg-gradient-to-t from-[#20B7F3]/5 to-transparent pointer-events-none" />
+
+        <div className="max-w-4xl mx-auto relative z-10">
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: 20,
+            }}
+            animate={{
+              opacity: 1,
+              y: 0,
+            }}
+            transition={{
+              duration: 0.6,
+            }}
+          >
+            <span className="inline-block py-1 px-3 rounded-full bg-[#20B7F3]/10 text-[#20B7F3] font-mono text-sm mb-6 border border-[#20B7F3]/20">
+              Get in touch
+            </span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 font-figtree leading-tight">
+              Let's talk about your{' '}
+              <span className="text-[#20B7F3]">content platform</span>
+            </h1>
+            <p className="text-lg md:text-xl text-[#dddfed]/80 max-w-2xl mx-auto leading-relaxed">
+              Book a strategy call or send me a message. I reply within 1
+              business day.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Form Section */}
+      <section className="px-4 pb-24 -mt-20 relative z-20">
+        <div className="max-w-2xl mx-auto">
+          <ContactForm />
+
+          {/* Alternative Contact Options */}
+          <motion.div
+            initial={{
+              opacity: 0,
+            }}
+            whileInView={{
+              opacity: 1,
+            }}
+            viewport={{
+              once: true,
+            }}
+            transition={{
+              delay: 0.3,
+            }}
+            className="mt-16 text-center"
+          >
+            <h2 className="text-xl font-bold text-[#151927] mb-8 font-figtree">
+              Prefer a different approach?
+            </h2>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <a
+                href="mailto:hello@markbartha.com"
+                className="flex flex-col items-center p-6 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:-translate-y-1 transition-all group"
+              >
+                <div className="w-12 h-12 bg-[#20B7F3]/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-[#20B7F3]/20 transition-colors">
+                  <Mail className="w-6 h-6 text-[#20B7F3]" />
+                </div>
+                <span className="font-medium text-[#151927]">Email Me</span>
+                <span className="text-sm text-gray-500 mt-1">
+                  hello@markbartha.com
+                </span>
+              </a>
+
+              <a
+                href="#"
+                className="flex flex-col items-center p-6 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:-translate-y-1 transition-all group"
+              >
+                <div className="w-12 h-12 bg-[#0077b5]/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-[#0077b5]/20 transition-colors">
+                  <Linkedin className="w-6 h-6 text-[#0077b5]" />
+                </div>
+                <span className="font-medium text-[#151927]">LinkedIn</span>
+                <span className="text-sm text-gray-500 mt-1">
+                  Connect with me
+                </span>
+              </a>
+
+              <a
+                href="#"
+                className="flex flex-col items-center p-6 bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md hover:-translate-y-1 transition-all group"
+              >
+                <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mb-4 group-hover:bg-purple-200 transition-colors">
+                  <Calendar className="w-6 h-6 text-purple-600" />
+                </div>
+                <span className="font-medium text-[#151927]">Book a Call</span>
+                <span className="text-sm text-gray-500 mt-1">
+                  15-min intro chat
+                </span>
+              </a>
+            </div>
+
+            <p className="mt-12 text-gray-500 text-sm">
+              No obligation. I'll share a clear next-step recommendation based
+              on your needs.
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      <footer className="bg-[#151927] text-[#dddfed]/40 py-8 text-center text-sm border-t border-white/10">
+        <div className="max-w-7xl mx-auto px-4">
+          <p>
+            &copy; {new Date().getFullYear()} Márk Bartha. All rights reserved.
+          </p>
+        </div>
+      </footer>
+    </main>
+  )
+}
+
+```
+```pages/HomePage.tsx
+import React from 'react'
+import { Navigation } from '../components/Navigation'
+import { Hero } from '../components/Hero'
+import { ProblemSection } from '../components/ProblemSection'
+import { SolutionSection } from '../components/SolutionSection'
+import { ServicesSection } from '../components/ServicesSection'
+import { ProofSection } from '../components/ProofSection'
+import { WhyMarkSection } from '../components/WhyMarkSection'
+import { ProcessSection } from '../components/ProcessSection'
+import { CTASection } from '../components/CTASection'
+export function HomePage() {
+  return (
+    <main className="min-h-screen w-full overflow-x-hidden bg-[#151927]">
+      <Navigation />
+      <Hero />
+      <ProblemSection />
+      <SolutionSection />
+      <ServicesSection />
+      <ProofSection />
+      <WhyMarkSection />
+      <ProcessSection />
+      <CTASection />
+
+      {/* Simple Footer Placeholder */}
+      <footer className="bg-[#151927] text-[#dddfed]/40 py-8 text-center text-sm border-t border-white/10">
+        <div className="max-w-7xl mx-auto px-4">
+          <p>
+            &copy; {new Date().getFullYear()} Márk Bartha. All rights reserved.
+          </p>
+        </div>
+      </footer>
+    </main>
+  )
+}
+
+```
+```tailwind.config.js
+export default {}
+```

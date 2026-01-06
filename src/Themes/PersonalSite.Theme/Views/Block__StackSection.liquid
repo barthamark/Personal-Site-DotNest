@@ -1,19 +1,12 @@
 {% assign header_items = Model.ContentItem.Content.Header.ContentItems %}
 {% assign items = Model.ContentItem.Content.Items.ContentItems %}
-{% assign columns = Model.ContentItem.Content.GridSection.Columns.Text %}
-{% assign alignment = Model.ContentItem.Content.GridSection.HeaderAlignment.Text %}
-
-{% assign items_class = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" %}
-{% case columns %}
-    {% when "Two" %}
-        {% assign items_class = "grid grid-cols-1 md:grid-cols-2 gap-8" %}
-    {% when "Four" %}
-        {% assign items_class = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" %}
-{% endcase %}
+{% assign alignment = Model.ContentItem.Content.StackSection.HeaderAlignment.Text %}
 
 {% assign header_class = "mb-12 max-w-2xl" %}
+{% assign items_class = "flex flex-col gap-6" %}
 {% if alignment == "Center" %}
     {% assign header_class = "text-center max-w-3xl mx-auto mb-16" %}
+    {% assign items_class = "flex flex-col items-center gap-6 text-center" %}
 {% endif %}
 
 <section class="w-full py-24">

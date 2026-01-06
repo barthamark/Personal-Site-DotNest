@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="en" class="scheme-light scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact - Content Platform Strategy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Figtree:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/tailwind.generated.css" />
+  </head>
+  <body class="bg-light-bg text-dark-blue font-sans antialiased">
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-dark-blue/95 backdrop-blur-md shadow-lg py-4">
+      <div class="page-container">
+        <div class="flex items-center justify-between">
+          <a
+            href="home.html"
+            class="text-2xl font-bold text-white font-figtree tracking-tight"
+          >
+            Mark Bartha
+          </a>
+
+          <div class="hidden md:flex items-center space-x-8" aria-label="Primary">
+            <a
+              href="home.html"
+              class="text-sm font-medium text-light-text/80 hover:text-light-blue transition-colors"
+            >
+              Home
+            </a>
+            <a
+              href="home.html#services"
+              class="text-sm font-medium text-light-text/80 hover:text-light-blue transition-colors"
+            >
+              Services
+            </a>
+            <a
+              href="home.html#work"
+              class="text-sm font-medium text-light-text/80 hover:text-light-blue transition-colors"
+            >
+              Case Studies
+            </a>
+            <a
+              href="home.html#about"
+              class="text-sm font-medium text-light-text/80 hover:text-light-blue transition-colors"
+            >
+              About
+            </a>
+            <a
+              href="blog.html"
+              class="text-sm font-medium text-light-text/80 hover:text-light-blue transition-colors"
+            >
+              Blog
+            </a>
+            <a href="contact.html" class="btn btn-primary btn-sm">Contact</a>
+          </div>
+
+          <details class="md:hidden">
+            <summary class="list-none text-white p-2 cursor-pointer">
+              <span class="sr-only">Toggle menu</span>
+              <i data-lucide="menu" class="w-6 h-6" aria-hidden="true"></i>
+            </summary>
+            <div class="mt-4 border-t border-white/10 pt-4 space-y-4">
+              <a
+                href="home.html"
+                class="block py-2 text-lg font-medium text-light-text hover:text-light-blue transition-colors"
+              >
+                Home
+              </a>
+              <a
+                href="home.html#services"
+                class="block py-2 text-lg font-medium text-light-text hover:text-light-blue transition-colors"
+              >
+                Services
+              </a>
+              <a
+                href="home.html#work"
+                class="block py-2 text-lg font-medium text-light-text hover:text-light-blue transition-colors"
+              >
+                Case Studies
+              </a>
+              <a
+                href="home.html#about"
+                class="block py-2 text-lg font-medium text-light-text hover:text-light-blue transition-colors"
+              >
+                About
+              </a>
+              <a
+                href="blog.html"
+                class="block py-2 text-lg font-medium text-light-text hover:text-light-blue transition-colors"
+              >
+                Blog
+              </a>
+              <div class="pt-2">
+                <a href="contact.html" class="btn btn-primary btn-sm w-full">
+                  Contact
+                </a>
+              </div>
+            </div>
+          </details>
+        </div>
+      </div>
+    </nav>
+
+    <main class="min-h-screen w-full bg-light-bg">
+      <section class="hero-backdrop bg-dark-blue pt-32 pb-32 text-center">
+        <div class="page-container max-w-4xl relative z-10">
+          <span class="pill mb-6">
+            Get in touch
+          </span>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-hero text-balance">
+            Let's talk about your <span class="text-light-blue">content platform</span>
+          </h1>
+          <p class="text-lg md:text-xl text-light-text/80 max-w-2xl mx-auto leading-relaxed">
+            Book a strategy call or send me a message. I reply within 1
+            business day.
+          </p>
+        </div>
+      </section>
+
+      <section class="px-4 pb-24 -mt-20 relative z-20">
+        <div class="max-w-2xl mx-auto">
+          <div class="card shadow-lg p-8 md:p-12">
+            <form action="#" method="post" class="space-y-6">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="space-y-2">
+                  <label for="name" class="block text-sm font-medium text-dark-blue">
+                    Name <span class="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    class="form-field"
+                    placeholder="John Doe"
+                  />
+                </div>
+
+                <div class="space-y-2">
+                  <label for="email" class="block text-sm font-medium text-dark-blue">
+                    Work Email <span class="text-red-500">*</span>
+                  </label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    class="form-field"
+                    placeholder="john@company.com"
+                  />
+                </div>
+              </div>
+
+              <div class="space-y-2">
+                <label for="company" class="block text-sm font-medium text-dark-blue">
+                  Company <span class="text-red-500">*</span>
+                </label>
+                <input
+                  type="text"
+                  id="company"
+                  name="company"
+                  required
+                  class="form-field"
+                  placeholder="Company Name Ltd."
+                />
+              </div>
+
+              <div class="space-y-2">
+                <label for="interest" class="block text-sm font-medium text-dark-blue">
+                  What are you looking for?
+                </label>
+                <div class="relative">
+                  <select
+                    id="interest"
+                    name="interest"
+                    class="form-field appearance-none bg-white"
+                  >
+                    <option value="" selected disabled>Select an option</option>
+                    <option value="website">Website Rebuild</option>
+                    <option value="knowledge-hub">Knowledge Hub / Help Center</option>
+                    <option value="roadmap">Content Architecture and Roadmap</option>
+                    <option value="other">Other</option>
+                  </select>
+                  <div class="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
+                    <i data-lucide="chevron-down" class="w-4 h-4 text-gray-500" aria-hidden="true"></i>
+                  </div>
+                </div>
+              </div>
+
+              <div class="space-y-2">
+                <label for="message" class="block text-sm font-medium text-dark-blue">
+                  Message <span class="text-red-500">*</span>
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  required
+                  rows="5"
+                  class="form-field resize-none"
+                  placeholder="Tell me about your project goals and timeline..."
+                ></textarea>
+              </div>
+
+              <div class="pt-2">
+                <button type="submit" class="btn btn-primary btn-md w-full justify-center">
+                  Send Message
+                </button>
+              </div>
+
+              <p class="text-xs text-center text-gray-500 mt-4">
+                I respect your privacy. No spam, ever.
+              </p>
+            </form>
+          </div>
+
+          <div class="mt-16 text-center">
+            <h2 class="text-xl font-bold text-dark-blue mb-8">Prefer a different approach?</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <a
+                href="mailto:hello@markbartha.com"
+                class="flex flex-col items-center p-6 card hover:shadow-md hover:-translate-y-1 transition-all group"
+              >
+                <div class="w-12 h-12 bg-light-blue/10 rounded-full flex items-center justify-center mb-4 group-hover:bg-light-blue/20 transition-colors">
+                  <i data-lucide="mail" class="w-6 h-6 text-light-blue" aria-hidden="true"></i>
+                </div>
+                <span class="font-medium text-dark-blue">Email Me</span>
+                <span class="text-sm text-gray-500 mt-1">
+                  hello@markbartha.com
+                </span>
+              </a>
+
+              <a
+                href="#"
+                class="flex flex-col items-center p-6 card hover:shadow-md hover:-translate-y-1 transition-all group"
+              >
+                <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mb-4 group-hover:bg-blue-200 transition-colors">
+                  <i data-lucide="linkedin" class="w-6 h-6 text-blue-600" aria-hidden="true"></i>
+                </div>
+                <span class="font-medium text-dark-blue">LinkedIn</span>
+                <span class="text-sm text-gray-500 mt-1">Connect with me</span>
+              </a>
+
+              <a
+                href="#"
+                class="flex flex-col items-center p-6 card hover:shadow-md hover:-translate-y-1 transition-all group"
+              >
+                <div class="w-12 h-12 bg-violet-100 rounded-full flex items-center justify-center mb-4 group-hover:bg-violet-200 transition-colors">
+                  <i data-lucide="calendar" class="w-6 h-6 text-violet-600" aria-hidden="true"></i>
+                </div>
+                <span class="font-medium text-dark-blue">Book a Call</span>
+                <span class="text-sm text-gray-500 mt-1">15-min intro chat</span>
+              </a>
+            </div>
+
+            <p class="mt-12 text-gray-500 text-sm">
+              No obligation. I will share a clear next-step recommendation based
+              on your needs.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <footer class="bg-dark-blue text-light-text/40 py-8 text-center text-sm border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4">
+          <p>&copy; 2025 Mark Bartha. All rights reserved.</p>
+        </div>
+      </footer>
+    </main>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>
+

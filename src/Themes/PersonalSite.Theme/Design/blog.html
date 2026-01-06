@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="en" class="scheme-light scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Insights and Resources - Blog</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Figtree:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/tailwind.generated.css" />
+  </head>
+  <body class="bg-light-bg text-dark-blue font-sans antialiased">
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-dark-blue/95 backdrop-blur-md shadow-lg py-4">
+      <div class="page-container">
+        <div class="flex items-center justify-between">
+          <a
+            href="home.html"
+            class="text-2xl font-bold text-white font-figtree tracking-tight"
+          >
+            Mark Bartha
+          </a>
+
+          <div class="hidden md:flex items-center space-x-8" aria-label="Primary">
+            <a
+              href="home.html"
+              class="text-sm font-medium text-light-text/80 hover:text-light-blue transition-colors"
+            >
+              Home
+            </a>
+            <a
+              href="home.html#services"
+              class="text-sm font-medium text-light-text/80 hover:text-light-blue transition-colors"
+            >
+              Services
+            </a>
+            <a
+              href="home.html#work"
+              class="text-sm font-medium text-light-text/80 hover:text-light-blue transition-colors"
+            >
+              Case Studies
+            </a>
+            <a
+              href="home.html#about"
+              class="text-sm font-medium text-light-text/80 hover:text-light-blue transition-colors"
+            >
+              About
+            </a>
+            <a
+              href="blog.html"
+              class="text-sm font-medium text-light-text/80 hover:text-light-blue transition-colors text-light-blue"
+            >
+              Blog
+            </a>
+            <a
+              href="contact.html"
+              class="btn btn-primary btn-sm"
+            >
+              Contact
+            </a>
+          </div>
+
+          <details class="md:hidden">
+            <summary class="list-none text-white p-2 cursor-pointer">
+              <span class="sr-only">Toggle menu</span>
+              <i data-lucide="menu" class="w-6 h-6" aria-hidden="true"></i>
+            </summary>
+            <div class="mt-4 border-t border-white/10 pt-4 space-y-4">
+              <a
+                href="home.html"
+                class="block py-2 text-lg font-medium text-light-text hover:text-light-blue transition-colors"
+              >
+                Home
+              </a>
+              <a
+                href="home.html#services"
+                class="block py-2 text-lg font-medium text-light-text hover:text-light-blue transition-colors"
+              >
+                Services
+              </a>
+              <a
+                href="home.html#work"
+                class="block py-2 text-lg font-medium text-light-text hover:text-light-blue transition-colors"
+              >
+                Case Studies
+              </a>
+              <a
+                href="home.html#about"
+                class="block py-2 text-lg font-medium text-light-text hover:text-light-blue transition-colors"
+              >
+                About
+              </a>
+              <a
+                href="blog.html"
+                class="block py-2 text-lg font-medium text-light-text hover:text-light-blue transition-colors text-light-blue"
+              >
+                Blog
+              </a>
+              <div class="pt-2">
+                <a
+                  href="contact.html"
+                  class="btn btn-primary btn-sm w-full"
+                >
+                  Contact
+                </a>
+              </div>
+            </div>
+          </details>
+        </div>
+      </div>
+    </nav>
+
+    <main class="min-h-screen w-full overflow-x-hidden bg-light-bg">
+      <section class="hero-backdrop w-full bg-dark-blue text-light-text pt-32 pb-20">
+        <div class="page-container relative z-10">
+          <div class="max-w-3xl">
+            <span class="pill mb-6">
+              Blog
+            </span>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-hero mb-6 tracking-tight text-balance">
+              Insights and Resources
+            </h1>
+            <p class="text-lg md:text-xl text-light-text/80 max-w-2xl leading-relaxed">
+              Practical guides on building content platforms, managing B2B
+              websites, and scaling your knowledge hub.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-20 bg-light-bg">
+        <div class="page-container">
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <a href="blog-post.html" class="block h-full">
+              <article class="card transition-shadow duration-300 hover:shadow-md overflow-hidden flex flex-col h-full group">
+                <div class="aspect-video w-full bg-gray-100 relative overflow-hidden">
+                  <div class="absolute inset-0 bg-linear-to-br from-dark-blue/5 to-dark-blue/10 group-hover:scale-105 transition-transform duration-500"></div>
+                  <div class="absolute top-4 left-4">
+                    <span class="tag">
+                      Strategy
+                    </span>
+                  </div>
+                </div>
+
+                <div class="p-6 flex flex-col flex-1">
+                  <div class="flex items-center text-xs text-gray-500 mb-3 space-x-4 font-mono">
+                    <div class="flex items-center">
+                      <i data-lucide="calendar" class="w-3 h-3 mr-1.5" aria-hidden="true"></i>
+                      Dec 15, 2024
+                    </div>
+                    <div class="flex items-center">
+                      <i data-lucide="clock" class="w-3 h-3 mr-1.5" aria-hidden="true"></i>
+                      8 min read
+                    </div>
+                  </div>
+
+                  <h3 class="text-xl font-bold text-dark-blue mb-3 group-hover:text-light-blue transition-colors line-clamp-2">
+                    When your B2B site stops being just a website
+                  </h3>
+
+                  <p class="text-gray-600 text-sm leading-relaxed mb-6 line-clamp-3 flex-1">
+                    Most B2B companies start with a simple website. But as you grow,
+                    that website becomes a bottleneck. Here is how to recognize the
+                    signs and what to do next.
+                  </p>
+
+                  <div class="mt-auto pt-4 border-t border-gray-100">
+                    <span class="text-sm font-bold text-dark-blue group-hover:text-light-blue transition-colors flex items-center">
+                      Read article
+                      <i data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" aria-hidden="true"></i>
+                    </span>
+                  </div>
+                </div>
+              </article>
+            </a>
+
+            <a href="blog-post.html" class="block h-full">
+              <article class="card transition-shadow duration-300 hover:shadow-md overflow-hidden flex flex-col h-full group">
+                <div class="aspect-video w-full bg-gray-100 relative overflow-hidden">
+                  <div class="absolute inset-0 bg-linear-to-br from-dark-blue/5 to-dark-blue/10 group-hover:scale-105 transition-transform duration-500"></div>
+                  <div class="absolute top-4 left-4">
+                    <span class="tag">
+                      Content
+                    </span>
+                  </div>
+                </div>
+
+                <div class="p-6 flex flex-col flex-1">
+                  <div class="flex items-center text-xs text-gray-500 mb-3 space-x-4 font-mono">
+                    <div class="flex items-center">
+                      <i data-lucide="calendar" class="w-3 h-3 mr-1.5" aria-hidden="true"></i>
+                      Dec 10, 2024
+                    </div>
+                    <div class="flex items-center">
+                      <i data-lucide="clock" class="w-3 h-3 mr-1.5" aria-hidden="true"></i>
+                      6 min read
+                    </div>
+                  </div>
+
+                  <h3 class="text-xl font-bold text-dark-blue mb-3 group-hover:text-light-blue transition-colors line-clamp-2">
+                    How to structure case studies for trust and leads
+                  </h3>
+
+                  <p class="text-gray-600 text-sm leading-relaxed mb-6 line-clamp-3 flex-1">
+                    Case studies are powerful, but only if structured correctly.
+                    Learn the framework that converts prospects into qualified leads.
+                  </p>
+
+                  <div class="mt-auto pt-4 border-t border-gray-100">
+                    <span class="text-sm font-bold text-dark-blue group-hover:text-light-blue transition-colors flex items-center">
+                      Read article
+                      <i data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" aria-hidden="true"></i>
+                    </span>
+                  </div>
+                </div>
+              </article>
+            </a>
+
+            <a href="blog-post.html" class="block h-full">
+              <article class="card transition-shadow duration-300 hover:shadow-md overflow-hidden flex flex-col h-full group">
+                <div class="aspect-video w-full bg-gray-100 relative overflow-hidden">
+                  <div class="absolute inset-0 bg-linear-to-br from-dark-blue/5 to-dark-blue/10 group-hover:scale-105 transition-transform duration-500"></div>
+                  <div class="absolute top-4 left-4">
+                    <span class="tag">
+                      Knowledge
+                    </span>
+                  </div>
+                </div>
+
+                <div class="p-6 flex flex-col flex-1">
+                  <div class="flex items-center text-xs text-gray-500 mb-3 space-x-4 font-mono">
+                    <div class="flex items-center">
+                      <i data-lucide="calendar" class="w-3 h-3 mr-1.5" aria-hidden="true"></i>
+                      Dec 5, 2024
+                    </div>
+                    <div class="flex items-center">
+                      <i data-lucide="clock" class="w-3 h-3 mr-1.5" aria-hidden="true"></i>
+                      7 min read
+                    </div>
+                  </div>
+
+                  <h3 class="text-xl font-bold text-dark-blue mb-3 group-hover:text-light-blue transition-colors line-clamp-2">
+                    Knowledge base vs help center vs docs: what to build first
+                  </h3>
+
+                  <p class="text-gray-600 text-sm leading-relaxed mb-6 line-clamp-3 flex-1">
+                    These terms are often used interchangeably, but they serve
+                    different purposes. Here is how to decide what your team needs.
+                  </p>
+
+                  <div class="mt-auto pt-4 border-t border-gray-100">
+                    <span class="text-sm font-bold text-dark-blue group-hover:text-light-blue transition-colors flex items-center">
+                      Read article
+                      <i data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" aria-hidden="true"></i>
+                    </span>
+                  </div>
+                </div>
+              </article>
+            </a>
+
+            <a href="blog-post.html" class="block h-full">
+              <article class="card transition-shadow duration-300 hover:shadow-md overflow-hidden flex flex-col h-full group">
+                <div class="aspect-video w-full bg-gray-100 relative overflow-hidden">
+                  <div class="absolute inset-0 bg-linear-to-br from-dark-blue/5 to-dark-blue/10 group-hover:scale-105 transition-transform duration-500"></div>
+                  <div class="absolute top-4 left-4">
+                    <span class="tag">
+                      Technical
+                    </span>
+                  </div>
+                </div>
+
+                <div class="p-6 flex flex-col flex-1">
+                  <div class="flex items-center text-xs text-gray-500 mb-3 space-x-4 font-mono">
+                    <div class="flex items-center">
+                      <i data-lucide="calendar" class="w-3 h-3 mr-1.5" aria-hidden="true"></i>
+                      Nov 28, 2024
+                    </div>
+                    <div class="flex items-center">
+                      <i data-lucide="clock" class="w-3 h-3 mr-1.5" aria-hidden="true"></i>
+                      10 min read
+                    </div>
+                  </div>
+
+                  <h3 class="text-xl font-bold text-dark-blue mb-3 group-hover:text-light-blue transition-colors line-clamp-2">
+                    CMS migration without chaos: a phased roadmap
+                  </h3>
+
+                  <p class="text-gray-600 text-sm leading-relaxed mb-6 line-clamp-3 flex-1">
+                    Migrating your CMS does not have to be a nightmare. Follow this
+                    phased approach to minimize risk and downtime.
+                  </p>
+
+                  <div class="mt-auto pt-4 border-t border-gray-100">
+                    <span class="text-sm font-bold text-dark-blue group-hover:text-light-blue transition-colors flex items-center">
+                      Read article
+                      <i data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" aria-hidden="true"></i>
+                    </span>
+                  </div>
+                </div>
+              </article>
+            </a>
+
+            <a href="blog-post.html" class="block h-full">
+              <article class="card transition-shadow duration-300 hover:shadow-md overflow-hidden flex flex-col h-full group">
+                <div class="aspect-video w-full bg-gray-100 relative overflow-hidden">
+                  <div class="absolute inset-0 bg-linear-to-br from-dark-blue/5 to-dark-blue/10 group-hover:scale-105 transition-transform duration-500"></div>
+                  <div class="absolute top-4 left-4">
+                    <span class="tag">
+                      Strategy
+                    </span>
+                  </div>
+                </div>
+
+                <div class="p-6 flex flex-col flex-1">
+                  <div class="flex items-center text-xs text-gray-500 mb-3 space-x-4 font-mono">
+                    <div class="flex items-center">
+                      <i data-lucide="calendar" class="w-3 h-3 mr-1.5" aria-hidden="true"></i>
+                      Nov 20, 2024
+                    </div>
+                    <div class="flex items-center">
+                      <i data-lucide="clock" class="w-3 h-3 mr-1.5" aria-hidden="true"></i>
+                      5 min read
+                    </div>
+                  </div>
+
+                  <h3 class="text-xl font-bold text-dark-blue mb-3 group-hover:text-light-blue transition-colors line-clamp-2">
+                    Content audit checklist for B2B websites
+                  </h3>
+
+                  <p class="text-gray-600 text-sm leading-relaxed mb-6 line-clamp-3 flex-1">
+                    Before rebuilding your website, you need to know what you have.
+                    Use this checklist to audit your content effectively.
+                  </p>
+
+                  <div class="mt-auto pt-4 border-t border-gray-100">
+                    <span class="text-sm font-bold text-dark-blue group-hover:text-light-blue transition-colors flex items-center">
+                      Read article
+                      <i data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" aria-hidden="true"></i>
+                    </span>
+                  </div>
+                </div>
+              </article>
+            </a>
+
+            <a href="blog-post.html" class="block h-full">
+              <article class="card transition-shadow duration-300 hover:shadow-md overflow-hidden flex flex-col h-full group">
+                <div class="aspect-video w-full bg-gray-100 relative overflow-hidden">
+                  <div class="absolute inset-0 bg-linear-to-br from-dark-blue/5 to-dark-blue/10 group-hover:scale-105 transition-transform duration-500"></div>
+                  <div class="absolute top-4 left-4">
+                    <span class="tag">
+                      Knowledge
+                    </span>
+                  </div>
+                </div>
+
+                <div class="p-6 flex flex-col flex-1">
+                  <div class="flex items-center text-xs text-gray-500 mb-3 space-x-4 font-mono">
+                    <div class="flex items-center">
+                      <i data-lucide="calendar" class="w-3 h-3 mr-1.5" aria-hidden="true"></i>
+                      Nov 15, 2024
+                    </div>
+                    <div class="flex items-center">
+                      <i data-lucide="clock" class="w-3 h-3 mr-1.5" aria-hidden="true"></i>
+                      6 min read
+                    </div>
+                  </div>
+
+                  <h3 class="text-xl font-bold text-dark-blue mb-3 group-hover:text-light-blue transition-colors line-clamp-2">
+                    Why your support team needs a knowledge hub
+                  </h3>
+
+                  <p class="text-gray-600 text-sm leading-relaxed mb-6 line-clamp-3 flex-1">
+                    Support teams waste hours answering the same questions. A
+                    knowledge hub changes that. Here is how to build one.
+                  </p>
+
+                  <div class="mt-auto pt-4 border-t border-gray-100">
+                    <span class="text-sm font-bold text-dark-blue group-hover:text-light-blue transition-colors flex items-center">
+                      Read article
+                      <i data-lucide="arrow-right" class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" aria-hidden="true"></i>
+                    </span>
+                  </div>
+                </div>
+              </article>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-24 bg-light-bg">
+        <div class="page-container max-w-4xl text-center">
+          <h2 class="text-3xl md:text-5xl font-bold text-dark-blue mb-6 text-balance">
+            Ready to make your content platform predictable again?
+          </h2>
+          <p class="text-lg text-dark-blue/70 mb-10">
+            No obligation. I will share a clear next-step recommendation based on
+            your current situation.
+          </p>
+
+          <div class="flex flex-col items-center gap-4">
+            <a
+              href="contact.html"
+              class="btn btn-primary btn-lg w-full sm:w-auto"
+            >
+              Book a strategy call
+              <i data-lucide="arrow-right" class="ml-2 h-4 w-4" aria-hidden="true"></i>
+            </a>
+            <p class="text-sm text-dark-blue/50">Direct access to Mark's calendar</p>
+          </div>
+        </div>
+      </section>
+
+      <footer class="bg-dark-blue text-light-text/40 py-8 text-center text-sm border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4">
+          <p>&copy; 2025 Mark Bartha. All rights reserved.</p>
+        </div>
+      </footer>
+    </main>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>
+

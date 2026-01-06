@@ -1,0 +1,133 @@
+@import "tailwindcss" source(none);
+@source "../*.html";
+@source "../styles/*.css";
+@source not "../styles/tailwind.generated.css";
+
+@theme {
+  --color-dark-blue: #151927;
+  --color-dark-panel: #1a1f30;
+  --color-light-blue: #20B7F3;
+  --color-light-blue-strong: #1aa3d9;
+  --color-light-bg: #edeef7;
+  --color-light-text: #dddfed;
+
+  --aspect-4-5: 4 / 5;
+
+  --leading-hero: 1.1;
+
+  --font-sans: "DM Sans", sans-serif;
+  --font-mono: "DM Mono", monospace;
+  --font-figtree: "Figtree", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-figtree);
+}
+
+@layer base {
+  code,
+  pre {
+    @apply font-mono;
+  }
+}
+summary::-webkit-details-marker {
+  display: none;
+}
+
+@utility page-container {
+  @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+}
+
+@utility form-field {
+  @apply w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-light-blue focus:ring-2 focus:ring-light-blue/20 outline-none transition-all font-sans placeholder:text-gray-400;
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border-2 border-transparent font-medium no-underline transition-colors duration-200 cursor-pointer focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-light-blue disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-primary {
+    @apply bg-light-blue text-dark-blue hover:bg-light-blue-strong;
+  }
+
+  .btn-outline {
+    @apply border-dark-blue text-dark-blue hover:bg-dark-blue hover:text-white;
+  }
+
+  .btn-ghost {
+    @apply text-light-blue hover:bg-light-blue/10;
+  }
+
+  .btn-ghost-inverse {
+    @apply text-white border-white/20 hover:bg-white/10 hover:border-white/40;
+  }
+
+  .btn-sm {
+    @apply px-4 py-2 text-sm;
+  }
+
+  .btn-md {
+    @apply px-6 py-3 text-base;
+  }
+
+  .btn-lg {
+    @apply px-8 py-4 text-lg;
+  }
+
+  .hero-backdrop {
+    @apply relative overflow-hidden;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    &::before {
+      top: 0;
+      right: 0;
+      width: 33.333333%;
+      height: 100%;
+      background: linear-gradient(
+        to left,
+        color-mix(in oklab, var(--color-light-blue) 5%, transparent),
+        transparent
+      );
+    }
+
+    &::after {
+      bottom: 0;
+      left: 0;
+      width: 25%;
+      height: 50%;
+      background: linear-gradient(
+        to top,
+        color-mix(in oklab, var(--color-light-blue) 5%, transparent),
+        transparent
+      );
+    }
+  }
+
+  .card {
+    @apply bg-white border border-gray-100 rounded-xl shadow-xs;
+  }
+
+  .card-compact {
+    @apply bg-white border border-gray-100 rounded-lg shadow-xs;
+  }
+
+  .card-dark {
+    @apply bg-white/5 border border-white/10 rounded-xl p-6 transition-colors duration-300 hover:bg-white/10;
+  }
+
+  .pill {
+    @apply inline-block px-3 py-1 rounded-full bg-light-blue/10 text-light-blue border border-light-blue/20 font-mono text-sm;
+  }
+
+  .tag {
+    @apply inline-block px-3 py-1 rounded-full bg-light-blue/10 text-light-blue border border-light-blue/20 text-xs font-bold uppercase tracking-wider;
+  }
+}

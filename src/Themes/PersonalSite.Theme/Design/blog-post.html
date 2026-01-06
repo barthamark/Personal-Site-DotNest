@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en" class="scheme-light scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Case Study Frameworks - Blog Post</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Figtree:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/tailwind.generated.css" />
+  </head>
+  <body class="bg-white text-dark-blue font-sans antialiased">
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-dark-blue/95 backdrop-blur-md shadow-lg py-4">
+      <div class="page-container">
+        <div class="flex items-center justify-between">
+          <a
+            href="home.html"
+            class="text-2xl font-bold text-white font-figtree tracking-tight"
+          >
+            Mark Bartha
+          </a>
+
+          <div class="hidden md:flex items-center space-x-8" aria-label="Primary">
+            <a
+              href="home.html"
+              class="text-sm font-medium text-light-text/80 hover:text-light-blue transition-colors"
+            >
+              Home
+            </a>
+            <a
+              href="home.html#services"
+              class="text-sm font-medium text-light-text/80 hover:text-light-blue transition-colors"
+            >
+              Services
+            </a>
+            <a
+              href="home.html#work"
+              class="text-sm font-medium text-light-text/80 hover:text-light-blue transition-colors"
+            >
+              Case Studies
+            </a>
+            <a
+              href="home.html#about"
+              class="text-sm font-medium text-light-text/80 hover:text-light-blue transition-colors"
+            >
+              About
+            </a>
+            <a href="blog.html" class="text-sm font-medium text-light-text/80 hover:text-light-blue transition-colors text-light-blue">
+              Blog
+            </a>
+            <a href="contact.html" class="btn btn-primary btn-sm">Contact</a>
+          </div>
+
+          <details class="md:hidden">
+            <summary class="list-none text-white p-2 cursor-pointer">
+              <span class="sr-only">Toggle menu</span>
+              <i data-lucide="menu" class="w-6 h-6" aria-hidden="true"></i>
+            </summary>
+            <div class="mt-4 border-t border-white/10 pt-4 space-y-4">
+              <a
+                href="home.html"
+                class="block py-2 text-lg font-medium text-light-text hover:text-light-blue transition-colors"
+              >
+                Home
+              </a>
+              <a
+                href="home.html#services"
+                class="block py-2 text-lg font-medium text-light-text hover:text-light-blue transition-colors"
+              >
+                Services
+              </a>
+              <a
+                href="home.html#work"
+                class="block py-2 text-lg font-medium text-light-text hover:text-light-blue transition-colors"
+              >
+                Case Studies
+              </a>
+              <a
+                href="home.html#about"
+                class="block py-2 text-lg font-medium text-light-text hover:text-light-blue transition-colors"
+              >
+                About
+              </a>
+              <a href="blog.html" class="block py-2 text-lg font-medium text-light-text hover:text-light-blue transition-colors text-light-blue">
+                Blog
+              </a>
+              <div class="pt-2">
+                <a href="contact.html" class="btn btn-primary btn-sm w-full">
+                  Contact
+                </a>
+              </div>
+            </div>
+          </details>
+        </div>
+      </div>
+    </nav>
+
+    <main class="min-h-screen w-full bg-white">
+      <header class="pt-32 pb-12 bg-dark-blue text-light-text">
+        <div class="page-container max-w-3xl">
+          <a
+            href="blog.html"
+            class="inline-flex items-center text-light-blue hover:text-white transition-colors mb-8 text-sm font-medium"
+          >
+            <i data-lucide="arrow-left" class="w-4 h-4 mr-2" aria-hidden="true"></i>
+            Back to Blog
+          </a>
+
+          <div class="mb-6">
+            <span class="tag">
+              Content Strategy
+            </span>
+          </div>
+
+          <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight text-balance">
+            How to structure case studies for trust and leads
+          </h1>
+
+          <div class="flex flex-wrap items-center gap-6 text-sm text-light-text/60 font-mono">
+            <div class="flex items-center">
+              <i data-lucide="user" class="w-4 h-4 mr-2" aria-hidden="true"></i>
+              Mark Bartha
+            </div>
+            <div class="flex items-center">
+              <i data-lucide="calendar" class="w-4 h-4 mr-2" aria-hidden="true"></i>
+              Dec 10, 2024
+            </div>
+            <div class="flex items-center">
+              <i data-lucide="clock" class="w-4 h-4 mr-2" aria-hidden="true"></i>
+              6 min read
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <article class="page-container max-w-3xl py-16">
+        <div class="text-dark-blue text-pretty">
+          <p class="text-xl leading-relaxed text-gray-600 mb-12 font-medium">
+            Case studies are powerful, but only if structured correctly. Most
+            B2B companies treat them as simple success stories, missing the
+            opportunity to convert prospects into qualified leads. Here is the
+            framework that changes that.
+          </p>
+
+          <h2 class="text-3xl font-bold text-dark-blue mt-12 mb-6">
+            Why case studies matter
+          </h2>
+
+          <p class="text-lg leading-relaxed text-gray-700 mb-6">
+            In the B2B world, trust is the currency of conversion. Your
+            prospects are not just buying a product; they are buying a
+            partnership and a promise of results. A well-structured case study
+            acts as <span class="font-bold">social proof</span> on steroids.
+          </p>
+
+          <p class="text-lg leading-relaxed text-gray-700 mb-6">
+            According to recent surveys, over 70% of B2B buyers cite case
+            studies as the most influential content format during their
+            decision-making process. Yet, many are dry, technical documents that
+            fail to tell a compelling story.
+          </p>
+
+          <blockquote class="border-l-4 border-light-blue pl-6 my-10 italic text-xl text-gray-800 bg-gray-50 py-4 pr-4 rounded-r-lg">
+            "A great case study does not just say 'we are great'. It says 'we
+            understand your problem and here is exactly how we solve it'."
+          </blockquote>
+
+          <h2 class="text-3xl font-bold text-dark-blue mt-12 mb-6">
+            The anatomy of a great case study
+          </h2>
+
+          <p class="text-lg leading-relaxed text-gray-700 mb-6">
+            To move beyond generic praise, your case studies need a structured
+            narrative arc. We recommend the "Challenge-Approach-Results"
+            framework, but with a twist.
+          </p>
+
+          <h3 class="text-2xl font-bold text-dark-blue mt-8 mb-4">
+            1. The Challenge
+          </h3>
+
+          <p class="text-lg leading-relaxed text-gray-700 mb-4">
+            Do not just list the problem. Dive deep into the pain. What was at
+            stake?
+          </p>
+
+          <ul class="list-disc list-outside ml-6 mb-8 space-y-2 text-lg text-gray-700 marker:text-light-blue">
+            <li>
+              <strong>Operational inefficiencies:</strong> How much time was
+              being wasted?
+            </li>
+            <li>
+              <strong>Lost revenue:</strong> What was the financial impact of
+              the problem?
+            </li>
+            <li>
+              <strong>Team morale:</strong> How was the issue affecting the
+              people involved?
+            </li>
+          </ul>
+
+          <h3 class="text-2xl font-bold text-dark-blue mt-8 mb-4">
+            2. The Approach
+          </h3>
+
+          <p class="text-lg leading-relaxed text-gray-700 mb-4">
+            This is where you show your expertise. Be specific about the
+            solution.
+          </p>
+
+          <ol class="list-decimal list-outside ml-6 mb-8 space-y-2 text-lg text-gray-700 marker:text-dark-blue marker:font-bold">
+            <li>
+              We conducted a thorough audit of the existing infrastructure.
+            </li>
+            <li>
+              We identified three key bottlenecks in the deployment pipeline.
+            </li>
+            <li>
+              We implemented a custom CI/CD solution using industry-standard
+              tools.
+            </li>
+          </ol>
+
+          <figure class="my-10">
+            <div class="bg-gray-100 rounded-xl overflow-hidden shadow-md aspect-video flex items-center justify-center relative">
+              <div class="absolute inset-0 bg-linear-to-br from-dark-blue/5 to-dark-blue/10"></div>
+              <span class="text-gray-400 font-mono">
+                Dashboard Screenshot Placeholder
+              </span>
+            </div>
+            <figcaption class="text-center text-sm text-gray-500 italic mt-3">
+              Figure 1: The analytics dashboard showing pre-optimization metrics
+              vs. post-optimization results.
+            </figcaption>
+          </figure>
+
+          <h2 class="text-3xl font-bold text-dark-blue mt-12 mb-6">
+            Implementation tips
+          </h2>
+
+          <p class="text-lg leading-relaxed text-gray-700 mb-6">
+            When building your case study page, you might want to include
+            dynamic data. Here is a simple example of how you might structure
+            the data object in your code using
+            <code class="bg-gray-100 px-2 py-1 rounded font-mono text-sm text-dark-blue">
+              TypeScript
+            </code>
+            .
+          </p>
+
+          <div class="bg-dark-blue text-light-text p-6 rounded-lg font-mono text-sm overflow-x-auto mb-8 shadow-lg">
+            <pre>interface CaseStudy {
+  id: string;
+  client: string;
+  industry: string;
+  metrics: {
+    label: string;
+    value: string;
+    growth: number;
+  }[];
+  tags: string[];
+}</pre>
+          </div>
+
+          <p class="text-lg leading-relaxed text-gray-700 mb-6">
+            This structure allows you to programmatically generate the "Results"
+            section of your case study cards, ensuring consistency across your
+            site. You can learn more about structured content in our
+            <a
+              href="#"
+              class="text-light-blue underline hover:text-light-blue-strong transition-colors"
+            >
+              guide to content modeling
+            </a>
+            .
+          </p>
+
+          <h4 class="text-xl font-bold text-dark-blue mt-8 mb-4">
+            Common mistakes to avoid
+          </h4>
+
+          <p class="text-lg leading-relaxed text-gray-700 mb-6">
+            Avoid using jargon that your audience might not understand. Keep it
+            simple, direct, and focused on the <em>business outcomes</em> rather
+            than just the technical implementation details.
+          </p>
+
+          <hr class="border-gray-200 my-12" />
+
+          <p class="text-lg leading-relaxed text-gray-700 mb-8">
+            Ready to transform your case studies? Start by auditing your
+            existing success stories and applying this framework. The results
+            will speak for themselves.
+          </p>
+        </div>
+
+        <div class="mt-16 pt-8 border-t border-gray-100">
+          <div class="flex items-start gap-6">
+            <div class="w-16 h-16 rounded-full overflow-hidden flex-shrink-0 bg-gray-200">
+              <img
+                src="https://markbartha.com/mediatheme/images/profile.jpg"
+                alt="Mark Bartha"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-dark-blue mb-2">About the Author</h3>
+              <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                Mark Bartha is an independent software partner helping B2B teams
+                build scalable content platforms. He specializes in bridging the
+                gap between technical complexity and editorial needs.
+              </p>
+              <div class="flex gap-4">
+                <a
+                  href="#"
+                  class="btn btn-ghost btn-sm pl-0 hover:bg-transparent hover:text-dark-blue"
+                >
+                  <i data-lucide="linkedin" class="w-4 h-4" aria-hidden="true"></i>
+                  LinkedIn
+                </a>
+                <a
+                  href="#"
+                  class="btn btn-ghost btn-sm pl-0 hover:bg-transparent hover:text-dark-blue"
+                >
+                  <i data-lucide="twitter" class="w-4 h-4" aria-hidden="true"></i>
+                  Twitter
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <section class="py-24 bg-light-bg">
+        <div class="page-container max-w-4xl text-center">
+          <h2 class="text-3xl md:text-5xl font-bold text-dark-blue mb-6 text-balance">
+            Ready to make your content platform predictable again?
+          </h2>
+          <p class="text-lg text-dark-blue/70 mb-10">
+            No obligation. I will share a clear next-step recommendation based on
+            your current situation.
+          </p>
+
+          <div class="flex flex-col items-center gap-4">
+            <a href="contact.html" class="btn btn-primary btn-lg w-full sm:w-auto">
+              Book a strategy call
+              <i data-lucide="arrow-right" class="ml-2 h-4 w-4" aria-hidden="true"></i>
+            </a>
+            <p class="text-sm text-dark-blue/50">Direct access to Mark's calendar</p>
+          </div>
+        </div>
+      </section>
+
+      <footer class="bg-dark-blue text-light-text/40 py-8 text-center text-sm border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4">
+          <p>&copy; 2025 Mark Bartha. All rights reserved.</p>
+        </div>
+      </footer>
+    </main>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>
+
