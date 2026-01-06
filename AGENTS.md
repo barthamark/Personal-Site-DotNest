@@ -13,7 +13,7 @@ This repo is a DotNest Core SDK Orchard Core site with a custom Liquid theme and
 
 ## Theme workflow
 - Global layout: `src/Themes/PersonalSite.Theme/Views/Layout.liquid` renders header/footer directly and pulls the main menu via `Content["alias:main-menu"]`.
-- Menu rendering uses `item.DisplayText` and `item.Content.LinkMenuItemPart.Url` only (no fallbacks to `TitlePart.Title`).
+- Menu rendering uses `item.DisplayText` and `item.LinkMenuItemPart.Url` only (no fallbacks to `TitlePart.Title`).
 - Tailwind v4 is delivered via `@tailwindcss/browser@4`; tokens/utilities live in `src/Themes/PersonalSite.Theme/Views/Tailwind__Styles.liquid`.
 - The legacy Tailwind v3 pipeline (`src/Themes/PersonalSite.Theme/Assets/css/site.css` and `src/Themes/PersonalSite.Theme/Targets/RunTailwindBuild.targets`) is unused while CDN is active.
 - Page output is driven by BagPart blocks: `src/Themes/PersonalSite.Theme/Views/Content__Page.liquid`.

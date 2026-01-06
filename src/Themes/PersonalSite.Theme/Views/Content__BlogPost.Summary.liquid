@@ -8,7 +8,6 @@
     {% assign image_path = blog_post.Image.Paths[0] %}
 {% endif %}
 {% assign tag_terms = blog_post.Tags | taxonomy_terms %}
-{% assign primary_tag = tag_terms | first %}
 {% assign published_date = content_item.PublishedUtc | default: content_item.CreatedUtc %}
 
 <a href="{{ content_item | display_url }}" class="block h-full">
@@ -18,11 +17,13 @@
                 <img src="{{ image_path | asset_url }}" alt="{{ title | escape }}" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" loading="lazy">
             {% endif %}
             <div class="absolute inset-0 bg-linear-to-br from-dark-blue/5 to-dark-blue/10 transition-transform duration-500 group-hover:scale-105"></div>
-            {% if primary_tag %}
-                <div class="absolute top-4 left-4">
-                    <span class="tag">
-                        {{ primary_tag.DisplayText }}
-                    </span>
+            {% if tag_terms and tag_terms.size > 0 %}
+                <div class="absolute top-4 left-4 flex flex-wrap gap-2">
+                    {% for term in tag_terms %}
+                        <span class="tag">
+                            {{ term.DisplayText }}
+                        </span>
+                    {% endfor %}
                 </div>
             {% endif %}
         </div>

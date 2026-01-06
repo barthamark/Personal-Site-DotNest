@@ -44,7 +44,7 @@
                     {% if menu_items %}
                         {% for item in menu_items %}
                             {% assign link_text = item.DisplayText %}
-                            {% assign raw_url = item.Content.LinkMenuItemPart.Url %}
+                            {% assign raw_url = item.LinkMenuItemPart.Url %}
                             {% assign link_url = raw_url %}
                             {% if raw_url %}
                                 {% assign url_prefix = raw_url | slice: 0, 2 %}
@@ -52,7 +52,7 @@
                                     {% assign link_url = raw_url | href %}
                                 {% endif %}
                             {% endif %}
-                            {% assign link_target = item.Content.LinkMenuItemPart.Target %}
+                            {% assign link_target = item.LinkMenuItemPart.Target %}
 
                             {% if link_text == "Contact" %}
                                 <a href="{{ link_url }}" class="btn btn-primary btn-sm"{% if link_target %} target="{{ link_target }}"{% endif %}>
@@ -76,7 +76,7 @@
                         {% if menu_items %}
                             {% for item in menu_items %}
                                 {% assign link_text = item.DisplayText %}
-                                {% assign raw_url = item.Content.LinkMenuItemPart.Url %}
+                                {% assign raw_url = item.LinkMenuItemPart.Url %}
                                 {% assign link_url = raw_url %}
                                 {% if raw_url %}
                                     {% assign url_prefix = raw_url | slice: 0, 2 %}
@@ -84,7 +84,7 @@
                                         {% assign link_url = raw_url | href %}
                                     {% endif %}
                                 {% endif %}
-                                {% assign link_target = item.Content.LinkMenuItemPart.Target %}
+                                {% assign link_target = item.LinkMenuItemPart.Target %}
 
                                 {% if link_text == "Contact" %}
                                     <div class="pt-2">
