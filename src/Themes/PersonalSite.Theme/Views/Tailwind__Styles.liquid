@@ -216,11 +216,26 @@ summary::-webkit-details-marker {
   }
 
   .rich-text ul {
-    @apply list-disc list-outside ml-6 mb-6 space-y-2;
+    @apply list-disc list-outside ml-0 pl-6 mb-6 space-y-2;
   }
 
   .rich-text ol {
-    @apply list-decimal list-outside ml-6 mb-6 space-y-2;
+    @apply list-none pl-0 mb-6 space-y-2;
+    counter-reset: rich-text-ol;
+  }
+
+  .rich-text ol > li {
+    @apply relative pl-6;
+    counter-increment: rich-text-ol;
+  }
+
+  .rich-text ol > li::before {
+    content: counter(rich-text-ol) ".";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: inherit;
+    @apply tabular-nums;
   }
 
   .rich-text li {
@@ -241,6 +256,10 @@ summary::-webkit-details-marker {
 
   .rich-text pre {
     @apply font-mono text-sm bg-light-blue/10 p-4 rounded-lg overflow-x-auto mb-6;
+  }
+
+  .rich-text pre code {
+    @apply bg-transparent p-0 rounded-none text-inherit;
   }
 
   .rich-text table {

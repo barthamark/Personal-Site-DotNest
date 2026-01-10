@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "isRoot": true,
+  "tools": {
+    "lombiq.hosting.mediatheme.deployer": {
+      "version": "8.0.0",
+      "commands": [
+        "media-theme-deploy"
+      ],
+      "rollForward": false
+    }
+  }
+}

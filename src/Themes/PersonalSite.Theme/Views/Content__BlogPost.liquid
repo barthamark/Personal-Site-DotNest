@@ -21,9 +21,16 @@
         {% if tag_terms and tag_terms.size > 0 %}
             <div class="mb-6 flex flex-wrap gap-2">
                 {% for term in tag_terms %}
-                    <span class="tag">
-                        {{ term.DisplayText }}
-                    </span>
+                    {% assign term_url = term | display_url %}
+                    {% if term_url != blank %}
+                        <a href="{{ term_url }}" class="tag">
+                            {{ term.DisplayText }}
+                        </a>
+                    {% else %}
+                        <span class="tag">
+                            {{ term.DisplayText }}
+                        </span>
+                    {% endif %}
                 {% endfor %}
             </div>
         {% endif %}

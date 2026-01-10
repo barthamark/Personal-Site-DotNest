@@ -1341,6 +1341,25 @@
                   "Position": "0"
                 }
               }
+            },
+            {
+              "PartName": "AutoroutePart",
+              "Name": "AutoroutePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "1"
+                },
+                "AutoroutePartSettings": {
+                  "AllowAbsolutePath": false,
+                  "AllowCustomPath": true,
+                  "AllowDisabled": false,
+                  "AllowRouteContainedItems": false,
+                  "AllowUpdatePath": true,
+                  "ManageContainedItemRoutes": true,
+                  "Pattern": "{{ ContentItem.DisplayText | slugify }}",
+                  "ShowHomepageOption": false
+                }
+              }
             }
           ]
         },
@@ -3342,8 +3361,18 @@
           "CreatedUtc": "2025-01-01T00:00:00Z",
           "Owner": "admin",
           "Author": "admin",
+          "AliasPart": {
+            "Alias": "tags"
+          },
           "TitlePart": {
             "Title": "Tags"
+          },
+          "AutoroutePart": {
+            "SetHomepage": false,
+            "Disabled": false,
+            "RouteContainedItems": true,
+            "Absolute": false,
+            "Path": "tags"
           },
           "TaxonomyPart": {
             "TermContentType": "Tag",
@@ -3355,6 +3384,13 @@
                 "DisplayText": "Strategy",
                 "Latest": true,
                 "Published": true,
+                "AutoroutePart": {
+                  "SetHomepage": false,
+                  "Disabled": false,
+                  "RouteContainedItems": false,
+                  "Absolute": false,
+                  "Path": "strategy"
+                },
                 "TitlePart": {
                   "Title": "Strategy"
                 },
@@ -3370,6 +3406,13 @@
                 "DisplayText": "Content",
                 "Latest": true,
                 "Published": true,
+                "AutoroutePart": {
+                  "SetHomepage": false,
+                  "Disabled": false,
+                  "RouteContainedItems": false,
+                  "Absolute": false,
+                  "Path": "content"
+                },
                 "TitlePart": {
                   "Title": "Content"
                 },
@@ -3385,6 +3428,13 @@
                 "DisplayText": "Knowledge",
                 "Latest": true,
                 "Published": true,
+                "AutoroutePart": {
+                  "SetHomepage": false,
+                  "Disabled": false,
+                  "RouteContainedItems": false,
+                  "Absolute": false,
+                  "Path": "knowledge"
+                },
                 "TitlePart": {
                   "Title": "Knowledge"
                 },
@@ -3400,6 +3450,13 @@
                 "DisplayText": "Technical",
                 "Latest": true,
                 "Published": true,
+                "AutoroutePart": {
+                  "SetHomepage": false,
+                  "Disabled": false,
+                  "RouteContainedItems": false,
+                  "Absolute": false,
+                  "Path": "technical"
+                },
                 "TitlePart": {
                   "Title": "Technical"
                 },
@@ -3415,6 +3472,13 @@
                 "DisplayText": "Process",
                 "Latest": true,
                 "Published": true,
+                "AutoroutePart": {
+                  "SetHomepage": false,
+                  "Disabled": false,
+                  "RouteContainedItems": false,
+                  "Absolute": false,
+                  "Path": "process"
+                },
                 "TitlePart": {
                   "Title": "Process"
                 },

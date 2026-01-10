@@ -46,3 +46,11 @@ This repo is a DotNest Core SDK Orchard Core site with a custom Liquid theme and
 
 ## Local development
 - Run the site from `src/DotNest.Core.SDK.Web` with `dotnet run`.
+
+## Deployment script
+- `Deploy-MediaTheme.ps1` runs `dotnet restore`, `dotnet tool restore`, then `dotnet tool run media-theme-deploy`.
+- The deploy key comes from `-Key`, `MEDIA_THEME_DEPLOY_KEY`, or a gitignored `.env` file.
+- For CI/CD, set `MEDIA_THEME_DEPLOY_KEY` as a secret or pass `-Key`; use `-SkipRestore` if restore is handled elsewhere.
+
+## Git workflow
+- Do not commit changes; the user handles all commits.
