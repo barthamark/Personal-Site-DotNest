@@ -1,0 +1,28 @@
+{% assign options_part = Model.ContentItem.Content.ContactOptions %}
+{% assign heading = options_part.Heading.Text %}
+{% assign note = options_part.Note.Text %}
+{% assign options = Model.ContentItem.Content.Options.ContentItems %}
+
+<section class="px-4 pb-24 pt-16">
+    <div class="max-w-2xl mx-auto">
+        <div class="text-center">
+            {% if heading != blank %}
+                <h2 class="text-xl font-bold text-dark-blue mb-8">{{ heading }}</h2>
+            {% endif %}
+
+            {% if options %}
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    {% for option in options %}
+                        {{ option | shape_build_display: "Detail" | shape_render }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+            {% if note != blank %}
+                <p class="mt-12 text-gray-500 text-sm">
+                    {{ note }}
+                </p>
+            {% endif %}
+        </div>
+    </div>
+</section>

@@ -1,0 +1,48 @@
+{% assign option = Model.ContentItem.Content.ContactOption %}
+{% assign link_url = option.Link.Url %}
+{% assign link_target = option.Link.Target %}
+{% assign title = option.Title.Text %}
+{% assign subtitle = option.Subtitle.Text %}
+{% assign icon = option.Icon.Text %}
+{% assign accent = option.Accent.Text | default: "LightBlue" %}
+
+{% assign bubble_class = "bg-light-blue/10 group-hover:bg-light-blue/20" %}
+{% assign icon_class = "text-light-blue" %}
+{% case accent %}
+    {% when "Blue" %}
+        {% assign bubble_class = "bg-blue-100 group-hover:bg-blue-200" %}
+        {% assign icon_class = "text-blue-600" %}
+    {% when "Violet" %}
+        {% assign bubble_class = "bg-violet-100 group-hover:bg-violet-200" %}
+        {% assign icon_class = "text-violet-600" %}
+{% endcase %}
+
+{% if link_url != blank %}
+    <a href="{{ link_url }}" class="flex flex-col items-center p-6 card hover:shadow-md hover:-translate-y-1 transition-all group"{% if link_target %} target="{{ link_target }}"{% endif %}>
+        <div class="w-12 h-12 {{ bubble_class }} rounded-full flex items-center justify-center mb-4 transition-colors">
+            {% if icon != blank %}
+                <i data-lucide="{{ icon }}" class="w-6 h-6 {{ icon_class }}" aria-hidden="true"></i>
+            {% endif %}
+        </div>
+        {% if title != blank %}
+            <span class="font-medium text-dark-blue">{{ title }}</span>
+        {% endif %}
+        {% if subtitle != blank %}
+            <span class="text-sm text-gray-500 mt-1">{{ subtitle }}</span>
+        {% endif %}
+    </a>
+{% else %}
+    <div class="flex flex-col items-center p-6 card">
+        <div class="w-12 h-12 {{ bubble_class }} rounded-full flex items-center justify-center mb-4">
+            {% if icon != blank %}
+                <i data-lucide="{{ icon }}" class="w-6 h-6 {{ icon_class }}" aria-hidden="true"></i>
+            {% endif %}
+        </div>
+        {% if title != blank %}
+            <span class="font-medium text-dark-blue">{{ title }}</span>
+        {% endif %}
+        {% if subtitle != blank %}
+            <span class="text-sm text-gray-500 mt-1">{{ subtitle }}</span>
+        {% endif %}
+    </div>
+{% endif %}

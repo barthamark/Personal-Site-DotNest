@@ -552,6 +552,84 @@
           ]
         },
         {
+          "Name": "ContactPage",
+          "DisplayName": "Contact Page",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Creatable": true,
+              "Listable": true,
+              "Draftable": true,
+              "Versionable": true,
+              "Securable": true
+            }
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "TitlePart",
+              "Name": "TitlePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            },
+            {
+              "PartName": "AutoroutePart",
+              "Name": "AutoroutePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "1"
+                },
+                "AutoroutePartSettings": {
+                  "AllowCustomPath": true,
+                  "Pattern": "{{ Model.ContentItem | display_text | slugify }}",
+                  "ShowHomepageOption": true
+                }
+              }
+            },
+            {
+              "PartName": "BagPart",
+              "Name": "Hero",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "DisplayName": "Hero",
+                  "Position": "2"
+                },
+                  "BagPartSettings": {
+                    "ContainedStereotypes": [
+                      "Widget"
+                    ]
+                  }
+                }
+              },
+            {
+              "PartName": "BagPart",
+              "Name": "After",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "DisplayName": "After",
+                  "Position": "3"
+                },
+                "BagPartSettings": {
+                  "ContainedStereotypes": [
+                    "Block"
+                  ]
+                }
+              }
+            },
+            {
+              "PartName": "ContactForm",
+              "Name": "ContactForm",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "DisplayName": "Form Settings",
+                  "Position": "4"
+                }
+              }
+            }
+          ]
+        },
+        {
           "Name": "Hero",
           "DisplayName": "Hero",
           "Settings": {
@@ -901,6 +979,175 @@
                   "ContainedContentTypes": [
                     "Callout"
                   ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "ContactHero",
+          "DisplayName": "Contact Hero",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Creatable": false,
+              "Listable": false,
+              "Draftable": false,
+              "Versionable": false,
+              "Securable": false,
+              "Stereotype": "Block"
+            }
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "TitlePart",
+              "Name": "TitlePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            },
+            {
+              "PartName": "BlockCommon",
+              "Name": "BlockCommon",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "1"
+                }
+              }
+            },
+            {
+              "PartName": "ContactHero",
+              "Name": "ContactHero",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "2"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "ContactForm",
+          "DisplayName": "Contact Form",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Creatable": false,
+              "Listable": false,
+              "Draftable": false,
+              "Versionable": false,
+              "Securable": false,
+              "Stereotype": "Block"
+            }
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "TitlePart",
+              "Name": "TitlePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            },
+            {
+              "PartName": "BlockCommon",
+              "Name": "BlockCommon",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "1"
+                }
+              }
+            },
+            {
+              "PartName": "ContactForm",
+              "Name": "ContactForm",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "2"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "ContactOptions",
+          "DisplayName": "Contact Options",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Creatable": false,
+              "Listable": false,
+              "Draftable": false,
+              "Versionable": false,
+              "Securable": false,
+              "Stereotype": "Block"
+            }
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "TitlePart",
+              "Name": "TitlePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            },
+            {
+              "PartName": "BlockCommon",
+              "Name": "BlockCommon",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "1"
+                }
+              }
+            },
+            {
+              "PartName": "ContactOptions",
+              "Name": "ContactOptions",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "2"
+                }
+              }
+            },
+            {
+              "PartName": "BagPart",
+              "Name": "Options",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "DisplayName": "Options",
+                  "Position": "3"
+                },
+                "BagPartSettings": {
+                  "ContainedContentTypes": [
+                    "ContactOption"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "ContactOption",
+          "DisplayName": "Contact Option",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Creatable": false,
+              "Listable": false,
+              "Draftable": false,
+              "Versionable": false,
+              "Securable": false,
+              "Stereotype": "Widget"
+            }
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "ContactOption",
+              "Name": "ContactOption",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
                 }
               }
             }
@@ -2198,6 +2445,207 @@
           ]
         },
         {
+          "Name": "ContactHero",
+          "Settings": {},
+          "ContentPartFieldDefinitionRecords": [
+            {
+              "FieldName": "TextField",
+              "Name": "PillText",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Pill text",
+                  "Position": "0"
+                }
+              }
+            },
+            {
+              "FieldName": "TextField",
+              "Name": "Title",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Title",
+                  "Position": "1"
+                }
+              }
+            },
+            {
+              "FieldName": "TextField",
+              "Name": "Highlight",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Highlight",
+                  "Position": "2"
+                }
+              }
+            },
+            {
+              "FieldName": "TextField",
+              "Name": "TitleSuffix",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Title suffix",
+                  "Position": "3"
+                }
+              }
+            },
+            {
+              "FieldName": "TextField",
+              "Name": "Body",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Body",
+                  "Position": "4"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "ContactForm",
+          "Settings": {},
+          "ContentPartFieldDefinitionRecords": [
+            {
+              "FieldName": "TextField",
+              "Name": "PostUrl",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Post URL",
+                  "Position": "0"
+                }
+              }
+            },
+            {
+              "FieldName": "TextField",
+              "Name": "SubmitText",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Submit text",
+                  "Position": "1"
+                }
+              }
+            },
+              {
+                "FieldName": "HtmlField",
+                "Name": "PrivacyText",
+                "Settings": {
+                  "ContentPartFieldSettings": {
+                    "DisplayName": "Privacy text",
+                    "Editor": "Trumbowyg",
+                    "Position": "2"
+                  },
+                  "HtmlFieldSettings": {
+                    "SanitizeHtml": true
+                  },
+                  "HtmlFieldTrumbowygEditorSettings": {
+                    "Options": "{ \"autogrow\": true, \"removeformatPasted\": true, \"btns\": [[\"strong\",\"em\"],[\"link\"],[\"unorderedList\",\"orderedList\"],[\"removeformat\"]] }",
+                    "InsertMediaWithUrl": false
+                  }
+                }
+              }
+          ]
+        },
+        {
+          "Name": "ContactOptions",
+          "Settings": {},
+          "ContentPartFieldDefinitionRecords": [
+            {
+              "FieldName": "TextField",
+              "Name": "Heading",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Heading",
+                  "Position": "0"
+                }
+              }
+            },
+            {
+              "FieldName": "TextField",
+              "Name": "Note",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Note",
+                  "Position": "1"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "ContactOption",
+          "Settings": {},
+          "ContentPartFieldDefinitionRecords": [
+            {
+              "FieldName": "LinkField",
+              "Name": "Link",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Link",
+                  "Position": "0"
+                }
+              }
+            },
+            {
+              "FieldName": "TextField",
+              "Name": "Title",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Title",
+                  "Position": "1"
+                }
+              }
+            },
+            {
+              "FieldName": "TextField",
+              "Name": "Subtitle",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Subtitle",
+                  "Position": "2"
+                }
+              }
+            },
+            {
+              "FieldName": "TextField",
+              "Name": "Icon",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Icon",
+                  "Position": "3"
+                }
+              }
+            },
+            {
+              "FieldName": "TextField",
+              "Name": "Accent",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Accent",
+                  "Editor": "PredefinedList",
+                  "Position": "4"
+                },
+                "TextFieldPredefinedListEditorSettings": {
+                  "Options": [
+                    {
+                      "name": "LightBlue",
+                      "value": "LightBlue"
+                    },
+                    {
+                      "name": "Blue",
+                      "value": "Blue"
+                    },
+                    {
+                      "name": "Violet",
+                      "value": "Violet"
+                    }
+                  ],
+                  "Editor": 1,
+                  "DefaultValue": "LightBlue"
+                }
+              }
+            }
+          ]
+        },
+        {
           "Name": "StackSection",
           "Settings": {},
           "ContentPartFieldDefinitionRecords": [
@@ -3350,6 +3798,183 @@
           }
         },
         {
+          "ContentItemId": "4t9n2c7k1m8r5p3v6s0b2q9w1x",
+          "ContentItemVersionId": "[js:uuid()]",
+          "ContentType": "ContactPage",
+          "DisplayText": "Contact",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2025-01-01T00:00:00Z",
+          "PublishedUtc": "2025-01-01T00:00:00Z",
+          "CreatedUtc": "2025-01-01T00:00:00Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "TitlePart": {
+            "Title": "Contact"
+          },
+          "AutoroutePart": {
+            "SetHomepage": false,
+            "Disabled": false,
+            "RouteContainedItems": false,
+            "Absolute": false,
+            "Path": "contact"
+          },
+            "Hero": {
+              "ContentItems": [
+                {
+                  "ContentItemId": "[js:uuid()]",
+                  "ContentItemVersionId": "[js:uuid()]",
+                  "ContentType": "Badge",
+                  "DisplayText": "Get in touch",
+                  "Latest": true,
+                  "Published": true,
+                  "Badge": {
+                    "Text": {
+                      "Text": "Get in touch"
+                    }
+                  }
+                },
+                {
+                  "ContentItemId": "[js:uuid()]",
+                  "ContentItemVersionId": "[js:uuid()]",
+                  "ContentType": "RichText",
+                  "DisplayText": "Contact Hero Copy",
+                  "Latest": true,
+                  "Published": true,
+                  "RichText": {
+                    "Text": {
+                      "Html": "<h1>Let's talk about your <mark>content platform</mark></h1><p>Book a strategy call or send me a message. I reply within 1 business day.</p>"
+                    }
+                  }
+                }
+              ]
+            },
+          "After": {
+            "ContentItems": [
+              {
+                "ContentItemId": "[js:uuid()]",
+                "ContentItemVersionId": "[js:uuid()]",
+                "ContentType": "ContactOptions",
+                "DisplayText": "Contact Options",
+                "Latest": true,
+                "Published": true,
+                "TitlePart": {
+                  "Title": "Contact Options"
+                },
+                "BlockCommon": {
+                  "Theme": {
+                    "Text": "LightGray"
+                  }
+                },
+                "ContactOptions": {
+                  "Heading": {
+                    "Text": "Prefer a different approach?"
+                  },
+                  "Note": {
+                    "Text": "No obligation. I will share a clear next-step recommendation based on your needs."
+                  }
+                },
+                "Options": {
+                  "ContentItems": [
+                    {
+                      "ContentItemId": "[js:uuid()]",
+                      "ContentItemVersionId": "[js:uuid()]",
+                      "ContentType": "ContactOption",
+                      "DisplayText": "Email Me",
+                      "Latest": true,
+                      "Published": true,
+                      "ContactOption": {
+                        "Link": {
+                          "Url": "mailto:hello@markbartha.com",
+                          "Text": "",
+                          "Target": null
+                        },
+                        "Title": {
+                          "Text": "Email Me"
+                        },
+                        "Subtitle": {
+                          "Text": "hello@markbartha.com"
+                        },
+                        "Icon": {
+                          "Text": "mail"
+                        },
+                        "Accent": {
+                          "Text": "LightBlue"
+                        }
+                      }
+                    },
+                    {
+                      "ContentItemId": "[js:uuid()]",
+                      "ContentItemVersionId": "[js:uuid()]",
+                      "ContentType": "ContactOption",
+                      "DisplayText": "LinkedIn",
+                      "Latest": true,
+                      "Published": true,
+                      "ContactOption": {
+                        "Link": {
+                          "Url": "#",
+                          "Text": "",
+                          "Target": null
+                        },
+                        "Title": {
+                          "Text": "LinkedIn"
+                        },
+                        "Subtitle": {
+                          "Text": "Connect with me"
+                        },
+                        "Icon": {
+                          "Text": "linkedin"
+                        },
+                        "Accent": {
+                          "Text": "Blue"
+                        }
+                      }
+                    },
+                    {
+                      "ContentItemId": "[js:uuid()]",
+                      "ContentItemVersionId": "[js:uuid()]",
+                      "ContentType": "ContactOption",
+                      "DisplayText": "Book a Call",
+                      "Latest": true,
+                      "Published": true,
+                      "ContactOption": {
+                        "Link": {
+                          "Url": "#",
+                          "Text": "",
+                          "Target": null
+                        },
+                        "Title": {
+                          "Text": "Book a Call"
+                        },
+                        "Subtitle": {
+                          "Text": "15-min intro chat"
+                        },
+                        "Icon": {
+                          "Text": "calendar"
+                        },
+                        "Accent": {
+                          "Text": "Violet"
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "ContactForm": {
+            "PostUrl": {
+              "Text": ""
+            },
+            "SubmitText": {
+              "Text": "Send Message"
+            },
+            "PrivacyText": {
+              "Html": "I respect your privacy. No spam, ever."
+            }
+          }
+        },
+        {
           "ContentItemId": "4cjjtn6m0rvpay8qh54yzwy0ds",
           "ContentItemVersionId": "[js:uuid()]",
           "ContentType": "Taxonomy",
@@ -4384,7 +5009,7 @@
                   "Title": "Contact"
                 },
                 "LinkMenuItemPart": {
-                  "Url": "#contact",
+                  "Url": "/contact",
                   "Target": null
                 }
               }
