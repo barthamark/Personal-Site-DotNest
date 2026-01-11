@@ -125,6 +125,7 @@
                   "ReasonItem",
                   "RichText",
                   "ServiceCard",
+                  "SplitSection",
                   "StackSection",
                   "Stat",
                   "Tag",
@@ -705,6 +706,70 @@
                 "BagPartSettings": {
                   "ContainedContentTypes": [
                     "IconText"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "SplitSection",
+          "DisplayName": "Split Section",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Creatable": false,
+              "Listable": false,
+              "Draftable": false,
+              "Versionable": false,
+              "Securable": false,
+              "Stereotype": "Block"
+            }
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "TitlePart",
+              "Name": "TitlePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            },
+            {
+              "PartName": "BlockCommon",
+              "Name": "BlockCommon",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "1"
+                }
+              }
+            },
+            {
+              "PartName": "BagPart",
+              "Name": "LeftColumn",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "DisplayName": "Left Column",
+                  "Position": "2"
+                },
+                "BagPartSettings": {
+                  "ContainedStereotypes": [
+                    "Widget"
+                  ]
+                }
+              }
+            },
+            {
+              "PartName": "BagPart",
+              "Name": "RightColumn",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "DisplayName": "Right Column",
+                  "Position": "3"
+                },
+                "BagPartSettings": {
+                  "ContainedStereotypes": [
+                    "Widget"
                   ]
                 }
               }
