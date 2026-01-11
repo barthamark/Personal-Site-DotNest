@@ -1,0 +1,22 @@
+{% assign link = Model.ContentItem.Content.ArrowLink.Link %}
+
+{% if link and link.Url != blank %}
+    {% assign raw_url = link.Url %}
+    {% assign link_url = raw_url %}
+    {% if raw_url %}
+        {% assign url_prefix = raw_url | slice: 0, 2 %}
+        {% if url_prefix == "~/" %}
+            {% assign link_url = raw_url | href %}
+        {% endif %}
+    {% endif %}
+
+    {% assign link_text = link.Text %}
+    {% if link_text == blank %}
+        {% assign link_text = link_url %}
+    {% endif %}
+
+    <a href="{{ link_url }}" class="inline-flex items-center text-sm font-medium transition-colors group theme-dark-blue:text-light-text theme-dark-panel:text-light-text theme-light-gray:text-dark-blue theme-white:text-dark-blue hover:text-light-blue"{% if link.Target %} target="{{ link.Target }}"{% endif %}>
+        {{ link_text }}
+        <i data-lucide="arrow-right" class="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" aria-hidden="true"></i>
+    </a>
+{% endif %}

@@ -5,6 +5,7 @@ import { HomePage } from './pages/HomePage';
 import { BlogPage } from './pages/BlogPage';
 import { BlogPostPage } from './pages/BlogPostPage';
 import { ContactPage } from './pages/ContactPage';
+import { AboutPage } from './pages/AboutPage';
 export function App() {
   return <Router>
       <Routes>
@@ -12,6 +13,7 @@ export function App() {
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/blog/:slug" element={<BlogPostPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/about" element={<AboutPage />} />
       </Routes>
     </Router>;
 }
@@ -227,6 +229,186 @@ export function BlogPostCard({ post, index }: BlogPostCardProps) {
         </div>
       </motion.article>
     </Link>
+  )
+}
+
+```
+```components/CaseStudiesSection.tsx
+import React from 'react'
+import { motion } from 'framer-motion'
+import { ArrowRight, Quote } from 'lucide-react'
+import { Button } from './ui/Button'
+const caseStudies = [
+  {
+    title: 'Enterprise Knowledge Hub Migration',
+    client: 'B2B SaaS Company',
+    description:
+      'Migrated a legacy help center to a modern, searchable knowledge platform. Reduced support tickets by 40% in the first quarter.',
+    tags: ['Orchard CMS', 'Content Migration', 'Search'],
+  },
+  {
+    title: 'Marketing Website Rebuild',
+    client: 'Growing Tech Startup',
+    description:
+      'Rebuilt marketing site with modular content blocks and a CMS that the marketing team could confidently manage without developer help.',
+    tags: ['React', 'Headless CMS', 'Performance'],
+  },
+]
+const testimonials = [
+  {
+    quote:
+      "Márk didn't just build us a website—he built us a system we can actually maintain. Our marketing team finally feels confident making updates without breaking things.",
+    author: 'Sarah Chen',
+    role: 'VP of Marketing',
+    company: 'TechCorp',
+  },
+  {
+    quote:
+      "The knowledge hub Márk built reduced our support load significantly. More importantly, he trained our team so well that we've been able to expand it ourselves.",
+    author: 'James Wilson',
+    role: 'Head of Customer Success',
+    company: 'CloudSolutions',
+  },
+]
+export function CaseStudiesSection() {
+  return (
+    <section className="py-24 bg-[#edeef7]" id="work">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: 20,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{
+              once: true,
+            }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-[#151927] mb-4 font-figtree">
+              Recent Projects & Client Feedback
+            </h2>
+            <p className="text-lg text-[#151927]/70 max-w-2xl mx-auto">
+              A selection of recent work and what clients have to say about the
+              results.
+            </p>
+          </motion.div>
+        </div>
+
+        {/* Case Studies */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+          {caseStudies.map((study, index) => (
+            <motion.div
+              key={index}
+              initial={{
+                opacity: 0,
+                y: 20,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              viewport={{
+                once: true,
+              }}
+              transition={{
+                delay: index * 0.1,
+              }}
+              className="bg-white rounded-xl p-8 shadow-sm border border-gray-100 hover:shadow-md transition-shadow group cursor-pointer"
+            >
+              <div className="flex flex-wrap gap-2 mb-4">
+                {study.tags.map((tag, idx) => (
+                  <span
+                    key={idx}
+                    className="px-3 py-1 rounded-full bg-[#20B7F3]/10 text-[#20B7F3] text-xs font-medium border border-[#20B7F3]/20"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              <h3 className="text-xl font-bold text-[#151927] mb-2 font-figtree group-hover:text-[#20B7F3] transition-colors">
+                {study.title}
+              </h3>
+              <p className="text-sm text-[#151927]/50 mb-3 font-mono">
+                {study.client}
+              </p>
+              <p className="text-[#151927]/70 leading-relaxed text-sm mb-4">
+                {study.description}
+              </p>
+              <div className="inline-flex items-center text-sm font-medium text-[#20B7F3] group-hover:text-[#1aa3d9] transition-colors">
+                Read case study
+                <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Testimonials */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          {testimonials.map((testimonial, index) => (
+            <motion.div
+              key={index}
+              initial={{
+                opacity: 0,
+                y: 20,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              viewport={{
+                once: true,
+              }}
+              transition={{
+                delay: 0.2 + index * 0.1,
+              }}
+              className="bg-white rounded-xl p-8 shadow-sm border border-gray-100 relative"
+            >
+              <Quote className="w-8 h-8 text-[#20B7F3]/20 mb-4" />
+              <p className="text-[#151927]/80 leading-relaxed mb-6 italic">
+                "{testimonial.quote}"
+              </p>
+              <div className="border-t border-gray-100 pt-4">
+                <p className="font-bold text-[#151927] font-figtree">
+                  {testimonial.author}
+                </p>
+                <p className="text-sm text-[#151927]/60">
+                  {testimonial.role}, {testimonial.company}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* CTA */}
+        <motion.div
+          initial={{
+            opacity: 0,
+          }}
+          whileInView={{
+            opacity: 1,
+          }}
+          viewport={{
+            once: true,
+          }}
+          transition={{
+            delay: 0.4,
+          }}
+          className="text-center"
+        >
+          <p className="text-sm text-[#151927]/60 mb-6">
+            More case studies and detailed results available upon request
+          </p>
+          <Button variant="primary" size="lg">
+            Discuss your project
+          </Button>
+        </motion.div>
+      </div>
+    </section>
   )
 }
 
@@ -494,10 +676,187 @@ export function CTASection() {
 }
 
 ```
+```components/CTAWithFAQSection.tsx
+import React, { useState } from 'react'
+import { motion } from 'framer-motion'
+import { Button } from './ui/Button'
+import { Plus, Minus } from 'lucide-react'
+import { useNavigate } from 'react-router-dom'
+const faqs = [
+  {
+    question: 'How do you handle project scope and pricing?',
+    answer:
+      'I start with a discovery call to understand your needs, then provide a fixed-price proposal for a defined scope. For larger projects, I break them into phases so you can see value early and adjust as needed.',
+  },
+  {
+    question: "What's your typical timeline?",
+    answer:
+      "Most projects take 8-12 weeks from kickoff to launch, depending on complexity. I work in 2-week sprints with regular check-ins, so you'll see progress throughout.",
+  },
+  {
+    question: 'Do you work with internal teams?',
+    answer:
+      'Absolutely. I often collaborate with your marketing, design, or development teams. I can also train your team to manage the platform after launch.',
+  },
+  {
+    question: 'What if we need ongoing support?',
+    answer:
+      'I offer monthly retainers for ongoing maintenance, improvements, and support. Many clients start with a project, then move to a retainer for peace of mind.',
+  },
+  {
+    question: 'How many projects do you take at once?',
+    answer:
+      'I limit myself to 2-3 active projects at a time. This ensures I can give each client the focus and responsiveness they deserve.',
+  },
+]
+export function CTAWithFAQSection() {
+  const [openIndex, setOpenIndex] = useState<number | null>(0)
+  const navigate = useNavigate()
+  return (
+    <section className="py-24 bg-[#151927] text-[#dddfed]">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* CTA */}
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 20,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+          }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 font-figtree leading-tight">
+            Ready to build a content platform that actually works?
+          </h2>
+          <p className="text-lg text-[#dddfed]/70 mb-8 leading-relaxed max-w-2xl mx-auto">
+            Let's talk about your content challenges and what success looks
+            like. No pressure, no sales pitch—just a straightforward
+            conversation.
+          </p>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button
+              variant="primary"
+              size="lg"
+              onClick={() => navigate('/contact')}
+            >
+              Book a strategy call
+            </Button>
+            <Button
+              variant="ghost"
+              size="lg"
+              className="text-white hover:bg-white/10 hover:text-white border-white/20 hover:border-white/40"
+              onClick={() => navigate('/about')}
+            >
+              Learn more about me
+            </Button>
+          </div>
+        </motion.div>
+
+        {/* FAQ */}
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 20,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+          }}
+          transition={{
+            delay: 0.2,
+          }}
+        >
+          <h3 className="text-xl font-bold text-white mb-8 text-center font-figtree">
+            Common questions
+          </h3>
+
+          <div className="border border-white/10 rounded-lg overflow-hidden">
+            {faqs.map((faq, index) => (
+              <div key={index}>
+                <button
+                  onClick={() =>
+                    setOpenIndex(openIndex === index ? null : index)
+                  }
+                  className="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-white/5 transition-colors"
+                >
+                  <span className="font-medium text-white pr-4">
+                    {faq.question}
+                  </span>
+                  {openIndex === index ? (
+                    <Minus className="w-5 h-5 text-[#20B7F3] flex-shrink-0" />
+                  ) : (
+                    <Plus className="w-5 h-5 text-[#dddfed]/40 flex-shrink-0" />
+                  )}
+                </button>
+                {openIndex === index && (
+                  <motion.div
+                    initial={{
+                      height: 0,
+                      opacity: 0,
+                    }}
+                    animate={{
+                      height: 'auto',
+                      opacity: 1,
+                    }}
+                    exit={{
+                      height: 0,
+                      opacity: 0,
+                    }}
+                    transition={{
+                      duration: 0.2,
+                    }}
+                    className="px-6 pb-4 border-t border-white/10"
+                  >
+                    <p className="text-[#dddfed]/70 leading-relaxed pt-4">
+                      {faq.answer}
+                    </p>
+                  </motion.div>
+                )}
+                {index < faqs.length - 1 && (
+                  <div className="border-t border-white/10" />
+                )}
+              </div>
+            ))}
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  )
+}
+
+```
 ```components/Hero.tsx
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Button } from './ui/Button'
+import { Code2, Database, BookOpen, Wrench } from 'lucide-react'
+const expertise = [
+  {
+    icon: Code2,
+    text: '10+ years building .NET web platforms',
+  },
+  {
+    icon: Database,
+    text: 'Deep CMS + content modeling expertise',
+  },
+  {
+    icon: BookOpen,
+    text: 'Content-heavy B2B sites + knowledge hubs',
+  },
+  {
+    icon: Wrench,
+    text: 'Long-term maintainability focus',
+  },
+]
 export function Hero() {
   return (
     <section className="relative w-full bg-[#151927] text-[#dddfed] pt-32 pb-20 lg:pt-40 lg:pb-32 overflow-hidden">
@@ -560,17 +919,20 @@ export function Hero() {
                 delay: 0.4,
                 duration: 0.6,
               }}
-              className="border-t border-white/10 pt-8"
+              className="border-t border-white/10 pt-6"
             >
               <p className="text-sm font-mono text-[#dddfed]/60 mb-4 uppercase tracking-wider">
-                Trusted by growing B2B teams across UK, EU, and North America
+                Background & Expertise
               </p>
-              <div className="flex flex-wrap gap-x-8 gap-y-4 text-[#dddfed]/40 font-bold text-lg items-center">
-                <span>TECHFLOW</span>
-                <span>DATASTREAM</span>
-                <span>NEXUS CORP</span>
-                <span>VENTURE SCALE</span>
-                <span>CLOUD NINE</span>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                {expertise.map((item, index) => (
+                  <div key={index} className="flex items-center gap-2">
+                    <item.icon className="w-4 h-4 text-[#20B7F3] flex-shrink-0" />
+                    <span className="text-sm text-[#dddfed]/70">
+                      {item.text}
+                    </span>
+                  </div>
+                ))}
               </div>
             </motion.div>
           </motion.div>
@@ -635,15 +997,15 @@ const navItems = [
   },
   {
     name: 'Services',
-    href: '#services',
+    href: '/#services',
   },
   {
     name: 'Case Studies',
-    href: '#work',
+    href: '/#work',
   },
   {
     name: 'About',
-    href: '#about',
+    href: '/about',
   },
   {
     name: 'Blog',
@@ -694,7 +1056,7 @@ export function Navigation() {
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
               {navItems.map((item) =>
-                item.href.startsWith('#') ? (
+                item.href.includes('#') ? (
                   <a
                     key={item.name}
                     href={item.href}
@@ -749,7 +1111,7 @@ export function Navigation() {
           >
             <div className="px-4 py-6 space-y-4">
               {navItems.map((item) =>
-                item.href.startsWith('#') ? (
+                item.href.includes('#') ? (
                   <a
                     key={item.name}
                     href={item.href}
@@ -864,34 +1226,36 @@ export function ProblemSection() {
 ```components/ProcessSection.tsx
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Sparkles } from 'lucide-react'
+import { Button } from './ui/Button'
+import { useNavigate } from 'react-router-dom'
 const steps = [
   {
     number: '01',
-    title: 'Discovery & Content Audit',
+    title: 'Align on goals and content reality',
     description:
-      'AI-assisted analysis combined with human expertise to understand your current state and opportunities.',
+      'We clarify what the site needs to achieve (sales, support, hiring) and map the content types, workflows, and constraints.',
   },
   {
     number: '02',
-    title: 'Roadmap & Structure',
+    title: 'Design the content model and structure',
     description:
-      'Defining the information architecture, content types, and technical roadmap for the project.',
+      'Content types, taxonomy, navigation, and reusable components. This is what makes the platform scalable and AI-ready later.',
   },
   {
     number: '03',
-    title: 'Build & Iterate',
+    title: 'Build and ship in increments',
     description:
-      'Developing the modular blocks, templates, and integrations in rapid, transparent sprints.',
+      'A usable slice first, then expand. You get working pages early, not a big-bang launch at the end.',
   },
   {
     number: '04',
-    title: 'Launch & Evolve',
+    title: 'Polish, train, and hand over',
     description:
-      'Thorough testing, team training, and a plan for ongoing improvements and evolution.',
+      'Editor training, documentation, and optional support. If AI features are planned, we add guardrails and measure impact.',
   },
 ]
 export function ProcessSection() {
+  const navigate = useNavigate()
   return (
     <section className="py-24 bg-[#151927] text-[#dddfed]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -909,16 +1273,16 @@ export function ProcessSection() {
           }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            How I work
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 font-figtree">
+            How it works
           </h2>
-          <p className="text-[#dddfed]/70 max-w-2xl mx-auto">
-            A structured, transparent process designed to reduce risk and
-            deliver value at every stage.
+          <p className="text-[#dddfed]/70 max-w-2xl mx-auto text-lg">
+            A straightforward process that keeps scope under control and makes
+            progress visible.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {steps.map((step, index) => (
             <motion.div
               key={index}
@@ -942,7 +1306,7 @@ export function ProcessSection() {
                 {step.number}
               </div>
               <div className="relative z-10">
-                <h3 className="text-xl font-bold text-white mb-3">
+                <h3 className="text-xl font-bold text-white mb-3 font-figtree">
                   {step.title}
                 </h3>
                 <p className="text-[#dddfed]/60 text-sm leading-relaxed">
@@ -956,29 +1320,43 @@ export function ProcessSection() {
         <motion.div
           initial={{
             opacity: 0,
-            scale: 0.95,
+            y: 20,
           }}
           whileInView={{
             opacity: 1,
-            scale: 1,
+            y: 0,
           }}
           viewport={{
             once: true,
           }}
-          className="bg-gradient-to-r from-[#20B7F3]/10 to-transparent border border-[#20B7F3]/20 rounded-xl p-6 flex items-start md:items-center gap-4 max-w-3xl mx-auto"
+          transition={{
+            delay: 0.4,
+          }}
+          className="flex flex-col sm:flex-row gap-4 justify-center items-center"
         >
-          <div className="bg-[#20B7F3]/20 p-2 rounded-lg flex-shrink-0">
-            <Sparkles className="w-5 h-5 text-[#20B7F3]" />
-          </div>
-          <div>
-            <p className="text-sm md:text-base text-[#dddfed]/90">
-              <span className="font-bold text-[#20B7F3]">
-                AI-Assisted Workflow:
-              </span>{' '}
-              I use AI to speed up audits, spot content gaps, and accelerate
-              drafts—then I validate and refine everything with human judgment.
-            </p>
-          </div>
+          <Button
+            variant="primary"
+            size="lg"
+            onClick={() => navigate('/contact')}
+          >
+            Contact me
+          </Button>
+          <Button
+            variant="ghost"
+            size="lg"
+            className="text-white hover:bg-white/10 hover:text-white"
+            onClick={() => {
+              // Scroll to case studies section or navigate to case studies page when available
+              const element = document.getElementById('work')
+              if (element) {
+                element.scrollIntoView({
+                  behavior: 'smooth',
+                })
+              }
+            }}
+          >
+            See case studies
+          </Button>
         </motion.div>
       </div>
     </section>
@@ -1415,97 +1793,291 @@ export function Button({
 }
 
 ```
-```components/WhyMarkSection.tsx
+```components/WhatIBuildSection.tsx
 import React from 'react'
 import { motion } from 'framer-motion'
-import { User, ShieldCheck, MessageSquare, Code2, Wrench } from 'lucide-react'
-const reasons = [
+import { ArrowRight, CheckCircle2 } from 'lucide-react'
+import { Link } from 'react-router-dom'
+const offerings = [
   {
-    icon: User,
-    text: 'Direct senior execution (no hand-offs to juniors)',
+    title: 'Marketing websites + landing pages',
+    description:
+      "Clear messaging, fast pages, and a CMS your team won't fight.",
+    features: [
+      'Modular sections you can reuse',
+      'SEO-friendly structure and performance',
+      'Built for iteration, not one-off launches',
+    ],
   },
   {
-    icon: ShieldCheck,
-    text: 'Clear scope and phased delivery',
+    title: 'Content platforms',
+    description:
+      'For teams publishing regularly and needing structure, workflow, and governance.',
+    features: [
+      'Structured content types and reusable blocks',
+      'Editorial workflow that fits your team',
+      'Taxonomy and content organization that scales',
+    ],
   },
   {
-    icon: MessageSquare,
-    text: 'Predictable communication cadence',
-  },
-  {
-    icon: Code2,
-    text: 'Built for editors, not just developers',
-  },
-  {
-    icon: Wrench,
-    text: 'Long-term maintainability focus',
+    title: 'Knowledge hubs',
+    description:
+      'Help centers and resource libraries that reduce support load and make content easy to find.',
+    features: [
+      'Information architecture + navigation',
+      'Search that actually works',
+      'Optional AI search/chat grounded in your content',
+    ],
   },
 ]
-export function WhyMarkSection() {
+export function WhatIBuildSection() {
   return (
-    <section className="py-24 bg-[#edeef7] text-[#151927]">
+    <section className="py-24 bg-[#edeef7]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="text-center max-w-3xl mx-auto mb-16">
           <motion.div
             initial={{
               opacity: 0,
-              x: -20,
+              y: 20,
             }}
             whileInView={{
               opacity: 1,
-              x: 0,
+              y: 0,
             }}
             viewport={{
               once: true,
             }}
+            transition={{
+              duration: 0.6,
+            }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Why work with an independent consultant?
+            <h2 className="text-3xl md:text-4xl font-bold text-[#151927] mb-4 font-figtree">
+              What I build for B2B teams
             </h2>
-            <p className="text-lg text-[#151927]/70 mb-8">
-              Agencies are great for massive campaigns, but for specialized B2B
-              platforms, you need focus, expertise, and direct accountability.
+            <p className="text-lg text-[#151927]/70 leading-relaxed">
+              Practical, content-heavy websites and knowledge hubs that stay
+              easy to manage as you grow. AI features are optional and only
+              added when they improve the workflow.
             </p>
-            <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
-              <h3 className="font-bold text-xl mb-2">The Solo Advantage</h3>
-              <p className="text-[#151927]/70">
-                When you hire me, you get me. No account managers, no telephone
-                game, just direct collaboration with the person building your
-                solution.
-              </p>
-            </div>
           </motion.div>
+        </div>
 
-          <div className="space-y-6">
-            {reasons.map((reason, index) => (
-              <motion.div
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          {offerings.map((offering, index) => (
+            <motion.div
+              key={index}
+              initial={{
+                opacity: 0,
+                y: 20,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              viewport={{
+                once: true,
+              }}
+              transition={{
+                delay: index * 0.1,
+                duration: 0.5,
+              }}
+              className="bg-white rounded-xl p-8 shadow-sm border border-gray-100 flex flex-col"
+            >
+              <h3 className="text-xl font-bold text-[#151927] mb-3 font-figtree">
+                {offering.title}
+              </h3>
+              <p className="text-[#151927]/70 mb-6 leading-relaxed">
+                {offering.description}
+              </p>
+
+              <ul className="space-y-3 flex-1">
+                {offering.features.map((feature, idx) => (
+                  <li
+                    key={idx}
+                    className="flex items-start text-sm text-[#151927]/70"
+                  >
+                    <CheckCircle2 className="w-5 h-5 text-[#20B7F3] mr-3 flex-shrink-0 mt-0.5" />
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+          ))}
+        </div>
+
+        <motion.div
+          initial={{
+            opacity: 0,
+          }}
+          whileInView={{
+            opacity: 1,
+          }}
+          viewport={{
+            once: true,
+          }}
+          transition={{
+            delay: 0.4,
+          }}
+          className="text-center"
+        >
+          <Link
+            to="/contact"
+            className="inline-flex items-center text-sm font-medium text-[#151927] hover:text-[#20B7F3] transition-colors group"
+          >
+            Want to talk about your site?
+            <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          </Link>
+        </motion.div>
+      </div>
+    </section>
+  )
+}
+
+```
+```components/WhyMarkSection.tsx
+import React from 'react'
+import { motion } from 'framer-motion'
+import { CheckCircle2, Quote } from 'lucide-react'
+const benefits = [
+  {
+    title: 'Direct access, faster decisions',
+    description:
+      'No account managers or hand-offs. You work directly with me, which means faster feedback loops and clearer communication.',
+  },
+  {
+    title: 'Senior expertise without agency overhead',
+    description:
+      'You get enterprise-level experience at a fraction of agency costs. No junior developers learning on your project.',
+  },
+  {
+    title: 'Long-term thinking, not just launch day',
+    description:
+      'I build platforms that your team can maintain and evolve. Training and documentation are included, not afterthoughts.',
+  },
+  {
+    title: 'Focused capacity means better quality',
+    description:
+      'I limit concurrent projects to 2-3 at a time. Your project gets the attention it deserves, not divided focus.',
+  },
+]
+const testimonials = [
+  {
+    quote:
+      "Márk didn't just build us a website—he built us a system we can actually maintain. Our marketing team finally feels confident making updates without breaking things.",
+    author: 'Sarah Chen',
+    role: 'VP of Marketing',
+    company: 'TechCorp',
+  },
+  {
+    quote:
+      "The knowledge hub Márk built reduced our support load significantly. More importantly, he trained our team so well that we've been able to expand it ourselves.",
+    author: 'James Wilson',
+    role: 'Head of Customer Success',
+    company: 'CloudSolutions',
+  },
+]
+export function WhyMarkSection() {
+  return (
+    <section className="py-24 bg-[#edeef7]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 20,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+          }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-3xl md:text-4xl font-bold text-[#151927] mb-4 font-figtree">
+            Why work with an independent consultant?
+          </h2>
+          <p className="text-lg text-[#151927]/70 max-w-2xl mx-auto">
+            You get senior expertise with direct collaboration—no agency
+            overhead, no hand-offs.
+          </p>
+        </motion.div>
+
+        {/* Benefits Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+          {benefits.map((benefit, index) => (
+            <motion.div
+              key={index}
+              initial={{
+                opacity: 0,
+                y: 20,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              viewport={{
+                once: true,
+              }}
+              transition={{
+                delay: index * 0.1,
+              }}
+              className="flex gap-4"
+            >
+              <div className="flex-shrink-0">
+                <CheckCircle2 className="w-6 h-6 text-[#20B7F3]" />
+              </div>
+              <div>
+                <h3 className="text-lg font-bold text-[#151927] mb-2 font-figtree">
+                  {benefit.title}
+                </h3>
+                <p className="text-[#151927]/70 text-sm leading-relaxed">
+                  {benefit.description}
+                </p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Testimonials */}
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 20,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+          }}
+          transition={{
+            delay: 0.4,
+          }}
+        >
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <div
                 key={index}
-                initial={{
-                  opacity: 0,
-                  x: 20,
-                }}
-                whileInView={{
-                  opacity: 1,
-                  x: 0,
-                }}
-                viewport={{
-                  once: true,
-                }}
-                transition={{
-                  delay: index * 0.1,
-                }}
-                className="flex items-center"
+                className="bg-white rounded-xl p-8 shadow-sm border border-gray-100"
               >
-                <div className="w-12 h-12 bg-[#20B7F3]/10 rounded-full flex items-center justify-center mr-6 flex-shrink-0">
-                  <reason.icon className="w-6 h-6 text-[#20B7F3]" />
+                <Quote className="w-8 h-8 text-[#20B7F3]/20 mb-4" />
+                <p className="text-[#151927]/80 leading-relaxed mb-6 italic">
+                  "{testimonial.quote}"
+                </p>
+                <div className="border-t border-gray-100 pt-4">
+                  <p className="font-bold text-[#151927] font-figtree">
+                    {testimonial.author}
+                  </p>
+                  <p className="text-sm text-[#151927]/60">
+                    {testimonial.role}, {testimonial.company}
+                  </p>
                 </div>
-                <span className="text-lg font-medium text-[#151927]">
-                  {reason.text}
-                </span>
-              </motion.div>
+              </div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   )
@@ -1551,6 +2123,321 @@ import { render } from "react-dom";
 import { App } from "./App";
 
 render(<App />, document.getElementById("root"));
+
+```
+```pages/AboutPage.tsx
+import React from 'react'
+import { motion } from 'framer-motion'
+import { Navigation } from '../components/Navigation'
+import { CTASection } from '../components/CTASection'
+import { Button } from '../components/ui/Button'
+import { Code, Users, Lightbulb, ArrowRight, CheckCircle2 } from 'lucide-react'
+export function AboutPage() {
+  return (
+    <main className="min-h-screen w-full bg-[#edeef7]">
+      <Navigation />
+
+      {/* Hero Section */}
+      <section className="bg-[#151927] pt-32 pb-20 lg:pt-40 lg:pb-32 relative overflow-hidden">
+        {/* Background decoration */}
+        <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-[#20B7F3]/5 to-transparent pointer-events-none" />
+        <div className="absolute bottom-0 left-0 w-1/4 h-1/2 bg-gradient-to-t from-[#20B7F3]/5 to-transparent pointer-events-none" />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{
+                opacity: 0,
+                y: 20,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{
+                duration: 0.6,
+              }}
+            >
+              <span className="inline-block py-1 px-3 rounded-full bg-[#20B7F3]/10 text-[#20B7F3] font-mono text-sm mb-6 border border-[#20B7F3]/20">
+                About Me
+              </span>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 font-figtree leading-tight">
+                Hi, I'm Márk.
+              </h1>
+              <p className="text-xl text-[#dddfed]/80 mb-8 leading-relaxed font-dm-sans">
+                I help B2B companies turn their content into a scalable platform
+                that actually works for their team.
+              </p>
+              <p className="text-lg text-[#dddfed]/60 mb-8 leading-relaxed font-dm-sans">
+                I'm an independent software partner with a background in
+                enterprise CMS development. I bridge the gap between complex
+                technical requirements and editorial needs.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{
+                opacity: 0,
+                scale: 0.95,
+              }}
+              animate={{
+                opacity: 1,
+                scale: 1,
+              }}
+              transition={{
+                delay: 0.2,
+                duration: 0.6,
+              }}
+              className="relative"
+            >
+              <div className="absolute inset-0 bg-[#20B7F3]/20 rounded-2xl transform rotate-3 blur-sm" />
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 aspect-[4/5] lg:aspect-square max-w-md mx-auto">
+                <img
+                  src="https://markbartha.com/mediatheme/images/profile.jpg"
+                  alt="Márk Bartha"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Story Section */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
+        <motion.div
+          initial={{
+            opacity: 0,
+            y: 20,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+          }}
+          viewport={{
+            once: true,
+          }}
+          className="space-y-12"
+        >
+          <div>
+            <h2 className="text-3xl font-bold font-figtree text-[#151927] mb-6">
+              My Journey
+            </h2>
+            <div className="prose prose-lg text-gray-600 font-dm-sans">
+              <p>
+                I didn't start out as a content platform specialist. Like many
+                developers, I began building websites—lots of them. But I kept
+                noticing the same pattern: companies would launch a beautiful
+                site, then struggle to maintain it. The CMS was too complex, the
+                structure was too rigid, and the team avoided touching it.
+              </p>
+              <p>
+                That frustration led me to focus deeper on the systems behind
+                the websites. I realized that a website isn't just a collection
+                of pages; it's a living tool for your business.
+              </p>
+            </div>
+          </div>
+
+          {/* Lombiq Highlight */}
+          <div className="bg-white rounded-2xl p-8 md:p-10 shadow-lg border border-gray-100 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-[#20B7F3]/5 rounded-bl-full" />
+
+            <h3 className="text-2xl font-bold font-figtree text-[#151927] mb-4 flex items-center">
+              <span className="w-8 h-8 bg-[#151927] rounded-lg flex items-center justify-center mr-3 text-white text-xs font-mono">
+                L
+              </span>
+              The Lombiq Chapter
+            </h3>
+
+            <div className="prose prose-lg text-gray-600 font-dm-sans mb-6">
+              <p>
+                I spent several years at <strong>Lombiq</strong>, a specialized
+                agency focused on complex content platforms and Orchard CMS.
+                Working with enterprise clients across Europe and North America
+                taught me that the real challenge isn't building a website—it's
+                building a system that grows with your content.
+              </p>
+              <p>
+                At Lombiq, I worked on large-scale platforms where content
+                structure and publishing processes were just as important as the
+                code. I learned to design information architectures that scale,
+                build editorial workflows that make sense, and create systems
+                that non-technical teams can actually use.
+              </p>
+            </div>
+
+            <div className="flex flex-wrap gap-3">
+              <span className="inline-flex items-center px-3 py-1 rounded-full bg-gray-100 text-sm text-gray-700 font-medium">
+                <CheckCircle2 className="w-4 h-4 mr-2 text-[#20B7F3]" />
+                Enterprise CMS
+              </span>
+              <span className="inline-flex items-center px-3 py-1 rounded-full bg-gray-100 text-sm text-gray-700 font-medium">
+                <CheckCircle2 className="w-4 h-4 mr-2 text-[#20B7F3]" />
+                Editorial Workflows
+              </span>
+              <span className="inline-flex items-center px-3 py-1 rounded-full bg-gray-100 text-sm text-gray-700 font-medium">
+                <CheckCircle2 className="w-4 h-4 mr-2 text-[#20B7F3]" />
+                Complex Integrations
+              </span>
+            </div>
+          </div>
+
+          <div>
+            <h3 className="text-2xl font-bold font-figtree text-[#151927] mb-4">
+              Why I Went Independent
+            </h3>
+            <div className="prose prose-lg text-gray-600 font-dm-sans">
+              <p>
+                I went independent because I saw a gap: agencies are great for
+                massive projects, but they come with overhead, hand-offs, and
+                sometimes misalignment. Solo freelancers are affordable but
+                often lack the enterprise experience.
+              </p>
+              <p>
+                I wanted to offer the best of both—senior expertise with direct
+                collaboration. Now, I partner directly with B2B leaders to build
+                content platforms that are robust enough for enterprise needs
+                but agile enough for growing teams.
+              </p>
+            </div>
+          </div>
+        </motion.div>
+      </section>
+
+      {/* Values / Approach */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold font-figtree text-[#151927] mb-4">
+              How I Work
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              My approach is built on transparency, direct collaboration, and a
+              focus on long-term value.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                icon: Users,
+                title: 'Direct Partnership',
+                desc: 'No account managers, no hand-offs. You work directly with me, ensuring clear communication and accountability.',
+              },
+              {
+                icon: Lightbulb,
+                title: 'Business First',
+                desc: 'I start with your business goals, not technical solutions. Code is just a means to an end.',
+              },
+              {
+                icon: Code,
+                title: 'Transparent Process',
+                desc: "Clear roadmaps, regular updates, and no surprises. You'll always know where your project stands.",
+              },
+              {
+                icon: CheckCircle2,
+                title: 'Long-term Thinking',
+                desc: 'I build for maintainability, not just launch day. Your platform should be easy to update for years to come.',
+              },
+            ].map((item, idx) => (
+              <motion.div
+                key={idx}
+                initial={{
+                  opacity: 0,
+                  y: 20,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                viewport={{
+                  once: true,
+                }}
+                transition={{
+                  delay: idx * 0.1,
+                }}
+                className="p-6 rounded-xl bg-[#edeef7] border border-gray-100 hover:shadow-md transition-shadow"
+              >
+                <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center mb-4 shadow-sm text-[#20B7F3]">
+                  <item.icon className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-bold font-figtree text-[#151927] mb-3">
+                  {item.title}
+                </h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  {item.desc}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-3xl mx-auto">
+        <h2 className="text-3xl font-bold font-figtree text-[#151927] mb-12 text-center">
+          Common Questions
+        </h2>
+
+        <div className="space-y-6">
+          {[
+            {
+              q: 'How many projects do you take at once?',
+              a: 'I limit myself to 2-3 active projects at a time. This ensures I can give each client the focus and responsiveness they deserve.',
+            },
+            {
+              q: "What's a typical timeline?",
+              a: 'It depends on the scope, but a full website rebuild typically takes 8-12 weeks. I break projects into phases so we can ship value early and often.',
+            },
+            {
+              q: 'Do you work with internal teams?',
+              a: 'Absolutely. I often collaborate with internal marketing teams, designers, and developers. I can also train your team on how to manage the new platform.',
+            },
+            {
+              q: 'What if we need ongoing support?',
+              a: "I offer retainer options for ongoing maintenance, improvements, and support. I don't just launch and leave; I'm here to help your platform evolve.",
+            },
+          ].map((faq, idx) => (
+            <motion.div
+              key={idx}
+              initial={{
+                opacity: 0,
+                y: 10,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              viewport={{
+                once: true,
+              }}
+              transition={{
+                delay: idx * 0.1,
+              }}
+              className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm"
+            >
+              <h3 className="text-lg font-bold font-figtree text-[#151927] mb-2">
+                {faq.q}
+              </h3>
+              <p className="text-gray-600">{faq.a}</p>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      <CTASection />
+
+      <footer className="bg-[#151927] text-[#dddfed]/40 py-8 text-center text-sm border-t border-white/10">
+        <div className="max-w-7xl mx-auto px-4">
+          <p>
+            &copy; {new Date().getFullYear()} Márk Bartha. All rights reserved.
+          </p>
+        </div>
+      </footer>
+    </main>
+  )
+}
 
 ```
 ```pages/BlogPage.tsx
@@ -2036,25 +2923,19 @@ export function ContactPage() {
 import React from 'react'
 import { Navigation } from '../components/Navigation'
 import { Hero } from '../components/Hero'
-import { ProblemSection } from '../components/ProblemSection'
-import { SolutionSection } from '../components/SolutionSection'
-import { ServicesSection } from '../components/ServicesSection'
-import { ProofSection } from '../components/ProofSection'
-import { WhyMarkSection } from '../components/WhyMarkSection'
+import { WhatIBuildSection } from '../components/WhatIBuildSection'
 import { ProcessSection } from '../components/ProcessSection'
-import { CTASection } from '../components/CTASection'
+import { WhyMarkSection } from '../components/WhyMarkSection'
+import { CTAWithFAQSection } from '../components/CTAWithFAQSection'
 export function HomePage() {
   return (
     <main className="min-h-screen w-full overflow-x-hidden bg-[#151927]">
       <Navigation />
       <Hero />
-      <ProblemSection />
-      <SolutionSection />
-      <ServicesSection />
-      <ProofSection />
-      <WhyMarkSection />
+      <WhatIBuildSection />
       <ProcessSection />
-      <CTASection />
+      <WhyMarkSection />
+      <CTAWithFAQSection />
 
       {/* Simple Footer Placeholder */}
       <footer className="bg-[#151927] text-[#dddfed]/40 py-8 text-center text-sm border-t border-white/10">

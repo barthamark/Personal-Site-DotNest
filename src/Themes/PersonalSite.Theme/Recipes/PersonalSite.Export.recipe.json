@@ -103,6 +103,7 @@
                 "IncludeAll": false,
                 "ContentTypes": [
                   "Article",
+                  "ArrowLink",
                   "BenefitItem",
                   "Badge",
                   "Blog",
@@ -131,6 +132,7 @@
                 ],
                 "ContentParts": [
                   "Article",
+                  "ArrowLink",
                   "BenefitItem",
                   "Badge",
                   "Blog",
@@ -823,6 +825,21 @@
                   ]
                 }
               }
+            },
+            {
+              "PartName": "BagPart",
+              "Name": "After",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "DisplayName": "After",
+                  "Position": "5"
+                },
+                "BagPartSettings": {
+                  "ContainedStereotypes": [
+                    "Widget"
+                  ]
+                }
+              }
             }
           ]
         },
@@ -979,49 +996,6 @@
                   "ContainedContentTypes": [
                     "Callout"
                   ]
-                }
-              }
-            }
-          ]
-        },
-        {
-          "Name": "ContactHero",
-          "DisplayName": "Contact Hero",
-          "Settings": {
-            "ContentTypeSettings": {
-              "Creatable": false,
-              "Listable": false,
-              "Draftable": false,
-              "Versionable": false,
-              "Securable": false,
-              "Stereotype": "Block"
-            }
-          },
-          "ContentTypePartDefinitionRecords": [
-            {
-              "PartName": "TitlePart",
-              "Name": "TitlePart",
-              "Settings": {
-                "ContentTypePartSettings": {
-                  "Position": "0"
-                }
-              }
-            },
-            {
-              "PartName": "BlockCommon",
-              "Name": "BlockCommon",
-              "Settings": {
-                "ContentTypePartSettings": {
-                  "Position": "1"
-                }
-              }
-            },
-            {
-              "PartName": "ContactHero",
-              "Name": "ContactHero",
-              "Settings": {
-                "ContentTypePartSettings": {
-                  "Position": "2"
                 }
               }
             }
@@ -1285,6 +1259,31 @@
             {
               "PartName": "BulletItem",
               "Name": "BulletItem",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "ArrowLink",
+          "DisplayName": "Arrow Link",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Creatable": false,
+              "Listable": false,
+              "Draftable": false,
+              "Versionable": false,
+              "Securable": false,
+              "Stereotype": "Widget"
+            }
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "ArrowLink",
+              "Name": "ArrowLink",
               "Settings": {
                 "ContentTypePartSettings": {
                   "Position": "0"
@@ -2075,6 +2074,22 @@
           ]
         },
         {
+          "Name": "ArrowLink",
+          "Settings": {},
+          "ContentPartFieldDefinitionRecords": [
+            {
+              "FieldName": "LinkField",
+              "Name": "Link",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Link",
+                  "Position": "0"
+                }
+              }
+            }
+          ]
+        },
+        {
           "Name": "BulletItem",
           "Settings": {},
           "ContentPartFieldDefinitionRecords": [
@@ -2445,62 +2460,6 @@
           ]
         },
         {
-          "Name": "ContactHero",
-          "Settings": {},
-          "ContentPartFieldDefinitionRecords": [
-            {
-              "FieldName": "TextField",
-              "Name": "PillText",
-              "Settings": {
-                "ContentPartFieldSettings": {
-                  "DisplayName": "Pill text",
-                  "Position": "0"
-                }
-              }
-            },
-            {
-              "FieldName": "TextField",
-              "Name": "Title",
-              "Settings": {
-                "ContentPartFieldSettings": {
-                  "DisplayName": "Title",
-                  "Position": "1"
-                }
-              }
-            },
-            {
-              "FieldName": "TextField",
-              "Name": "Highlight",
-              "Settings": {
-                "ContentPartFieldSettings": {
-                  "DisplayName": "Highlight",
-                  "Position": "2"
-                }
-              }
-            },
-            {
-              "FieldName": "TextField",
-              "Name": "TitleSuffix",
-              "Settings": {
-                "ContentPartFieldSettings": {
-                  "DisplayName": "Title suffix",
-                  "Position": "3"
-                }
-              }
-            },
-            {
-              "FieldName": "TextField",
-              "Name": "Body",
-              "Settings": {
-                "ContentPartFieldSettings": {
-                  "DisplayName": "Body",
-                  "Position": "4"
-                }
-              }
-            }
-          ]
-        },
-        {
           "Name": "ContactForm",
           "Settings": {},
           "ContentPartFieldDefinitionRecords": [
@@ -2749,12 +2708,12 @@
                       "DisplayText": "Hero Copy",
                       "Latest": true,
                       "Published": true,
-                      "RichText": {
-                        "Text": {
-                          "Html": "<h1>Turn your B2B content into a <mark>scalable website</mark> and knowledge hub.</h1><p>I help growing B2B teams move beyond &quot;just a website&quot; with a content platform that is easy to manage, built to last, and designed to support sales and support.</p>"
-                        }
+                    "RichText": {
+                      "Text": {
+                          "Html": "<h1>Build a content platform your team can actually run.</h1><p>I help B2B teams move beyond &quot;just a website&quot; with scalable marketing sites, landing pages, and content platforms. Add a knowledge hub when needed. AI features are available if they're a real fit.</p>"
                       }
-                    },
+                    }
+                  },
                     {
                       "ContentItemId": "[js:uuid()]",
                       "ContentItemVersionId": "[js:uuid()]",
@@ -2773,13 +2732,13 @@
                             "ContentItemId": "[js:uuid()]",
                             "ContentItemVersionId": "[js:uuid()]",
                             "ContentType": "Button",
-                            "DisplayText": "Book a strategy call",
+                            "DisplayText": "Contact me",
                             "Latest": true,
                             "Published": true,
                             "Button": {
                               "Content": {
                                 "Url": "#contact",
-                                "Text": "Book a strategy call",
+                                "Text": "Contact me",
                                 "Target": null
                               },
                               "Icon": {
@@ -2820,98 +2779,253 @@
               {
                 "ContentItemId": "[js:uuid()]",
                 "ContentItemVersionId": "[js:uuid()]",
-                "ContentType": "SplitSection",
-                "DisplayText": "Reality Section",
+                "ContentType": "GridSection",
+                "DisplayText": "What I Build Section",
                 "Latest": true,
                 "Published": true,
                 "TitlePart": {
-                  "Title": "Reality Section"
+                  "Title": "What I Build Section"
                 },
                 "BlockCommon": {
                   "Theme": {
                     "Text": "LightGray"
                   }
                 },
-                "LeftColumn": {
+                "GridSection": {
+                  "Columns": {
+                    "Text": "Three"
+                  },
+                  "HeaderAlignment": {
+                    "Text": "Left"
+                  }
+                },
+                "Header": {
                   "ContentItems": [
                     {
                       "ContentItemId": "[js:uuid()]",
                       "ContentItemVersionId": "[js:uuid()]",
                       "ContentType": "RichText",
-                      "DisplayText": "Reality Copy",
+                      "DisplayText": "What I Build Header",
                       "Latest": true,
                       "Published": true,
                       "RichText": {
                         "Text": {
-                          "Html": "<h2>The reality for most B2B teams</h2><p>You have great expertise, but your digital presence is holding you back. The gap between what you know and what you show is costing you leads and time.</p>"
+                          "Html": "<h2>What I build for B2B teams</h2><p>Practical, content-heavy websites and knowledge hubs that stay easy to manage as you grow. AI features are optional and only added when they improve the workflow.</p>"
                         }
                       }
                     }
                   ]
                 },
-                "RightColumn": {
+                "Items": {
                   "ContentItems": [
                     {
                       "ContentItemId": "[js:uuid()]",
                       "ContentItemVersionId": "[js:uuid()]",
-                      "ContentType": "IconCard",
-                      "DisplayText": "Content lives everywhere",
+                      "ContentType": "ServiceCard",
+                      "DisplayText": "Marketing websites + landing pages",
                       "Latest": true,
                       "Published": true,
-                      "IconCard": {
-                        "Icon": {
-                          "Text": "x-circle"
+                      "ServiceCard": {
+                        "Title": {
+                          "Text": "Marketing websites + landing pages"
                         },
-                        "Text": {
-                          "Text": "Content lives everywhere, so customers and prospects cannot find what matters"
+                        "Summary": {
+                          "Html": "<p>Clear messaging, fast pages, and a CMS your team won't fight.</p>"
+                        },
+                        "Link": {
+                          "Url": "",
+                          "Text": "",
+                          "Target": null
                         }
+                      },
+                      "Bullets": {
+                        "ContentItems": [
+                          {
+                            "ContentItemId": "[js:uuid()]",
+                            "ContentItemVersionId": "[js:uuid()]",
+                            "ContentType": "BulletItem",
+                            "DisplayText": "Modular sections you can reuse",
+                            "Latest": true,
+                            "Published": true,
+                            "BulletItem": {
+                              "Text": {
+                                "Text": "Modular sections you can reuse"
+                              }
+                            }
+                          },
+                          {
+                            "ContentItemId": "[js:uuid()]",
+                            "ContentItemVersionId": "[js:uuid()]",
+                            "ContentType": "BulletItem",
+                            "DisplayText": "SEO-friendly structure and performance",
+                            "Latest": true,
+                            "Published": true,
+                            "BulletItem": {
+                              "Text": {
+                                "Text": "SEO-friendly structure and performance"
+                              }
+                            }
+                          },
+                          {
+                            "ContentItemId": "[js:uuid()]",
+                            "ContentItemVersionId": "[js:uuid()]",
+                            "ContentType": "BulletItem",
+                            "DisplayText": "Built for iteration, not one-off launches",
+                            "Latest": true,
+                            "Published": true,
+                            "BulletItem": {
+                              "Text": {
+                                "Text": "Built for iteration, not one-off launches"
+                              }
+                            }
+                          }
+                        ]
                       }
                     },
                     {
                       "ContentItemId": "[js:uuid()]",
                       "ContentItemVersionId": "[js:uuid()]",
-                      "ContentType": "IconCard",
-                      "DisplayText": "Publishing is slow",
+                      "ContentType": "ServiceCard",
+                      "DisplayText": "Content platforms",
                       "Latest": true,
                       "Published": true,
-                      "IconCard": {
-                        "Icon": {
-                          "Text": "x-circle"
+                      "ServiceCard": {
+                        "Title": {
+                          "Text": "Content platforms"
                         },
-                        "Text": {
-                          "Text": "Publishing is slow, and the team avoids touching the CMS"
+                        "Summary": {
+                          "Html": "<p>For teams publishing regularly and needing structure, workflow, and governance.</p>"
+                        },
+                        "Link": {
+                          "Url": "",
+                          "Text": "",
+                          "Target": null
                         }
+                      },
+                      "Bullets": {
+                        "ContentItems": [
+                          {
+                            "ContentItemId": "[js:uuid()]",
+                            "ContentItemVersionId": "[js:uuid()]",
+                            "ContentType": "BulletItem",
+                            "DisplayText": "Structured content types and reusable blocks",
+                            "Latest": true,
+                            "Published": true,
+                            "BulletItem": {
+                              "Text": {
+                                "Text": "Structured content types and reusable blocks"
+                              }
+                            }
+                          },
+                          {
+                            "ContentItemId": "[js:uuid()]",
+                            "ContentItemVersionId": "[js:uuid()]",
+                            "ContentType": "BulletItem",
+                            "DisplayText": "Editorial workflow that fits your team",
+                            "Latest": true,
+                            "Published": true,
+                            "BulletItem": {
+                              "Text": {
+                                "Text": "Editorial workflow that fits your team"
+                              }
+                            }
+                          },
+                          {
+                            "ContentItemId": "[js:uuid()]",
+                            "ContentItemVersionId": "[js:uuid()]",
+                            "ContentType": "BulletItem",
+                            "DisplayText": "Taxonomy and content organization that scales",
+                            "Latest": true,
+                            "Published": true,
+                            "BulletItem": {
+                              "Text": {
+                                "Text": "Taxonomy and content organization that scales"
+                              }
+                            }
+                          }
+                        ]
                       }
                     },
                     {
                       "ContentItemId": "[js:uuid()]",
                       "ContentItemVersionId": "[js:uuid()]",
-                      "ContentType": "IconCard",
-                      "DisplayText": "Support repeats",
+                      "ContentType": "ServiceCard",
+                      "DisplayText": "Knowledge hubs",
                       "Latest": true,
                       "Published": true,
-                      "IconCard": {
-                        "Icon": {
-                          "Text": "x-circle"
+                      "ServiceCard": {
+                        "Title": {
+                          "Text": "Knowledge hubs"
                         },
-                        "Text": {
-                          "Text": "Support answers the same questions repeatedly"
+                        "Summary": {
+                          "Html": "<p>Help centers and resource libraries that reduce support load and make content easy to find.</p>"
+                        },
+                        "Link": {
+                          "Url": "",
+                          "Text": "",
+                          "Target": null
                         }
+                      },
+                      "Bullets": {
+                        "ContentItems": [
+                          {
+                            "ContentItemId": "[js:uuid()]",
+                            "ContentItemVersionId": "[js:uuid()]",
+                            "ContentType": "BulletItem",
+                            "DisplayText": "Information architecture + navigation",
+                            "Latest": true,
+                            "Published": true,
+                            "BulletItem": {
+                              "Text": {
+                                "Text": "Information architecture + navigation"
+                              }
+                            }
+                          },
+                          {
+                            "ContentItemId": "[js:uuid()]",
+                            "ContentItemVersionId": "[js:uuid()]",
+                            "ContentType": "BulletItem",
+                            "DisplayText": "Search that actually works",
+                            "Latest": true,
+                            "Published": true,
+                            "BulletItem": {
+                              "Text": {
+                                "Text": "Search that actually works"
+                              }
+                            }
+                          },
+                          {
+                            "ContentItemId": "[js:uuid()]",
+                            "ContentItemVersionId": "[js:uuid()]",
+                            "ContentType": "BulletItem",
+                            "DisplayText": "Optional AI search/chat grounded in your content",
+                            "Latest": true,
+                            "Published": true,
+                            "BulletItem": {
+                              "Text": {
+                                "Text": "Optional AI search/chat grounded in your content"
+                              }
+                            }
+                          }
+                        ]
                       }
-                    },
+                    }
+                  ]
+                },
+                "After": {
+                  "ContentItems": [
                     {
                       "ContentItemId": "[js:uuid()]",
                       "ContentItemVersionId": "[js:uuid()]",
-                      "ContentType": "IconCard",
-                      "DisplayText": "Does not reflect expertise",
+                      "ContentType": "ArrowLink",
+                      "DisplayText": "What I Build Link",
                       "Latest": true,
                       "Published": true,
-                      "IconCard": {
-                        "Icon": {
-                          "Text": "x-circle"
-                        },
-                        "Text": {
-                          "Text": "The website does not reflect your expertise"
+                      "ArrowLink": {
+                        "Link": {
+                          "Url": "/contact",
+                          "Text": "Want to talk about your site?",
+                          "Target": null
                         }
                       }
                     }
@@ -3753,13 +3867,13 @@
                             "ContentItemId": "[js:uuid()]",
                             "ContentItemVersionId": "[js:uuid()]",
                             "ContentType": "Button",
-                            "DisplayText": "Book a strategy call",
+                            "DisplayText": "Contact me",
                             "Latest": true,
                             "Published": true,
                             "Button": {
                               "Content": {
                                 "Url": "#contact",
-                                "Text": "Book a strategy call",
+                                "Text": "Contact me",
                                 "Target": null
                               },
                               "Icon": {

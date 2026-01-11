@@ -1,5 +1,6 @@
 {% assign header_items = Model.ContentItem.Content.Header.ContentItems %}
 {% assign items = Model.ContentItem.Content.Items.ContentItems %}
+{% assign after_items = Model.ContentItem.Content.After.ContentItems %}
 {% assign columns = Model.ContentItem.Content.GridSection.Columns.Text %}
 {% assign alignment = Model.ContentItem.Content.GridSection.HeaderAlignment.Text %}
 
@@ -29,6 +30,14 @@
         {% if items %}
             <div class="{{ items_class }}">
                 {% for item in items %}
+                    {{ item | shape_build_display: "Detail" | shape_render }}
+                {% endfor %}
+            </div>
+        {% endif %}
+
+        {% if after_items %}
+            <div class="mt-12 text-center space-y-4">
+                {% for item in after_items %}
                     {{ item | shape_build_display: "Detail" | shape_render }}
                 {% endfor %}
             </div>
