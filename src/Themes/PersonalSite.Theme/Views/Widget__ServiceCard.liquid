@@ -1,5 +1,5 @@
 {% assign title = Model.ContentItem.Content.ServiceCard.Title.Text %}
-{% assign summary = Model.ContentItem.Content.ServiceCard.Summary.Html %}
+{% assign summary_markdown = Model.ContentItem.Content.ServiceCard.Summary.Markdown %}
 {% assign link = Model.ContentItem.Content.ServiceCard.Link %}
 {% assign bullets = Model.ContentItem.Content.Bullets.ContentItems %}
 
@@ -8,9 +8,9 @@
     <h3 class="text-xl font-bold mb-3 min-h-12 theme-dark-blue:text-white theme-dark-panel:text-white">{{ title }}</h3>
 {% endif %}
 
-{% if summary != blank %}
+{% if summary_markdown != blank %}
     <div class="rich-text text-base md:text-base leading-relaxed theme-dark-blue:text-light-text/70 theme-dark-panel:text-light-text/70 theme-light-gray:text-dark-blue/70 theme-white:text-dark-blue/70 mb-6">
-        {{ summary | raw }}
+        {{ summary_markdown | markdownify | shortcode | raw }}
     </div>
 {% endif %}
 

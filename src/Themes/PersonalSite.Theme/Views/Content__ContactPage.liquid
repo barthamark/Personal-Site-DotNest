@@ -3,7 +3,7 @@
 {% assign form_settings = Model.ContentItem.Content.ContactForm %}
 {% assign post_url = form_settings.PostUrl.Text %}
 {% assign submit_text = form_settings.SubmitText.Text | default: "Send Message" %}
-{% assign privacy_html = form_settings.PrivacyText.Html | default: "I respect your privacy. No spam, ever." %}
+{% assign privacy_markdown = form_settings.PrivacyText.Markdown | default: "I respect your privacy. No spam, ever." %}
 
 <div data-theme="light-gray">
     {% if hero_items %}
@@ -108,9 +108,9 @@
                     </button>
                 </div>
 
-                {% if privacy_html != blank %}
+                {% if privacy_markdown != blank %}
                     <div class="text-xs text-center text-gray-500 mt-4">
-                        {{ privacy_html | raw }}
+                        {{ privacy_markdown | markdownify | shortcode | raw }}
                     </div>
                 {% endif %}
                 </form>

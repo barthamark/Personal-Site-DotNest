@@ -1,0 +1,7 @@
+{% assign markdown_text = Model.ContentItem.Content.Markdown.Text.Markdown %}
+
+{% if markdown_text != blank %}
+    <div class="rich-text">
+        {{ markdown_text | markdownify | shortcode | raw }}
+    </div>
+{% endif %}

@@ -1,6 +1,6 @@
 {% assign content_item = Model.ContentItem %}
 {% assign title = content_item.DisplayText %}
-{% assign intro_html = content_item.Content.Blog.Summary.Html %}
+{% assign intro_markdown = content_item.Content.Blog.Summary.Markdown %}
 
 <section class="hero-backdrop w-full pt-32 pb-20" data-theme="dark-blue">
     <div class="page-container relative z-10">
@@ -13,9 +13,9 @@
                 </h1>
             {% endif %}
 
-            {% if intro_html != blank %}
+            {% if intro_markdown != blank %}
                 <div class="rich-text text-light-text/80 max-w-2xl">
-                    {{ intro_html | raw }}
+                    {{ intro_markdown | markdownify | shortcode | raw }}
                 </div>
             {% endif %}
         </div>

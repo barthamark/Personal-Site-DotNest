@@ -1,4 +1,4 @@
-{% assign quote = Model.ContentItem.Content.Testimonial.Quote.Html %}
+{% assign quote_markdown = Model.ContentItem.Content.Testimonial.Quote.Markdown %}
 {% assign name = Model.ContentItem.Content.Testimonial.Name.Text %}
 {% assign role = Model.ContentItem.Content.Testimonial.Role.Text %}
 {% assign company = Model.ContentItem.Content.Testimonial.Company.Text %}
@@ -6,9 +6,9 @@
 <div class="card p-8">
     <i data-lucide="quote" class="w-8 h-8 text-light-blue/20 mb-4" aria-hidden="true"></i>
 
-    {% if quote != blank %}
+    {% if quote_markdown != blank %}
         <div class="rich-text text-base italic theme-dark-blue:text-light-text/90 theme-dark-panel:text-light-text/90 theme-light-gray:text-dark-blue/80 theme-white:text-dark-blue/80 mb-6">
-            {{ quote | raw }}
+            {{ quote_markdown | markdownify | shortcode | raw }}
         </div>
     {% endif %}
 

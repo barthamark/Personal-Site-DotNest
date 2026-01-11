@@ -130,7 +130,8 @@
                   "Stat",
                   "Tag",
                   "Testimonial",
-                  "TextNote"
+                  "TextNote",
+                  "Markdown"
                 ],
                 "ContentParts": [
                   "Article",
@@ -160,7 +161,8 @@
                   "Stat",
                   "Tag",
                   "Testimonial",
-                  "TextNote"
+                  "TextNote",
+                  "Markdown"
                 ],
                 "Id": "8b9df93d34a9496097ee2128941cfb8b",
                 "Name": "ContentDefinition"
@@ -690,7 +692,8 @@
                   "ContainedContentTypes": [
                     "Badge",
                     "RichText",
-                    "ButtonGroup"
+                    "ButtonGroup",
+                    "Markdown"
                   ]
                 }
               }
@@ -1423,6 +1426,31 @@
           ]
         },
         {
+          "Name": "Markdown",
+          "DisplayName": "Markdown",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Creatable": false,
+              "Listable": false,
+              "Draftable": false,
+              "Versionable": false,
+              "Securable": false,
+              "Stereotype": "Widget"
+            }
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "Markdown",
+              "Name": "Markdown",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            }
+          ]
+        },
+        {
           "Name": "ButtonGroup",
           "DisplayName": "Button Group",
           "Settings": {
@@ -1590,7 +1618,8 @@
                 },
                 "BagPartSettings": {
                   "ContainedContentTypes": [
-                    "RichText"
+                    "RichText",
+                    "Markdown"
                   ]
                 }
               }
@@ -1638,20 +1667,15 @@
               }
             },
             {
-              "FieldName": "HtmlField",
+              "FieldName": "MarkdownField",
               "Name": "Summary",
               "Settings": {
                 "ContentPartFieldSettings": {
                   "DisplayName": "Summary",
-                  "Editor": "Trumbowyg",
                   "Position": "1"
                 },
-                "HtmlFieldSettings": {
+                "MarkdownFieldSettings": {
                   "SanitizeHtml": true
-                },
-                "HtmlFieldTrumbowygEditorSettings": {
-                  "Options": "{ \"autogrow\": true, \"removeformatPasted\": true, \"btns\": [[\"viewHTML\"],[\"undo\",\"redo\"],[\"formatting\"],[\"strong\",\"em\",\"del\"],[\"fontsize\"],[\"link\"],[\"align\"],[\"unorderedList\",\"orderedList\"],[\"removeformat\"]], \"btnsDef\": { \"align\": { \"dropdown\": [\"justifyLeft\",\"justifyCenter\",\"justifyRight\",\"justifyFull\"], \"ico\": \"justifyLeft\" } } }",
-                  "InsertMediaWithUrl": false
                 }
               }
             }
@@ -1925,20 +1949,15 @@
               }
             },
             {
-              "FieldName": "HtmlField",
+              "FieldName": "MarkdownField",
               "Name": "Body",
               "Settings": {
                 "ContentPartFieldSettings": {
                   "DisplayName": "Body",
-                  "Editor": "Trumbowyg",
                   "Position": "2"
                 },
-                "HtmlFieldSettings": {
+                "MarkdownFieldSettings": {
                   "SanitizeHtml": true
-                },
-                "HtmlFieldTrumbowygEditorSettings": {
-                  "Options": "{ \"autogrow\": true, \"removeformatPasted\": true, \"btns\": [[\"viewHTML\"],[\"undo\",\"redo\"],[\"formatting\"],[\"strong\",\"em\",\"del\"],[\"fontsize\"],[\"link\"],[\"align\"],[\"unorderedList\",\"orderedList\"],[\"removeformat\"]], \"btnsDef\": { \"align\": { \"dropdown\": [\"justifyLeft\",\"justifyCenter\",\"justifyRight\",\"justifyFull\"], \"ico\": \"justifyLeft\" } } }",
-                  "InsertMediaWithUrl": false
                 }
               }
             }
@@ -1959,20 +1978,15 @@
               }
             },
             {
-              "FieldName": "HtmlField",
+              "FieldName": "MarkdownField",
               "Name": "Answer",
               "Settings": {
                 "ContentPartFieldSettings": {
                   "DisplayName": "Answer",
-                  "Editor": "Trumbowyg",
                   "Position": "1"
                 },
-                "HtmlFieldSettings": {
+                "MarkdownFieldSettings": {
                   "SanitizeHtml": true
-                },
-                "HtmlFieldTrumbowygEditorSettings": {
-                  "Options": "{ \"autogrow\": true, \"removeformatPasted\": true, \"btns\": [[\"viewHTML\"],[\"undo\",\"redo\"],[\"formatting\"],[\"strong\",\"em\",\"del\"],[\"fontsize\"],[\"link\"],[\"align\"],[\"unorderedList\",\"orderedList\"],[\"removeformat\"]], \"btnsDef\": { \"align\": { \"dropdown\": [\"justifyLeft\",\"justifyCenter\",\"justifyRight\",\"justifyFull\"], \"ico\": \"justifyLeft\" } } }",
-                  "InsertMediaWithUrl": false
                 }
               }
             }
@@ -2045,20 +2059,15 @@
               }
             },
             {
-              "FieldName": "HtmlField",
+              "FieldName": "MarkdownField",
               "Name": "Body",
               "Settings": {
                 "ContentPartFieldSettings": {
                   "DisplayName": "Body",
-                  "Editor": "Trumbowyg",
                   "Position": "2"
                 },
-                "HtmlFieldSettings": {
+                "MarkdownFieldSettings": {
                   "SanitizeHtml": true
-                },
-                "HtmlFieldTrumbowygEditorSettings": {
-                  "Options": "{ \"autogrow\": true, \"removeformatPasted\": true, \"btns\": [[\"viewHTML\"],[\"undo\",\"redo\"],[\"formatting\"],[\"strong\",\"em\",\"del\"],[\"fontsize\"],[\"link\"],[\"align\"],[\"unorderedList\",\"orderedList\"],[\"removeformat\"]], \"btnsDef\": { \"align\": { \"dropdown\": [\"justifyLeft\",\"justifyCenter\",\"justifyRight\",\"justifyFull\"], \"ico\": \"justifyLeft\" } } }",
-                  "InsertMediaWithUrl": false
                 }
               }
             }
@@ -2079,20 +2088,15 @@
               }
             },
             {
-              "FieldName": "HtmlField",
+              "FieldName": "MarkdownField",
               "Name": "Summary",
               "Settings": {
                 "ContentPartFieldSettings": {
                   "DisplayName": "Summary",
-                  "Editor": "Trumbowyg",
                   "Position": "1"
                 },
-                "HtmlFieldSettings": {
+                "MarkdownFieldSettings": {
                   "SanitizeHtml": true
-                },
-                "HtmlFieldTrumbowygEditorSettings": {
-                  "Options": "{ \"autogrow\": true, \"removeformatPasted\": true, \"btns\": [[\"viewHTML\"],[\"undo\",\"redo\"],[\"formatting\"],[\"strong\",\"em\",\"del\"],[\"fontsize\"],[\"link\"],[\"align\"],[\"unorderedList\",\"orderedList\"],[\"removeformat\"]], \"btnsDef\": { \"align\": { \"dropdown\": [\"justifyLeft\",\"justifyCenter\",\"justifyRight\",\"justifyFull\"], \"ico\": \"justifyLeft\" } } }",
-                  "InsertMediaWithUrl": false
                 }
               }
             },
@@ -2171,20 +2175,15 @@
           "Settings": {},
           "ContentPartFieldDefinitionRecords": [
             {
-              "FieldName": "HtmlField",
+              "FieldName": "MarkdownField",
               "Name": "Quote",
               "Settings": {
                 "ContentPartFieldSettings": {
                   "DisplayName": "Quote",
-                  "Editor": "Trumbowyg",
                   "Position": "0"
                 },
-                "HtmlFieldSettings": {
+                "MarkdownFieldSettings": {
                   "SanitizeHtml": true
-                },
-                "HtmlFieldTrumbowygEditorSettings": {
-                  "Options": "{ \"autogrow\": true, \"removeformatPasted\": true, \"btns\": [[\"viewHTML\"],[\"undo\",\"redo\"],[\"formatting\"],[\"strong\",\"em\",\"del\"],[\"fontsize\"],[\"link\"],[\"align\"],[\"unorderedList\",\"orderedList\"],[\"removeformat\"]], \"btnsDef\": { \"align\": { \"dropdown\": [\"justifyLeft\",\"justifyCenter\",\"justifyRight\",\"justifyFull\"], \"ico\": \"justifyLeft\" } } }",
-                  "InsertMediaWithUrl": false
                 }
               }
             },
@@ -2249,20 +2248,15 @@
               }
             },
             {
-              "FieldName": "HtmlField",
+              "FieldName": "MarkdownField",
               "Name": "Body",
               "Settings": {
                 "ContentPartFieldSettings": {
                   "DisplayName": "Body",
-                  "Editor": "Trumbowyg",
                   "Position": "1"
                 },
-                "HtmlFieldSettings": {
+                "MarkdownFieldSettings": {
                   "SanitizeHtml": true
-                },
-                "HtmlFieldTrumbowygEditorSettings": {
-                  "Options": "{ \"autogrow\": true, \"removeformatPasted\": true, \"btns\": [[\"viewHTML\"],[\"undo\",\"redo\"],[\"formatting\"],[\"strong\",\"em\",\"del\"],[\"fontsize\"],[\"link\"],[\"align\"],[\"unorderedList\",\"orderedList\"],[\"removeformat\"]], \"btnsDef\": { \"align\": { \"dropdown\": [\"justifyLeft\",\"justifyCenter\",\"justifyRight\",\"justifyFull\"], \"ico\": \"justifyLeft\" } } }",
-                  "InsertMediaWithUrl": false
                 }
               }
             }
@@ -2319,20 +2313,15 @@
               }
             },
             {
-              "FieldName": "HtmlField",
+              "FieldName": "MarkdownField",
               "Name": "Body",
               "Settings": {
                 "ContentPartFieldSettings": {
                   "DisplayName": "Body",
-                  "Editor": "Trumbowyg",
                   "Position": "2"
                 },
-                "HtmlFieldSettings": {
+                "MarkdownFieldSettings": {
                   "SanitizeHtml": true
-                },
-                "HtmlFieldTrumbowygEditorSettings": {
-                  "Options": "{ \"autogrow\": true, \"removeformatPasted\": true, \"btns\": [[\"viewHTML\"],[\"undo\",\"redo\"],[\"formatting\"],[\"strong\",\"em\",\"del\"],[\"fontsize\"],[\"link\"],[\"align\"],[\"unorderedList\",\"orderedList\"],[\"removeformat\"]], \"btnsDef\": { \"align\": { \"dropdown\": [\"justifyLeft\",\"justifyCenter\",\"justifyRight\",\"justifyFull\"], \"ico\": \"justifyLeft\" } } }",
-                  "InsertMediaWithUrl": false
                 }
               }
             }
@@ -2353,20 +2342,15 @@
               }
             },
             {
-              "FieldName": "HtmlField",
+              "FieldName": "MarkdownField",
               "Name": "Body",
               "Settings": {
                 "ContentPartFieldSettings": {
                   "DisplayName": "Body",
-                  "Editor": "Trumbowyg",
                   "Position": "1"
                 },
-                "HtmlFieldSettings": {
+                "MarkdownFieldSettings": {
                   "SanitizeHtml": true
-                },
-                "HtmlFieldTrumbowygEditorSettings": {
-                  "Options": "{ \"autogrow\": true, \"removeformatPasted\": true, \"btns\": [[\"viewHTML\"],[\"undo\",\"redo\"],[\"formatting\"],[\"strong\",\"em\",\"del\"],[\"fontsize\"],[\"link\"],[\"align\"],[\"unorderedList\",\"orderedList\"],[\"removeformat\"]], \"btnsDef\": { \"align\": { \"dropdown\": [\"justifyLeft\",\"justifyCenter\",\"justifyRight\",\"justifyFull\"], \"ico\": \"justifyLeft\" } } }",
-                  "InsertMediaWithUrl": false
                 }
               }
             }
@@ -2438,6 +2422,25 @@
                 "HtmlFieldTrumbowygEditorSettings": {
                   "Options": "{ \"autogrow\": true, \"removeformatPasted\": true, \"btns\": [[\"viewHTML\"],[\"undo\",\"redo\"],[\"formatting\"],[\"strong\",\"em\",\"del\"],[\"fontsize\"],[\"link\"],[\"align\"],[\"unorderedList\",\"orderedList\"],[\"removeformat\"]], \"btnsDef\": { \"align\": { \"dropdown\": [\"justifyLeft\",\"justifyCenter\",\"justifyRight\",\"justifyFull\"], \"ico\": \"justifyLeft\" } } }",
                   "InsertMediaWithUrl": false
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "Markdown",
+          "Settings": {},
+          "ContentPartFieldDefinitionRecords": [
+            {
+              "FieldName": "MarkdownField",
+              "Name": "Text",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Text",
+                  "Position": "0"
+                },
+                "MarkdownFieldSettings": {
+                  "SanitizeHtml": true
                 }
               }
             }
@@ -2519,20 +2522,15 @@
               }
             },
             {
-              "FieldName": "HtmlField",
+              "FieldName": "MarkdownField",
               "Name": "PrivacyText",
               "Settings": {
                 "ContentPartFieldSettings": {
                   "DisplayName": "Privacy text",
-                  "Editor": "Trumbowyg",
                   "Position": "2"
                 },
-                "HtmlFieldSettings": {
+                "MarkdownFieldSettings": {
                   "SanitizeHtml": true
-                },
-                "HtmlFieldTrumbowygEditorSettings": {
-                  "Options": "{ \"autogrow\": true, \"removeformatPasted\": true, \"btns\": [[\"strong\",\"em\"],[\"link\"],[\"unorderedList\",\"orderedList\"],[\"removeformat\"]] }",
-                  "InsertMediaWithUrl": false
                 }
               }
             }
@@ -2742,13 +2740,13 @@
                     {
                       "ContentItemId": "[js:uuid()]",
                       "ContentItemVersionId": "[js:uuid()]",
-                      "ContentType": "RichText",
+                      "ContentType": "Markdown",
                       "DisplayText": "Hero Copy",
                       "Latest": true,
                       "Published": true,
-                      "RichText": {
+                      "Markdown": {
                         "Text": {
-                          "Html": "<h1>Build a content platform your team can actually run.</h1><p>I help B2B teams move beyond &quot;just a website&quot; with scalable marketing sites, landing pages, and content platforms. Add a knowledge hub when needed. AI features are available if they're a real fit.</p>"
+                          "Markdown": "# Build a content platform your team can actually run.\n\nI help B2B teams move beyond \"just a website\" with scalable marketing sites, landing pages, and content platforms. Add a knowledge hub when needed. AI features are available if they're a real fit."
                         }
                       }
                     },
@@ -2902,13 +2900,13 @@
                     {
                       "ContentItemId": "[js:uuid()]",
                       "ContentItemVersionId": "[js:uuid()]",
-                      "ContentType": "RichText",
+                      "ContentType": "Markdown",
                       "DisplayText": "What I Build Section Header",
                       "Latest": true,
                       "Published": true,
-                      "RichText": {
+                      "Markdown": {
                         "Text": {
-                          "Html": "<h2>What I build for B2B teams</h2><p>Practical, content-heavy websites and knowledge hubs that stay easy to manage as you grow. AI features are optional and only added when they improve the workflow.</p>"
+                          "Markdown": "## What I build for B2B teams\n\nPractical, content-heavy websites and knowledge hubs that stay easy to manage as you grow. AI features are optional and only added when they improve the workflow."
                         }
                       }
                     }
@@ -2942,7 +2940,7 @@
                                 "Text": "Marketing websites + landing pages"
                               },
                               "Summary": {
-                                "Html": "<p>Clear messaging, fast pages, and a CMS your team won't fight.</p>"
+                                "Markdown": "Clear messaging, fast pages, and a CMS your team won't fight."
                               },
                               "Link": {
                                 "Url": "",
@@ -3006,7 +3004,7 @@
                                 "Text": "Content platforms"
                               },
                               "Summary": {
-                                "Html": "<p>For teams publishing regularly and needing structure, workflow, and governance.</p>"
+                                "Markdown": "For teams publishing regularly and needing structure, workflow, and governance."
                               },
                               "Link": {
                                 "Url": "",
@@ -3070,7 +3068,7 @@
                                 "Text": "Knowledge hubs"
                               },
                               "Summary": {
-                                "Html": "<p>Help centers and resource libraries that reduce support load and make content easy to find.</p>"
+                                "Markdown": "Help centers and resource libraries that reduce support load and make content easy to find."
                               },
                               "Link": {
                                 "Url": "",
@@ -3168,13 +3166,13 @@
                     {
                       "ContentItemId": "[js:uuid()]",
                       "ContentItemVersionId": "[js:uuid()]",
-                      "ContentType": "RichText",
+                      "ContentType": "Markdown",
                       "DisplayText": "How It Works Section Header",
                       "Latest": true,
                       "Published": true,
-                      "RichText": {
+                      "Markdown": {
                         "Text": {
-                          "Html": "<h2>How it works</h2><p>A straightforward process that keeps scope under control and makes progress visible.</p>"
+                          "Markdown": "## How it works\n\nA straightforward process that keeps scope under control and makes progress visible."
                         }
                       }
                     }
@@ -3211,7 +3209,7 @@
                                 "Text": "Align on goals and content reality"
                               },
                               "Body": {
-                                "Html": "<p>We clarify what the site needs to achieve (sales, support, hiring) and map the content types, workflows, and constraints.</p>"
+                                "Markdown": "We clarify what the site needs to achieve (sales, support, hiring) and map the content types, workflows, and constraints."
                               }
                             }
                           },
@@ -3230,7 +3228,7 @@
                                 "Text": "Design the content model and structure"
                               },
                               "Body": {
-                                "Html": "<p>Content types, taxonomy, navigation, and reusable components. This is what makes the platform scalable and AI-ready later.</p>"
+                                "Markdown": "Content types, taxonomy, navigation, and reusable components. This is what makes the platform scalable and AI-ready later."
                               }
                             }
                           },
@@ -3249,7 +3247,7 @@
                                 "Text": "Build and ship in increments"
                               },
                               "Body": {
-                                "Html": "<p>A usable slice first, then expand. You get working pages early, not a big-bang launch at the end.</p>"
+                                "Markdown": "A usable slice first, then expand. You get working pages early, not a big-bang launch at the end."
                               }
                             }
                           },
@@ -3268,7 +3266,7 @@
                                 "Text": "Polish, train, and hand over"
                               },
                               "Body": {
-                                "Html": "<p>Editor training, documentation, and optional support. If AI features are planned, we add guardrails and measure impact.</p>"
+                                "Markdown": "Editor training, documentation, and optional support. If AI features are planned, we add guardrails and measure impact."
                               }
                             }
                           }
@@ -3362,13 +3360,13 @@
                     {
                       "ContentItemId": "[js:uuid()]",
                       "ContentItemVersionId": "[js:uuid()]",
-                      "ContentType": "RichText",
+                      "ContentType": "Markdown",
                       "DisplayText": "Why Work Section Header",
                       "Latest": true,
                       "Published": true,
-                      "RichText": {
+                      "Markdown": {
                         "Text": {
-                          "Html": "<h2>Why work with an independent consultant?</h2><p>You get senior expertise with direct collaboration-no agency overhead, no hand-offs.</p>"
+                          "Markdown": "## Why work with an independent consultant?\n\nYou get senior expertise with direct collaboration-no agency overhead, no hand-offs."
                         }
                       }
                     }
@@ -3405,7 +3403,7 @@
                                 "Text": "Direct access, faster decisions"
                               },
                               "Body": {
-                                "Html": "<p>No account managers or hand-offs. You work directly with me, which means faster feedback loops and clearer communication.</p>"
+                                "Markdown": "No account managers or hand-offs. You work directly with me, which means faster feedback loops and clearer communication."
                               }
                             }
                           },
@@ -3424,7 +3422,7 @@
                                 "Text": "Senior expertise without agency overhead"
                               },
                               "Body": {
-                                "Html": "<p>You get enterprise-level experience at a fraction of agency costs. No junior developers learning on your project.</p>"
+                                "Markdown": "You get enterprise-level experience at a fraction of agency costs. No junior developers learning on your project."
                               }
                             }
                           },
@@ -3443,7 +3441,7 @@
                                 "Text": "Long-term thinking, not just launch day"
                               },
                               "Body": {
-                                "Html": "<p>I build platforms that your team can maintain and evolve. Training and documentation are included, not afterthoughts.</p>"
+                                "Markdown": "I build platforms that your team can maintain and evolve. Training and documentation are included, not afterthoughts."
                               }
                             }
                           },
@@ -3462,7 +3460,7 @@
                                 "Text": "Focused capacity means better quality"
                               },
                               "Body": {
-                                "Html": "<p>I limit concurrent projects to 2-3 at a time. Your project gets the attention it deserves, not divided focus.</p>"
+                                "Markdown": "I limit concurrent projects to 2-3 at a time. Your project gets the attention it deserves, not divided focus."
                               }
                             }
                           }
@@ -3492,7 +3490,7 @@
                             "Published": true,
                             "Testimonial": {
                               "Quote": {
-                                "Html": "<p>\"Mark didn't just build us a website-he built us a system we can actually maintain. Our marketing team finally feels confident making updates without breaking things.\"</p>"
+                                "Markdown": "\"Mark didn't just build us a website-he built us a system we can actually maintain. Our marketing team finally feels confident making updates without breaking things.\""
                               },
                               "Name": {
                                 "Text": "Sarah Chen"
@@ -3519,7 +3517,7 @@
                             "Published": true,
                             "Testimonial": {
                               "Quote": {
-                                "Html": "<p>\"The knowledge hub Mark built reduced our support load significantly. More importantly, he trained our team so well that we've been able to expand it ourselves.\"</p>"
+                                "Markdown": "\"The knowledge hub Mark built reduced our support load significantly. More importantly, he trained our team so well that we've been able to expand it ourselves.\""
                               },
                               "Name": {
                                 "Text": "James Wilson"
@@ -3568,13 +3566,13 @@
                     {
                       "ContentItemId": "[js:uuid()]",
                       "ContentItemVersionId": "[js:uuid()]",
-                      "ContentType": "RichText",
+                      "ContentType": "Markdown",
                       "DisplayText": "CTA Section Header",
                       "Latest": true,
                       "Published": true,
-                      "RichText": {
+                      "Markdown": {
                         "Text": {
-                          "Html": "<h2>Ready to build a content platform that actually works?</h2><p>Let's talk about your content challenges and what success looks like. No pressure, no sales pitch-just a straightforward conversation.</p>"
+                          "Markdown": "## Ready to build a content platform that actually works?\n\nLet's talk about your content challenges and what success looks like. No pressure, no sales pitch-just a straightforward conversation."
                         }
                       }
                     }
@@ -3667,7 +3665,7 @@
                                 "Text": "How do you handle project scope and pricing?"
                               },
                               "Answer": {
-                                "Html": "<p>I start with a discovery call to understand your needs, then provide a fixed-price proposal for a defined scope. For larger projects, I break them into phases so you can see value early and adjust as needed.</p>"
+                                "Markdown": "I start with a discovery call to understand your needs, then provide a fixed-price proposal for a defined scope. For larger projects, I break them into phases so you can see value early and adjust as needed."
                               }
                             }
                           },
@@ -3683,7 +3681,7 @@
                                 "Text": "What's your typical timeline?"
                               },
                               "Answer": {
-                                "Html": "<p>Most projects take 8-12 weeks from kickoff to launch, depending on complexity. I work in 2-week sprints with regular check-ins, so you'll see progress throughout.</p>"
+                                "Markdown": "Most projects take 8-12 weeks from kickoff to launch, depending on complexity. I work in 2-week sprints with regular check-ins, so you'll see progress throughout."
                               }
                             }
                           },
@@ -3699,7 +3697,7 @@
                                 "Text": "Do you work with internal teams?"
                               },
                               "Answer": {
-                                "Html": "<p>Absolutely. I often collaborate with your marketing, design, or development teams. I can also train your team to manage the platform after launch.</p>"
+                                "Markdown": "Absolutely. I often collaborate with your marketing, design, or development teams. I can also train your team to manage the platform after launch."
                               }
                             }
                           },
@@ -3715,7 +3713,7 @@
                                 "Text": "What if we need ongoing support?"
                               },
                               "Answer": {
-                                "Html": "<p>I offer monthly retainers for ongoing maintenance, improvements, and support. Many clients start with a project, then move to a retainer for peace of mind.</p>"
+                                "Markdown": "I offer monthly retainers for ongoing maintenance, improvements, and support. Many clients start with a project, then move to a retainer for peace of mind."
                               }
                             }
                           },
@@ -3731,7 +3729,7 @@
                                 "Text": "How many projects do you take at once?"
                               },
                               "Answer": {
-                                "Html": "<p>I limit myself to 2-3 active projects at a time. This ensures I can give each client the focus and responsiveness they deserve.</p>"
+                                "Markdown": "I limit myself to 2-3 active projects at a time. This ensures I can give each client the focus and responsiveness they deserve."
                               }
                             }
                           }
@@ -3789,13 +3787,13 @@
               {
                 "ContentItemId": "[js:uuid()]",
                 "ContentItemVersionId": "[js:uuid()]",
-                "ContentType": "RichText",
+                "ContentType": "Markdown",
                 "DisplayText": "Contact Hero Copy",
                 "Latest": true,
                 "Published": true,
-                "RichText": {
+                "Markdown": {
                   "Text": {
-                    "Html": "<h1>Let's talk about your <mark>content platform</mark></h1><p>Book a strategy call or send me a message. I reply within 1 business day.</p>"
+                    "Markdown": "# Let's talk about your **content platform**\n\nBook a strategy call or send me a message. I reply within 1 business day."
                   }
                 }
               }
@@ -3922,7 +3920,7 @@
               "Text": "Send Message"
             },
             "PrivacyText": {
-              "Html": "I respect your privacy. No spam, ever."
+              "Markdown": "I respect your privacy. No spam, ever."
             }
           }
         },
@@ -4091,7 +4089,7 @@
           },
           "Blog": {
             "Summary": {
-              "Html": "<p>Practical guides on building content platforms, managing B2B websites, and scaling your knowledge hub.</p>"
+              "Markdown": "Practical guides on building content platforms, managing B2B websites, and scaling your knowledge hub."
             },
             "Image": {
               "Paths": [],

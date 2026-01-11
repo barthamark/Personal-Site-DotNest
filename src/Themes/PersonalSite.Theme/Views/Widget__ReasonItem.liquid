@@ -1,6 +1,6 @@
 {% assign icon = Model.ContentItem.Content.ReasonItem.Icon.Text %}
 {% assign title = Model.ContentItem.Content.ReasonItem.Title.Text %}
-{% assign body = Model.ContentItem.Content.ReasonItem.Body.Html %}
+{% assign body_markdown = Model.ContentItem.Content.ReasonItem.Body.Markdown %}
 
 <div class="flex gap-4">
     <div class="flex-shrink-0">
@@ -14,9 +14,9 @@
                 {{ title }}
             </h3>
         {% endif %}
-        {% if body != blank %}
+        {% if body_markdown != blank %}
             <div class="rich-text text-sm theme-dark-blue:text-light-text/70 theme-dark-panel:text-light-text/70 theme-light-gray:text-dark-blue/70 theme-white:text-dark-blue/70">
-                {{ body | raw }}
+                {{ body_markdown | markdownify | shortcode | raw }}
             </div>
         {% endif %}
     </div>

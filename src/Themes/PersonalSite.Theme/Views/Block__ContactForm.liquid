@@ -1,7 +1,7 @@
 {% assign form = Model.ContentItem.Content.ContactForm %}
 {% assign post_url = form.PostUrl.Text %}
 {% assign submit_text = form.SubmitText.Text | default: "Send Message" %}
-{% assign privacy_text = form.PrivacyText.Text | default: "I respect your privacy. No spam, ever." %}
+{% assign privacy_markdown = form.PrivacyText.Markdown | default: "I respect your privacy. No spam, ever." %}
 
 <section class="px-4 pb-24 -mt-20 relative z-20">
     <div class="max-w-2xl mx-auto">
@@ -89,10 +89,10 @@
                     </button>
                 </div>
 
-                {% if privacy_text != blank %}
-                    <p class="text-xs text-center text-gray-500 mt-4">
-                        {{ privacy_text }}
-                    </p>
+                {% if privacy_markdown != blank %}
+                    <div class="text-xs text-center text-gray-500 mt-4">
+                        {{ privacy_markdown | markdownify | shortcode | raw }}
+                    </div>
                 {% endif %}
             </form>
         </div>
