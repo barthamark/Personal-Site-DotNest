@@ -37,10 +37,11 @@ This repo is a DotNest Core SDK Orchard Core site with a custom Liquid theme and
 - BlockCommon part stores the theme (PredefinedList): `DarkBlue`, `DarkPanel`, `LightGray`, `White`, mapped to `data-theme` values `dark-blue`, `dark-panel`, `light-gray`, `white`.
 - ButtonGroup supports alignment via `ButtonGroup.Alignment` (Left/Center).
 - CTA uses `StackSection` with `StackSection.HeaderAlignment = Center`; items render stacked (not a grid).
-- GridSection columns are `Two`, `Three`, or `Four` only; use `StackSection` for single-column layouts. GridSection supports `Header`, `Items`, and `After` BagParts.
+- Hero adds `Hero.BackgroundLabel` plus a `Background` BagPart for `IconText` items.
+- GridWidget columns are `Two`, `Three`, or `Four` only; use `StackSection` for single-column layouts. GridWidget stores its items in the `Items` BagPart.
 - Current key types in `PersonalSite.Export.recipe.json`:
-  - Blocks: `Hero`, `SplitSection`, `GridSection`, `StackSection`, `ResultsSection`, `ProcessSection`.
-  - Widgets: `Badge`, `RichText`, `ButtonGroup`, `IconCard`, `FeatureCard`, `ServiceCard`, `BulletItem`, `Stat`, `Testimonial`, `HighlightCard`, `BenefitItem`, `ProcessStep`, `Callout`, `TextNote`, `ArrowLink`.
+  - Blocks: `Hero`, `StackSection`, `ContactForm`, `ContactOptions`.
+  - Widgets: `Badge`, `RichText`, `ButtonGroup`, `IconCard`, `FeatureCard`, `ServiceCard`, `BulletItem`, `Stat`, `Testimonial`, `HighlightCard`, `BenefitItem`, `ProcessStep`, `Callout`, `TextNote`, `ArrowLink`, `GridWidget`, `IconText`, `ReasonItem`, `FaqList`, `FaqItem`, `ContactOption`.
   - Buttons: `Button` (no stereotype), used by `ButtonGroup`.
   - BlogPost summary field is named `Excerpt`.
 

@@ -1,0 +1,46 @@
+{% assign heading = Model.ContentItem.Content.FaqList.Heading.Text %}
+{% assign items = Model.ContentItem.Content.Items.ContentItems %}
+
+{% if heading != blank or items %}
+    <div class="w-full max-w-4xl mx-auto">
+        {% if heading != blank %}
+            <h3 class="text-xl font-bold mb-8 text-center theme-dark-blue:text-white theme-dark-panel:text-white theme-light-gray:text-dark-blue theme-white:text-dark-blue">
+                {{ heading }}
+            </h3>
+        {% endif %}
+
+        {% if items %}
+            <div class="border border-white/10 theme-light-gray:border-gray-200 theme-white:border-gray-200 rounded-lg overflow-hidden">
+                {% for item in items %}
+                    {% assign question = item.FaqItem.Question.Text %}
+                    {% assign answer = item.FaqItem.Answer.Html %}
+                    {% assign is_open = forloop.first %}
+                    <div>
+                        <button type="button" class="w-full px-6 py-4 flex items-center justify-between text-left transition-colors theme-dark-blue:hover:bg-white/5 theme-dark-panel:hover:bg-white/5 theme-light-gray:hover:bg-dark-blue/5 theme-white:hover:bg-dark-blue/5">
+                            <span class="font-medium theme-dark-blue:text-white theme-dark-panel:text-white theme-light-gray:text-dark-blue theme-white:text-dark-blue pr-4">
+                                {{ question }}
+                            </span>
+                            {% if is_open %}
+                                <i data-lucide="minus" class="w-5 h-5 text-light-blue flex-shrink-0" aria-hidden="true"></i>
+                            {% else %}
+                                <i data-lucide="plus" class="w-5 h-5 theme-dark-blue:text-light-text/40 theme-dark-panel:text-light-text/40 theme-light-gray:text-dark-blue/40 theme-white:text-dark-blue/40 flex-shrink-0" aria-hidden="true"></i>
+                            {% endif %}
+                        </button>
+
+                        {% if is_open and answer != blank %}
+                            <div class="px-6 pb-4 border-t border-white/10 theme-light-gray:border-gray-200 theme-white:border-gray-200">
+                                <div class="rich-text text-sm theme-dark-blue:text-light-text/70 theme-dark-panel:text-light-text/70 theme-light-gray:text-dark-blue/70 theme-white:text-dark-blue/70 pt-4">
+                                    {{ answer | raw }}
+                                </div>
+                            </div>
+                        {% endif %}
+
+                        {% unless forloop.last %}
+                            <div class="border-t border-white/10 theme-light-gray:border-gray-200 theme-white:border-gray-200"></div>
+                        {% endunless %}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+{% endif %}

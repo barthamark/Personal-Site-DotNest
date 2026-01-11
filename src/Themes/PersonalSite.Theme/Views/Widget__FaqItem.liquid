@@ -1,0 +1,15 @@
+{% assign question = Model.ContentItem.Content.FaqItem.Question.Text %}
+{% assign answer = Model.ContentItem.Content.FaqItem.Answer.Html %}
+
+{% if question != blank %}
+    <div class="space-y-2">
+        <h4 class="font-medium theme-dark-blue:text-white theme-dark-panel:text-white theme-light-gray:text-dark-blue theme-white:text-dark-blue">
+            {{ question }}
+        </h4>
+        {% if answer != blank %}
+            <div class="rich-text text-sm theme-dark-blue:text-light-text/70 theme-dark-panel:text-light-text/70 theme-light-gray:text-dark-blue/70 theme-white:text-dark-blue/70">
+                {{ answer | raw }}
+            </div>
+        {% endif %}
+    </div>
+{% endif %}

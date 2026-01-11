@@ -1,0 +1,13 @@
+{% assign icon = Model.ContentItem.Content.IconText.Icon.Text %}
+{% assign text = Model.ContentItem.Content.IconText.Text.Text %}
+
+{% if text != blank %}
+    <div class="flex items-center gap-2">
+        {% if icon != blank %}
+            <i data-lucide="{{ icon }}" class="w-4 h-4 text-light-blue flex-shrink-0" aria-hidden="true"></i>
+        {% endif %}
+        <span class="text-sm theme-dark-blue:text-light-text/70 theme-dark-panel:text-light-text/70 theme-light-gray:text-dark-blue/70 theme-white:text-dark-blue/70">
+            {{ text }}
+        </span>
+    </div>
+{% endif %}

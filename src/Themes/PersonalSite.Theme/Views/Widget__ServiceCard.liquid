@@ -19,7 +19,7 @@
             {% for bullet in bullets %}
                 {% assign bullet_text = bullet.BulletItem.Text.Text %}
                 <li class="flex items-start text-sm theme-dark-blue:text-light-text/70 theme-dark-panel:text-light-text/70 theme-light-gray:text-dark-blue/70 theme-white:text-dark-blue/70">
-                    <i data-lucide="check" class="w-5 h-5 text-light-blue mr-3 flex-shrink-0" aria-hidden="true"></i>
+                    <i data-lucide="check-circle-2" class="w-5 h-5 text-light-blue mr-3 flex-shrink-0 mt-0.5" aria-hidden="true"></i>
                     <span>{{ bullet_text }}</span>
                 </li>
             {% endfor %}

@@ -1,0 +1,20 @@
+{% assign items = Model.ContentItem.Content.Items.ContentItems %}
+{% assign columns = Model.ContentItem.Content.GridWidget.Columns.Text %}
+
+{% assign grid_class = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" %}
+{% case columns %}
+    {% when "Two" %}
+        {% assign grid_class = "grid grid-cols-1 md:grid-cols-2 gap-8" %}
+    {% when "Four" %}
+        {% assign grid_class = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8" %}
+{% endcase %}
+
+{% if items %}
+    <div class="w-full text-left">
+        <div class="{{ grid_class }}">
+            {% for item in items %}
+                {{ item | shape_build_display: "Detail" | shape_render }}
+            {% endfor %}
+        </div>
+    </div>
+{% endif %}

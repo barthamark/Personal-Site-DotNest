@@ -112,23 +112,24 @@
                   "Button",
                   "ButtonGroup",
                   "Callout",
+                  "FaqItem",
+                  "FaqList",
                   "FeatureCard",
-                  "GridSection",
+                  "GridWidget",
                   "Hero",
                   "HighlightCard",
                   "IconCard",
+                  "IconText",
                   "Page",
-                  "ProcessSection",
                   "ProcessStep",
-                  "ResultsSection",
+                  "ReasonItem",
                   "RichText",
                   "ServiceCard",
-                  "SplitSection",
+                  "StackSection",
                   "Stat",
                   "Tag",
                   "Testimonial",
-                  "TextNote",
-                  "StackSection"
+                  "TextNote"
                 ],
                 "ContentParts": [
                   "Article",
@@ -142,19 +143,23 @@
                   "Button",
                   "ButtonGroup",
                   "Callout",
+                  "FaqItem",
+                  "FaqList",
                   "FeatureCard",
-                  "GridSection",
+                  "GridWidget",
                   "Hero",
                   "HighlightCard",
                   "IconCard",
+                  "IconText",
                   "ProcessStep",
+                  "ReasonItem",
                   "RichText",
                   "ServiceCard",
+                  "StackSection",
                   "Stat",
                   "Tag",
                   "Testimonial",
-                  "TextNote",
-                  "StackSection"
+                  "TextNote"
                 ],
                 "Id": "8b9df93d34a9496097ee2128941cfb8b",
                 "Name": "ContentDefinition"
@@ -597,13 +602,13 @@
                   "DisplayName": "Hero",
                   "Position": "2"
                 },
-                  "BagPartSettings": {
-                    "ContainedStereotypes": [
-                      "Widget"
-                    ]
-                  }
+                "BagPartSettings": {
+                  "ContainedStereotypes": [
+                    "Widget"
+                  ]
                 }
-              },
+              }
+            },
             {
               "PartName": "BagPart",
               "Name": "After",
@@ -688,313 +693,18 @@
                   ]
                 }
               }
-            }
-          ]
-        },
-        {
-          "Name": "SplitSection",
-          "DisplayName": "Split Section",
-          "Settings": {
-            "ContentTypeSettings": {
-              "Creatable": false,
-              "Listable": false,
-              "Draftable": false,
-              "Versionable": false,
-              "Securable": false,
-              "Stereotype": "Block"
-            }
-          },
-          "ContentTypePartDefinitionRecords": [
-            {
-              "PartName": "TitlePart",
-              "Name": "TitlePart",
-              "Settings": {
-                "ContentTypePartSettings": {
-                  "Position": "0"
-                }
-              }
-            },
-            {
-              "PartName": "BlockCommon",
-              "Name": "BlockCommon",
-              "Settings": {
-                "ContentTypePartSettings": {
-                  "Position": "1"
-                }
-              }
             },
             {
               "PartName": "BagPart",
-              "Name": "LeftColumn",
+              "Name": "Background",
               "Settings": {
                 "ContentTypePartSettings": {
-                  "DisplayName": "Left Column",
-                  "Position": "2"
-                },
-                "BagPartSettings": {
-                  "ContainedStereotypes": [
-                    "Widget"
-                  ]
-                }
-              }
-            },
-            {
-              "PartName": "BagPart",
-              "Name": "RightColumn",
-              "Settings": {
-                "ContentTypePartSettings": {
-                  "DisplayName": "Right Column",
-                  "Position": "3"
-                },
-                "BagPartSettings": {
-                  "ContainedStereotypes": [
-                    "Widget"
-                  ]
-                }
-              }
-            }
-          ]
-        },
-        {
-          "Name": "GridSection",
-          "DisplayName": "Grid Section",
-          "Settings": {
-            "ContentTypeSettings": {
-              "Creatable": false,
-              "Listable": false,
-              "Draftable": false,
-              "Versionable": false,
-              "Securable": false,
-              "Stereotype": "Block"
-            }
-          },
-          "ContentTypePartDefinitionRecords": [
-            {
-              "PartName": "TitlePart",
-              "Name": "TitlePart",
-              "Settings": {
-                "ContentTypePartSettings": {
-                  "Position": "0"
-                }
-              }
-            },
-            {
-              "PartName": "BlockCommon",
-              "Name": "BlockCommon",
-              "Settings": {
-                "ContentTypePartSettings": {
-                  "Position": "1"
-                }
-              }
-            },
-            {
-              "PartName": "GridSection",
-              "Name": "GridSection",
-              "Settings": {
-                "ContentTypePartSettings": {
-                  "Position": "2"
-                }
-              }
-            },
-            {
-              "PartName": "BagPart",
-              "Name": "Header",
-              "Settings": {
-                "ContentTypePartSettings": {
-                  "DisplayName": "Header",
-                  "Position": "3"
-                },
-                "BagPartSettings": {
-                  "ContainedContentTypes": [
-                    "RichText"
-                  ]
-                }
-              }
-            },
-            {
-              "PartName": "BagPart",
-              "Name": "Items",
-              "Settings": {
-                "ContentTypePartSettings": {
-                  "DisplayName": "Items",
-                  "Position": "4"
-                },
-                "BagPartSettings": {
-                  "ContainedStereotypes": [
-                    "Widget"
-                  ]
-                }
-              }
-            },
-            {
-              "PartName": "BagPart",
-              "Name": "After",
-              "Settings": {
-                "ContentTypePartSettings": {
-                  "DisplayName": "After",
-                  "Position": "5"
-                },
-                "BagPartSettings": {
-                  "ContainedStereotypes": [
-                    "Widget"
-                  ]
-                }
-              }
-            }
-          ]
-        },
-        {
-          "Name": "ResultsSection",
-          "DisplayName": "Results Section",
-          "Settings": {
-            "ContentTypeSettings": {
-              "Creatable": false,
-              "Listable": false,
-              "Draftable": false,
-              "Versionable": false,
-              "Securable": false,
-              "Stereotype": "Block"
-            }
-          },
-          "ContentTypePartDefinitionRecords": [
-            {
-              "PartName": "TitlePart",
-              "Name": "TitlePart",
-              "Settings": {
-                "ContentTypePartSettings": {
-                  "Position": "0"
-                }
-              }
-            },
-            {
-              "PartName": "BlockCommon",
-              "Name": "BlockCommon",
-              "Settings": {
-                "ContentTypePartSettings": {
-                  "Position": "1"
-                }
-              }
-            },
-            {
-              "PartName": "BagPart",
-              "Name": "Header",
-              "Settings": {
-                "ContentTypePartSettings": {
-                  "DisplayName": "Header",
-                  "Position": "2"
-                },
-                "BagPartSettings": {
-                  "ContainedContentTypes": [
-                    "RichText"
-                  ]
-                }
-              }
-            },
-            {
-              "PartName": "BagPart",
-              "Name": "Stats",
-              "Settings": {
-                "ContentTypePartSettings": {
-                  "DisplayName": "Stats",
-                  "Position": "3"
-                },
-                "BagPartSettings": {
-                  "ContainedContentTypes": [
-                    "Stat"
-                  ]
-                }
-              }
-            },
-            {
-              "PartName": "BagPart",
-              "Name": "Testimonials",
-              "Settings": {
-                "ContentTypePartSettings": {
-                  "DisplayName": "Testimonials",
+                  "DisplayName": "Background & Expertise",
                   "Position": "4"
                 },
                 "BagPartSettings": {
                   "ContainedContentTypes": [
-                    "Testimonial"
-                  ]
-                }
-              }
-            }
-          ]
-        },
-        {
-          "Name": "ProcessSection",
-          "DisplayName": "Process Section",
-          "Settings": {
-            "ContentTypeSettings": {
-              "Creatable": false,
-              "Listable": false,
-              "Draftable": false,
-              "Versionable": false,
-              "Securable": false,
-              "Stereotype": "Block"
-            }
-          },
-          "ContentTypePartDefinitionRecords": [
-            {
-              "PartName": "TitlePart",
-              "Name": "TitlePart",
-              "Settings": {
-                "ContentTypePartSettings": {
-                  "Position": "0"
-                }
-              }
-            },
-            {
-              "PartName": "BlockCommon",
-              "Name": "BlockCommon",
-              "Settings": {
-                "ContentTypePartSettings": {
-                  "Position": "1"
-                }
-              }
-            },
-            {
-              "PartName": "BagPart",
-              "Name": "Header",
-              "Settings": {
-                "ContentTypePartSettings": {
-                  "DisplayName": "Header",
-                  "Position": "2"
-                },
-                "BagPartSettings": {
-                  "ContainedContentTypes": [
-                    "RichText"
-                  ]
-                }
-              }
-            },
-            {
-              "PartName": "BagPart",
-              "Name": "Steps",
-              "Settings": {
-                "ContentTypePartSettings": {
-                  "DisplayName": "Steps",
-                  "Position": "3"
-                },
-                "BagPartSettings": {
-                  "ContainedContentTypes": [
-                    "ProcessStep"
-                  ]
-                }
-              }
-            },
-            {
-              "PartName": "BagPart",
-              "Name": "Callout",
-              "Settings": {
-                "ContentTypePartSettings": {
-                  "DisplayName": "Callout",
-                  "Position": "4"
-                },
-                "BagPartSettings": {
-                  "ContainedContentTypes": [
-                    "Callout"
+                    "IconText"
                   ]
                 }
               }
@@ -1287,6 +997,161 @@
               "Settings": {
                 "ContentTypePartSettings": {
                   "Position": "0"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "IconText",
+          "DisplayName": "Icon Text",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Creatable": false,
+              "Listable": false,
+              "Draftable": false,
+              "Versionable": false,
+              "Securable": false,
+              "Stereotype": "Widget"
+            }
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "IconText",
+              "Name": "IconText",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "ReasonItem",
+          "DisplayName": "Reason Item",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Creatable": false,
+              "Listable": false,
+              "Draftable": false,
+              "Versionable": false,
+              "Securable": false,
+              "Stereotype": "Widget"
+            }
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "ReasonItem",
+              "Name": "ReasonItem",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "GridWidget",
+          "DisplayName": "Grid",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Creatable": false,
+              "Listable": false,
+              "Draftable": false,
+              "Versionable": false,
+              "Securable": false,
+              "Stereotype": "Widget"
+            }
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "GridWidget",
+              "Name": "GridWidget",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            },
+            {
+              "PartName": "BagPart",
+              "Name": "Items",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "DisplayName": "Items",
+                  "Position": "1"
+                },
+                "BagPartSettings": {
+                  "ContainedStereotypes": [
+                    "Widget"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "FaqItem",
+          "DisplayName": "FAQ Item",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Creatable": false,
+              "Listable": false,
+              "Draftable": false,
+              "Versionable": false,
+              "Securable": false,
+              "Stereotype": "Widget"
+            }
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "FaqItem",
+              "Name": "FaqItem",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "FaqList",
+          "DisplayName": "FAQ List",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Creatable": false,
+              "Listable": false,
+              "Draftable": false,
+              "Versionable": false,
+              "Securable": false,
+              "Stereotype": "Widget"
+            }
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "FaqList",
+              "Name": "FaqList",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            },
+            {
+              "PartName": "BagPart",
+              "Name": "Items",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "DisplayName": "Items",
+                  "Position": "1"
+                },
+                "BagPartSettings": {
+                  "ContainedContentTypes": [
+                    "FaqItem"
+                  ]
                 }
               }
             }
@@ -1864,7 +1729,7 @@
           ]
         },
         {
-          "Name": "GridSection",
+          "Name": "GridWidget",
           "Settings": {},
           "ContentPartFieldDefinitionRecords": [
             {
@@ -1895,31 +1760,6 @@
                   "DefaultValue": "Three"
                 }
               }
-            },
-            {
-              "FieldName": "TextField",
-              "Name": "HeaderAlignment",
-              "Settings": {
-                "ContentPartFieldSettings": {
-                  "DisplayName": "Header alignment",
-                  "Editor": "PredefinedList",
-                  "Position": "1"
-                },
-                "TextFieldPredefinedListEditorSettings": {
-                  "Options": [
-                    {
-                      "name": "Left",
-                      "value": "Left"
-                    },
-                    {
-                      "name": "Center",
-                      "value": "Center"
-                    }
-                  ],
-                  "Editor": 1,
-                  "DefaultValue": "Left"
-                }
-              }
             }
           ]
         },
@@ -1940,6 +1780,16 @@
                   "AllowAnchors": true
                 }
               }
+            },
+            {
+              "FieldName": "TextField",
+              "Name": "BackgroundLabel",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Background label",
+                  "Position": "1"
+                }
+              }
             }
           ]
         },
@@ -1953,6 +1803,126 @@
               "Settings": {
                 "ContentPartFieldSettings": {
                   "DisplayName": "Text",
+                  "Position": "0"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "IconText",
+          "Settings": {},
+          "ContentPartFieldDefinitionRecords": [
+            {
+              "FieldName": "TextField",
+              "Name": "Icon",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Icon",
+                  "Position": "0"
+                }
+              }
+            },
+            {
+              "FieldName": "TextField",
+              "Name": "Text",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Text",
+                  "Position": "1"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "ReasonItem",
+          "Settings": {},
+          "ContentPartFieldDefinitionRecords": [
+            {
+              "FieldName": "TextField",
+              "Name": "Icon",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Icon",
+                  "Position": "0"
+                }
+              }
+            },
+            {
+              "FieldName": "TextField",
+              "Name": "Title",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Title",
+                  "Position": "1"
+                }
+              }
+            },
+            {
+              "FieldName": "HtmlField",
+              "Name": "Body",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Body",
+                  "Editor": "Trumbowyg",
+                  "Position": "2"
+                },
+                "HtmlFieldSettings": {
+                  "SanitizeHtml": true
+                },
+                "HtmlFieldTrumbowygEditorSettings": {
+                  "Options": "{ \"autogrow\": true, \"removeformatPasted\": true, \"btns\": [[\"viewHTML\"],[\"undo\",\"redo\"],[\"formatting\"],[\"strong\",\"em\",\"del\"],[\"fontsize\"],[\"link\"],[\"align\"],[\"unorderedList\",\"orderedList\"],[\"removeformat\"]], \"btnsDef\": { \"align\": { \"dropdown\": [\"justifyLeft\",\"justifyCenter\",\"justifyRight\",\"justifyFull\"], \"ico\": \"justifyLeft\" } } }",
+                  "InsertMediaWithUrl": false
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "FaqItem",
+          "Settings": {},
+          "ContentPartFieldDefinitionRecords": [
+            {
+              "FieldName": "TextField",
+              "Name": "Question",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Question",
+                  "Position": "0"
+                }
+              }
+            },
+            {
+              "FieldName": "HtmlField",
+              "Name": "Answer",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Answer",
+                  "Editor": "Trumbowyg",
+                  "Position": "1"
+                },
+                "HtmlFieldSettings": {
+                  "SanitizeHtml": true
+                },
+                "HtmlFieldTrumbowygEditorSettings": {
+                  "Options": "{ \"autogrow\": true, \"removeformatPasted\": true, \"btns\": [[\"viewHTML\"],[\"undo\",\"redo\"],[\"formatting\"],[\"strong\",\"em\",\"del\"],[\"fontsize\"],[\"link\"],[\"align\"],[\"unorderedList\",\"orderedList\"],[\"removeformat\"]], \"btnsDef\": { \"align\": { \"dropdown\": [\"justifyLeft\",\"justifyCenter\",\"justifyRight\",\"justifyFull\"], \"ico\": \"justifyLeft\" } } }",
+                  "InsertMediaWithUrl": false
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "FaqList",
+          "Settings": {},
+          "ContentPartFieldDefinitionRecords": [
+            {
+              "FieldName": "TextField",
+              "Name": "Heading",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Heading",
                   "Position": "0"
                 }
               }
@@ -2483,24 +2453,24 @@
                 }
               }
             },
-              {
-                "FieldName": "HtmlField",
-                "Name": "PrivacyText",
-                "Settings": {
-                  "ContentPartFieldSettings": {
-                    "DisplayName": "Privacy text",
-                    "Editor": "Trumbowyg",
-                    "Position": "2"
-                  },
-                  "HtmlFieldSettings": {
-                    "SanitizeHtml": true
-                  },
-                  "HtmlFieldTrumbowygEditorSettings": {
-                    "Options": "{ \"autogrow\": true, \"removeformatPasted\": true, \"btns\": [[\"strong\",\"em\"],[\"link\"],[\"unorderedList\",\"orderedList\"],[\"removeformat\"]] }",
-                    "InsertMediaWithUrl": false
-                  }
+            {
+              "FieldName": "HtmlField",
+              "Name": "PrivacyText",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Privacy text",
+                  "Editor": "Trumbowyg",
+                  "Position": "2"
+                },
+                "HtmlFieldSettings": {
+                  "SanitizeHtml": true
+                },
+                "HtmlFieldTrumbowygEditorSettings": {
+                  "Options": "{ \"autogrow\": true, \"removeformatPasted\": true, \"btns\": [[\"strong\",\"em\"],[\"link\"],[\"unorderedList\",\"orderedList\"],[\"removeformat\"]] }",
+                  "InsertMediaWithUrl": false
                 }
               }
+            }
           ]
         },
         {
@@ -2684,6 +2654,9 @@
                     "Anchors": [],
                     "Paths": [],
                     "MediaTexts": []
+                  },
+                  "BackgroundLabel": {
+                    "Text": "Background & Expertise"
                   }
                 },
                 "BagPart": {
@@ -2708,12 +2681,12 @@
                       "DisplayText": "Hero Copy",
                       "Latest": true,
                       "Published": true,
-                    "RichText": {
-                      "Text": {
+                      "RichText": {
+                        "Text": {
                           "Html": "<h1>Build a content platform your team can actually run.</h1><p>I help B2B teams move beyond &quot;just a website&quot; with scalable marketing sites, landing pages, and content platforms. Add a knowledge hub when needed. AI features are available if they're a real fit.</p>"
+                        }
                       }
-                    }
-                  },
+                    },
                     {
                       "ContentItemId": "[js:uuid()]",
                       "ContentItemVersionId": "[js:uuid()]",
@@ -2737,7 +2710,7 @@
                             "Published": true,
                             "Button": {
                               "Content": {
-                                "Url": "#contact",
+                                "Url": "/contact",
                                 "Text": "Contact me",
                                 "Target": null
                               },
@@ -2774,12 +2747,80 @@
                       }
                     }
                   ]
+                },
+                "Background": {
+                  "ContentItems": [
+                    {
+                      "ContentItemId": "[js:uuid()]",
+                      "ContentItemVersionId": "[js:uuid()]",
+                      "ContentType": "IconText",
+                      "DisplayText": "10+ years building .NET web platforms",
+                      "Latest": true,
+                      "Published": true,
+                      "IconText": {
+                        "Icon": {
+                          "Text": "code-2"
+                        },
+                        "Text": {
+                          "Text": "10+ years building .NET web platforms"
+                        }
+                      }
+                    },
+                    {
+                      "ContentItemId": "[js:uuid()]",
+                      "ContentItemVersionId": "[js:uuid()]",
+                      "ContentType": "IconText",
+                      "DisplayText": "Deep CMS + content modeling expertise",
+                      "Latest": true,
+                      "Published": true,
+                      "IconText": {
+                        "Icon": {
+                          "Text": "database"
+                        },
+                        "Text": {
+                          "Text": "Deep CMS + content modeling expertise"
+                        }
+                      }
+                    },
+                    {
+                      "ContentItemId": "[js:uuid()]",
+                      "ContentItemVersionId": "[js:uuid()]",
+                      "ContentType": "IconText",
+                      "DisplayText": "Content-heavy B2B sites + knowledge hubs",
+                      "Latest": true,
+                      "Published": true,
+                      "IconText": {
+                        "Icon": {
+                          "Text": "book-open"
+                        },
+                        "Text": {
+                          "Text": "Content-heavy B2B sites + knowledge hubs"
+                        }
+                      }
+                    },
+                    {
+                      "ContentItemId": "[js:uuid()]",
+                      "ContentItemVersionId": "[js:uuid()]",
+                      "ContentType": "IconText",
+                      "DisplayText": "Long-term maintainability focus",
+                      "Latest": true,
+                      "Published": true,
+                      "IconText": {
+                        "Icon": {
+                          "Text": "wrench"
+                        },
+                        "Text": {
+                          "Text": "Long-term maintainability focus"
+                        }
+                      }
+                    }
+                  ]
                 }
               },
               {
                 "ContentItemId": "[js:uuid()]",
                 "ContentItemVersionId": "[js:uuid()]",
-                "ContentType": "GridSection",
+                "ContentType": "StackSection",
                 "DisplayText": "What I Build Section",
                 "Latest": true,
                 "Published": true,
@@ -2791,21 +2832,13 @@
                     "Text": "LightGray"
                   }
                 },
-                "GridSection": {
-                  "Columns": {
-                    "Text": "Three"
-                  },
-                  "HeaderAlignment": {
-                    "Text": "Left"
-                  }
-                },
                 "Header": {
                   "ContentItems": [
                     {
                       "ContentItemId": "[js:uuid()]",
                       "ContentItemVersionId": "[js:uuid()]",
                       "ContentType": "RichText",
-                      "DisplayText": "What I Build Header",
+                      "DisplayText": "What I Build Section Header",
                       "Latest": true,
                       "Published": true,
                       "RichText": {
@@ -2821,199 +2854,212 @@
                     {
                       "ContentItemId": "[js:uuid()]",
                       "ContentItemVersionId": "[js:uuid()]",
-                      "ContentType": "ServiceCard",
-                      "DisplayText": "Marketing websites + landing pages",
+                      "ContentType": "GridWidget",
+                      "DisplayText": "What I Build Grid",
                       "Latest": true,
                       "Published": true,
-                      "ServiceCard": {
-                        "Title": {
-                          "Text": "Marketing websites + landing pages"
-                        },
-                        "Summary": {
-                          "Html": "<p>Clear messaging, fast pages, and a CMS your team won't fight.</p>"
-                        },
-                        "Link": {
-                          "Url": "",
-                          "Text": "",
-                          "Target": null
+                      "GridWidget": {
+                        "Columns": {
+                          "Text": "Three"
                         }
                       },
-                      "Bullets": {
+                      "Items": {
                         "ContentItems": [
                           {
                             "ContentItemId": "[js:uuid()]",
                             "ContentItemVersionId": "[js:uuid()]",
-                            "ContentType": "BulletItem",
-                            "DisplayText": "Modular sections you can reuse",
+                            "ContentType": "ServiceCard",
+                            "DisplayText": "Marketing websites + landing pages",
                             "Latest": true,
                             "Published": true,
-                            "BulletItem": {
-                              "Text": {
-                                "Text": "Modular sections you can reuse"
+                            "ServiceCard": {
+                              "Title": {
+                                "Text": "Marketing websites + landing pages"
+                              },
+                              "Summary": {
+                                "Html": "<p>Clear messaging, fast pages, and a CMS your team won't fight.</p>"
+                              },
+                              "Link": {
+                                "Url": "",
+                                "Text": "",
+                                "Target": null
                               }
+                            },
+                            "Bullets": {
+                              "ContentItems": [
+                                {
+                                  "ContentItemId": "[js:uuid()]",
+                                  "ContentItemVersionId": "[js:uuid()]",
+                                  "ContentType": "BulletItem",
+                                  "DisplayText": "Modular sections you can reuse",
+                                  "Latest": true,
+                                  "Published": true,
+                                  "BulletItem": {
+                                    "Text": {
+                                      "Text": "Modular sections you can reuse"
+                                    }
+                                  }
+                                },
+                                {
+                                  "ContentItemId": "[js:uuid()]",
+                                  "ContentItemVersionId": "[js:uuid()]",
+                                  "ContentType": "BulletItem",
+                                  "DisplayText": "SEO-friendly structure and performance",
+                                  "Latest": true,
+                                  "Published": true,
+                                  "BulletItem": {
+                                    "Text": {
+                                      "Text": "SEO-friendly structure and performance"
+                                    }
+                                  }
+                                },
+                                {
+                                  "ContentItemId": "[js:uuid()]",
+                                  "ContentItemVersionId": "[js:uuid()]",
+                                  "ContentType": "BulletItem",
+                                  "DisplayText": "Built for iteration, not one-off launches",
+                                  "Latest": true,
+                                  "Published": true,
+                                  "BulletItem": {
+                                    "Text": {
+                                      "Text": "Built for iteration, not one-off launches"
+                                    }
+                                  }
+                                }
+                              ]
                             }
                           },
                           {
                             "ContentItemId": "[js:uuid()]",
                             "ContentItemVersionId": "[js:uuid()]",
-                            "ContentType": "BulletItem",
-                            "DisplayText": "SEO-friendly structure and performance",
+                            "ContentType": "ServiceCard",
+                            "DisplayText": "Content platforms",
                             "Latest": true,
                             "Published": true,
-                            "BulletItem": {
-                              "Text": {
-                                "Text": "SEO-friendly structure and performance"
+                            "ServiceCard": {
+                              "Title": {
+                                "Text": "Content platforms"
+                              },
+                              "Summary": {
+                                "Html": "<p>For teams publishing regularly and needing structure, workflow, and governance.</p>"
+                              },
+                              "Link": {
+                                "Url": "",
+                                "Text": "",
+                                "Target": null
                               }
+                            },
+                            "Bullets": {
+                              "ContentItems": [
+                                {
+                                  "ContentItemId": "[js:uuid()]",
+                                  "ContentItemVersionId": "[js:uuid()]",
+                                  "ContentType": "BulletItem",
+                                  "DisplayText": "Structured content types and reusable blocks",
+                                  "Latest": true,
+                                  "Published": true,
+                                  "BulletItem": {
+                                    "Text": {
+                                      "Text": "Structured content types and reusable blocks"
+                                    }
+                                  }
+                                },
+                                {
+                                  "ContentItemId": "[js:uuid()]",
+                                  "ContentItemVersionId": "[js:uuid()]",
+                                  "ContentType": "BulletItem",
+                                  "DisplayText": "Editorial workflow that fits your team",
+                                  "Latest": true,
+                                  "Published": true,
+                                  "BulletItem": {
+                                    "Text": {
+                                      "Text": "Editorial workflow that fits your team"
+                                    }
+                                  }
+                                },
+                                {
+                                  "ContentItemId": "[js:uuid()]",
+                                  "ContentItemVersionId": "[js:uuid()]",
+                                  "ContentType": "BulletItem",
+                                  "DisplayText": "Taxonomy and content organization that scales",
+                                  "Latest": true,
+                                  "Published": true,
+                                  "BulletItem": {
+                                    "Text": {
+                                      "Text": "Taxonomy and content organization that scales"
+                                    }
+                                  }
+                                }
+                              ]
                             }
                           },
                           {
                             "ContentItemId": "[js:uuid()]",
                             "ContentItemVersionId": "[js:uuid()]",
-                            "ContentType": "BulletItem",
-                            "DisplayText": "Built for iteration, not one-off launches",
+                            "ContentType": "ServiceCard",
+                            "DisplayText": "Knowledge hubs",
                             "Latest": true,
                             "Published": true,
-                            "BulletItem": {
-                              "Text": {
-                                "Text": "Built for iteration, not one-off launches"
+                            "ServiceCard": {
+                              "Title": {
+                                "Text": "Knowledge hubs"
+                              },
+                              "Summary": {
+                                "Html": "<p>Help centers and resource libraries that reduce support load and make content easy to find.</p>"
+                              },
+                              "Link": {
+                                "Url": "",
+                                "Text": "",
+                                "Target": null
                               }
+                            },
+                            "Bullets": {
+                              "ContentItems": [
+                                {
+                                  "ContentItemId": "[js:uuid()]",
+                                  "ContentItemVersionId": "[js:uuid()]",
+                                  "ContentType": "BulletItem",
+                                  "DisplayText": "Information architecture + navigation",
+                                  "Latest": true,
+                                  "Published": true,
+                                  "BulletItem": {
+                                    "Text": {
+                                      "Text": "Information architecture + navigation"
+                                    }
+                                  }
+                                },
+                                {
+                                  "ContentItemId": "[js:uuid()]",
+                                  "ContentItemVersionId": "[js:uuid()]",
+                                  "ContentType": "BulletItem",
+                                  "DisplayText": "Search that actually works",
+                                  "Latest": true,
+                                  "Published": true,
+                                  "BulletItem": {
+                                    "Text": {
+                                      "Text": "Search that actually works"
+                                    }
+                                  }
+                                },
+                                {
+                                  "ContentItemId": "[js:uuid()]",
+                                  "ContentItemVersionId": "[js:uuid()]",
+                                  "ContentType": "BulletItem",
+                                  "DisplayText": "Optional AI search/chat grounded in your content",
+                                  "Latest": true,
+                                  "Published": true,
+                                  "BulletItem": {
+                                    "Text": {
+                                      "Text": "Optional AI search/chat grounded in your content"
+                                    }
+                                  }
+                                }
+                              ]
                             }
                           }
                         ]
                       }
                     },
-                    {
-                      "ContentItemId": "[js:uuid()]",
-                      "ContentItemVersionId": "[js:uuid()]",
-                      "ContentType": "ServiceCard",
-                      "DisplayText": "Content platforms",
-                      "Latest": true,
-                      "Published": true,
-                      "ServiceCard": {
-                        "Title": {
-                          "Text": "Content platforms"
-                        },
-                        "Summary": {
-                          "Html": "<p>For teams publishing regularly and needing structure, workflow, and governance.</p>"
-                        },
-                        "Link": {
-                          "Url": "",
-                          "Text": "",
-                          "Target": null
-                        }
-                      },
-                      "Bullets": {
-                        "ContentItems": [
-                          {
-                            "ContentItemId": "[js:uuid()]",
-                            "ContentItemVersionId": "[js:uuid()]",
-                            "ContentType": "BulletItem",
-                            "DisplayText": "Structured content types and reusable blocks",
-                            "Latest": true,
-                            "Published": true,
-                            "BulletItem": {
-                              "Text": {
-                                "Text": "Structured content types and reusable blocks"
-                              }
-                            }
-                          },
-                          {
-                            "ContentItemId": "[js:uuid()]",
-                            "ContentItemVersionId": "[js:uuid()]",
-                            "ContentType": "BulletItem",
-                            "DisplayText": "Editorial workflow that fits your team",
-                            "Latest": true,
-                            "Published": true,
-                            "BulletItem": {
-                              "Text": {
-                                "Text": "Editorial workflow that fits your team"
-                              }
-                            }
-                          },
-                          {
-                            "ContentItemId": "[js:uuid()]",
-                            "ContentItemVersionId": "[js:uuid()]",
-                            "ContentType": "BulletItem",
-                            "DisplayText": "Taxonomy and content organization that scales",
-                            "Latest": true,
-                            "Published": true,
-                            "BulletItem": {
-                              "Text": {
-                                "Text": "Taxonomy and content organization that scales"
-                              }
-                            }
-                          }
-                        ]
-                      }
-                    },
-                    {
-                      "ContentItemId": "[js:uuid()]",
-                      "ContentItemVersionId": "[js:uuid()]",
-                      "ContentType": "ServiceCard",
-                      "DisplayText": "Knowledge hubs",
-                      "Latest": true,
-                      "Published": true,
-                      "ServiceCard": {
-                        "Title": {
-                          "Text": "Knowledge hubs"
-                        },
-                        "Summary": {
-                          "Html": "<p>Help centers and resource libraries that reduce support load and make content easy to find.</p>"
-                        },
-                        "Link": {
-                          "Url": "",
-                          "Text": "",
-                          "Target": null
-                        }
-                      },
-                      "Bullets": {
-                        "ContentItems": [
-                          {
-                            "ContentItemId": "[js:uuid()]",
-                            "ContentItemVersionId": "[js:uuid()]",
-                            "ContentType": "BulletItem",
-                            "DisplayText": "Information architecture + navigation",
-                            "Latest": true,
-                            "Published": true,
-                            "BulletItem": {
-                              "Text": {
-                                "Text": "Information architecture + navigation"
-                              }
-                            }
-                          },
-                          {
-                            "ContentItemId": "[js:uuid()]",
-                            "ContentItemVersionId": "[js:uuid()]",
-                            "ContentType": "BulletItem",
-                            "DisplayText": "Search that actually works",
-                            "Latest": true,
-                            "Published": true,
-                            "BulletItem": {
-                              "Text": {
-                                "Text": "Search that actually works"
-                              }
-                            }
-                          },
-                          {
-                            "ContentItemId": "[js:uuid()]",
-                            "ContentItemVersionId": "[js:uuid()]",
-                            "ContentType": "BulletItem",
-                            "DisplayText": "Optional AI search/chat grounded in your content",
-                            "Latest": true,
-                            "Published": true,
-                            "BulletItem": {
-                              "Text": {
-                                "Text": "Optional AI search/chat grounded in your content"
-                              }
-                            }
-                          }
-                        ]
-                      }
-                    }
-                  ]
-                },
-                "After": {
-                  "ContentItems": [
                     {
                       "ContentItemId": "[js:uuid()]",
                       "ContentItemVersionId": "[js:uuid()]",
@@ -3030,30 +3076,27 @@
                       }
                     }
                   ]
-                }
-              },
-              {
-                "ContentItemId": "[js:uuid()]",
-                "ContentItemVersionId": "[js:uuid()]",
-                "ContentType": "GridSection",
-                "DisplayText": "Feature Grid",
-                "Latest": true,
-                "Published": true,
-                "TitlePart": {
-                  "Title": "Feature Grid"
                 },
-                "BlockCommon": {
-                  "Theme": {
-                    "Text": "DarkBlue"
-                  }
-                },
-                "GridSection": {
-                  "Columns": {
-                    "Text": "Four"
-                  },
+                "StackSection": {
                   "HeaderAlignment": {
                     "Text": "Center"
                   }
+                }
+              },
+              {
+                "ContentItemId": "[js:uuid()]",
+                "ContentItemVersionId": "[js:uuid()]",
+                "ContentType": "StackSection",
+                "DisplayText": "How It Works Section",
+                "Latest": true,
+                "Published": true,
+                "TitlePart": {
+                  "Title": "How It Works Section"
+                },
+                "BlockCommon": {
+                  "Theme": {
+                    "Text": "DarkBlue"
+                  }
                 },
                 "Header": {
                   "ContentItems": [
@@ -3061,12 +3104,12 @@
                       "ContentItemId": "[js:uuid()]",
                       "ContentItemVersionId": "[js:uuid()]",
                       "ContentType": "RichText",
-                      "DisplayText": "Feature Grid Header",
+                      "DisplayText": "How It Works Section Header",
                       "Latest": true,
                       "Published": true,
                       "RichText": {
                         "Text": {
-                          "Html": "<h2>A content platform built for growth</h2><p>Stop wrestling with rigid templates. I build systems that adapt to your content strategy, not the other way around.</p>"
+                          "Html": "<h2>How it works</h2><p>A straightforward process that keeps scope under control and makes progress visible.</p>"
                         }
                       }
                     }
@@ -3077,103 +3120,176 @@
                     {
                       "ContentItemId": "[js:uuid()]",
                       "ContentItemVersionId": "[js:uuid()]",
-                      "ContentType": "FeatureCard",
-                      "DisplayText": "Structured Content",
+                      "ContentType": "GridWidget",
+                      "DisplayText": "Process Grid",
                       "Latest": true,
                       "Published": true,
-                      "FeatureCard": {
-                        "Icon": {
-                          "Text": "layers"
-                        },
-                        "Title": {
-                          "Text": "Structured Content"
-                        },
-                        "Body": {
-                          "Html": "<p>Services, case studies, insights, and docs organized logically, not just dumped in pages.</p>"
+                      "GridWidget": {
+                        "Columns": {
+                          "Text": "Four"
                         }
+                      },
+                      "Items": {
+                        "ContentItems": [
+                          {
+                            "ContentItemId": "[js:uuid()]",
+                            "ContentItemVersionId": "[js:uuid()]",
+                            "ContentType": "ProcessStep",
+                            "DisplayText": "Align on goals and content reality",
+                            "Latest": true,
+                            "Published": true,
+                            "ProcessStep": {
+                              "Number": {
+                                "Text": "01"
+                              },
+                              "Title": {
+                                "Text": "Align on goals and content reality"
+                              },
+                              "Body": {
+                                "Html": "<p>We clarify what the site needs to achieve (sales, support, hiring) and map the content types, workflows, and constraints.</p>"
+                              }
+                            }
+                          },
+                          {
+                            "ContentItemId": "[js:uuid()]",
+                            "ContentItemVersionId": "[js:uuid()]",
+                            "ContentType": "ProcessStep",
+                            "DisplayText": "Design the content model and structure",
+                            "Latest": true,
+                            "Published": true,
+                            "ProcessStep": {
+                              "Number": {
+                                "Text": "02"
+                              },
+                              "Title": {
+                                "Text": "Design the content model and structure"
+                              },
+                              "Body": {
+                                "Html": "<p>Content types, taxonomy, navigation, and reusable components. This is what makes the platform scalable and AI-ready later.</p>"
+                              }
+                            }
+                          },
+                          {
+                            "ContentItemId": "[js:uuid()]",
+                            "ContentItemVersionId": "[js:uuid()]",
+                            "ContentType": "ProcessStep",
+                            "DisplayText": "Build and ship in increments",
+                            "Latest": true,
+                            "Published": true,
+                            "ProcessStep": {
+                              "Number": {
+                                "Text": "03"
+                              },
+                              "Title": {
+                                "Text": "Build and ship in increments"
+                              },
+                              "Body": {
+                                "Html": "<p>A usable slice first, then expand. You get working pages early, not a big-bang launch at the end.</p>"
+                              }
+                            }
+                          },
+                          {
+                            "ContentItemId": "[js:uuid()]",
+                            "ContentItemVersionId": "[js:uuid()]",
+                            "ContentType": "ProcessStep",
+                            "DisplayText": "Polish, train, and hand over",
+                            "Latest": true,
+                            "Published": true,
+                            "ProcessStep": {
+                              "Number": {
+                                "Text": "04"
+                              },
+                              "Title": {
+                                "Text": "Polish, train, and hand over"
+                              },
+                              "Body": {
+                                "Html": "<p>Editor training, documentation, and optional support. If AI features are planned, we add guardrails and measure impact.</p>"
+                              }
+                            }
+                          }
+                        ]
                       }
                     },
                     {
                       "ContentItemId": "[js:uuid()]",
                       "ContentItemVersionId": "[js:uuid()]",
-                      "ContentType": "FeatureCard",
-                      "DisplayText": "Modular Building Blocks",
+                      "ContentType": "ButtonGroup",
+                      "DisplayText": "Process Buttons",
                       "Latest": true,
                       "Published": true,
-                      "FeatureCard": {
-                        "Icon": {
-                          "Text": "layout"
-                        },
-                        "Title": {
-                          "Text": "Modular Building Blocks"
-                        },
-                        "Body": {
-                          "Html": "<p>Flexible page building components that maintain design consistency without code.</p>"
+                      "ButtonGroup": {
+                        "Alignment": {
+                          "Text": "Center"
                         }
-                      }
-                    },
-                    {
-                      "ContentItemId": "[js:uuid()]",
-                      "ContentItemVersionId": "[js:uuid()]",
-                      "ContentType": "FeatureCard",
-                      "DisplayText": "Intelligent Search",
-                      "Latest": true,
-                      "Published": true,
-                      "FeatureCard": {
-                        "Icon": {
-                          "Text": "search"
-                        },
-                        "Title": {
-                          "Text": "Intelligent Search"
-                        },
-                        "Body": {
-                          "Html": "<p>Navigation patterns and search functionality that actually help users find answers.</p>"
-                        }
-                      }
-                    },
-                    {
-                      "ContentItemId": "[js:uuid()]",
-                      "ContentItemVersionId": "[js:uuid()]",
-                      "ContentType": "FeatureCard",
-                      "DisplayText": "Editorial Workflow",
-                      "Latest": true,
-                      "Published": true,
-                      "FeatureCard": {
-                        "Icon": {
-                          "Text": "pen-tool"
-                        },
-                        "Title": {
-                          "Text": "Editorial Workflow"
-                        },
-                        "Body": {
-                          "Html": "<p>A CMS setup designed for writers and editors, streamlining the publishing process.</p>"
-                        }
+                      },
+                      "BagPart": {
+                        "ContentItems": [
+                          {
+                            "ContentItemId": "[js:uuid()]",
+                            "ContentItemVersionId": "[js:uuid()]",
+                            "ContentType": "Button",
+                            "DisplayText": "Contact me",
+                            "Latest": true,
+                            "Published": true,
+                            "Button": {
+                              "Content": {
+                                "Url": "/contact",
+                                "Text": "Contact me",
+                                "Target": null
+                              },
+                              "Icon": {
+                                "Text": ""
+                              },
+                              "Type": {
+                                "Text": "Primary"
+                              }
+                            }
+                          },
+                          {
+                            "ContentItemId": "[js:uuid()]",
+                            "ContentItemVersionId": "[js:uuid()]",
+                            "ContentType": "Button",
+                            "DisplayText": "See case studies",
+                            "Latest": true,
+                            "Published": true,
+                            "Button": {
+                              "Content": {
+                                "Url": "#work",
+                                "Text": "See case studies",
+                                "Target": null
+                              },
+                              "Icon": {
+                                "Text": ""
+                              },
+                              "Type": {
+                                "Text": "Secondary"
+                              }
+                            }
+                          }
+                        ]
                       }
                     }
                   ]
-                }
-              },
-              {
-                "ContentItemId": "[js:uuid()]",
-                "ContentItemVersionId": "[js:uuid()]",
-                "ContentType": "GridSection",
-                "DisplayText": "Services Section",
-                "Latest": true,
-                "Published": true,
-                "TitlePart": {
-                  "Title": "Services Section"
                 },
-                "BlockCommon": {
-                  "Theme": {
-                    "Text": "LightGray"
-                  }
-                },
-                "GridSection": {
-                  "Columns": {
-                    "Text": "Three"
-                  },
+                "StackSection": {
                   "HeaderAlignment": {
-                    "Text": "Left"
+                    "Text": "Center"
+                  }
+                }
+              },
+              {
+                "ContentItemId": "[js:uuid()]",
+                "ContentItemVersionId": "[js:uuid()]",
+                "ContentType": "StackSection",
+                "DisplayText": "Why Work Section",
+                "Latest": true,
+                "Published": true,
+                "TitlePart": {
+                  "Title": "Why Work Section"
+                },
+                "BlockCommon": {
+                  "Theme": {
+                    "Text": "LightGray"
                   }
                 },
                 "Header": {
@@ -3182,12 +3298,12 @@
                       "ContentItemId": "[js:uuid()]",
                       "ContentItemVersionId": "[js:uuid()]",
                       "ContentType": "RichText",
-                      "DisplayText": "Services Header",
+                      "DisplayText": "Why Work Section Header",
                       "Latest": true,
                       "Published": true,
                       "RichText": {
                         "Text": {
-                          "Html": "<h2>How I help</h2><p>Specialized services for B2B companies that need to manage complex content.</p>"
+                          "Html": "<h2>Why work with an independent consultant?</h2><p>You get senior expertise with direct collaboration-no agency overhead, no hand-offs.</p>"
                         }
                       }
                     }
@@ -3198,61 +3314,90 @@
                     {
                       "ContentItemId": "[js:uuid()]",
                       "ContentItemVersionId": "[js:uuid()]",
-                      "ContentType": "ServiceCard",
-                      "DisplayText": "Content-Heavy Website (Re)build",
+                      "ContentType": "GridWidget",
+                      "DisplayText": "Why Work Grid",
                       "Latest": true,
                       "Published": true,
-                      "ServiceCard": {
-                        "Title": {
-                          "Text": "Content-Heavy Website (Re)build"
-                        },
-                        "Summary": {
-                          "Html": "<p>Modern, maintainable site that communicates expertise and converts.</p>"
-                        },
-                        "Link": {
-                          "Url": "#",
-                          "Text": "Learn more",
-                          "Target": null
+                      "GridWidget": {
+                        "Columns": {
+                          "Text": "Two"
                         }
                       },
-                      "Bullets": {
+                      "Items": {
                         "ContentItems": [
                           {
                             "ContentItemId": "[js:uuid()]",
                             "ContentItemVersionId": "[js:uuid()]",
-                            "ContentType": "BulletItem",
-                            "DisplayText": "Content audit and strategy",
+                            "ContentType": "ReasonItem",
+                            "DisplayText": "Direct access, faster decisions",
                             "Latest": true,
                             "Published": true,
-                            "BulletItem": {
-                              "Text": {
-                                "Text": "Content audit and strategy"
+                            "ReasonItem": {
+                              "Icon": {
+                                "Text": "check-circle-2"
+                              },
+                              "Title": {
+                                "Text": "Direct access, faster decisions"
+                              },
+                              "Body": {
+                                "Html": "<p>No account managers or hand-offs. You work directly with me, which means faster feedback loops and clearer communication.</p>"
                               }
                             }
                           },
                           {
                             "ContentItemId": "[js:uuid()]",
                             "ContentItemVersionId": "[js:uuid()]",
-                            "ContentType": "BulletItem",
-                            "DisplayText": "Information architecture",
+                            "ContentType": "ReasonItem",
+                            "DisplayText": "Senior expertise without agency overhead",
                             "Latest": true,
                             "Published": true,
-                            "BulletItem": {
-                              "Text": {
-                                "Text": "Information architecture"
+                            "ReasonItem": {
+                              "Icon": {
+                                "Text": "check-circle-2"
+                              },
+                              "Title": {
+                                "Text": "Senior expertise without agency overhead"
+                              },
+                              "Body": {
+                                "Html": "<p>You get enterprise-level experience at a fraction of agency costs. No junior developers learning on your project.</p>"
                               }
                             }
                           },
                           {
                             "ContentItemId": "[js:uuid()]",
                             "ContentItemVersionId": "[js:uuid()]",
-                            "ContentType": "BulletItem",
-                            "DisplayText": "Custom CMS setup",
+                            "ContentType": "ReasonItem",
+                            "DisplayText": "Long-term thinking, not just launch day",
                             "Latest": true,
                             "Published": true,
-                            "BulletItem": {
-                              "Text": {
-                                "Text": "Custom CMS setup"
+                            "ReasonItem": {
+                              "Icon": {
+                                "Text": "check-circle-2"
+                              },
+                              "Title": {
+                                "Text": "Long-term thinking, not just launch day"
+                              },
+                              "Body": {
+                                "Html": "<p>I build platforms that your team can maintain and evolve. Training and documentation are included, not afterthoughts.</p>"
+                              }
+                            }
+                          },
+                          {
+                            "ContentItemId": "[js:uuid()]",
+                            "ContentItemVersionId": "[js:uuid()]",
+                            "ContentType": "ReasonItem",
+                            "DisplayText": "Focused capacity means better quality",
+                            "Latest": true,
+                            "Published": true,
+                            "ReasonItem": {
+                              "Icon": {
+                                "Text": "check-circle-2"
+                              },
+                              "Title": {
+                                "Text": "Focused capacity means better quality"
+                              },
+                              "Body": {
+                                "Html": "<p>I limit concurrent projects to 2-3 at a time. Your project gets the attention it deserves, not divided focus.</p>"
                               }
                             }
                           }
@@ -3262,125 +3407,68 @@
                     {
                       "ContentItemId": "[js:uuid()]",
                       "ContentItemVersionId": "[js:uuid()]",
-                      "ContentType": "ServiceCard",
-                      "DisplayText": "Knowledge Hub / Help Center",
+                      "ContentType": "GridWidget",
+                      "DisplayText": "Why Work Testimonials",
                       "Latest": true,
                       "Published": true,
-                      "ServiceCard": {
-                        "Title": {
-                          "Text": "Knowledge Hub / Help Center"
-                        },
-                        "Summary": {
-                          "Html": "<p>Searchable self-service content that reduces support load.</p>"
-                        },
-                        "Link": {
-                          "Url": "#",
-                          "Text": "Learn more",
-                          "Target": null
+                      "GridWidget": {
+                        "Columns": {
+                          "Text": "Two"
                         }
                       },
-                      "Bullets": {
+                      "Items": {
                         "ContentItems": [
                           {
                             "ContentItemId": "[js:uuid()]",
                             "ContentItemVersionId": "[js:uuid()]",
-                            "ContentType": "BulletItem",
-                            "DisplayText": "Content structure design",
+                            "ContentType": "Testimonial",
+                            "DisplayText": "Testimonial TechCorp",
                             "Latest": true,
                             "Published": true,
-                            "BulletItem": {
-                              "Text": {
-                                "Text": "Content structure design"
+                            "Testimonial": {
+                              "Quote": {
+                                "Html": "<p>\"Mark didn't just build us a website-he built us a system we can actually maintain. Our marketing team finally feels confident making updates without breaking things.\"</p>"
+                              },
+                              "Name": {
+                                "Text": "Sarah Chen"
+                              },
+                              "Role": {
+                                "Text": "VP of Marketing"
+                              },
+                              "Company": {
+                                "Text": "TechCorp"
+                              },
+                              "Avatar": {
+                                "Anchors": [],
+                                "Paths": [],
+                                "MediaTexts": []
                               }
                             }
                           },
                           {
                             "ContentItemId": "[js:uuid()]",
                             "ContentItemVersionId": "[js:uuid()]",
-                            "ContentType": "BulletItem",
-                            "DisplayText": "Advanced search implementation",
+                            "ContentType": "Testimonial",
+                            "DisplayText": "Testimonial CloudSolutions",
                             "Latest": true,
                             "Published": true,
-                            "BulletItem": {
-                              "Text": {
-                                "Text": "Advanced search implementation"
-                              }
-                            }
-                          },
-                          {
-                            "ContentItemId": "[js:uuid()]",
-                            "ContentItemVersionId": "[js:uuid()]",
-                            "ContentType": "BulletItem",
-                            "DisplayText": "Editorial workflow setup",
-                            "Latest": true,
-                            "Published": true,
-                            "BulletItem": {
-                              "Text": {
-                                "Text": "Editorial workflow setup"
-                              }
-                            }
-                          }
-                        ]
-                      }
-                    },
-                    {
-                      "ContentItemId": "[js:uuid()]",
-                      "ContentItemVersionId": "[js:uuid()]",
-                      "ContentType": "ServiceCard",
-                      "DisplayText": "Content Architecture and CMS Roadmap",
-                      "Latest": true,
-                      "Published": true,
-                      "ServiceCard": {
-                        "Title": {
-                          "Text": "Content Architecture and CMS Roadmap"
-                        },
-                        "Summary": {
-                          "Html": "<p>Audit, structure, and plan to reduce risk before a rebuild.</p>"
-                        },
-                        "Link": {
-                          "Url": "#",
-                          "Text": "Learn more",
-                          "Target": null
-                        }
-                      },
-                      "Bullets": {
-                        "ContentItems": [
-                          {
-                            "ContentItemId": "[js:uuid()]",
-                            "ContentItemVersionId": "[js:uuid()]",
-                            "ContentType": "BulletItem",
-                            "DisplayText": "Deep content audit",
-                            "Latest": true,
-                            "Published": true,
-                            "BulletItem": {
-                              "Text": {
-                                "Text": "Deep content audit"
-                              }
-                            }
-                          },
-                          {
-                            "ContentItemId": "[js:uuid()]",
-                            "ContentItemVersionId": "[js:uuid()]",
-                            "ContentType": "BulletItem",
-                            "DisplayText": "IA design and mapping",
-                            "Latest": true,
-                            "Published": true,
-                            "BulletItem": {
-                              "Text": {
-                                "Text": "IA design and mapping"
-                              }
-                            }
-                          },
-                          {
-                            "ContentItemId": "[js:uuid()]",
-                            "ContentItemVersionId": "[js:uuid()]",
-                            "ContentType": "BulletItem",
-                            "DisplayText": "Migration roadmap",
-                            "Latest": true,
-                            "Published": true,
-                            "BulletItem": {
-                              "Text": {
-                                "Text": "Migration roadmap"
+                            "Testimonial": {
+                              "Quote": {
+                                "Html": "<p>\"The knowledge hub Mark built reduced our support load significantly. More importantly, he trained our team so well that we've been able to expand it ourselves.\"</p>"
+                              },
+                              "Name": {
+                                "Text": "James Wilson"
+                              },
+                              "Role": {
+                                "Text": "Head of Customer Success"
+                              },
+                              "Company": {
+                                "Text": "CloudSolutions"
+                              },
+                              "Avatar": {
+                                "Anchors": [],
+                                "Paths": [],
+                                "MediaTexts": []
                               }
                             }
                           }
@@ -3388,431 +3476,11 @@
                       }
                     }
                   ]
-                }
-              },
-              {
-                "ContentItemId": "[js:uuid()]",
-                "ContentItemVersionId": "[js:uuid()]",
-                "ContentType": "ResultsSection",
-                "DisplayText": "Results Section",
-                "Latest": true,
-                "Published": true,
-                "TitlePart": {
-                  "Title": "Results Section"
                 },
-                "BlockCommon": {
-                  "Theme": {
-                    "Text": "DarkBlue"
+                "StackSection": {
+                  "HeaderAlignment": {
+                    "Text": "Center"
                   }
-                },
-                "Header": {
-                  "ContentItems": [
-                    {
-                      "ContentItemId": "[js:uuid()]",
-                      "ContentItemVersionId": "[js:uuid()]",
-                      "ContentType": "RichText",
-                      "DisplayText": "Results Header",
-                      "Latest": true,
-                      "Published": true,
-                      "RichText": {
-                        "Text": {
-                          "Html": "<h2>Results that matter</h2>"
-                        }
-                      }
-                    }
-                  ]
-                },
-                "Stats": {
-                  "ContentItems": [
-                    {
-                      "ContentItemId": "[js:uuid()]",
-                      "ContentItemVersionId": "[js:uuid()]",
-                      "ContentType": "Stat",
-                      "DisplayText": "3x Faster publishing",
-                      "Latest": true,
-                      "Published": true,
-                      "Stat": {
-                        "Value": {
-                          "Text": "3x"
-                        },
-                        "Label": {
-                          "Text": "Faster publishing"
-                        }
-                      }
-                    },
-                    {
-                      "ContentItemId": "[js:uuid()]",
-                      "ContentItemVersionId": "[js:uuid()]",
-                      "ContentType": "Stat",
-                      "DisplayText": "60% Fewer support tickets",
-                      "Latest": true,
-                      "Published": true,
-                      "Stat": {
-                        "Value": {
-                          "Text": "60%"
-                        },
-                        "Label": {
-                          "Text": "Fewer support tickets"
-                        }
-                      }
-                    },
-                    {
-                      "ContentItemId": "[js:uuid()]",
-                      "ContentItemVersionId": "[js:uuid()]",
-                      "ContentType": "Stat",
-                      "DisplayText": "2x Organic traffic",
-                      "Latest": true,
-                      "Published": true,
-                      "Stat": {
-                        "Value": {
-                          "Text": "2x"
-                        },
-                        "Label": {
-                          "Text": "Organic traffic"
-                        }
-                      }
-                    },
-                    {
-                      "ContentItemId": "[js:uuid()]",
-                      "ContentItemVersionId": "[js:uuid()]",
-                      "ContentType": "Stat",
-                      "DisplayText": "90% Editor satisfaction",
-                      "Latest": true,
-                      "Published": true,
-                      "Stat": {
-                        "Value": {
-                          "Text": "90%"
-                        },
-                        "Label": {
-                          "Text": "Editor satisfaction"
-                        }
-                      }
-                    }
-                  ]
-                },
-                "Testimonials": {
-                  "ContentItems": [
-                    {
-                      "ContentItemId": "[js:uuid()]",
-                      "ContentItemVersionId": "[js:uuid()]",
-                      "ContentType": "Testimonial",
-                      "DisplayText": "Testimonial TechFlow",
-                      "Latest": true,
-                      "Published": true,
-                      "Testimonial": {
-                        "Quote": {
-                          "Html": "<p>\"Mark transformed our scattered documentation into a cohesive knowledge hub. Our support team finally has a single source of truth, and customers love the self-service experience.\"</p>"
-                        },
-                        "Name": {
-                          "Text": "Sarah Jenkins"
-                        },
-                        "Role": {
-                          "Text": "Head of Customer Success"
-                        },
-                        "Company": {
-                          "Text": "TechFlow"
-                        },
-                        "Avatar": {
-                          "Anchors": [],
-                          "Paths": [],
-                          "MediaTexts": []
-                        }
-                      }
-                    },
-                    {
-                      "ContentItemId": "[js:uuid()]",
-                      "ContentItemVersionId": "[js:uuid()]",
-                      "ContentType": "Testimonial",
-                      "DisplayText": "Testimonial Nexus",
-                      "Latest": true,
-                      "Published": true,
-                      "Testimonial": {
-                        "Quote": {
-                          "Html": "<p>\"We were afraid of another long, painful redesign. Mark's process was transparent, phased, and actually enjoyable. The new site is blazing fast and easy to update.\"</p>"
-                        },
-                        "Name": {
-                          "Text": "David Chen"
-                        },
-                        "Role": {
-                          "Text": "CTO"
-                        },
-                        "Company": {
-                          "Text": "Nexus Corp"
-                        },
-                        "Avatar": {
-                          "Anchors": [],
-                          "Paths": [],
-                          "MediaTexts": []
-                        }
-                      }
-                    }
-                  ]
-                }
-              },
-              {
-                "ContentItemId": "[js:uuid()]",
-                "ContentItemVersionId": "[js:uuid()]",
-                "ContentType": "SplitSection",
-                "DisplayText": "About Section",
-                "Latest": true,
-                "Published": true,
-                "TitlePart": {
-                  "Title": "About Section"
-                },
-                "BlockCommon": {
-                  "Theme": {
-                    "Text": "LightGray"
-                  }
-                },
-                "LeftColumn": {
-                  "ContentItems": [
-                    {
-                      "ContentItemId": "[js:uuid()]",
-                      "ContentItemVersionId": "[js:uuid()]",
-                      "ContentType": "RichText",
-                      "DisplayText": "About Copy",
-                      "Latest": true,
-                      "Published": true,
-                      "RichText": {
-                        "Text": {
-                          "Html": "<h2>Why work with an independent consultant?</h2><p>Agencies are great for massive campaigns, but for specialized B2B platforms, you need focus, expertise, and direct accountability.</p>"
-                        }
-                      }
-                    },
-                    {
-                      "ContentItemId": "[js:uuid()]",
-                      "ContentItemVersionId": "[js:uuid()]",
-                      "ContentType": "HighlightCard",
-                      "DisplayText": "The Solo Advantage",
-                      "Latest": true,
-                      "Published": true,
-                      "HighlightCard": {
-                        "Title": {
-                          "Text": "The Solo Advantage"
-                        },
-                        "Body": {
-                          "Html": "<p>When you hire me, you get me. No account managers, no telephone game, just direct collaboration with the person building your solution.</p>"
-                        }
-                      }
-                    }
-                  ]
-                },
-                "RightColumn": {
-                  "ContentItems": [
-                    {
-                      "ContentItemId": "[js:uuid()]",
-                      "ContentItemVersionId": "[js:uuid()]",
-                      "ContentType": "BenefitItem",
-                      "DisplayText": "Direct senior execution",
-                      "Latest": true,
-                      "Published": true,
-                      "BenefitItem": {
-                        "Icon": {
-                          "Text": "user"
-                        },
-                        "Text": {
-                          "Text": "Direct senior execution (no hand-offs to juniors)"
-                        }
-                      }
-                    },
-                    {
-                      "ContentItemId": "[js:uuid()]",
-                      "ContentItemVersionId": "[js:uuid()]",
-                      "ContentType": "BenefitItem",
-                      "DisplayText": "Clear scope",
-                      "Latest": true,
-                      "Published": true,
-                      "BenefitItem": {
-                        "Icon": {
-                          "Text": "shield-check"
-                        },
-                        "Text": {
-                          "Text": "Clear scope and phased delivery"
-                        }
-                      }
-                    },
-                    {
-                      "ContentItemId": "[js:uuid()]",
-                      "ContentItemVersionId": "[js:uuid()]",
-                      "ContentType": "BenefitItem",
-                      "DisplayText": "Predictable communication",
-                      "Latest": true,
-                      "Published": true,
-                      "BenefitItem": {
-                        "Icon": {
-                          "Text": "message-square"
-                        },
-                        "Text": {
-                          "Text": "Predictable communication cadence"
-                        }
-                      }
-                    },
-                    {
-                      "ContentItemId": "[js:uuid()]",
-                      "ContentItemVersionId": "[js:uuid()]",
-                      "ContentType": "BenefitItem",
-                      "DisplayText": "Built for editors",
-                      "Latest": true,
-                      "Published": true,
-                      "BenefitItem": {
-                        "Icon": {
-                          "Text": "code"
-                        },
-                        "Text": {
-                          "Text": "Built for editors, not just developers"
-                        }
-                      }
-                    },
-                    {
-                      "ContentItemId": "[js:uuid()]",
-                      "ContentItemVersionId": "[js:uuid()]",
-                      "ContentType": "BenefitItem",
-                      "DisplayText": "Long-term maintainability",
-                      "Latest": true,
-                      "Published": true,
-                      "BenefitItem": {
-                        "Icon": {
-                          "Text": "wrench"
-                        },
-                        "Text": {
-                          "Text": "Long-term maintainability focus"
-                        }
-                      }
-                    }
-                  ]
-                }
-              },
-              {
-                "ContentItemId": "[js:uuid()]",
-                "ContentItemVersionId": "[js:uuid()]",
-                "ContentType": "ProcessSection",
-                "DisplayText": "Process Section",
-                "Latest": true,
-                "Published": true,
-                "TitlePart": {
-                  "Title": "Process Section"
-                },
-                "BlockCommon": {
-                  "Theme": {
-                    "Text": "DarkBlue"
-                  }
-                },
-                "Header": {
-                  "ContentItems": [
-                    {
-                      "ContentItemId": "[js:uuid()]",
-                      "ContentItemVersionId": "[js:uuid()]",
-                      "ContentType": "RichText",
-                      "DisplayText": "Process Header",
-                      "Latest": true,
-                      "Published": true,
-                      "RichText": {
-                        "Text": {
-                          "Html": "<h2>How I work</h2><p>A structured, transparent process designed to reduce risk and deliver value at every stage.</p>"
-                        }
-                      }
-                    }
-                  ]
-                },
-                "Steps": {
-                  "ContentItems": [
-                    {
-                      "ContentItemId": "[js:uuid()]",
-                      "ContentItemVersionId": "[js:uuid()]",
-                      "ContentType": "ProcessStep",
-                      "DisplayText": "Discovery and Content Audit",
-                      "Latest": true,
-                      "Published": true,
-                      "ProcessStep": {
-                        "Number": {
-                          "Text": "01"
-                        },
-                        "Title": {
-                          "Text": "Discovery and Content Audit"
-                        },
-                        "Body": {
-                          "Html": "<p>AI-assisted analysis combined with human expertise to understand your current state and opportunities.</p>"
-                        }
-                      }
-                    },
-                    {
-                      "ContentItemId": "[js:uuid()]",
-                      "ContentItemVersionId": "[js:uuid()]",
-                      "ContentType": "ProcessStep",
-                      "DisplayText": "Roadmap and Structure",
-                      "Latest": true,
-                      "Published": true,
-                      "ProcessStep": {
-                        "Number": {
-                          "Text": "02"
-                        },
-                        "Title": {
-                          "Text": "Roadmap and Structure"
-                        },
-                        "Body": {
-                          "Html": "<p>Defining the information architecture, content types, and technical roadmap for the project.</p>"
-                        }
-                      }
-                    },
-                    {
-                      "ContentItemId": "[js:uuid()]",
-                      "ContentItemVersionId": "[js:uuid()]",
-                      "ContentType": "ProcessStep",
-                      "DisplayText": "Build and Iterate",
-                      "Latest": true,
-                      "Published": true,
-                      "ProcessStep": {
-                        "Number": {
-                          "Text": "03"
-                        },
-                        "Title": {
-                          "Text": "Build and Iterate"
-                        },
-                        "Body": {
-                          "Html": "<p>Developing the modular blocks, templates, and integrations in rapid, transparent sprints.</p>"
-                        }
-                      }
-                    },
-                    {
-                      "ContentItemId": "[js:uuid()]",
-                      "ContentItemVersionId": "[js:uuid()]",
-                      "ContentType": "ProcessStep",
-                      "DisplayText": "Launch and Evolve",
-                      "Latest": true,
-                      "Published": true,
-                      "ProcessStep": {
-                        "Number": {
-                          "Text": "04"
-                        },
-                        "Title": {
-                          "Text": "Launch and Evolve"
-                        },
-                        "Body": {
-                          "Html": "<p>Thorough testing, team training, and a plan for ongoing improvements and evolution.</p>"
-                        }
-                      }
-                    }
-                  ]
-                },
-                "Callout": {
-                  "ContentItems": [
-                    {
-                      "ContentItemId": "[js:uuid()]",
-                      "ContentItemVersionId": "[js:uuid()]",
-                      "ContentType": "Callout",
-                      "DisplayText": "AI Assisted Workflow",
-                      "Latest": true,
-                      "Published": true,
-                      "Callout": {
-                        "Icon": {
-                          "Text": "sparkles"
-                        },
-                        "Body": {
-                          "Html": "<p><strong>AI-Assisted Workflow:</strong> I use AI to speed up audits, spot content gaps, and accelerate drafts, then I validate and refine everything with human judgment.</p>"
-                        }
-                      }
-                    }
-                  ]
                 }
               },
               {
@@ -3827,7 +3495,7 @@
                 },
                 "BlockCommon": {
                   "Theme": {
-                    "Text": "LightGray"
+                    "Text": "DarkBlue"
                   }
                 },
                 "Header": {
@@ -3836,12 +3504,12 @@
                       "ContentItemId": "[js:uuid()]",
                       "ContentItemVersionId": "[js:uuid()]",
                       "ContentType": "RichText",
-                      "DisplayText": "CTA Copy",
+                      "DisplayText": "CTA Section Header",
                       "Latest": true,
                       "Published": true,
                       "RichText": {
                         "Text": {
-                          "Html": "<h2>Ready to make your content platform predictable again?</h2><p>No obligation. I will share a clear next-step recommendation based on your current situation.</p>"
+                          "Html": "<h2>Ready to build a content platform that actually works?</h2><p>Let's talk about your content challenges and what success looks like. No pressure, no sales pitch-just a straightforward conversation.</p>"
                         }
                       }
                     }
@@ -3872,15 +3540,36 @@
                             "Published": true,
                             "Button": {
                               "Content": {
-                                "Url": "#contact",
+                                "Url": "/contact",
                                 "Text": "Contact me",
                                 "Target": null
                               },
                               "Icon": {
-                                "Text": "arrow-right"
+                                "Text": ""
                               },
                               "Type": {
                                 "Text": "Primary"
+                              }
+                            }
+                          },
+                          {
+                            "ContentItemId": "[js:uuid()]",
+                            "ContentItemVersionId": "[js:uuid()]",
+                            "ContentType": "Button",
+                            "DisplayText": "Learn more about me",
+                            "Latest": true,
+                            "Published": true,
+                            "Button": {
+                              "Content": {
+                                "Url": "/about",
+                                "Text": "Learn more about me",
+                                "Target": null
+                              },
+                              "Icon": {
+                                "Text": ""
+                              },
+                              "Type": {
+                                "Text": "Secondary"
                               }
                             }
                           }
@@ -3890,14 +3579,98 @@
                     {
                       "ContentItemId": "[js:uuid()]",
                       "ContentItemVersionId": "[js:uuid()]",
-                      "ContentType": "TextNote",
-                      "DisplayText": "CTA Note",
+                      "ContentType": "FaqList",
+                      "DisplayText": "FAQ List",
                       "Latest": true,
                       "Published": true,
-                      "TextNote": {
-                        "Text": {
-                          "Text": "Direct access to Mark's calendar"
+                      "FaqList": {
+                        "Heading": {
+                          "Text": "Common questions"
                         }
+                      },
+                      "Items": {
+                        "ContentItems": [
+                          {
+                            "ContentItemId": "[js:uuid()]",
+                            "ContentItemVersionId": "[js:uuid()]",
+                            "ContentType": "FaqItem",
+                            "DisplayText": "How do you handle project scope and pricing?",
+                            "Latest": true,
+                            "Published": true,
+                            "FaqItem": {
+                              "Question": {
+                                "Text": "How do you handle project scope and pricing?"
+                              },
+                              "Answer": {
+                                "Html": "<p>I start with a discovery call to understand your needs, then provide a fixed-price proposal for a defined scope. For larger projects, I break them into phases so you can see value early and adjust as needed.</p>"
+                              }
+                            }
+                          },
+                          {
+                            "ContentItemId": "[js:uuid()]",
+                            "ContentItemVersionId": "[js:uuid()]",
+                            "ContentType": "FaqItem",
+                            "DisplayText": "What's your typical timeline?",
+                            "Latest": true,
+                            "Published": true,
+                            "FaqItem": {
+                              "Question": {
+                                "Text": "What's your typical timeline?"
+                              },
+                              "Answer": {
+                                "Html": "<p>Most projects take 8-12 weeks from kickoff to launch, depending on complexity. I work in 2-week sprints with regular check-ins, so you'll see progress throughout.</p>"
+                              }
+                            }
+                          },
+                          {
+                            "ContentItemId": "[js:uuid()]",
+                            "ContentItemVersionId": "[js:uuid()]",
+                            "ContentType": "FaqItem",
+                            "DisplayText": "Do you work with internal teams?",
+                            "Latest": true,
+                            "Published": true,
+                            "FaqItem": {
+                              "Question": {
+                                "Text": "Do you work with internal teams?"
+                              },
+                              "Answer": {
+                                "Html": "<p>Absolutely. I often collaborate with your marketing, design, or development teams. I can also train your team to manage the platform after launch.</p>"
+                              }
+                            }
+                          },
+                          {
+                            "ContentItemId": "[js:uuid()]",
+                            "ContentItemVersionId": "[js:uuid()]",
+                            "ContentType": "FaqItem",
+                            "DisplayText": "What if we need ongoing support?",
+                            "Latest": true,
+                            "Published": true,
+                            "FaqItem": {
+                              "Question": {
+                                "Text": "What if we need ongoing support?"
+                              },
+                              "Answer": {
+                                "Html": "<p>I offer monthly retainers for ongoing maintenance, improvements, and support. Many clients start with a project, then move to a retainer for peace of mind.</p>"
+                              }
+                            }
+                          },
+                          {
+                            "ContentItemId": "[js:uuid()]",
+                            "ContentItemVersionId": "[js:uuid()]",
+                            "ContentType": "FaqItem",
+                            "DisplayText": "How many projects do you take at once?",
+                            "Latest": true,
+                            "Published": true,
+                            "FaqItem": {
+                              "Question": {
+                                "Text": "How many projects do you take at once?"
+                              },
+                              "Answer": {
+                                "Html": "<p>I limit myself to 2-3 active projects at a time. This ensures I can give each client the focus and responsiveness they deserve.</p>"
+                              }
+                            }
+                          }
+                        ]
                       }
                     }
                   ]
@@ -3933,36 +3706,36 @@
             "Absolute": false,
             "Path": "contact"
           },
-            "Hero": {
-              "ContentItems": [
-                {
-                  "ContentItemId": "[js:uuid()]",
-                  "ContentItemVersionId": "[js:uuid()]",
-                  "ContentType": "Badge",
-                  "DisplayText": "Get in touch",
-                  "Latest": true,
-                  "Published": true,
-                  "Badge": {
-                    "Text": {
-                      "Text": "Get in touch"
-                    }
-                  }
-                },
-                {
-                  "ContentItemId": "[js:uuid()]",
-                  "ContentItemVersionId": "[js:uuid()]",
-                  "ContentType": "RichText",
-                  "DisplayText": "Contact Hero Copy",
-                  "Latest": true,
-                  "Published": true,
-                  "RichText": {
-                    "Text": {
-                      "Html": "<h1>Let's talk about your <mark>content platform</mark></h1><p>Book a strategy call or send me a message. I reply within 1 business day.</p>"
-                    }
+          "Hero": {
+            "ContentItems": [
+              {
+                "ContentItemId": "[js:uuid()]",
+                "ContentItemVersionId": "[js:uuid()]",
+                "ContentType": "Badge",
+                "DisplayText": "Get in touch",
+                "Latest": true,
+                "Published": true,
+                "Badge": {
+                  "Text": {
+                    "Text": "Get in touch"
                   }
                 }
-              ]
-            },
+              },
+              {
+                "ContentItemId": "[js:uuid()]",
+                "ContentItemVersionId": "[js:uuid()]",
+                "ContentType": "RichText",
+                "DisplayText": "Contact Hero Copy",
+                "Latest": true,
+                "Published": true,
+                "RichText": {
+                  "Text": {
+                    "Html": "<h1>Let's talk about your <mark>content platform</mark></h1><p>Book a strategy call or send me a message. I reply within 1 business day.</p>"
+                  }
+                }
+              }
+            ]
+          },
           "After": {
             "ContentItems": [
               {
