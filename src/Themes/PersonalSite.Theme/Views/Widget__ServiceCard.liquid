@@ -1,6 +1,7 @@
 {% assign title = Model.ContentItem.Content.ServiceCard.Title.Text %}
 {% assign summary_markdown = Model.ContentItem.Content.ServiceCard.Summary.Markdown %}
 {% assign link = Model.ContentItem.Content.ServiceCard.Link %}
+{% assign has_link = link and link.Url != blank %}
 {% assign bullets = Model.ContentItem.Content.Bullets.ContentItems %}
 
 <div class="card-surface p-8 flex flex-col h-full">
@@ -15,7 +16,7 @@
 {% endif %}
 
     {% if bullets %}
-        <ul class="space-y-3 mb-8 flex-1">
+        <ul class="space-y-3{% if has_link %} mb-8{% endif %} flex-1">
             {% for bullet in bullets %}
                 {% assign bullet_text = bullet.BulletItem.Text.Text %}
                 <li class="flex items-start text-sm theme-dark-blue:text-light-text/70 theme-dark-panel:text-light-text/70 theme-light-gray:text-dark-blue/70 theme-white:text-dark-blue/70">
@@ -26,7 +27,7 @@
         </ul>
     {% endif %}
 
-    {% if link and link.Url != blank %}
+    {% if has_link %}
         {% assign raw_url = link.Url %}
         {% assign link_url = raw_url %}
         {% if raw_url %}

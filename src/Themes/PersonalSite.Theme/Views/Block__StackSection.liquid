@@ -2,11 +2,11 @@
 {% assign items = Model.ContentItem.Content.Items.ContentItems %}
 {% assign alignment = Model.ContentItem.Content.StackSection.HeaderAlignment.Text %}
 
-{% assign header_class = "mb-12 max-w-2xl" %}
-{% assign items_class = "flex flex-col gap-6" %}
+{% assign header_class = "mb-8 max-w-2xl" %}
+{% assign items_class = "flex flex-col gap-8" %}
 {% if alignment == "Center" %}
-    {% assign header_class = "text-center max-w-3xl mx-auto mb-16" %}
-    {% assign items_class = "flex flex-col items-center gap-6 text-center" %}
+    {% assign header_class = "text-center max-w-3xl mx-auto mb-10" %}
+    {% assign items_class = "flex flex-col items-center gap-10 text-center" %}
 {% endif %}
 
 <section class="w-full py-24">

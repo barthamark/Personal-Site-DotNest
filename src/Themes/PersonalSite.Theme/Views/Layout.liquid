@@ -123,6 +123,43 @@
     <script>
         lucide.createIcons();
     </script>
+    <script>
+        document.addEventListener("click", (event) => {
+            const toggle = event.target.closest("[data-faq-toggle]");
+            if (!toggle) {
+                return;
+            }
+
+            const root = toggle.closest("[data-faq-root]");
+            const item = toggle.closest("[data-faq-item]");
+            if (!root || !item) {
+                return;
+            }
+
+            const isOpen = toggle.getAttribute("aria-expanded") === "true";
+
+            root.querySelectorAll("[data-faq-item]").forEach((entry) => {
+                const entryToggle = entry.querySelector("[data-faq-toggle]");
+                const answer = entry.querySelector("[data-faq-answer]");
+                const openIcon = entry.querySelector('[data-faq-icon="open"]');
+                const closedIcon = entry.querySelector('[data-faq-icon="closed"]');
+                const shouldOpen = entry === item && !isOpen;
+
+                if (entryToggle) {
+                    entryToggle.setAttribute("aria-expanded", shouldOpen ? "true" : "false");
+                }
+                if (answer) {
+                    answer.classList.toggle("hidden", !shouldOpen);
+                }
+                if (openIcon) {
+                    openIcon.classList.toggle("hidden", !shouldOpen);
+                }
+                if (closedIcon) {
+                    closedIcon.classList.toggle("hidden", shouldOpen);
+                }
+            });
+        });
+    </script>
 
     {% resources type: "FootScript" %}
 </body>

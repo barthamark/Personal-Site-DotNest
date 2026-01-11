@@ -2,7 +2,7 @@
   "name": "PersonalSite.Export",
   "displayName": "Personal Site - Export",
   "description": "Contents exported from the DotNest site.",
-  "author": "M\u00e1rk Bartha",
+  "author": "Márk Bartha",
   "website": "https://markbartha.com",
   "version": "1.0",
   "categories": [],
@@ -1672,7 +1672,8 @@
               "Settings": {
                 "ContentPartFieldSettings": {
                   "DisplayName": "Summary",
-                  "Position": "1"
+                  "Position": "1",
+                  "Editor": "Wysiwyg"
                 },
                 "MarkdownFieldSettings": {
                   "SanitizeHtml": true
@@ -1954,7 +1955,8 @@
               "Settings": {
                 "ContentPartFieldSettings": {
                   "DisplayName": "Body",
-                  "Position": "2"
+                  "Position": "2",
+                  "Editor": "Wysiwyg"
                 },
                 "MarkdownFieldSettings": {
                   "SanitizeHtml": true
@@ -1983,7 +1985,8 @@
               "Settings": {
                 "ContentPartFieldSettings": {
                   "DisplayName": "Answer",
-                  "Position": "1"
+                  "Position": "1",
+                  "Editor": "Wysiwyg"
                 },
                 "MarkdownFieldSettings": {
                   "SanitizeHtml": true
@@ -2064,7 +2067,8 @@
               "Settings": {
                 "ContentPartFieldSettings": {
                   "DisplayName": "Body",
-                  "Position": "2"
+                  "Position": "2",
+                  "Editor": "Wysiwyg"
                 },
                 "MarkdownFieldSettings": {
                   "SanitizeHtml": true
@@ -2093,7 +2097,8 @@
               "Settings": {
                 "ContentPartFieldSettings": {
                   "DisplayName": "Summary",
-                  "Position": "1"
+                  "Position": "1",
+                  "Editor": "Wysiwyg"
                 },
                 "MarkdownFieldSettings": {
                   "SanitizeHtml": true
@@ -2180,7 +2185,8 @@
               "Settings": {
                 "ContentPartFieldSettings": {
                   "DisplayName": "Quote",
-                  "Position": "0"
+                  "Position": "0",
+                  "Editor": "Wysiwyg"
                 },
                 "MarkdownFieldSettings": {
                   "SanitizeHtml": true
@@ -2253,7 +2259,8 @@
               "Settings": {
                 "ContentPartFieldSettings": {
                   "DisplayName": "Body",
-                  "Position": "1"
+                  "Position": "1",
+                  "Editor": "Wysiwyg"
                 },
                 "MarkdownFieldSettings": {
                   "SanitizeHtml": true
@@ -2318,7 +2325,8 @@
               "Settings": {
                 "ContentPartFieldSettings": {
                   "DisplayName": "Body",
-                  "Position": "2"
+                  "Position": "2",
+                  "Editor": "Wysiwyg"
                 },
                 "MarkdownFieldSettings": {
                   "SanitizeHtml": true
@@ -2347,7 +2355,8 @@
               "Settings": {
                 "ContentPartFieldSettings": {
                   "DisplayName": "Body",
-                  "Position": "1"
+                  "Position": "1",
+                  "Editor": "Wysiwyg"
                 },
                 "MarkdownFieldSettings": {
                   "SanitizeHtml": true
@@ -2437,7 +2446,8 @@
               "Settings": {
                 "ContentPartFieldSettings": {
                   "DisplayName": "Text",
-                  "Position": "0"
+                  "Position": "0",
+                  "Editor": "Wysiwyg"
                 },
                 "MarkdownFieldSettings": {
                   "SanitizeHtml": true
@@ -2527,7 +2537,8 @@
               "Settings": {
                 "ContentPartFieldSettings": {
                   "DisplayName": "Privacy text",
-                  "Position": "2"
+                  "Position": "2",
+                  "Editor": "Wysiwyg"
                 },
                 "MarkdownFieldSettings": {
                   "SanitizeHtml": true
@@ -2746,7 +2757,7 @@
                       "Published": true,
                       "Markdown": {
                         "Text": {
-                          "Markdown": "# Build a content platform your team can actually run.\n\nI help B2B teams move beyond \"just a website\" with scalable marketing sites, landing pages, and content platforms. Add a knowledge hub when needed. AI features are available if they're a real fit."
+                          "Markdown": "# Build a ==content platform== your team can actually run.\n\nI help B2B teams move beyond \"just a website\" with scalable marketing sites, landing pages, and content platforms. Add a knowledge hub when needed. AI features are available if they're a real fit."
                         }
                       }
                     },
