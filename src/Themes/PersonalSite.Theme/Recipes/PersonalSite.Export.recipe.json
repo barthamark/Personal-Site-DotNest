@@ -4803,6 +4803,124 @@
               "Page"
             ]
           }
+        ],
+        "AutoroutePart_Edit": [
+          {
+            "place": "Parts:0#Properties;1",
+            "contentType": [
+              "Blog"
+            ]
+          },
+          {
+            "place": "Parts:0#Properties;1",
+            "contentType": [
+              "BlogPost"
+            ]
+          },
+          {
+            "place": "Parts:0#Properties;1",
+            "contentType": [
+              "Page"
+            ]
+          },
+          {
+            "place": "Parts:0#Properties;1",
+            "contentType": [
+              "StatusPage"
+            ]
+          }
+        ],
+        "AliasPart_Edit": [
+          {
+            "place": "Parts:0#Properties;2",
+            "contentType": [
+              "StatusPage"
+            ]
+          }
+        ],
+        "TextField_Edit": [
+          {
+            "place": "Parts:0#Properties;0",
+            "contentType": [
+              "Blog"
+            ],
+            "differentiator": "Blog-PostListStyle"
+          },
+          {
+            "place": "Parts:0#Properties;0",
+            "differentiator": "BlockCommon-Theme"
+          },
+          {
+            "place": "Parts:0#Properties;0",
+            "contentType": [
+              "StackSection"
+            ],
+            "differentiator": "StackSection-HeaderAlignment"
+          },
+          {
+            "place": "Parts:0#Properties;0",
+            "contentType": [
+              "GridWidget"
+            ],
+            "differentiator": "GridWidget-Columns"
+          },
+          {
+            "place": "Parts:0#Properties;0",
+            "contentType": [
+              "IconWidget"
+            ],
+            "differentiator": "IconWidget-Size"
+          },
+          {
+            "place": "Parts:0#Properties;1",
+            "contentType": [
+              "IconWidget"
+            ],
+            "differentiator": "IconWidget-Accent"
+          },
+          {
+            "place": "Parts:0#Properties;0",
+            "contentType": [
+              "IconBlurb"
+            ],
+            "differentiator": "IconBlurb-IconPosition"
+          },
+          {
+            "place": "Parts:0#Properties;1",
+            "contentType": [
+              "IconBlurb"
+            ],
+            "differentiator": "IconBlurb-Style"
+          },
+          {
+            "place": "Parts:0#Properties;0",
+            "contentType": [
+              "ButtonGroup"
+            ],
+            "differentiator": "ButtonGroup-Alignment"
+          },
+          {
+            "place": "Parts:0#Properties;0",
+            "contentType": [
+              "Button"
+            ],
+            "differentiator": "Button-Type"
+          },
+          {
+            "place": "Parts:0#Properties;0",
+            "contentType": [
+              "ContactOption"
+            ],
+            "differentiator": "ContactOption-Accent"
+          }
+        ],
+        "ListPartFeed_Edit": [
+          {
+            "place": "Parts:0#Properties;2",
+            "contentType": [
+              "Blog"
+            ]
+          }
         ]
       }
     },
