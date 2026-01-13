@@ -4947,6 +4947,69 @@
               "Classes": []
             }
           ]
+        },
+        {
+          "Id": "c28d5d541c8d4471adf19b3620446255",
+          "Name": "Pages",
+          "Enabled": true,
+          "MenuItems": [
+            {
+              "$type": "OrchardCore.AdminMenu.AdminNodes.PlaceholderAdminNode, OrchardCore.AdminMenu",
+              "LinkText": "Pages",
+              "IconClass": "fas fa-file-alt",
+              "PermissionNames": [],
+              "UniqueId": "08e804c49cb64fc89198cb2d1ffed407",
+              "Enabled": true,
+              "Priority": 0,
+              "LinkToFirstChild": true,
+              "LocalNav": false,
+              "Items": [
+                {
+                  "$type": "OrchardCore.AdminMenu.AdminNodes.LinkAdminNode, OrchardCore.AdminMenu",
+                  "LinkText": "Landing Pages",
+                  "LinkUrl": "~/Admin/Contents/ContentItems?contentTypeId=Page",
+                  "IconClass": "far fa-file",
+                  "PermissionNames": [],
+                  "UniqueId": "a726d64589d3498e956dc0f95c72104d",
+                  "Enabled": true,
+                  "Priority": 0,
+                  "LinkToFirstChild": false,
+                  "LocalNav": false,
+                  "Items": [],
+                  "Classes": []
+                },
+                {
+                  "$type": "OrchardCore.AdminMenu.AdminNodes.LinkAdminNode, OrchardCore.AdminMenu",
+                  "LinkText": "Contact Page",
+                  "LinkUrl": "~/Admin/Contents/ContentItems/4t9n2c7k1m8r5p3v6s0b2q9w1x/Display",
+                  "IconClass": "far fa-envelope",
+                  "PermissionNames": [],
+                  "UniqueId": "090ba30f2dbf43cda39623416fa75498",
+                  "Enabled": true,
+                  "Priority": 1,
+                  "LinkToFirstChild": false,
+                  "LocalNav": false,
+                  "Items": [],
+                  "Classes": []
+                },
+                {
+                  "$type": "OrchardCore.AdminMenu.AdminNodes.LinkAdminNode, OrchardCore.AdminMenu",
+                  "LinkText": "Status Pages",
+                  "LinkUrl": "~/Admin/Contents/ContentItems?contentTypeId=StatusPage",
+                  "IconClass": "far fa-flag",
+                  "PermissionNames": [],
+                  "UniqueId": "119f49584bb54bf0bf738e719e428986",
+                  "Enabled": true,
+                  "Priority": 2,
+                  "LinkToFirstChild": false,
+                  "LocalNav": false,
+                  "Items": [],
+                  "Classes": []
+                }
+              ],
+              "Classes": []
+            }
+          ]
         }
       ]
     }
