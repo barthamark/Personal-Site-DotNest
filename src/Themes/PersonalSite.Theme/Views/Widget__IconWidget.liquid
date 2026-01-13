@@ -1,0 +1,36 @@
+{% assign icon_name = Model.ContentItem.Content.IconWidget.Icon.Text %}
+{% assign size_value = Model.ContentItem.Content.IconWidget.Size.Text | default: "Large" %}
+{% assign accent_value = Model.ContentItem.Content.IconWidget.Accent.Text | default: "Green" %}
+
+{% assign size_class = "w-20 h-20" %}
+{% assign icon_class = "w-10 h-10" %}
+{% if size_value == "Small" %}
+    {% assign size_class = "w-12 h-12" %}
+    {% assign icon_class = "w-6 h-6" %}
+{% elsif size_value == "Medium" %}
+    {% assign size_class = "w-16 h-16" %}
+    {% assign icon_class = "w-8 h-8" %}
+{% endif %}
+
+{% assign bg_class = "bg-emerald-500/10" %}
+{% assign border_class = "border-emerald-500/20" %}
+{% assign text_class = "text-emerald-400" %}
+{% if accent_value == "LightBlue" %}
+    {% assign bg_class = "bg-light-blue/10" %}
+    {% assign border_class = "border-light-blue/20" %}
+    {% assign text_class = "text-light-blue" %}
+{% elsif accent_value == "Blue" %}
+    {% assign bg_class = "bg-blue-500/10" %}
+    {% assign border_class = "border-blue-500/20" %}
+    {% assign text_class = "text-blue-500" %}
+{% elsif accent_value == "Violet" %}
+    {% assign bg_class = "bg-violet-500/10" %}
+    {% assign border_class = "border-violet-500/20" %}
+    {% assign text_class = "text-violet-400" %}
+{% endif %}
+
+<div class="inline-flex items-center justify-center rounded-full border-2 {{ size_class }} {{ bg_class }} {{ border_class }}">
+    {% if icon_name != blank %}
+        <i data-lucide="{{ icon_name }}" class="{{ icon_class }} {{ text_class }}" aria-hidden="true"></i>
+    {% endif %}
+</div>

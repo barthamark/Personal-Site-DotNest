@@ -2,7 +2,7 @@
 {% assign title = Model.ContentItem.Content.ProcessStep.Title.Text %}
 {% assign body_markdown = Model.ContentItem.Content.ProcessStep.Body.Markdown %}
 
-<div class="relative">
+<div class="relative mt-6">
     {% if number != blank %}
         <div class="text-6xl font-mono font-bold theme-dark-blue:text-white/5 theme-dark-panel:text-white/5 text-dark-blue/5 mb-4 absolute -top-8 -left-4 select-none">
             {{ number }}

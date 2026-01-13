@@ -2,21 +2,24 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { HomePage } from './pages/HomePage';
+import { AboutPage } from './pages/AboutPage';
 import { BlogPage } from './pages/BlogPage';
 import { BlogPostPage } from './pages/BlogPostPage';
 import { ContactPage } from './pages/ContactPage';
-import { AboutPage } from './pages/AboutPage';
-export function App() {
+import { ConfirmationPage } from './pages/ConfirmationPage';
+function App() {
   return <Router>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<AboutPage />} />
         <Route path="/blog" element={<BlogPage />} />
         <Route path="/blog/:slug" element={<BlogPostPage />} />
         <Route path="/contact" element={<ContactPage />} />
-        <Route path="/about" element={<AboutPage />} />
+        <Route path="/confirmation" element={<ConfirmationPage />} />
       </Routes>
     </Router>;
 }
+export { App };
 ```
 ```components/BlogGrid.tsx
 import React from 'react'
@@ -2129,73 +2132,133 @@ render(<App />, document.getElementById("root"));
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Navigation } from '../components/Navigation'
-import { CTASection } from '../components/CTASection'
 import { Button } from '../components/ui/Button'
-import { Code, Users, Lightbulb, ArrowRight, CheckCircle2 } from 'lucide-react'
+import {
+  CheckCircle2,
+  Github,
+  MessageSquare,
+  Code2,
+  ArrowRight,
+  Quote,
+  Building2,
+  Users,
+  Briefcase,
+} from 'lucide-react'
+import { useNavigate } from 'react-router-dom'
+const strengths = [
+  'Content modeling and information architecture for complex sites',
+  'CMS editing experience and governance that teams actually adopt',
+  'Knowledge hubs and documentation systems that reduce support friction',
+  'Long-term maintainability in .NET (clean architecture, safe iteration)',
+  'Pragmatic AI in content platforms (integrated, grounded, optional)',
+]
+const orchardBenefits = [
+  {
+    title: 'Structured content and reusable blocks',
+    description:
+      'Perfect for landing pages, resource libraries, and multi-section sites',
+  },
+  {
+    title: 'Editor-friendly workflows',
+    description: 'Content changes are safe and governed, not scary',
+  },
+  {
+    title: 'Extensibility for the long term',
+    description:
+      'Custom features, integrations, and platform improvements over time',
+  },
+  {
+    title: 'Microsoft-friendly stack',
+    description: 'Fits teams already invested in .NET and Azure',
+  },
+  {
+    title: 'Open-source flexibility',
+    description: 'Long-term ownership with no hard vendor lock-in',
+  },
+]
 export function AboutPage() {
+  const navigate = useNavigate()
   return (
-    <main className="min-h-screen w-full bg-[#edeef7]">
+    <main className="min-h-screen w-full overflow-x-hidden bg-[#151927]">
       <Navigation />
 
-      {/* Hero Section */}
-      <section className="bg-[#151927] pt-32 pb-20 lg:pt-40 lg:pb-32 relative overflow-hidden">
+      {/* Hero with Photo */}
+      <section className="pt-32 pb-24 bg-[#151927] text-[#dddfed] relative overflow-hidden">
         {/* Background decoration */}
-        <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-[#20B7F3]/5 to-transparent pointer-events-none" />
-        <div className="absolute bottom-0 left-0 w-1/4 h-1/2 bg-gradient-to-t from-[#20B7F3]/5 to-transparent pointer-events-none" />
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#20B7F3]/5 to-transparent pointer-events-none" />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
               initial={{
                 opacity: 0,
-                y: 20,
+                x: -20,
               }}
               animate={{
                 opacity: 1,
-                y: 0,
+                x: 0,
               }}
               transition={{
                 duration: 0.6,
               }}
             >
               <span className="inline-block py-1 px-3 rounded-full bg-[#20B7F3]/10 text-[#20B7F3] font-mono text-sm mb-6 border border-[#20B7F3]/20">
-                About Me
+                Independent B2B Software Partner
               </span>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 font-figtree leading-tight">
-                Hi, I'm Márk.
+              <h1 className="text-4xl md:text-5xl font-bold text-white mb-6 font-figtree leading-tight">
+                Building platforms that teams can actually manage
               </h1>
-              <p className="text-xl text-[#dddfed]/80 mb-8 leading-relaxed font-dm-sans">
-                I help B2B companies turn their content into a scalable platform
-                that actually works for their team.
+              <p className="text-xl text-[#dddfed]/80 leading-relaxed mb-8">
+                I'm Márk Bartha, an independent software partner specializing in
+                content-heavy B2B websites and platforms. Since 2013, I've been
+                helping teams move beyond "just a website" with systems built
+                for the long term.
               </p>
-              <p className="text-lg text-[#dddfed]/60 mb-8 leading-relaxed font-dm-sans">
-                I'm an independent software partner with a background in
-                enterprise CMS development. I bridge the gap between complex
-                technical requirements and editorial needs.
-              </p>
+              <div className="flex flex-wrap gap-4">
+                <Button
+                  variant="primary"
+                  size="lg"
+                  onClick={() => navigate('/contact')}
+                >
+                  Let's talk
+                </Button>
+                <Button
+                  variant="ghost"
+                  size="lg"
+                  className="text-white hover:bg-white/10 hover:text-white border-white/20 hover:border-white/40"
+                  onClick={() => {
+                    const element = document.getElementById('story')
+                    element?.scrollIntoView({
+                      behavior: 'smooth',
+                    })
+                  }}
+                >
+                  Read my story
+                </Button>
+              </div>
             </motion.div>
 
             <motion.div
               initial={{
                 opacity: 0,
-                scale: 0.95,
+                x: 20,
               }}
               animate={{
                 opacity: 1,
-                scale: 1,
+                x: 0,
               }}
               transition={{
                 delay: 0.2,
-                duration: 0.6,
+                duration: 0.8,
               }}
               className="relative"
             >
-              <div className="absolute inset-0 bg-[#20B7F3]/20 rounded-2xl transform rotate-3 blur-sm" />
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10 aspect-[4/5] lg:aspect-square max-w-md mx-auto">
+              <div className="absolute -top-4 -right-4 w-full h-full border-2 border-[#20B7F3]/20 rounded-2xl z-0 hidden md:block" />
+              <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl border border-white/10 aspect-square max-w-md mx-auto lg:ml-auto">
                 <img
                   src="https://markbartha.com/mediatheme/images/profile.jpg"
                   alt="Márk Bartha"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover object-center"
                 />
               </div>
             </motion.div>
@@ -2203,146 +2266,298 @@ export function AboutPage() {
         </div>
       </section>
 
-      {/* Story Section */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
-        <motion.div
-          initial={{
-            opacity: 0,
-            y: 20,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-          }}
-          viewport={{
-            once: true,
-          }}
-          className="space-y-12"
-        >
-          <div>
-            <h2 className="text-3xl font-bold font-figtree text-[#151927] mb-6">
-              My Journey
-            </h2>
-            <div className="prose prose-lg text-gray-600 font-dm-sans">
-              <p>
-                I didn't start out as a content platform specialist. Like many
-                developers, I began building websites—lots of them. But I kept
-                noticing the same pattern: companies would launch a beautiful
-                site, then struggle to maintain it. The CMS was too complex, the
-                structure was too rigid, and the team avoided touching it.
-              </p>
-              <p>
-                That frustration led me to focus deeper on the systems behind
-                the websites. I realized that a website isn't just a collection
-                of pages; it's a living tool for your business.
-              </p>
-            </div>
+      {/* Experience Foundation - Split Layout */}
+      <section id="story" className="py-24 bg-[#edeef7]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+            {/* Left: Story */}
+            <motion.div
+              initial={{
+                opacity: 0,
+                x: -20,
+              }}
+              whileInView={{
+                opacity: 1,
+                x: 0,
+              }}
+              viewport={{
+                once: true,
+              }}
+            >
+              <div className="flex items-start gap-4 mb-6">
+                <div className="w-14 h-14 rounded-xl bg-white border border-gray-200 flex items-center justify-center flex-shrink-0 p-2">
+                  <img
+                    src="https://lombiq.com/LombiqDotCom.Theme/icons/android-chrome-192x192.png"
+                    alt="Lombiq Technologies"
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <div>
+                  <h2 className="text-3xl md:text-4xl font-bold text-[#151927] font-figtree leading-tight">
+                    Shaped by a decade at Lombiq
+                  </h2>
+                  <p className="text-sm text-[#151927]/50 font-mono mt-2">
+                    Independent partner since 2013
+                  </p>
+                </div>
+              </div>
+
+              <div className="space-y-6 text-[#151927]/70 leading-relaxed">
+                <p>
+                  My expertise comes from over a decade working as an
+                  independent partner with Lombiq Technologies, delivering
+                  Orchard Core and .NET platforms for enterprise clients across
+                  finance, insurance, healthcare, and B2B services.
+                </p>
+                <p>
+                  These weren't simple agency websites. I worked on complex
+                  content platforms, knowledge hubs serving thousands of users,
+                  editorial systems with sophisticated workflows, and customer
+                  portals requiring deep integration and governance.
+                </p>
+                <p>
+                  That experience taught me what separates platforms that scale
+                  from ones that become maintenance nightmares: structured
+                  content models, editor-friendly workflows, proper information
+                  architecture, and systems designed for teams to run
+                  independently.
+                </p>
+              </div>
+
+              <div className="mt-8 pt-8 border-t border-gray-200">
+                <p className="text-sm text-[#151927]/60 leading-relaxed">
+                  <strong className="text-[#151927]">
+                    Today I work independently.
+                  </strong>{' '}
+                  When projects need a larger team, I collaborate with yours and
+                  can involve Lombiq as a delivery partner when it truly makes
+                  sense.
+                </p>
+              </div>
+
+              {/* Testimonial inline */}
+              <div className="mt-8 bg-gradient-to-br from-[#20B7F3]/5 to-[#20B7F3]/10 rounded-xl p-6 border border-[#20B7F3]/20">
+                <Quote className="w-8 h-8 text-[#20B7F3]/40 mb-3" />
+                <p className="text-[#151927]/80 leading-relaxed italic mb-4">
+                  "Márk has been an invaluable partner in delivering complex
+                  content platforms. His technical expertise combined with
+                  product thinking makes him uniquely effective at translating
+                  business needs into maintainable solutions."
+                </p>
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full bg-white border border-gray-200 flex items-center justify-center p-1.5">
+                    <img
+                      src="https://lombiq.com/LombiqDotCom.Theme/icons/android-chrome-192x192.png"
+                      alt="Lombiq"
+                      className="w-full h-full object-contain"
+                    />
+                  </div>
+                  <div>
+                    <p className="font-bold text-[#151927] text-sm">
+                      Zoltán Lehóczky
+                    </p>
+                    <p className="text-xs text-[#151927]/60">
+                      CEO, Lombiq Technologies
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            {/* Right: Project Scope & Roles */}
+            <motion.div
+              initial={{
+                opacity: 0,
+                x: 20,
+              }}
+              whileInView={{
+                opacity: 1,
+                x: 0,
+              }}
+              viewport={{
+                once: true,
+              }}
+              transition={{
+                delay: 0.2,
+              }}
+              className="space-y-8"
+            >
+              {/* Project Types */}
+              <div className="bg-white rounded-xl p-8 shadow-sm border border-gray-100">
+                <div className="flex items-center gap-3 mb-6">
+                  <Building2 className="w-6 h-6 text-[#20B7F3]" />
+                  <h3 className="text-xl font-bold text-[#151927] font-figtree">
+                    Platform complexity
+                  </h3>
+                </div>
+                <div className="space-y-3">
+                  {[
+                    {
+                      label: 'Content platforms',
+                      desc: 'Editorial systems with workflows and governance',
+                    },
+                    {
+                      label: 'Knowledge hubs',
+                      desc: 'Documentation sites serving thousands of users',
+                    },
+                    {
+                      label: 'Customer portals',
+                      desc: 'Authenticated experiences with deep integrations',
+                    },
+                    {
+                      label: 'Marketing sites',
+                      desc: 'High-traffic B2B websites with structured content',
+                    },
+                  ].map((item, i) => (
+                    <div key={i} className="flex gap-3">
+                      <div className="w-1.5 h-1.5 rounded-full bg-[#20B7F3] mt-2 flex-shrink-0" />
+                      <div>
+                        <p className="font-medium text-[#151927]">
+                          {item.label}
+                        </p>
+                        <p className="text-sm text-[#151927]/60">{item.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Industries */}
+              <div className="bg-white rounded-xl p-8 shadow-sm border border-gray-100">
+                <div className="flex items-center gap-3 mb-6">
+                  <Users className="w-6 h-6 text-[#20B7F3]" />
+                  <h3 className="text-xl font-bold text-[#151927] font-figtree">
+                    Industries served
+                  </h3>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {[
+                    'Finance',
+                    'Insurance',
+                    'Healthcare',
+                    'B2B Services',
+                    'SaaS',
+                    'Professional Services',
+                  ].map((industry, i) => (
+                    <span
+                      key={i}
+                      className="px-3 py-1.5 bg-[#edeef7] text-[#151927]/70 text-sm rounded-lg"
+                    >
+                      {industry}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              {/* Roles */}
+              <div className="bg-white rounded-xl p-8 shadow-sm border border-gray-100">
+                <div className="flex items-center gap-3 mb-6">
+                  <Briefcase className="w-6 h-6 text-[#20B7F3]" />
+                  <h3 className="text-xl font-bold text-[#151927] font-figtree">
+                    Roles I've held
+                  </h3>
+                </div>
+                <div className="space-y-4">
+                  <div className="flex gap-4">
+                    <div className="w-10 h-10 rounded-lg bg-[#20B7F3]/10 flex items-center justify-center flex-shrink-0">
+                      <span className="text-[#20B7F3] font-bold text-sm">
+                        TL
+                      </span>
+                    </div>
+                    <div>
+                      <p className="font-bold text-[#151927] mb-1">Tech Lead</p>
+                      <p className="text-sm text-[#151927]/70">
+                        Architecture decisions, technical tradeoffs, code
+                        quality, and long-term maintainability
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex gap-4">
+                    <div className="w-10 h-10 rounded-lg bg-[#20B7F3]/10 flex items-center justify-center flex-shrink-0">
+                      <span className="text-[#20B7F3] font-bold text-sm">
+                        PL
+                      </span>
+                    </div>
+                    <div>
+                      <p className="font-bold text-[#151927] mb-1">
+                        Project Lead
+                      </p>
+                      <p className="text-sm text-[#151927]/70">
+                        Delivery planning, scope management, stakeholder
+                        coordination, keeping projects on track
+                      </p>
+                    </div>
+                  </div>
+                  <div className="flex gap-4">
+                    <div className="w-10 h-10 rounded-lg bg-[#20B7F3]/10 flex items-center justify-center flex-shrink-0">
+                      <span className="text-[#20B7F3] font-bold text-sm">
+                        PP
+                      </span>
+                    </div>
+                    <div>
+                      <p className="font-bold text-[#151927] mb-1">
+                        Product Partner
+                      </p>
+                      <p className="text-sm text-[#151927]/70">
+                        Translating business goals into platform features,
+                        content structure, and workflows that work
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
           </div>
-
-          {/* Lombiq Highlight */}
-          <div className="bg-white rounded-2xl p-8 md:p-10 shadow-lg border border-gray-100 relative overflow-hidden">
-            <div className="absolute top-0 right-0 w-32 h-32 bg-[#20B7F3]/5 rounded-bl-full" />
-
-            <h3 className="text-2xl font-bold font-figtree text-[#151927] mb-4 flex items-center">
-              <span className="w-8 h-8 bg-[#151927] rounded-lg flex items-center justify-center mr-3 text-white text-xs font-mono">
-                L
-              </span>
-              The Lombiq Chapter
-            </h3>
-
-            <div className="prose prose-lg text-gray-600 font-dm-sans mb-6">
-              <p>
-                I spent several years at <strong>Lombiq</strong>, a specialized
-                agency focused on complex content platforms and Orchard CMS.
-                Working with enterprise clients across Europe and North America
-                taught me that the real challenge isn't building a website—it's
-                building a system that grows with your content.
-              </p>
-              <p>
-                At Lombiq, I worked on large-scale platforms where content
-                structure and publishing processes were just as important as the
-                code. I learned to design information architectures that scale,
-                build editorial workflows that make sense, and create systems
-                that non-technical teams can actually use.
-              </p>
-            </div>
-
-            <div className="flex flex-wrap gap-3">
-              <span className="inline-flex items-center px-3 py-1 rounded-full bg-gray-100 text-sm text-gray-700 font-medium">
-                <CheckCircle2 className="w-4 h-4 mr-2 text-[#20B7F3]" />
-                Enterprise CMS
-              </span>
-              <span className="inline-flex items-center px-3 py-1 rounded-full bg-gray-100 text-sm text-gray-700 font-medium">
-                <CheckCircle2 className="w-4 h-4 mr-2 text-[#20B7F3]" />
-                Editorial Workflows
-              </span>
-              <span className="inline-flex items-center px-3 py-1 rounded-full bg-gray-100 text-sm text-gray-700 font-medium">
-                <CheckCircle2 className="w-4 h-4 mr-2 text-[#20B7F3]" />
-                Complex Integrations
-              </span>
-            </div>
-          </div>
-
-          <div>
-            <h3 className="text-2xl font-bold font-figtree text-[#151927] mb-4">
-              Why I Went Independent
-            </h3>
-            <div className="prose prose-lg text-gray-600 font-dm-sans">
-              <p>
-                I went independent because I saw a gap: agencies are great for
-                massive projects, but they come with overhead, hand-offs, and
-                sometimes misalignment. Solo freelancers are affordable but
-                often lack the enterprise experience.
-              </p>
-              <p>
-                I wanted to offer the best of both—senior expertise with direct
-                collaboration. Now, I partner directly with B2B leaders to build
-                content platforms that are robust enough for enterprise needs
-                but agile enough for growing teams.
-              </p>
-            </div>
-          </div>
-        </motion.div>
+        </div>
       </section>
 
-      {/* Values / Approach */}
-      <section className="py-24 bg-white">
+      {/* What Makes Platforms Succeed */}
+      <section className="py-24 bg-[#151927] text-[#dddfed]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold font-figtree text-[#151927] mb-4">
-              How I Work
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: 20,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{
+              once: true,
+            }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 font-figtree">
+              What makes platforms succeed after launch
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              My approach is built on transparency, direct collaboration, and a
-              focus on long-term value.
+            <p className="text-lg text-[#dddfed]/70 max-w-3xl mx-auto">
+              Across dozens of projects, the biggest difference isn't the
+              framework. It's structure, workflow, and maintainability.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
             {[
               {
-                icon: Users,
-                title: 'Direct Partnership',
-                desc: 'No account managers, no hand-offs. You work directly with me, ensuring clear communication and accountability.',
+                title: 'Content modeling and reusable components',
+                desc: 'Keep teams moving fast without breaking consistency. Structured content types and modular building blocks prevent chaos as sites grow.',
               },
               {
-                icon: Lightbulb,
-                title: 'Business First',
-                desc: 'I start with your business goals, not technical solutions. Code is just a means to an end.',
+                title: 'Governance and workflows',
+                desc: 'Prevent content drift and accidental breakage. Clear publishing rules and approval flows give teams confidence to make changes.',
               },
               {
-                icon: Code,
-                title: 'Transparent Process',
-                desc: "Clear roadmaps, regular updates, and no surprises. You'll always know where your project stands.",
+                title: 'Search and information architecture',
+                desc: 'Decide whether knowledge hubs actually work. Users need to find answers quickly, or the platform fails its purpose.',
               },
               {
-                icon: CheckCircle2,
-                title: 'Long-term Thinking',
-                desc: 'I build for maintainability, not just launch day. Your platform should be easy to update for years to come.',
+                title: 'AI features done right',
+                desc: 'Only valuable when integrated and controlled. Grounded Q&A, smart search, and metadata suggestions that teams can trust and govern.',
               },
-            ].map((item, idx) => (
+            ].map((item, index) => (
               <motion.div
-                key={idx}
+                key={index}
                 initial={{
                   opacity: 0,
                   y: 20,
@@ -2355,79 +2570,406 @@ export function AboutPage() {
                   once: true,
                 }}
                 transition={{
-                  delay: idx * 0.1,
+                  delay: index * 0.1,
                 }}
-                className="p-6 rounded-xl bg-[#edeef7] border border-gray-100 hover:shadow-md transition-shadow"
+                className="bg-white/5 rounded-xl p-6 border border-white/10"
               >
-                <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center mb-4 shadow-sm text-[#20B7F3]">
-                  <item.icon className="w-6 h-6" />
-                </div>
-                <h3 className="text-xl font-bold font-figtree text-[#151927] mb-3">
+                <h3 className="text-lg font-bold text-white mb-3 font-figtree">
                   {item.title}
                 </h3>
-                <p className="text-gray-600 text-sm leading-relaxed">
-                  {item.desc}
-                </p>
+                <p className="text-[#dddfed]/70 leading-relaxed">{item.desc}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-3xl mx-auto">
-        <h2 className="text-3xl font-bold font-figtree text-[#151927] mb-12 text-center">
-          Common Questions
-        </h2>
+      {/* What I'm Known For - Bento Grid Style */}
+      <section className="py-24 bg-[#edeef7]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: 20,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{
+              once: true,
+            }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-[#151927] mb-4 font-figtree">
+              Specialist Strengths
+            </h2>
+            <p className="text-lg text-[#151927]/70 max-w-2xl mx-auto">
+              Deep expertise in the areas that matter most for content-heavy B2B
+              platforms
+            </p>
+          </motion.div>
 
-        <div className="space-y-6">
-          {[
-            {
-              q: 'How many projects do you take at once?',
-              a: 'I limit myself to 2-3 active projects at a time. This ensures I can give each client the focus and responsiveness they deserve.',
-            },
-            {
-              q: "What's a typical timeline?",
-              a: 'It depends on the scope, but a full website rebuild typically takes 8-12 weeks. I break projects into phases so we can ship value early and often.',
-            },
-            {
-              q: 'Do you work with internal teams?',
-              a: 'Absolutely. I often collaborate with internal marketing teams, designers, and developers. I can also train your team on how to manage the new platform.',
-            },
-            {
-              q: 'What if we need ongoing support?',
-              a: "I offer retainer options for ongoing maintenance, improvements, and support. I don't just launch and leave; I'm here to help your platform evolve.",
-            },
-          ].map((faq, idx) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {strengths.map((strength, index) => (
+              <motion.div
+                key={index}
+                initial={{
+                  opacity: 0,
+                  y: 20,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                viewport={{
+                  once: true,
+                }}
+                transition={{
+                  delay: index * 0.1,
+                }}
+                className="bg-white rounded-xl p-6 shadow-sm border border-gray-100"
+              >
+                <CheckCircle2 className="w-8 h-8 text-[#20B7F3] mb-4" />
+                <p className="text-[#151927]/80 leading-relaxed">{strength}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Working With Me - Side by Side */}
+      <section className="py-24 bg-[#151927] text-[#dddfed]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <motion.div
-              key={idx}
               initial={{
                 opacity: 0,
-                y: 10,
+                x: -20,
               }}
               whileInView={{
                 opacity: 1,
-                y: 0,
+                x: 0,
+              }}
+              viewport={{
+                once: true,
+              }}
+            >
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 font-figtree">
+                Direct collaboration, senior ownership
+              </h2>
+              <div className="h-1 w-20 bg-[#20B7F3] mb-8" />
+              <div className="space-y-6">
+                <div className="flex gap-4">
+                  <div className="w-2 h-2 rounded-full bg-[#20B7F3] mt-2 flex-shrink-0" />
+                  <div>
+                    <h3 className="font-bold text-white mb-2">
+                      You work with the person doing the work
+                    </h3>
+                    <p className="text-[#dddfed]/70">
+                      No account managers, no telephone game. Just direct
+                      collaboration with the person building your solution.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <div className="w-2 h-2 rounded-full bg-[#20B7F3] mt-2 flex-shrink-0" />
+                  <div>
+                    <h3 className="font-bold text-white mb-2">
+                      Fewer handoffs, faster iteration
+                    </h3>
+                    <p className="text-[#dddfed]/70">
+                      Senior ownership throughout means decisions happen quickly
+                      and implementation stays aligned with your goals.
+                    </p>
+                  </div>
+                </div>
+                <div className="flex gap-4">
+                  <div className="w-2 h-2 rounded-full bg-[#20B7F3] mt-2 flex-shrink-0" />
+                  <div>
+                    <h3 className="font-bold text-white mb-2">
+                      Comfortable with collaboration
+                    </h3>
+                    <p className="text-[#dddfed]/70">
+                      I work well alongside your internal team, designer, or
+                      agency—especially when you want a specialist to own the
+                      platform side.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{
+                opacity: 0,
+                x: 20,
+              }}
+              whileInView={{
+                opacity: 1,
+                x: 0,
               }}
               viewport={{
                 once: true,
               }}
               transition={{
-                delay: idx * 0.1,
+                delay: 0.2,
               }}
-              className="bg-white p-6 rounded-xl border border-gray-100 shadow-sm"
+              className="bg-white/5 rounded-2xl p-8 lg:p-12 border border-white/10"
             >
-              <h3 className="text-lg font-bold font-figtree text-[#151927] mb-2">
-                {faq.q}
-              </h3>
-              <p className="text-gray-600">{faq.a}</p>
+              <div className="space-y-8">
+                <div>
+                  <div className="text-5xl font-bold text-[#20B7F3] mb-2 font-figtree">
+                    10+
+                  </div>
+                  <p className="text-[#dddfed]/70">
+                    Years of specialized experience
+                  </p>
+                </div>
+                <div>
+                  <div className="text-5xl font-bold text-[#20B7F3] mb-2 font-figtree">
+                    2-3
+                  </div>
+                  <p className="text-[#dddfed]/70">
+                    Active projects at a time (focused capacity)
+                  </p>
+                </div>
+                <div>
+                  <div className="text-5xl font-bold text-[#20B7F3] mb-2 font-figtree">
+                    100%
+                  </div>
+                  <p className="text-[#dddfed]/70">
+                    Direct collaboration with me
+                  </p>
+                </div>
+              </div>
             </motion.div>
-          ))}
+          </div>
         </div>
       </section>
 
-      <CTASection />
+      {/* Community - Cards */}
+      <section className="py-24 bg-[#edeef7]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: 20,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{
+              once: true,
+            }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-[#151927] mb-4 font-figtree">
+              Active in the Orchard Core Community
+            </h2>
+            <p className="text-lg text-[#151927]/70 max-w-2xl mx-auto">
+              Contributing to the ecosystem through open-source work and
+              knowledge sharing keeps me close to what's working in real
+              projects today.
+            </p>
+          </motion.div>
 
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                icon: Github,
+                title: 'Open Source',
+                desc: 'Modules, fixes, and improvements to the Orchard Core platform',
+              },
+              {
+                icon: MessageSquare,
+                title: 'Community Support',
+                desc: 'Helping others solve problems and sharing knowledge',
+              },
+              {
+                icon: Code2,
+                title: 'Best Practices',
+                desc: 'Advocating for maintainable, long-term solutions',
+              },
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{
+                  opacity: 0,
+                  y: 20,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                viewport={{
+                  once: true,
+                }}
+                transition={{
+                  delay: index * 0.1,
+                }}
+                className="bg-white rounded-xl p-8 shadow-sm border border-gray-100 text-center"
+              >
+                <item.icon className="w-12 h-12 text-[#20B7F3] mx-auto mb-4" />
+                <h3 className="font-bold text-[#151927] mb-3 text-xl font-figtree">
+                  {item.title}
+                </h3>
+                <p className="text-[#151927]/70 leading-relaxed">{item.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Orchard Core - Feature Showcase */}
+      <section className="py-24 bg-[#151927] text-[#dddfed]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: 20,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{
+              once: true,
+            }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 font-figtree">
+              Why Orchard Core for B2B Teams
+            </h2>
+            <p className="text-lg text-[#dddfed]/70 max-w-3xl mx-auto leading-relaxed">
+              A modern, modular .NET content platform designed for structured
+              content and real-world workflows—not just page editing.
+            </p>
+          </motion.div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+            {orchardBenefits.map((benefit, index) => (
+              <motion.div
+                key={index}
+                initial={{
+                  opacity: 0,
+                  y: 20,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                viewport={{
+                  once: true,
+                }}
+                transition={{
+                  delay: index * 0.1,
+                }}
+                className="bg-white/5 rounded-xl p-6 border border-white/10"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="w-8 h-8 rounded-lg bg-[#20B7F3]/20 flex items-center justify-center flex-shrink-0 mt-1">
+                    <CheckCircle2 className="w-5 h-5 text-[#20B7F3]" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold text-white mb-2 font-figtree">
+                      {benefit.title}
+                    </h3>
+                    <p className="text-[#dddfed]/70 text-sm leading-relaxed">
+                      {benefit.description}
+                    </p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: 20,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{
+              once: true,
+            }}
+            className="bg-white/5 rounded-2xl p-8 lg:p-12 border border-white/10"
+          >
+            <h3 className="text-2xl font-bold text-white mb-4 font-figtree">
+              AI Features, When They Make Sense
+            </h3>
+            <p className="text-[#dddfed]/80 leading-relaxed mb-8 text-lg">
+              Orchard Core's modular architecture makes it a solid foundation
+              for AI-assisted content workflows—better search, grounded Q&A,
+              metadata suggestions. The key is doing it in a way that's
+              integrated and governed, so teams can trust it.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+                <h4 className="font-bold text-white mb-3 flex items-center gap-2">
+                  <CheckCircle2 className="w-5 h-5 text-green-500" />
+                  When I recommend it
+                </h4>
+                <p className="text-sm text-[#dddfed]/70">
+                  Content-heavy sites, evolving requirements, long-term
+                  maintainability needs, teams that value ownership
+                </p>
+              </div>
+              <div className="bg-white/5 rounded-xl p-6 border border-white/10">
+                <h4 className="font-bold text-white mb-3 flex items-center gap-2">
+                  <span className="w-5 h-5 rounded-full border-2 border-white/20" />
+                  When I don't
+                </h4>
+                <p className="text-sm text-[#dddfed]/70">
+                  Simple brochure sites with minimal content ops, or teams
+                  wanting an all-in-one SaaS marketing suite
+                </p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="py-24 bg-[#edeef7]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.div
+            initial={{
+              opacity: 0,
+              y: 20,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{
+              once: true,
+            }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-[#151927] mb-6 font-figtree">
+              Let's Talk About Your Project
+            </h2>
+            <p className="text-xl text-[#151927]/70 leading-relaxed mb-8 max-w-2xl mx-auto">
+              If you're building a content-heavy B2B site or knowledge hub, I'd
+              love to hear what you're working on.
+            </p>
+            <Button
+              variant="primary"
+              size="lg"
+              onClick={() => navigate('/contact')}
+              withArrow
+            >
+              Get in touch
+            </Button>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Footer */}
       <footer className="bg-[#151927] text-[#dddfed]/40 py-8 text-center text-sm border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4">
           <p>
@@ -2775,6 +3317,191 @@ export function BlogPostPage() {
 
       <CTASection />
 
+      <footer className="bg-[#151927] text-[#dddfed]/40 py-8 text-center text-sm border-t border-white/10">
+        <div className="max-w-7xl mx-auto px-4">
+          <p>
+            &copy; {new Date().getFullYear()} Márk Bartha. All rights reserved.
+          </p>
+        </div>
+      </footer>
+    </main>
+  )
+}
+
+```
+```pages/ConfirmationPage.tsx
+import React from 'react'
+import { motion } from 'framer-motion'
+import { Navigation } from '../components/Navigation'
+import { Button } from '../components/ui/Button'
+import { CheckCircle2, ArrowLeft, Home } from 'lucide-react'
+import { useNavigate, useSearchParams } from 'react-router-dom'
+export function ConfirmationPage() {
+  const navigate = useNavigate()
+  const [searchParams] = useSearchParams()
+  // Get confirmation type from URL params, default to 'message'
+  const type = searchParams.get('type') || 'message'
+  // Configuration for different confirmation types
+  const configs = {
+    message: {
+      icon: CheckCircle2,
+      title: 'Message sent successfully',
+      description:
+        "Thanks for reaching out. I'll get back to you within 24 hours.",
+      primaryAction: {
+        label: 'Back to home',
+        path: '/',
+      },
+      secondaryAction: {
+        label: 'Read about me',
+        path: '/about',
+      },
+    },
+    // Add more types as needed
+    subscribe: {
+      icon: CheckCircle2,
+      title: "You're subscribed",
+      description:
+        "Thanks for subscribing. You'll receive updates about new content and projects.",
+      primaryAction: {
+        label: 'Back to home',
+        path: '/',
+      },
+      secondaryAction: {
+        label: 'Read the blog',
+        path: '/blog',
+      },
+    },
+  }
+  const config = configs[type as keyof typeof configs] || configs.message
+  const Icon = config.icon
+  return (
+    <main className="min-h-screen w-full overflow-x-hidden bg-[#151927]">
+      <Navigation />
+
+      <section className="pt-32 pb-24 min-h-screen flex items-center justify-center">
+        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.div
+            initial={{
+              opacity: 0,
+              scale: 0.9,
+            }}
+            animate={{
+              opacity: 1,
+              scale: 1,
+            }}
+            transition={{
+              duration: 0.5,
+            }}
+          >
+            {/* Success Icon */}
+            <motion.div
+              initial={{
+                scale: 0,
+              }}
+              animate={{
+                scale: 1,
+              }}
+              transition={{
+                delay: 0.2,
+                type: 'spring',
+                stiffness: 200,
+              }}
+              className="inline-flex items-center justify-center w-20 h-20 rounded-full bg-green-500/10 border-2 border-green-500/20 mb-8"
+            >
+              <Icon className="w-10 h-10 text-green-500" />
+            </motion.div>
+
+            {/* Title */}
+            <motion.h1
+              initial={{
+                opacity: 0,
+                y: 20,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{
+                delay: 0.3,
+              }}
+              className="text-3xl md:text-4xl font-bold text-white mb-4 font-figtree"
+            >
+              {config.title}
+            </motion.h1>
+
+            {/* Description */}
+            <motion.p
+              initial={{
+                opacity: 0,
+                y: 20,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{
+                delay: 0.4,
+              }}
+              className="text-lg text-[#dddfed]/70 mb-8 leading-relaxed"
+            >
+              {config.description}
+            </motion.p>
+
+            {/* Actions */}
+            <motion.div
+              initial={{
+                opacity: 0,
+                y: 20,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{
+                delay: 0.5,
+              }}
+              className="flex flex-col sm:flex-row gap-4 justify-center"
+            >
+              <Button
+                variant="primary"
+                size="lg"
+                onClick={() => navigate(config.primaryAction.path)}
+              >
+                {config.primaryAction.label}
+              </Button>
+              <Button
+                variant="ghost"
+                size="lg"
+                className="text-white hover:bg-white/10 hover:text-white border-white/20 hover:border-white/40"
+                onClick={() => navigate(config.secondaryAction.path)}
+              >
+                {config.secondaryAction.label}
+              </Button>
+            </motion.div>
+
+            {/* Decorative element */}
+            <motion.div
+              initial={{
+                opacity: 0,
+              }}
+              animate={{
+                opacity: 1,
+              }}
+              transition={{
+                delay: 0.6,
+              }}
+              className="mt-12 pt-8 border-t border-white/10"
+            >
+              <p className="text-sm text-[#dddfed]/50">
+                You can close this page or navigate using the buttons above
+              </p>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Footer */}
       <footer className="bg-[#151927] text-[#dddfed]/40 py-8 text-center text-sm border-t border-white/10">
         <div className="max-w-7xl mx-auto px-4">
           <p>

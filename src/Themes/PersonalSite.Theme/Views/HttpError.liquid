@@ -1,0 +1,4 @@
+{% assign status_page = Content["alias:status-error"] %}
+{% if status_page %}
+    {{ status_page | shape_build_display: "Detail" | shape_render }}
+{% endif %}

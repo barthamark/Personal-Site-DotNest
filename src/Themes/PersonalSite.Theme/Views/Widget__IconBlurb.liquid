@@ -1,0 +1,38 @@
+{% assign icon = Model.ContentItem.Content.IconBlurb.Icon.Text %}
+{% assign title = Model.ContentItem.Content.IconBlurb.Title.Text %}
+{% assign body_markdown = Model.ContentItem.Content.IconBlurb.Body.Markdown %}
+{% assign icon_position = Model.ContentItem.Content.IconBlurb.IconPosition.Text | default: "Left" %}
+{% assign style = Model.ContentItem.Content.IconBlurb.Style.Text | default: "Plain" %}
+
+{% assign wrapper_class = "" %}
+{% if style == "Card" %}
+    {% assign wrapper_class = "card-compact p-4" %}
+{% endif %}
+
+{% assign layout_class = "flex gap-4 items-start" %}
+{% if icon_position == "Above" %}
+    {% assign layout_class = "flex flex-col gap-4 items-start" %}
+{% endif %}
+
+<div class="{{ wrapper_class }}">
+    <div class="{{ layout_class }}">
+        {% if icon != blank %}
+            <div class="flex-shrink-0">
+                <i data-lucide="{{ icon }}" class="w-6 h-6 text-light-blue" aria-hidden="true"></i>
+            </div>
+        {% endif %}
+
+        <div>
+            {% if title != blank %}
+                <h3 class="text-lg font-bold mb-2 theme-dark-blue:text-white theme-dark-panel:text-white theme-light-gray:text-dark-blue theme-white:text-dark-blue">
+                    {{ title }}
+                </h3>
+            {% endif %}
+            {% if body_markdown != blank %}
+                <div class="rich-text text-sm theme-dark-blue:text-light-text/70 theme-dark-panel:text-light-text/70 theme-light-gray:text-dark-blue/70 theme-white:text-dark-blue/70">
+                    {{ body_markdown | markdownify | shortcode | raw }}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</div>

@@ -14,21 +14,21 @@
                 {% for item in items %}
                     {% assign question = item.FaqItem.Question.Text %}
                     {% assign answer_markdown = item.FaqItem.Answer.Markdown %}
-                    {% assign is_open = forloop.first %}
+                    {% assign is_open = false %}
                     <div data-faq-item>
-                        <button type="button" class="w-full px-6 py-4 flex items-center justify-between text-left transition-colors theme-dark-blue:hover:bg-white/5 theme-dark-panel:hover:bg-white/5 theme-light-gray:hover:bg-dark-blue/5 theme-white:hover:bg-dark-blue/5" data-faq-toggle aria-expanded="{% if is_open %}true{% else %}false{% endif %}">
+                        <button type="button" class="w-full px-6 py-4 flex items-center justify-between text-left transition-colors theme-dark-blue:hover:bg-white/5 theme-dark-panel:hover:bg-white/5 theme-light-gray:hover:bg-dark-blue/5 theme-white:hover:bg-dark-blue/5" data-faq-toggle aria-expanded="false">
                             <span class="font-medium theme-dark-blue:text-white theme-dark-panel:text-white theme-light-gray:text-dark-blue theme-white:text-dark-blue pr-4">
                                 {{ question }}
                             </span>
                             <span class="flex-shrink-0 flex items-center">
-                                <i data-lucide="minus" data-faq-icon="open" class="w-5 h-5 text-light-blue{% unless is_open %} hidden{% endunless %}" aria-hidden="true"></i>
-                                <i data-lucide="plus" data-faq-icon="closed" class="w-5 h-5 theme-dark-blue:text-light-text/40 theme-dark-panel:text-light-text/40 theme-light-gray:text-dark-blue/40 theme-white:text-dark-blue/40{% if is_open %} hidden{% endif %}" aria-hidden="true"></i>
+                                <i data-lucide="minus" data-faq-icon="open" class="w-5 h-5 text-light-blue hidden" aria-hidden="true"></i>
+                                <i data-lucide="plus" data-faq-icon="closed" class="w-5 h-5 theme-dark-blue:text-light-text/40 theme-dark-panel:text-light-text/40 theme-light-gray:text-dark-blue/40 theme-white:text-dark-blue/40" aria-hidden="true"></i>
                             </span>
                         </button>
 
                         {% if answer_markdown != blank %}
-                            <div class="px-6 pb-4 border-t border-white/10 theme-light-gray:border-gray-200 theme-white:border-gray-200{% unless is_open %} hidden{% endunless %}" data-faq-answer>
-                                <div class="rich-text text-sm text-left theme-dark-blue:text-light-text/70 theme-dark-panel:text-light-text/70 theme-light-gray:text-dark-blue/70 theme-white:text-dark-blue/70 pt-4">
+                            <div class="faq-answer px-6" data-faq-answer>
+                                <div class="rich-text text-sm text-left theme-dark-blue:text-light-text/70 theme-dark-panel:text-light-text/70 theme-light-gray:text-dark-blue/70 theme-white:text-dark-blue/70">
                                     {{ answer_markdown | markdownify | shortcode | raw }}
                                 </div>
                             </div>

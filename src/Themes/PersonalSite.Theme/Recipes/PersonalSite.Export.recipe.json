@@ -2,7 +2,7 @@
   "name": "PersonalSite.Export",
   "displayName": "Personal Site - Export",
   "description": "Contents exported from the DotNest site.",
-  "author": "Márk Bartha",
+  "author": "M\u00e1rk Bartha",
   "website": "https://markbartha.com",
   "version": "1.0",
   "categories": [],
@@ -118,11 +118,10 @@
                   "GridWidget",
                   "Hero",
                   "HighlightCard",
-                  "IconCard",
                   "IconText",
                   "Page",
                   "ProcessStep",
-                  "ReasonItem",
+                  "IconBlurb",
                   "RichText",
                   "ServiceCard",
                   "SplitSection",
@@ -151,10 +150,9 @@
                   "GridWidget",
                   "Hero",
                   "HighlightCard",
-                  "IconCard",
                   "IconText",
                   "ProcessStep",
-                  "ReasonItem",
+                  "IconBlurb",
                   "RichText",
                   "ServiceCard",
                   "StackSection",
@@ -640,6 +638,68 @@
           ]
         },
         {
+          "Name": "StatusPage",
+          "DisplayName": "Status Page",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Creatable": true,
+              "Listable": true,
+              "Draftable": true,
+              "Versionable": true,
+              "Securable": true
+            }
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "TitlePart",
+              "Name": "TitlePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
+                }
+              }
+            },
+            {
+              "PartName": "AutoroutePart",
+              "Name": "AutoroutePart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "1"
+                },
+                "AutoroutePartSettings": {
+                  "AllowCustomPath": true,
+                  "Pattern": "{{ Model.ContentItem | display_text | slugify }}",
+                  "ShowHomepageOption": true
+                }
+              }
+            },
+            {
+              "PartName": "AliasPart",
+              "Name": "AliasPart",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "2"
+                }
+              }
+            },
+            {
+              "PartName": "BagPart",
+              "Name": "Widgets",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "DisplayName": "Widgets",
+                  "Position": "3"
+                },
+                "BagPartSettings": {
+                  "ContainedStereotypes": [
+                    "Widget"
+                  ]
+                }
+              }
+            }
+          ]
+        },
+        {
           "Name": "Hero",
           "DisplayName": "Hero",
           "Settings": {
@@ -931,31 +991,6 @@
           ]
         },
         {
-          "Name": "IconCard",
-          "DisplayName": "Icon Card",
-          "Settings": {
-            "ContentTypeSettings": {
-              "Creatable": false,
-              "Listable": false,
-              "Draftable": false,
-              "Versionable": false,
-              "Securable": false,
-              "Stereotype": "Widget"
-            }
-          },
-          "ContentTypePartDefinitionRecords": [
-            {
-              "PartName": "IconCard",
-              "Name": "IconCard",
-              "Settings": {
-                "ContentTypePartSettings": {
-                  "Position": "0"
-                }
-              }
-            }
-          ]
-        },
-        {
           "Name": "FeatureCard",
           "DisplayName": "Feature Card",
           "Settings": {
@@ -1096,8 +1131,8 @@
           ]
         },
         {
-          "Name": "ReasonItem",
-          "DisplayName": "Reason Item",
+          "Name": "IconWidget",
+          "DisplayName": "Icon Widget",
           "Settings": {
             "ContentTypeSettings": {
               "Creatable": false,
@@ -1110,8 +1145,8 @@
           },
           "ContentTypePartDefinitionRecords": [
             {
-              "PartName": "ReasonItem",
-              "Name": "ReasonItem",
+              "PartName": "IconWidget",
+              "Name": "IconWidget",
               "Settings": {
                 "ContentTypePartSettings": {
                   "Position": "0"
@@ -1155,6 +1190,31 @@
                   "ContainedStereotypes": [
                     "Widget"
                   ]
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "IconBlurb",
+          "DisplayName": "Icon Blurb",
+          "Settings": {
+            "ContentTypeSettings": {
+              "Creatable": false,
+              "Listable": false,
+              "Draftable": false,
+              "Versionable": false,
+              "Securable": false,
+              "Stereotype": "Widget"
+            }
+          },
+          "ContentTypePartDefinitionRecords": [
+            {
+              "PartName": "IconBlurb",
+              "Name": "IconBlurb",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "Position": "0"
                 }
               }
             }
@@ -1926,7 +1986,85 @@
           ]
         },
         {
-          "Name": "ReasonItem",
+          "Name": "IconWidget",
+          "Settings": {},
+          "ContentPartFieldDefinitionRecords": [
+            {
+              "FieldName": "TextField",
+              "Name": "Icon",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Icon",
+                  "Position": "0"
+                }
+              }
+            },
+            {
+              "FieldName": "TextField",
+              "Name": "Size",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Size",
+                  "Editor": "PredefinedList",
+                  "Position": "1"
+                },
+                "TextFieldPredefinedListEditorSettings": {
+                  "Options": [
+                    {
+                      "name": "Small",
+                      "value": "Small"
+                    },
+                    {
+                      "name": "Medium",
+                      "value": "Medium"
+                    },
+                    {
+                      "name": "Large",
+                      "value": "Large"
+                    }
+                  ],
+                  "Editor": 1,
+                  "DefaultValue": "Large"
+                }
+              }
+            },
+            {
+              "FieldName": "TextField",
+              "Name": "Accent",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Accent",
+                  "Editor": "PredefinedList",
+                  "Position": "2"
+                },
+                "TextFieldPredefinedListEditorSettings": {
+                  "Options": [
+                    {
+                      "name": "Green",
+                      "value": "Green"
+                    },
+                    {
+                      "name": "LightBlue",
+                      "value": "LightBlue"
+                    },
+                    {
+                      "name": "Blue",
+                      "value": "Blue"
+                    },
+                    {
+                      "name": "Violet",
+                      "value": "Violet"
+                    }
+                  ],
+                  "Editor": 1,
+                  "DefaultValue": "Green"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "Name": "IconBlurb",
           "Settings": {},
           "ContentPartFieldDefinitionRecords": [
             {
@@ -1960,6 +2098,56 @@
                 },
                 "MarkdownFieldSettings": {
                   "SanitizeHtml": true
+                }
+              }
+            },
+            {
+              "FieldName": "TextField",
+              "Name": "IconPosition",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Icon position",
+                  "Editor": "PredefinedList",
+                  "Position": "3"
+                },
+                "TextFieldPredefinedListEditorSettings": {
+                  "Options": [
+                    {
+                      "name": "Left",
+                      "value": "Left"
+                    },
+                    {
+                      "name": "Above",
+                      "value": "Above"
+                    }
+                  ],
+                  "Editor": 1,
+                  "DefaultValue": "Left"
+                }
+              }
+            },
+            {
+              "FieldName": "TextField",
+              "Name": "Style",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "Style",
+                  "Editor": "PredefinedList",
+                  "Position": "4"
+                },
+                "TextFieldPredefinedListEditorSettings": {
+                  "Options": [
+                    {
+                      "name": "Plain",
+                      "value": "Plain"
+                    },
+                    {
+                      "name": "Card",
+                      "value": "Card"
+                    }
+                  ],
+                  "Editor": 1,
+                  "DefaultValue": "Plain"
                 }
               }
             }
@@ -2006,32 +2194,6 @@
                 "ContentPartFieldSettings": {
                   "DisplayName": "Heading",
                   "Position": "0"
-                }
-              }
-            }
-          ]
-        },
-        {
-          "Name": "IconCard",
-          "Settings": {},
-          "ContentPartFieldDefinitionRecords": [
-            {
-              "FieldName": "TextField",
-              "Name": "Icon",
-              "Settings": {
-                "ContentPartFieldSettings": {
-                  "DisplayName": "Icon",
-                  "Position": "0"
-                }
-              }
-            },
-            {
-              "FieldName": "TextField",
-              "Name": "Text",
-              "Settings": {
-                "ContentPartFieldSettings": {
-                  "DisplayName": "Text",
-                  "Position": "1"
                 }
               }
             }
@@ -3402,11 +3564,11 @@
                           {
                             "ContentItemId": "[js:uuid()]",
                             "ContentItemVersionId": "[js:uuid()]",
-                            "ContentType": "ReasonItem",
+                            "ContentType": "IconBlurb",
                             "DisplayText": "Direct access, faster decisions",
                             "Latest": true,
                             "Published": true,
-                            "ReasonItem": {
+                            "IconBlurb": {
                               "Icon": {
                                 "Text": "check-circle-2"
                               },
@@ -3415,17 +3577,23 @@
                               },
                               "Body": {
                                 "Markdown": "No account managers or hand-offs. You work directly with me, which means faster feedback loops and clearer communication."
+                              },
+                              "IconPosition": {
+                                "Text": "Left"
+                              },
+                              "Style": {
+                                "Text": "Plain"
                               }
                             }
                           },
                           {
                             "ContentItemId": "[js:uuid()]",
                             "ContentItemVersionId": "[js:uuid()]",
-                            "ContentType": "ReasonItem",
+                            "ContentType": "IconBlurb",
                             "DisplayText": "Senior expertise without agency overhead",
                             "Latest": true,
                             "Published": true,
-                            "ReasonItem": {
+                            "IconBlurb": {
                               "Icon": {
                                 "Text": "check-circle-2"
                               },
@@ -3434,17 +3602,23 @@
                               },
                               "Body": {
                                 "Markdown": "You get enterprise-level experience at a fraction of agency costs. No junior developers learning on your project."
+                              },
+                              "IconPosition": {
+                                "Text": "Left"
+                              },
+                              "Style": {
+                                "Text": "Plain"
                               }
                             }
                           },
                           {
                             "ContentItemId": "[js:uuid()]",
                             "ContentItemVersionId": "[js:uuid()]",
-                            "ContentType": "ReasonItem",
+                            "ContentType": "IconBlurb",
                             "DisplayText": "Long-term thinking, not just launch day",
                             "Latest": true,
                             "Published": true,
-                            "ReasonItem": {
+                            "IconBlurb": {
                               "Icon": {
                                 "Text": "check-circle-2"
                               },
@@ -3453,17 +3627,23 @@
                               },
                               "Body": {
                                 "Markdown": "I build platforms that your team can maintain and evolve. Training and documentation are included, not afterthoughts."
+                              },
+                              "IconPosition": {
+                                "Text": "Left"
+                              },
+                              "Style": {
+                                "Text": "Plain"
                               }
                             }
                           },
                           {
                             "ContentItemId": "[js:uuid()]",
                             "ContentItemVersionId": "[js:uuid()]",
-                            "ContentType": "ReasonItem",
+                            "ContentType": "IconBlurb",
                             "DisplayText": "Focused capacity means better quality",
                             "Latest": true,
                             "Published": true,
-                            "ReasonItem": {
+                            "IconBlurb": {
                               "Icon": {
                                 "Text": "check-circle-2"
                               },
@@ -3472,6 +3652,12 @@
                               },
                               "Body": {
                                 "Markdown": "I limit concurrent projects to 2-3 at a time. Your project gets the attention it deserves, not divided focus."
+                              },
+                              "IconPosition": {
+                                "Text": "Left"
+                              },
+                              "Style": {
+                                "Text": "Plain"
                               }
                             }
                           }
@@ -3804,7 +3990,7 @@
                 "Published": true,
                 "Markdown": {
                   "Text": {
-                    "Markdown": "# Let's talk about your **content platform**\n\nBook a strategy call or send me a message. I reply within 1 business day."
+                    "Markdown": "# Let's talk about your ==content platform==\n\nBook a strategy call or send me a message. I reply within 1 business day."
                   }
                 }
               }
@@ -3933,6 +4119,366 @@
             "PrivacyText": {
               "Markdown": "I respect your privacy. No spam, ever."
             }
+          }
+        },
+        {
+          "ContentItemId": "46rsmvrdvwskf2wyf4fkmrpgnd",
+          "ContentItemVersionId": "[js:uuid()]",
+          "ContentType": "StatusPage",
+          "DisplayText": "Message Sent",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2025-01-01T00:00:00Z",
+          "PublishedUtc": "2025-01-01T00:00:00Z",
+          "CreatedUtc": "2025-01-01T00:00:00Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "TitlePart": {
+            "Title": "Message Sent"
+          },
+          "AutoroutePart": {
+            "SetHomepage": false,
+            "Disabled": false,
+            "RouteContainedItems": false,
+            "Absolute": false,
+            "Path": "message-sent"
+          },
+          "Widgets": {
+            "ContentItems": [
+              {
+                "ContentItemId": "[js:uuid()]",
+                "ContentItemVersionId": "[js:uuid()]",
+                "ContentType": "IconWidget",
+                "DisplayText": "Message Sent Icon",
+                "Latest": true,
+                "Published": true,
+                "IconWidget": {
+                  "Icon": {
+                    "Text": "check-circle"
+                  },
+                  "Size": {
+                    "Text": "Large"
+                  },
+                  "Accent": {
+                    "Text": "Green"
+                  }
+                }
+              },
+              {
+                "ContentItemId": "[js:uuid()]",
+                "ContentItemVersionId": "[js:uuid()]",
+                "ContentType": "Markdown",
+                "DisplayText": "Message Sent Header",
+                "Latest": true,
+                "Published": true,
+                "Markdown": {
+                  "Text": {
+                    "Markdown": "# Message sent successfully\n\nThanks for reaching out. I will reply within 1 business day with a clear next step."
+                  }
+                }
+              },
+              {
+                "ContentItemId": "[js:uuid()]",
+                "ContentItemVersionId": "[js:uuid()]",
+                "ContentType": "ButtonGroup",
+                "DisplayText": "Message Sent Buttons",
+                "Latest": true,
+                "Published": true,
+                "ButtonGroup": {
+                  "Alignment": {
+                    "Text": "Center"
+                  }
+                },
+                "BagPart": {
+                  "ContentItems": [
+                    {
+                      "ContentItemId": "[js:uuid()]",
+                      "ContentItemVersionId": "[js:uuid()]",
+                      "ContentType": "Button",
+                      "DisplayText": "Back to home",
+                      "Latest": true,
+                      "Published": true,
+                      "Button": {
+                        "Content": {
+                          "Url": "/",
+                        "Text": "Back to home",
+                        "Target": null
+                      },
+                      "Icon": {
+                        "Text": ""
+                      },
+                        "Type": {
+                          "Text": "Primary"
+                        }
+                      }
+                    },
+                    {
+                      "ContentItemId": "[js:uuid()]",
+                      "ContentItemVersionId": "[js:uuid()]",
+                      "ContentType": "Button",
+                      "DisplayText": "Read insights",
+                      "Latest": true,
+                      "Published": true,
+                      "Button": {
+                        "Content": {
+                          "Url": "/blog",
+                        "Text": "Read insights",
+                        "Target": null
+                      },
+                      "Icon": {
+                        "Text": ""
+                      },
+                        "Type": {
+                          "Text": "Secondary"
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "ContentItemId": "4tjgjhmebs0enwwp2ga9031e5b",
+          "ContentItemVersionId": "[js:uuid()]",
+          "ContentType": "StatusPage",
+          "DisplayText": "Page Not Found",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2025-01-01T00:00:00Z",
+          "PublishedUtc": "2025-01-01T00:00:00Z",
+          "CreatedUtc": "2025-01-01T00:00:00Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "TitlePart": {
+            "Title": "Page Not Found"
+          },
+          "AliasPart": {
+            "Alias": "status-not-found"
+          },
+          "AutoroutePart": {
+            "SetHomepage": false,
+            "Disabled": false,
+            "RouteContainedItems": false,
+            "Absolute": false,
+            "Path": "not-found"
+          },
+          "Widgets": {
+            "ContentItems": [
+              {
+                "ContentItemId": "[js:uuid()]",
+                "ContentItemVersionId": "[js:uuid()]",
+                "ContentType": "IconWidget",
+                "DisplayText": "Not Found Icon",
+                "Latest": true,
+                "Published": true,
+                "IconWidget": {
+                  "Icon": {
+                    "Text": "compass"
+                  },
+                  "Size": {
+                    "Text": "Large"
+                  },
+                  "Accent": {
+                    "Text": "LightBlue"
+                  }
+                }
+              },
+              {
+                "ContentItemId": "[js:uuid()]",
+                "ContentItemVersionId": "[js:uuid()]",
+                "ContentType": "Markdown",
+                "DisplayText": "Not Found Header",
+                "Latest": true,
+                "Published": true,
+                "Markdown": {
+                  "Text": {
+                    "Markdown": "# Page not found\n\nThe page you are looking for is no longer here. Try one of the links below."
+                  }
+                }
+              },
+              {
+                "ContentItemId": "[js:uuid()]",
+                "ContentItemVersionId": "[js:uuid()]",
+                "ContentType": "ButtonGroup",
+                "DisplayText": "Not Found Buttons",
+                "Latest": true,
+                "Published": true,
+                "ButtonGroup": {
+                  "Alignment": {
+                    "Text": "Center"
+                  }
+                },
+                "BagPart": {
+                  "ContentItems": [
+                    {
+                      "ContentItemId": "[js:uuid()]",
+                      "ContentItemVersionId": "[js:uuid()]",
+                      "ContentType": "Button",
+                      "DisplayText": "Back to home",
+                      "Latest": true,
+                      "Published": true,
+                      "Button": {
+                        "Content": {
+                          "Url": "/",
+                          "Text": "Back to home",
+                          "Target": null
+                        },
+                        "Icon": {
+                          "Text": ""
+                        },
+                        "Type": {
+                          "Text": "Primary"
+                        }
+                      }
+                    },
+                    {
+                      "ContentItemId": "[js:uuid()]",
+                      "ContentItemVersionId": "[js:uuid()]",
+                      "ContentType": "Button",
+                      "DisplayText": "Contact",
+                      "Latest": true,
+                      "Published": true,
+                      "Button": {
+                        "Content": {
+                          "Url": "/contact",
+                          "Text": "Contact",
+                          "Target": null
+                        },
+                        "Icon": {
+                          "Text": ""
+                        },
+                        "Type": {
+                          "Text": "Secondary"
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "ContentItemId": "41k5zxw3cvvdh2tm3c1ctchbms",
+          "ContentItemVersionId": "[js:uuid()]",
+          "ContentType": "StatusPage",
+          "DisplayText": "Something Went Wrong",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2025-01-01T00:00:00Z",
+          "PublishedUtc": "2025-01-01T00:00:00Z",
+          "CreatedUtc": "2025-01-01T00:00:00Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "TitlePart": {
+            "Title": "Something Went Wrong"
+          },
+          "AliasPart": {
+            "Alias": "status-error"
+          },
+          "AutoroutePart": {
+            "SetHomepage": false,
+            "Disabled": false,
+            "RouteContainedItems": false,
+            "Absolute": false,
+            "Path": "server-error"
+          },
+          "Widgets": {
+            "ContentItems": [
+              {
+                "ContentItemId": "[js:uuid()]",
+                "ContentItemVersionId": "[js:uuid()]",
+                "ContentType": "IconWidget",
+                "DisplayText": "Error Icon",
+                "Latest": true,
+                "Published": true,
+                "IconWidget": {
+                  "Icon": {
+                    "Text": "alert-triangle"
+                  },
+                  "Size": {
+                    "Text": "Large"
+                  },
+                  "Accent": {
+                    "Text": "Violet"
+                  }
+                }
+              },
+              {
+                "ContentItemId": "[js:uuid()]",
+                "ContentItemVersionId": "[js:uuid()]",
+                "ContentType": "Markdown",
+                "DisplayText": "Error Header",
+                "Latest": true,
+                "Published": true,
+                "Markdown": {
+                  "Text": {
+                    "Markdown": "# Something went wrong\n\nAn unexpected error occurred. Please try again, or return to the home page."
+                  }
+                }
+              },
+              {
+                "ContentItemId": "[js:uuid()]",
+                "ContentItemVersionId": "[js:uuid()]",
+                "ContentType": "ButtonGroup",
+                "DisplayText": "Error Buttons",
+                "Latest": true,
+                "Published": true,
+                "ButtonGroup": {
+                  "Alignment": {
+                    "Text": "Center"
+                  }
+                },
+                "BagPart": {
+                  "ContentItems": [
+                    {
+                      "ContentItemId": "[js:uuid()]",
+                      "ContentItemVersionId": "[js:uuid()]",
+                      "ContentType": "Button",
+                      "DisplayText": "Back to home",
+                      "Latest": true,
+                      "Published": true,
+                      "Button": {
+                        "Content": {
+                          "Url": "/",
+                          "Text": "Back to home",
+                          "Target": null
+                        },
+                        "Icon": {
+                          "Text": ""
+                        },
+                        "Type": {
+                          "Text": "Primary"
+                        }
+                      }
+                    },
+                    {
+                      "ContentItemId": "[js:uuid()]",
+                      "ContentItemVersionId": "[js:uuid()]",
+                      "ContentType": "Button",
+                      "DisplayText": "Contact me",
+                      "Latest": true,
+                      "Published": true,
+                      "Button": {
+                        "Content": {
+                          "Url": "mailto:hello@markbartha.com",
+                          "Text": "Contact me",
+                          "Target": null
+                        },
+                        "Icon": {
+                          "Text": ""
+                        },
+                        "Type": {
+                          "Text": "Secondary"
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
           }
         },
         {
@@ -4110,761 +4656,7 @@
           }
         },
         {
-          "ContentItemId": "[js:uuid()]",
-          "ContentItemVersionId": "[js:uuid()]",
-          "ContentType": "BlogPost",
-          "DisplayText": "When your B2B site stops being just a website",
-          "Latest": true,
-          "Published": true,
-          "ModifiedUtc": "2024-12-15T00:00:00Z",
-          "PublishedUtc": "2024-12-15T00:00:00Z",
-          "CreatedUtc": "2024-12-15T00:00:00Z",
-          "Owner": "admin",
-          "Author": "admin",
-          "TitlePart": {
-            "Title": "When your B2B site stops being just a website"
-          },
-          "AutoroutePart": {
-            "SetHomepage": false,
-            "Disabled": false,
-            "RouteContainedItems": false,
-            "Absolute": false,
-            "Path": "blog/when-your-b2b-site-stops-being-just-a-website"
-          },
-          "ContainedPart": {
-            "ListContentItemId": "47acgkkt1r84dznmwe115w1ydq",
-            "ListContentType": "Blog",
-            "Order": 0
-          },
-          "BlogPost": {
-            "Excerpt": {
-              "Text": "Most B2B companies start with a simple website. But as you grow, that website becomes a bottleneck. Here is how to recognize the signs and what to do next."
-            },
-            "ReadTime": {
-              "Text": "8 min read"
-            },
-            "Image": {
-              "Paths": [],
-              "MediaTexts": [],
-              "Anchors": []
-            },
-            "Tags": {
-              "TaxonomyContentItemId": "4cjjtn6m0rvpay8qh54yzwy0ds",
-              "TermContentItemIds": [
-                "4s2xgk8j4k9p7c6b1n3m2q5r8t"
-              ]
-            }
-          },
-          "MarkdownBodyPart": {
-            "Markdown": "Most B2B companies start with a simple website. But as you grow, that website becomes a bottleneck.\\r\\n\\r\\nThis article covers the warning signs and the playbook for turning your site into a predictable growth engine."
-          }
-        },
-        {
-          "ContentItemId": "[js:uuid()]",
-          "ContentItemVersionId": "[js:uuid()]",
-          "ContentType": "BlogPost",
-          "DisplayText": "How to structure case studies for trust and leads",
-          "Latest": true,
-          "Published": true,
-          "ModifiedUtc": "2024-12-10T00:00:00Z",
-          "PublishedUtc": "2024-12-10T00:00:00Z",
-          "CreatedUtc": "2024-12-10T00:00:00Z",
-          "Owner": "admin",
-          "Author": "admin",
-          "TitlePart": {
-            "Title": "How to structure case studies for trust and leads"
-          },
-          "AutoroutePart": {
-            "SetHomepage": false,
-            "Disabled": false,
-            "RouteContainedItems": false,
-            "Absolute": false,
-            "Path": "blog/how-to-structure-case-studies-for-trust-and-leads"
-          },
-          "ContainedPart": {
-            "ListContentItemId": "47acgkkt1r84dznmwe115w1ydq",
-            "ListContentType": "Blog",
-            "Order": 1
-          },
-          "BlogPost": {
-            "Excerpt": {
-              "Text": "Case studies are powerful, but only if structured correctly. Learn the framework that converts prospects into qualified leads."
-            },
-            "ReadTime": {
-              "Text": "6 min read"
-            },
-            "Image": {
-              "Paths": [],
-              "MediaTexts": [],
-              "Anchors": []
-            },
-            "Tags": {
-              "TaxonomyContentItemId": "4cjjtn6m0rvpay8qh54yzwy0ds",
-              "TermContentItemIds": [
-                "4m8v1c2q9t7b5h3n6p4r8s1k2x"
-              ]
-            }
-          },
-          "MarkdownBodyPart": {
-            "Markdown": "Case studies are powerful, but only if structured correctly. This framework turns success stories into sales assets.\\r\\n\\r\\nUse a clear challenge-approach-results arc so prospects can see themselves in the story."
-          }
-        },
-        {
-          "ContentItemId": "[js:uuid()]",
-          "ContentItemVersionId": "[js:uuid()]",
-          "ContentType": "BlogPost",
-          "DisplayText": "Knowledge base vs help center vs docs: what to build first",
-          "Latest": true,
-          "Published": true,
-          "ModifiedUtc": "2024-12-05T00:00:00Z",
-          "PublishedUtc": "2024-12-05T00:00:00Z",
-          "CreatedUtc": "2024-12-05T00:00:00Z",
-          "Owner": "admin",
-          "Author": "admin",
-          "TitlePart": {
-            "Title": "Knowledge base vs help center vs docs: what to build first"
-          },
-          "AutoroutePart": {
-            "SetHomepage": false,
-            "Disabled": false,
-            "RouteContainedItems": false,
-            "Absolute": false,
-            "Path": "blog/knowledge-base-vs-help-center-vs-docs-what-to-build-first"
-          },
-          "ContainedPart": {
-            "ListContentItemId": "47acgkkt1r84dznmwe115w1ydq",
-            "ListContentType": "Blog",
-            "Order": 2
-          },
-          "BlogPost": {
-            "Excerpt": {
-              "Text": "These terms are often used interchangeably, but they serve different purposes. Here is how to decide what your team needs."
-            },
-            "ReadTime": {
-              "Text": "7 min read"
-            },
-            "Image": {
-              "Paths": [],
-              "MediaTexts": [],
-              "Anchors": []
-            },
-            "Tags": {
-              "TaxonomyContentItemId": "4cjjtn6m0rvpay8qh54yzwy0ds",
-              "TermContentItemIds": [
-                "4k3d9n2p7r5s1t6v8m2b4c7q9w"
-              ]
-            }
-          },
-          "MarkdownBodyPart": {
-            "Markdown": "Knowledge bases, help centers, and docs each solve different problems. Start with the one that removes the most friction for your customers today.\\r\\n\\r\\nThis guide explains the decision criteria and what to build next."
-          }
-        },
-        {
-          "ContentItemId": "[js:uuid()]",
-          "ContentItemVersionId": "[js:uuid()]",
-          "ContentType": "BlogPost",
-          "DisplayText": "CMS migration without chaos: a phased roadmap",
-          "Latest": true,
-          "Published": true,
-          "ModifiedUtc": "2024-11-28T00:00:00Z",
-          "PublishedUtc": "2024-11-28T00:00:00Z",
-          "CreatedUtc": "2024-11-28T00:00:00Z",
-          "Owner": "admin",
-          "Author": "admin",
-          "TitlePart": {
-            "Title": "CMS migration without chaos: a phased roadmap"
-          },
-          "AutoroutePart": {
-            "SetHomepage": false,
-            "Disabled": false,
-            "RouteContainedItems": false,
-            "Absolute": false,
-            "Path": "blog/cms-migration-without-chaos-a-phased-roadmap"
-          },
-          "ContainedPart": {
-            "ListContentItemId": "47acgkkt1r84dznmwe115w1ydq",
-            "ListContentType": "Blog",
-            "Order": 3
-          },
-          "BlogPost": {
-            "Excerpt": {
-              "Text": "Migrating your CMS does not have to be a nightmare. Follow this phased approach to minimize risk and downtime."
-            },
-            "ReadTime": {
-              "Text": "10 min read"
-            },
-            "Image": {
-              "Paths": [],
-              "MediaTexts": [],
-              "Anchors": []
-            },
-            "Tags": {
-              "TaxonomyContentItemId": "4cjjtn6m0rvpay8qh54yzwy0ds",
-              "TermContentItemIds": [
-                "4t6p1n9r2k7s3m8v5b4c2d6g9x"
-              ]
-            }
-          },
-          "MarkdownBodyPart": {
-            "Markdown": "A phased migration keeps teams aligned and reduces disruption.\\r\\n\\r\\nThis guide covers discovery, content mapping, and parallel run strategies."
-          }
-        },
-        {
-          "ContentItemId": "[js:uuid()]",
-          "ContentItemVersionId": "[js:uuid()]",
-          "ContentType": "BlogPost",
-          "DisplayText": "Content audit checklist for B2B websites",
-          "Latest": true,
-          "Published": true,
-          "ModifiedUtc": "2024-11-20T00:00:00Z",
-          "PublishedUtc": "2024-11-20T00:00:00Z",
-          "CreatedUtc": "2024-11-20T00:00:00Z",
-          "Owner": "admin",
-          "Author": "admin",
-          "TitlePart": {
-            "Title": "Content audit checklist for B2B websites"
-          },
-          "AutoroutePart": {
-            "SetHomepage": false,
-            "Disabled": false,
-            "RouteContainedItems": false,
-            "Absolute": false,
-            "Path": "blog/content-audit-checklist-for-b2b-websites"
-          },
-          "ContainedPart": {
-            "ListContentItemId": "47acgkkt1r84dznmwe115w1ydq",
-            "ListContentType": "Blog",
-            "Order": 4
-          },
-          "BlogPost": {
-            "Excerpt": {
-              "Text": "Before rebuilding your website, you need to know what you have. Use this checklist to audit your content effectively."
-            },
-            "ReadTime": {
-              "Text": "5 min read"
-            },
-            "Image": {
-              "Paths": [],
-              "MediaTexts": [],
-              "Anchors": []
-            },
-            "Tags": {
-              "TaxonomyContentItemId": "4cjjtn6m0rvpay8qh54yzwy0ds",
-              "TermContentItemIds": [
-                "4s2xgk8j4k9p7c6b1n3m2q5r8t",
-                "4m8v1c2q9t7b5h3n6p4r8s1k2x"
-              ]
-            }
-          },
-          "MarkdownBodyPart": {
-            "Markdown": "A thorough audit uncovers gaps, duplicates, and outdated pages.\\r\\n\\r\\nStart with goals, map owners, and score each asset."
-          }
-        },
-        {
-          "ContentItemId": "[js:uuid()]",
-          "ContentItemVersionId": "[js:uuid()]",
-          "ContentType": "BlogPost",
-          "DisplayText": "Why your support team needs a knowledge hub",
-          "Latest": true,
-          "Published": true,
-          "ModifiedUtc": "2024-11-15T00:00:00Z",
-          "PublishedUtc": "2024-11-15T00:00:00Z",
-          "CreatedUtc": "2024-11-15T00:00:00Z",
-          "Owner": "admin",
-          "Author": "admin",
-          "TitlePart": {
-            "Title": "Why your support team needs a knowledge hub"
-          },
-          "AutoroutePart": {
-            "SetHomepage": false,
-            "Disabled": false,
-            "RouteContainedItems": false,
-            "Absolute": false,
-            "Path": "blog/why-your-support-team-needs-a-knowledge-hub"
-          },
-          "ContainedPart": {
-            "ListContentItemId": "47acgkkt1r84dznmwe115w1ydq",
-            "ListContentType": "Blog",
-            "Order": 5
-          },
-          "BlogPost": {
-            "Excerpt": {
-              "Text": "Support teams waste hours answering the same questions. A knowledge hub changes that. Here is how to build one."
-            },
-            "ReadTime": {
-              "Text": "6 min read"
-            },
-            "Image": {
-              "Paths": [],
-              "MediaTexts": [],
-              "Anchors": []
-            },
-            "Tags": {
-              "TaxonomyContentItemId": "4cjjtn6m0rvpay8qh54yzwy0ds",
-              "TermContentItemIds": [
-                "4k3d9n2p7r5s1t6v8m2b4c7q9w"
-              ]
-            }
-          },
-          "MarkdownBodyPart": {
-            "Markdown": "A shared knowledge hub reduces repeat tickets and onboarding time.\\r\\n\\r\\nFocus on search, structure, and clear ownership."
-          }
-        },
-        {
-          "ContentItemId": "[js:uuid()]",
-          "ContentItemVersionId": "[js:uuid()]",
-          "ContentType": "BlogPost",
-          "DisplayText": "Editorial workflows that keep marketing moving",
-          "Latest": true,
-          "Published": true,
-          "ModifiedUtc": "2024-11-08T00:00:00Z",
-          "PublishedUtc": "2024-11-08T00:00:00Z",
-          "CreatedUtc": "2024-11-08T00:00:00Z",
-          "Owner": "admin",
-          "Author": "admin",
-          "TitlePart": {
-            "Title": "Editorial workflows that keep marketing moving"
-          },
-          "AutoroutePart": {
-            "SetHomepage": false,
-            "Disabled": false,
-            "RouteContainedItems": false,
-            "Absolute": false,
-            "Path": "blog/editorial-workflows-that-keep-marketing-moving"
-          },
-          "ContainedPart": {
-            "ListContentItemId": "47acgkkt1r84dznmwe115w1ydq",
-            "ListContentType": "Blog",
-            "Order": 6
-          },
-          "BlogPost": {
-            "Excerpt": {
-              "Text": "A predictable editorial workflow helps teams publish on time without sacrificing quality."
-            },
-            "ReadTime": {
-              "Text": "7 min read"
-            },
-            "Image": {
-              "Paths": [],
-              "MediaTexts": [],
-              "Anchors": []
-            },
-            "Tags": {
-              "TaxonomyContentItemId": "4cjjtn6m0rvpay8qh54yzwy0ds",
-              "TermContentItemIds": [
-                "4p8m2r7k1t9v3n5b6c2d8g4h1q"
-              ]
-            }
-          },
-          "MarkdownBodyPart": {
-            "Markdown": "Set clear stages, owners, and review gates to keep work flowing.\\r\\n\\r\\nYour CMS should reinforce these steps, not fight them."
-          }
-        },
-        {
-          "ContentItemId": "[js:uuid()]",
-          "ContentItemVersionId": "[js:uuid()]",
-          "ContentType": "BlogPost",
-          "DisplayText": "Designing service pages that sell without fluff",
-          "Latest": true,
-          "Published": true,
-          "ModifiedUtc": "2024-11-01T00:00:00Z",
-          "PublishedUtc": "2024-11-01T00:00:00Z",
-          "CreatedUtc": "2024-11-01T00:00:00Z",
-          "Owner": "admin",
-          "Author": "admin",
-          "TitlePart": {
-            "Title": "Designing service pages that sell without fluff"
-          },
-          "AutoroutePart": {
-            "SetHomepage": false,
-            "Disabled": false,
-            "RouteContainedItems": false,
-            "Absolute": false,
-            "Path": "blog/designing-service-pages-that-sell-without-fluff"
-          },
-          "ContainedPart": {
-            "ListContentItemId": "47acgkkt1r84dznmwe115w1ydq",
-            "ListContentType": "Blog",
-            "Order": 7
-          },
-          "BlogPost": {
-            "Excerpt": {
-              "Text": "Service pages should clarify outcomes, scope, and proof instead of hiding behind vague claims."
-            },
-            "ReadTime": {
-              "Text": "6 min read"
-            },
-            "Image": {
-              "Paths": [],
-              "MediaTexts": [],
-              "Anchors": []
-            },
-            "Tags": {
-              "TaxonomyContentItemId": "4cjjtn6m0rvpay8qh54yzwy0ds",
-              "TermContentItemIds": [
-                "4s2xgk8j4k9p7c6b1n3m2q5r8t"
-              ]
-            }
-          },
-          "MarkdownBodyPart": {
-            "Markdown": "Focus on outcomes, the process, and evidence.\\r\\n\\r\\nMake it easy for buyers to self-qualify."
-          }
-        },
-        {
-          "ContentItemId": "[js:uuid()]",
-          "ContentItemVersionId": "[js:uuid()]",
-          "ContentType": "BlogPost",
-          "DisplayText": "How to brief developers for content-heavy sites",
-          "Latest": true,
-          "Published": true,
-          "ModifiedUtc": "2024-10-24T00:00:00Z",
-          "PublishedUtc": "2024-10-24T00:00:00Z",
-          "CreatedUtc": "2024-10-24T00:00:00Z",
-          "Owner": "admin",
-          "Author": "admin",
-          "TitlePart": {
-            "Title": "How to brief developers for content-heavy sites"
-          },
-          "AutoroutePart": {
-            "SetHomepage": false,
-            "Disabled": false,
-            "RouteContainedItems": false,
-            "Absolute": false,
-            "Path": "blog/how-to-brief-developers-for-content-heavy-sites"
-          },
-          "ContainedPart": {
-            "ListContentItemId": "47acgkkt1r84dznmwe115w1ydq",
-            "ListContentType": "Blog",
-            "Order": 8
-          },
-          "BlogPost": {
-            "Excerpt": {
-              "Text": "Great implementation starts with a clear brief. Define the content model before anyone writes code."
-            },
-            "ReadTime": {
-              "Text": "8 min read"
-            },
-            "Image": {
-              "Paths": [],
-              "MediaTexts": [],
-              "Anchors": []
-            },
-            "Tags": {
-              "TaxonomyContentItemId": "4cjjtn6m0rvpay8qh54yzwy0ds",
-              "TermContentItemIds": [
-                "4t6p1n9r2k7s3m8v5b4c2d6g9x"
-              ]
-            }
-          },
-          "MarkdownBodyPart": {
-            "Markdown": "Document content types, fields, and relationships upfront.\\r\\n\\r\\nThis prevents rework and keeps timelines stable."
-          }
-        },
-        {
-          "ContentItemId": "[js:uuid()]",
-          "ContentItemVersionId": "[js:uuid()]",
-          "ContentType": "BlogPost",
-          "DisplayText": "From brochure to platform: evolving a marketing site",
-          "Latest": true,
-          "Published": true,
-          "ModifiedUtc": "2024-10-16T00:00:00Z",
-          "PublishedUtc": "2024-10-16T00:00:00Z",
-          "CreatedUtc": "2024-10-16T00:00:00Z",
-          "Owner": "admin",
-          "Author": "admin",
-          "TitlePart": {
-            "Title": "From brochure to platform: evolving a marketing site"
-          },
-          "AutoroutePart": {
-            "SetHomepage": false,
-            "Disabled": false,
-            "RouteContainedItems": false,
-            "Absolute": false,
-            "Path": "blog/from-brochure-to-platform-evolving-a-marketing-site"
-          },
-          "ContainedPart": {
-            "ListContentItemId": "47acgkkt1r84dznmwe115w1ydq",
-            "ListContentType": "Blog",
-            "Order": 9
-          },
-          "BlogPost": {
-            "Excerpt": {
-              "Text": "As content grows, your site must move beyond static pages. Here is a roadmap to evolve without a rebuild."
-            },
-            "ReadTime": {
-              "Text": "9 min read"
-            },
-            "Image": {
-              "Paths": [],
-              "MediaTexts": [],
-              "Anchors": []
-            },
-            "Tags": {
-              "TaxonomyContentItemId": "4cjjtn6m0rvpay8qh54yzwy0ds",
-              "TermContentItemIds": [
-                "4s2xgk8j4k9p7c6b1n3m2q5r8t",
-                "4p8m2r7k1t9v3n5b6c2d8g4h1q"
-              ]
-            }
-          },
-          "MarkdownBodyPart": {
-            "Markdown": "Add structure, search, and reusable components in phases.\\r\\n\\r\\nThis keeps momentum while expanding capabilities."
-          }
-        },
-        {
-          "ContentItemId": "[js:uuid()]",
-          "ContentItemVersionId": "[js:uuid()]",
-          "ContentType": "BlogPost",
-          "DisplayText": "Building a B2B FAQ library that scales",
-          "Latest": true,
-          "Published": true,
-          "ModifiedUtc": "2024-10-08T00:00:00Z",
-          "PublishedUtc": "2024-10-08T00:00:00Z",
-          "CreatedUtc": "2024-10-08T00:00:00Z",
-          "Owner": "admin",
-          "Author": "admin",
-          "TitlePart": {
-            "Title": "Building a B2B FAQ library that scales"
-          },
-          "AutoroutePart": {
-            "SetHomepage": false,
-            "Disabled": false,
-            "RouteContainedItems": false,
-            "Absolute": false,
-            "Path": "blog/building-a-b2b-faq-library-that-scales"
-          },
-          "ContainedPart": {
-            "ListContentItemId": "47acgkkt1r84dznmwe115w1ydq",
-            "ListContentType": "Blog",
-            "Order": 10
-          },
-          "BlogPost": {
-            "Excerpt": {
-              "Text": "A scalable FAQ library reduces support load and increases trust. Structure and governance make it work."
-            },
-            "ReadTime": {
-              "Text": "5 min read"
-            },
-            "Image": {
-              "Paths": [],
-              "MediaTexts": [],
-              "Anchors": []
-            },
-            "Tags": {
-              "TaxonomyContentItemId": "4cjjtn6m0rvpay8qh54yzwy0ds",
-              "TermContentItemIds": [
-                "4k3d9n2p7r5s1t6v8m2b4c7q9w"
-              ]
-            }
-          },
-          "MarkdownBodyPart": {
-            "Markdown": "Group questions by intent, not internal teams.\\r\\n\\r\\nAssign owners and review dates to keep answers fresh."
-          }
-        },
-        {
-          "ContentItemId": "[js:uuid()]",
-          "ContentItemVersionId": "[js:uuid()]",
-          "ContentType": "BlogPost",
-          "DisplayText": "Picking KPIs for content operations",
-          "Latest": true,
-          "Published": true,
-          "ModifiedUtc": "2024-09-30T00:00:00Z",
-          "PublishedUtc": "2024-09-30T00:00:00Z",
-          "CreatedUtc": "2024-09-30T00:00:00Z",
-          "Owner": "admin",
-          "Author": "admin",
-          "TitlePart": {
-            "Title": "Picking KPIs for content operations"
-          },
-          "AutoroutePart": {
-            "SetHomepage": false,
-            "Disabled": false,
-            "RouteContainedItems": false,
-            "Absolute": false,
-            "Path": "blog/picking-kpis-for-content-operations"
-          },
-          "ContainedPart": {
-            "ListContentItemId": "47acgkkt1r84dznmwe115w1ydq",
-            "ListContentType": "Blog",
-            "Order": 11
-          },
-          "BlogPost": {
-            "Excerpt": {
-              "Text": "Content teams need leading indicators, not vanity metrics. Choose KPIs that map to outcomes."
-            },
-            "ReadTime": {
-              "Text": "7 min read"
-            },
-            "Image": {
-              "Paths": [],
-              "MediaTexts": [],
-              "Anchors": []
-            },
-            "Tags": {
-              "TaxonomyContentItemId": "4cjjtn6m0rvpay8qh54yzwy0ds",
-              "TermContentItemIds": [
-                "4p8m2r7k1t9v3n5b6c2d8g4h1q"
-              ]
-            }
-          },
-          "MarkdownBodyPart": {
-            "Markdown": "Track production velocity, reuse, and time-to-publish.\\r\\n\\r\\nPair these with pipeline and revenue metrics."
-          }
-        },
-        {
-          "ContentItemId": "[js:uuid()]",
-          "ContentItemVersionId": "[js:uuid()]",
-          "ContentType": "BlogPost",
-          "DisplayText": "Information architecture for complex offerings",
-          "Latest": true,
-          "Published": true,
-          "ModifiedUtc": "2024-09-22T00:00:00Z",
-          "PublishedUtc": "2024-09-22T00:00:00Z",
-          "CreatedUtc": "2024-09-22T00:00:00Z",
-          "Owner": "admin",
-          "Author": "admin",
-          "TitlePart": {
-            "Title": "Information architecture for complex offerings"
-          },
-          "AutoroutePart": {
-            "SetHomepage": false,
-            "Disabled": false,
-            "RouteContainedItems": false,
-            "Absolute": false,
-            "Path": "blog/information-architecture-for-complex-offerings"
-          },
-          "ContainedPart": {
-            "ListContentItemId": "47acgkkt1r84dznmwe115w1ydq",
-            "ListContentType": "Blog",
-            "Order": 12
-          },
-          "BlogPost": {
-            "Excerpt": {
-              "Text": "Complex offerings need clear navigation and naming. A strong IA keeps prospects from getting lost."
-            },
-            "ReadTime": {
-              "Text": "8 min read"
-            },
-            "Image": {
-              "Paths": [],
-              "MediaTexts": [],
-              "Anchors": []
-            },
-            "Tags": {
-              "TaxonomyContentItemId": "4cjjtn6m0rvpay8qh54yzwy0ds",
-              "TermContentItemIds": [
-                "4s2xgk8j4k9p7c6b1n3m2q5r8t",
-                "4m8v1c2q9t7b5h3n6p4r8s1k2x"
-              ]
-            }
-          },
-          "MarkdownBodyPart": {
-            "Markdown": "Start with customer language, then map pages to decisions.\\r\\n\\r\\nUse hubs and leaf pages to keep structure clear."
-          }
-        },
-        {
-          "ContentItemId": "[js:uuid()]",
-          "ContentItemVersionId": "[js:uuid()]",
-          "ContentType": "BlogPost",
-          "DisplayText": "Planning content migrations with stakeholders",
-          "Latest": true,
-          "Published": true,
-          "ModifiedUtc": "2024-09-14T00:00:00Z",
-          "PublishedUtc": "2024-09-14T00:00:00Z",
-          "CreatedUtc": "2024-09-14T00:00:00Z",
-          "Owner": "admin",
-          "Author": "admin",
-          "TitlePart": {
-            "Title": "Planning content migrations with stakeholders"
-          },
-          "AutoroutePart": {
-            "SetHomepage": false,
-            "Disabled": false,
-            "RouteContainedItems": false,
-            "Absolute": false,
-            "Path": "blog/planning-content-migrations-with-stakeholders"
-          },
-          "ContainedPart": {
-            "ListContentItemId": "47acgkkt1r84dznmwe115w1ydq",
-            "ListContentType": "Blog",
-            "Order": 13
-          },
-          "BlogPost": {
-            "Excerpt": {
-              "Text": "Migration success depends on alignment. Bring stakeholders in early with clear timelines and roles."
-            },
-            "ReadTime": {
-              "Text": "6 min read"
-            },
-            "Image": {
-              "Paths": [],
-              "MediaTexts": [],
-              "Anchors": []
-            },
-            "Tags": {
-              "TaxonomyContentItemId": "4cjjtn6m0rvpay8qh54yzwy0ds",
-              "TermContentItemIds": [
-                "4t6p1n9r2k7s3m8v5b4c2d6g9x",
-                "4p8m2r7k1t9v3n5b6c2d8g4h1q"
-              ]
-            }
-          },
-          "MarkdownBodyPart": {
-            "Markdown": "Define owners for each content area and schedule reviews.\\r\\n\\r\\nTransparency prevents last-minute surprises."
-          }
-        },
-        {
-          "ContentItemId": "[js:uuid()]",
-          "ContentItemVersionId": "[js:uuid()]",
-          "ContentType": "BlogPost",
-          "DisplayText": "What to document before switching CMS",
-          "Latest": true,
-          "Published": true,
-          "ModifiedUtc": "2024-09-06T00:00:00Z",
-          "PublishedUtc": "2024-09-06T00:00:00Z",
-          "CreatedUtc": "2024-09-06T00:00:00Z",
-          "Owner": "admin",
-          "Author": "admin",
-          "TitlePart": {
-            "Title": "What to document before switching CMS"
-          },
-          "AutoroutePart": {
-            "SetHomepage": false,
-            "Disabled": false,
-            "RouteContainedItems": false,
-            "Absolute": false,
-            "Path": "blog/what-to-document-before-switching-cms"
-          },
-          "ContainedPart": {
-            "ListContentItemId": "47acgkkt1r84dznmwe115w1ydq",
-            "ListContentType": "Blog",
-            "Order": 14
-          },
-          "BlogPost": {
-            "Excerpt": {
-              "Text": "The right documentation reduces migration risk. Capture content rules, redirects, and ownership now."
-            },
-            "ReadTime": {
-              "Text": "5 min read"
-            },
-            "Image": {
-              "Paths": [],
-              "MediaTexts": [],
-              "Anchors": []
-            },
-            "Tags": {
-              "TaxonomyContentItemId": "4cjjtn6m0rvpay8qh54yzwy0ds",
-              "TermContentItemIds": [
-                "4t6p1n9r2k7s3m8v5b4c2d6g9x"
-              ]
-            }
-          },
-          "MarkdownBodyPart": {
-            "Markdown": "Document page inventories, metadata standards, and redirect plans.\\r\\n\\r\\nThis prevents content loss and SEO dips."
-          }
-        },
-        {
-          "ContentItemId": "[js:uuid()]",
+          "ContentItemId": "4g62pqm2gvr19tn4yts4gh14nj",
           "ContentItemVersionId": "[js:uuid()]",
           "ContentType": "Menu",
           "DisplayText": "Main Menu",

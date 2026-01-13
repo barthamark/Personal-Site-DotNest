@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en" class="scheme-light scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Message Sent - Confirmation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Figtree:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/tailwind.generated.css" />
+  </head>
+  <body class="bg-dark-blue text-light-text font-sans antialiased">
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-dark-blue/95 backdrop-blur-md shadow-lg py-4">
+      <div class="page-container">
+        <div class="flex items-center justify-between">
+          <a
+            href="home.html"
+            class="text-2xl font-bold text-white font-figtree tracking-tight"
+          >
+            Mark Bartha
+          </a>
+
+          <div class="hidden md:flex items-center space-x-8" aria-label="Primary">
+            <a
+              href="home.html"
+              class="text-sm font-medium text-light-text/80 hover:text-light-blue transition-colors"
+            >
+              Home
+            </a>
+            <a
+              href="home.html#services"
+              class="text-sm font-medium text-light-text/80 hover:text-light-blue transition-colors"
+            >
+              Services
+            </a>
+            <a
+              href="home.html#work"
+              class="text-sm font-medium text-light-text/80 hover:text-light-blue transition-colors"
+            >
+              Case Studies
+            </a>
+            <a
+              href="home.html#about"
+              class="text-sm font-medium text-light-text/80 hover:text-light-blue transition-colors"
+            >
+              About
+            </a>
+            <a
+              href="blog.html"
+              class="text-sm font-medium text-light-text/80 hover:text-light-blue transition-colors"
+            >
+              Blog
+            </a>
+            <a href="contact.html" class="btn btn-primary btn-sm">Contact</a>
+          </div>
+
+          <details class="md:hidden">
+            <summary class="list-none text-white p-2 cursor-pointer">
+              <span class="sr-only">Toggle menu</span>
+              <i data-lucide="menu" class="w-6 h-6" aria-hidden="true"></i>
+            </summary>
+            <div class="mt-4 border-t border-white/10 pt-4 space-y-4">
+              <a
+                href="home.html"
+                class="block py-2 text-lg font-medium text-light-text hover:text-light-blue transition-colors"
+              >
+                Home
+              </a>
+              <a
+                href="home.html#services"
+                class="block py-2 text-lg font-medium text-light-text hover:text-light-blue transition-colors"
+              >
+                Services
+              </a>
+              <a
+                href="home.html#work"
+                class="block py-2 text-lg font-medium text-light-text hover:text-light-blue transition-colors"
+              >
+                Case Studies
+              </a>
+              <a
+                href="home.html#about"
+                class="block py-2 text-lg font-medium text-light-text hover:text-light-blue transition-colors"
+              >
+                About
+              </a>
+              <a
+                href="blog.html"
+                class="block py-2 text-lg font-medium text-light-text hover:text-light-blue transition-colors"
+              >
+                Blog
+              </a>
+              <div class="pt-2">
+                <a href="contact.html" class="btn btn-primary btn-sm w-full">
+                  Contact
+                </a>
+              </div>
+            </div>
+          </details>
+        </div>
+      </div>
+    </nav>
+
+    <main class="min-h-screen w-full bg-dark-blue">
+      <section class="hero-backdrop pt-32 pb-24">
+        <div class="page-container max-w-3xl">
+          <div class="flex flex-col items-center text-center">
+            <div class="inline-flex items-center justify-center w-20 h-20 rounded-full bg-emerald-500/10 border-2 border-emerald-500/20 mb-8">
+              <i data-lucide="check-circle" class="w-10 h-10 text-emerald-400" aria-hidden="true"></i>
+            </div>
+
+            <h1 class="text-3xl md:text-4xl font-bold text-white mb-4 text-balance">
+              Message sent successfully
+            </h1>
+            <p class="text-lg text-light-text/70 mb-10 leading-relaxed">
+              Thanks for reaching out. I'll reply within 1 business day with a clear next step.
+            </p>
+
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="home.html" class="btn btn-primary btn-lg">
+                <i data-lucide="arrow-left" class="w-4 h-4" aria-hidden="true"></i>
+                Back to home
+              </a>
+              <a href="blog.html" class="btn btn-ghost-inverse btn-lg">
+                Read insights
+                <i data-lucide="arrow-right" class="w-4 h-4" aria-hidden="true"></i>
+              </a>
+            </div>
+
+            <div class="mt-12 pt-8 border-t border-white/10 w-full">
+              <p class="text-sm text-light-text/50">
+                You can close this page or keep browsing if you want more context first.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-dark-blue text-light-text/40 py-8 text-center text-sm border-t border-white/10">
+      <div class="max-w-7xl mx-auto px-4">
+        <p>&copy; 2025 Mark Bartha. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+      lucide.createIcons();
+    </script>
+  </body>
+</html>

@@ -108,6 +108,10 @@
         {
           "executionid": "PersonalSite.Theme",
           "name": "PersonalSite.Export"
+        },
+        {
+          "executionid": "PersonalSite.Theme",
+          "name": "PersonalSite.SampleContent"
         }
 //        {
 //          "executionid": "PersonalSite.Theme",

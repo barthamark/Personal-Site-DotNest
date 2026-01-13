@@ -1,0 +1,771 @@
+{
+  "name": "PersonalSite.SampleContent",
+  "displayName": "Personal Site - Sample Content",
+  "description": "Sample content items for development.",
+  "author": "Mark Bartha",
+  "website": "https://markbartha.com",
+  "version": "1.0",
+  "categories": [],
+  "tags": [],
+  "steps": [
+    {
+      "name": "content",
+      "data": [
+        {
+          "ContentItemId": "aztbqtr9v8ri2yigm4ms16knbv",
+          "ContentItemVersionId": "[js:uuid()]",
+          "ContentType": "BlogPost",
+          "DisplayText": "When your B2B site stops being just a website",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2024-12-15T00:00:00Z",
+          "PublishedUtc": "2024-12-15T00:00:00Z",
+          "CreatedUtc": "2024-12-15T00:00:00Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "TitlePart": {
+            "Title": "When your B2B site stops being just a website"
+          },
+          "AutoroutePart": {
+            "SetHomepage": false,
+            "Disabled": false,
+            "RouteContainedItems": false,
+            "Absolute": false,
+            "Path": "blog/when-your-b2b-site-stops-being-just-a-website"
+          },
+          "ContainedPart": {
+            "ListContentItemId": "47acgkkt1r84dznmwe115w1ydq",
+            "ListContentType": "Blog",
+            "Order": 0
+          },
+          "BlogPost": {
+            "Excerpt": {
+              "Text": "Most B2B companies start with a simple website. But as you grow, that website becomes a bottleneck. Here is how to recognize the signs and what to do next."
+            },
+            "ReadTime": {
+              "Text": "8 min read"
+            },
+            "Image": {
+              "Paths": [],
+              "MediaTexts": [],
+              "Anchors": []
+            },
+            "Tags": {
+              "TaxonomyContentItemId": "4cjjtn6m0rvpay8qh54yzwy0ds",
+              "TermContentItemIds": [
+                "4s2xgk8j4k9p7c6b1n3m2q5r8t"
+              ]
+            }
+          },
+          "MarkdownBodyPart": {
+            "Markdown": "Most B2B companies start with a simple website. But as you grow, that website becomes a bottleneck.\\r\\n\\r\\nThis article covers the warning signs and the playbook for turning your site into a predictable growth engine."
+          }
+        },
+        {
+          "ContentItemId": "qqyfdr9s06fds9kfwyzk1phunw",
+          "ContentItemVersionId": "[js:uuid()]",
+          "ContentType": "BlogPost",
+          "DisplayText": "How to structure case studies for trust and leads",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2024-12-10T00:00:00Z",
+          "PublishedUtc": "2024-12-10T00:00:00Z",
+          "CreatedUtc": "2024-12-10T00:00:00Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "TitlePart": {
+            "Title": "How to structure case studies for trust and leads"
+          },
+          "AutoroutePart": {
+            "SetHomepage": false,
+            "Disabled": false,
+            "RouteContainedItems": false,
+            "Absolute": false,
+            "Path": "blog/how-to-structure-case-studies-for-trust-and-leads"
+          },
+          "ContainedPart": {
+            "ListContentItemId": "47acgkkt1r84dznmwe115w1ydq",
+            "ListContentType": "Blog",
+            "Order": 1
+          },
+          "BlogPost": {
+            "Excerpt": {
+              "Text": "Case studies are powerful, but only if structured correctly. Learn the framework that converts prospects into qualified leads."
+            },
+            "ReadTime": {
+              "Text": "6 min read"
+            },
+            "Image": {
+              "Paths": [],
+              "MediaTexts": [],
+              "Anchors": []
+            },
+            "Tags": {
+              "TaxonomyContentItemId": "4cjjtn6m0rvpay8qh54yzwy0ds",
+              "TermContentItemIds": [
+                "4m8v1c2q9t7b5h3n6p4r8s1k2x"
+              ]
+            }
+          },
+          "MarkdownBodyPart": {
+            "Markdown": "Case studies are powerful, but only if structured correctly. This framework turns success stories into sales assets.\\r\\n\\r\\nUse a clear challenge-approach-results arc so prospects can see themselves in the story."
+          }
+        },
+        {
+          "ContentItemId": "90mm89oxevldj660imne1kqy5c",
+          "ContentItemVersionId": "[js:uuid()]",
+          "ContentType": "BlogPost",
+          "DisplayText": "Knowledge base vs help center vs docs: what to build first",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2024-12-05T00:00:00Z",
+          "PublishedUtc": "2024-12-05T00:00:00Z",
+          "CreatedUtc": "2024-12-05T00:00:00Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "TitlePart": {
+            "Title": "Knowledge base vs help center vs docs: what to build first"
+          },
+          "AutoroutePart": {
+            "SetHomepage": false,
+            "Disabled": false,
+            "RouteContainedItems": false,
+            "Absolute": false,
+            "Path": "blog/knowledge-base-vs-help-center-vs-docs-what-to-build-first"
+          },
+          "ContainedPart": {
+            "ListContentItemId": "47acgkkt1r84dznmwe115w1ydq",
+            "ListContentType": "Blog",
+            "Order": 2
+          },
+          "BlogPost": {
+            "Excerpt": {
+              "Text": "These terms are often used interchangeably, but they serve different purposes. Here is how to decide what your team needs."
+            },
+            "ReadTime": {
+              "Text": "7 min read"
+            },
+            "Image": {
+              "Paths": [],
+              "MediaTexts": [],
+              "Anchors": []
+            },
+            "Tags": {
+              "TaxonomyContentItemId": "4cjjtn6m0rvpay8qh54yzwy0ds",
+              "TermContentItemIds": [
+                "4k3d9n2p7r5s1t6v8m2b4c7q9w"
+              ]
+            }
+          },
+          "MarkdownBodyPart": {
+            "Markdown": "Knowledge bases, help centers, and docs each solve different problems. Start with the one that removes the most friction for your customers today.\\r\\n\\r\\nThis guide explains the decision criteria and what to build next."
+          }
+        },
+        {
+          "ContentItemId": "1s8ap0g1il86xp73w38n4zr17e",
+          "ContentItemVersionId": "[js:uuid()]",
+          "ContentType": "BlogPost",
+          "DisplayText": "CMS migration without chaos: a phased roadmap",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2024-11-28T00:00:00Z",
+          "PublishedUtc": "2024-11-28T00:00:00Z",
+          "CreatedUtc": "2024-11-28T00:00:00Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "TitlePart": {
+            "Title": "CMS migration without chaos: a phased roadmap"
+          },
+          "AutoroutePart": {
+            "SetHomepage": false,
+            "Disabled": false,
+            "RouteContainedItems": false,
+            "Absolute": false,
+            "Path": "blog/cms-migration-without-chaos-a-phased-roadmap"
+          },
+          "ContainedPart": {
+            "ListContentItemId": "47acgkkt1r84dznmwe115w1ydq",
+            "ListContentType": "Blog",
+            "Order": 3
+          },
+          "BlogPost": {
+            "Excerpt": {
+              "Text": "Migrating your CMS does not have to be a nightmare. Follow this phased approach to minimize risk and downtime."
+            },
+            "ReadTime": {
+              "Text": "10 min read"
+            },
+            "Image": {
+              "Paths": [],
+              "MediaTexts": [],
+              "Anchors": []
+            },
+            "Tags": {
+              "TaxonomyContentItemId": "4cjjtn6m0rvpay8qh54yzwy0ds",
+              "TermContentItemIds": [
+                "4t6p1n9r2k7s3m8v5b4c2d6g9x"
+              ]
+            }
+          },
+          "MarkdownBodyPart": {
+            "Markdown": "A phased migration keeps teams aligned and reduces disruption.\\r\\n\\r\\nThis guide covers discovery, content mapping, and parallel run strategies."
+          }
+        },
+        {
+          "ContentItemId": "2tv1gi4d1lqxlrso9cu4hc4ne5",
+          "ContentItemVersionId": "[js:uuid()]",
+          "ContentType": "BlogPost",
+          "DisplayText": "Content audit checklist for B2B websites",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2024-11-20T00:00:00Z",
+          "PublishedUtc": "2024-11-20T00:00:00Z",
+          "CreatedUtc": "2024-11-20T00:00:00Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "TitlePart": {
+            "Title": "Content audit checklist for B2B websites"
+          },
+          "AutoroutePart": {
+            "SetHomepage": false,
+            "Disabled": false,
+            "RouteContainedItems": false,
+            "Absolute": false,
+            "Path": "blog/content-audit-checklist-for-b2b-websites"
+          },
+          "ContainedPart": {
+            "ListContentItemId": "47acgkkt1r84dznmwe115w1ydq",
+            "ListContentType": "Blog",
+            "Order": 4
+          },
+          "BlogPost": {
+            "Excerpt": {
+              "Text": "Before rebuilding your website, you need to know what you have. Use this checklist to audit your content effectively."
+            },
+            "ReadTime": {
+              "Text": "5 min read"
+            },
+            "Image": {
+              "Paths": [],
+              "MediaTexts": [],
+              "Anchors": []
+            },
+            "Tags": {
+              "TaxonomyContentItemId": "4cjjtn6m0rvpay8qh54yzwy0ds",
+              "TermContentItemIds": [
+                "4s2xgk8j4k9p7c6b1n3m2q5r8t",
+                "4m8v1c2q9t7b5h3n6p4r8s1k2x"
+              ]
+            }
+          },
+          "MarkdownBodyPart": {
+            "Markdown": "A thorough audit uncovers gaps, duplicates, and outdated pages.\\r\\n\\r\\nStart with goals, map owners, and score each asset."
+          }
+        },
+        {
+          "ContentItemId": "hxxj4dgqy0us6df01awjm737wh",
+          "ContentItemVersionId": "[js:uuid()]",
+          "ContentType": "BlogPost",
+          "DisplayText": "Why your support team needs a knowledge hub",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2024-11-15T00:00:00Z",
+          "PublishedUtc": "2024-11-15T00:00:00Z",
+          "CreatedUtc": "2024-11-15T00:00:00Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "TitlePart": {
+            "Title": "Why your support team needs a knowledge hub"
+          },
+          "AutoroutePart": {
+            "SetHomepage": false,
+            "Disabled": false,
+            "RouteContainedItems": false,
+            "Absolute": false,
+            "Path": "blog/why-your-support-team-needs-a-knowledge-hub"
+          },
+          "ContainedPart": {
+            "ListContentItemId": "47acgkkt1r84dznmwe115w1ydq",
+            "ListContentType": "Blog",
+            "Order": 5
+          },
+          "BlogPost": {
+            "Excerpt": {
+              "Text": "Support teams waste hours answering the same questions. A knowledge hub changes that. Here is how to build one."
+            },
+            "ReadTime": {
+              "Text": "6 min read"
+            },
+            "Image": {
+              "Paths": [],
+              "MediaTexts": [],
+              "Anchors": []
+            },
+            "Tags": {
+              "TaxonomyContentItemId": "4cjjtn6m0rvpay8qh54yzwy0ds",
+              "TermContentItemIds": [
+                "4k3d9n2p7r5s1t6v8m2b4c7q9w"
+              ]
+            }
+          },
+          "MarkdownBodyPart": {
+            "Markdown": "A shared knowledge hub reduces repeat tickets and onboarding time.\\r\\n\\r\\nFocus on search, structure, and clear ownership."
+          }
+        },
+        {
+          "ContentItemId": "4k1c93tl45uxpu8wjwmw856489",
+          "ContentItemVersionId": "[js:uuid()]",
+          "ContentType": "BlogPost",
+          "DisplayText": "Editorial workflows that keep marketing moving",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2024-11-08T00:00:00Z",
+          "PublishedUtc": "2024-11-08T00:00:00Z",
+          "CreatedUtc": "2024-11-08T00:00:00Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "TitlePart": {
+            "Title": "Editorial workflows that keep marketing moving"
+          },
+          "AutoroutePart": {
+            "SetHomepage": false,
+            "Disabled": false,
+            "RouteContainedItems": false,
+            "Absolute": false,
+            "Path": "blog/editorial-workflows-that-keep-marketing-moving"
+          },
+          "ContainedPart": {
+            "ListContentItemId": "47acgkkt1r84dznmwe115w1ydq",
+            "ListContentType": "Blog",
+            "Order": 6
+          },
+          "BlogPost": {
+            "Excerpt": {
+              "Text": "A predictable editorial workflow helps teams publish on time without sacrificing quality."
+            },
+            "ReadTime": {
+              "Text": "7 min read"
+            },
+            "Image": {
+              "Paths": [],
+              "MediaTexts": [],
+              "Anchors": []
+            },
+            "Tags": {
+              "TaxonomyContentItemId": "4cjjtn6m0rvpay8qh54yzwy0ds",
+              "TermContentItemIds": [
+                "4p8m2r7k1t9v3n5b6c2d8g4h1q"
+              ]
+            }
+          },
+          "MarkdownBodyPart": {
+            "Markdown": "Set clear stages, owners, and review gates to keep work flowing.\\r\\n\\r\\nYour CMS should reinforce these steps, not fight them."
+          }
+        },
+        {
+          "ContentItemId": "krojkcz1apuea4vdzxqv13d7fv",
+          "ContentItemVersionId": "[js:uuid()]",
+          "ContentType": "BlogPost",
+          "DisplayText": "Designing service pages that sell without fluff",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2024-11-01T00:00:00Z",
+          "PublishedUtc": "2024-11-01T00:00:00Z",
+          "CreatedUtc": "2024-11-01T00:00:00Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "TitlePart": {
+            "Title": "Designing service pages that sell without fluff"
+          },
+          "AutoroutePart": {
+            "SetHomepage": false,
+            "Disabled": false,
+            "RouteContainedItems": false,
+            "Absolute": false,
+            "Path": "blog/designing-service-pages-that-sell-without-fluff"
+          },
+          "ContainedPart": {
+            "ListContentItemId": "47acgkkt1r84dznmwe115w1ydq",
+            "ListContentType": "Blog",
+            "Order": 7
+          },
+          "BlogPost": {
+            "Excerpt": {
+              "Text": "Service pages should clarify outcomes, scope, and proof instead of hiding behind vague claims."
+            },
+            "ReadTime": {
+              "Text": "6 min read"
+            },
+            "Image": {
+              "Paths": [],
+              "MediaTexts": [],
+              "Anchors": []
+            },
+            "Tags": {
+              "TaxonomyContentItemId": "4cjjtn6m0rvpay8qh54yzwy0ds",
+              "TermContentItemIds": [
+                "4s2xgk8j4k9p7c6b1n3m2q5r8t"
+              ]
+            }
+          },
+          "MarkdownBodyPart": {
+            "Markdown": "Focus on outcomes, the process, and evidence.\\r\\n\\r\\nMake it easy for buyers to self-qualify."
+          }
+        },
+        {
+          "ContentItemId": "icg8y796zegx3qq5crxpep4hul",
+          "ContentItemVersionId": "[js:uuid()]",
+          "ContentType": "BlogPost",
+          "DisplayText": "How to brief developers for content-heavy sites",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2024-10-24T00:00:00Z",
+          "PublishedUtc": "2024-10-24T00:00:00Z",
+          "CreatedUtc": "2024-10-24T00:00:00Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "TitlePart": {
+            "Title": "How to brief developers for content-heavy sites"
+          },
+          "AutoroutePart": {
+            "SetHomepage": false,
+            "Disabled": false,
+            "RouteContainedItems": false,
+            "Absolute": false,
+            "Path": "blog/how-to-brief-developers-for-content-heavy-sites"
+          },
+          "ContainedPart": {
+            "ListContentItemId": "47acgkkt1r84dznmwe115w1ydq",
+            "ListContentType": "Blog",
+            "Order": 8
+          },
+          "BlogPost": {
+            "Excerpt": {
+              "Text": "Great implementation starts with a clear brief. Define the content model before anyone writes code."
+            },
+            "ReadTime": {
+              "Text": "8 min read"
+            },
+            "Image": {
+              "Paths": [],
+              "MediaTexts": [],
+              "Anchors": []
+            },
+            "Tags": {
+              "TaxonomyContentItemId": "4cjjtn6m0rvpay8qh54yzwy0ds",
+              "TermContentItemIds": [
+                "4t6p1n9r2k7s3m8v5b4c2d6g9x"
+              ]
+            }
+          },
+          "MarkdownBodyPart": {
+            "Markdown": "Document content types, fields, and relationships upfront.\\r\\n\\r\\nThis prevents rework and keeps timelines stable."
+          }
+        },
+        {
+          "ContentItemId": "ycuynl842o6d69v4wpc414i5l8",
+          "ContentItemVersionId": "[js:uuid()]",
+          "ContentType": "BlogPost",
+          "DisplayText": "From brochure to platform: evolving a marketing site",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2024-10-16T00:00:00Z",
+          "PublishedUtc": "2024-10-16T00:00:00Z",
+          "CreatedUtc": "2024-10-16T00:00:00Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "TitlePart": {
+            "Title": "From brochure to platform: evolving a marketing site"
+          },
+          "AutoroutePart": {
+            "SetHomepage": false,
+            "Disabled": false,
+            "RouteContainedItems": false,
+            "Absolute": false,
+            "Path": "blog/from-brochure-to-platform-evolving-a-marketing-site"
+          },
+          "ContainedPart": {
+            "ListContentItemId": "47acgkkt1r84dznmwe115w1ydq",
+            "ListContentType": "Blog",
+            "Order": 9
+          },
+          "BlogPost": {
+            "Excerpt": {
+              "Text": "As content grows, your site must move beyond static pages. Here is a roadmap to evolve without a rebuild."
+            },
+            "ReadTime": {
+              "Text": "9 min read"
+            },
+            "Image": {
+              "Paths": [],
+              "MediaTexts": [],
+              "Anchors": []
+            },
+            "Tags": {
+              "TaxonomyContentItemId": "4cjjtn6m0rvpay8qh54yzwy0ds",
+              "TermContentItemIds": [
+                "4s2xgk8j4k9p7c6b1n3m2q5r8t",
+                "4p8m2r7k1t9v3n5b6c2d8g4h1q"
+              ]
+            }
+          },
+          "MarkdownBodyPart": {
+            "Markdown": "Add structure, search, and reusable components in phases.\\r\\n\\r\\nThis keeps momentum while expanding capabilities."
+          }
+        },
+        {
+          "ContentItemId": "y8l3wmvam51a99m8kdi7qhrcj0",
+          "ContentItemVersionId": "[js:uuid()]",
+          "ContentType": "BlogPost",
+          "DisplayText": "Building a B2B FAQ library that scales",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2024-10-08T00:00:00Z",
+          "PublishedUtc": "2024-10-08T00:00:00Z",
+          "CreatedUtc": "2024-10-08T00:00:00Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "TitlePart": {
+            "Title": "Building a B2B FAQ library that scales"
+          },
+          "AutoroutePart": {
+            "SetHomepage": false,
+            "Disabled": false,
+            "RouteContainedItems": false,
+            "Absolute": false,
+            "Path": "blog/building-a-b2b-faq-library-that-scales"
+          },
+          "ContainedPart": {
+            "ListContentItemId": "47acgkkt1r84dznmwe115w1ydq",
+            "ListContentType": "Blog",
+            "Order": 10
+          },
+          "BlogPost": {
+            "Excerpt": {
+              "Text": "A scalable FAQ library reduces support load and increases trust. Structure and governance make it work."
+            },
+            "ReadTime": {
+              "Text": "5 min read"
+            },
+            "Image": {
+              "Paths": [],
+              "MediaTexts": [],
+              "Anchors": []
+            },
+            "Tags": {
+              "TaxonomyContentItemId": "4cjjtn6m0rvpay8qh54yzwy0ds",
+              "TermContentItemIds": [
+                "4k3d9n2p7r5s1t6v8m2b4c7q9w"
+              ]
+            }
+          },
+          "MarkdownBodyPart": {
+            "Markdown": "Group questions by intent, not internal teams.\\r\\n\\r\\nAssign owners and review dates to keep answers fresh."
+          }
+        },
+        {
+          "ContentItemId": "aspnv2xd6mmiqoizyh6xrzyzii",
+          "ContentItemVersionId": "[js:uuid()]",
+          "ContentType": "BlogPost",
+          "DisplayText": "Picking KPIs for content operations",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2024-09-30T00:00:00Z",
+          "PublishedUtc": "2024-09-30T00:00:00Z",
+          "CreatedUtc": "2024-09-30T00:00:00Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "TitlePart": {
+            "Title": "Picking KPIs for content operations"
+          },
+          "AutoroutePart": {
+            "SetHomepage": false,
+            "Disabled": false,
+            "RouteContainedItems": false,
+            "Absolute": false,
+            "Path": "blog/picking-kpis-for-content-operations"
+          },
+          "ContainedPart": {
+            "ListContentItemId": "47acgkkt1r84dznmwe115w1ydq",
+            "ListContentType": "Blog",
+            "Order": 11
+          },
+          "BlogPost": {
+            "Excerpt": {
+              "Text": "Content teams need leading indicators, not vanity metrics. Choose KPIs that map to outcomes."
+            },
+            "ReadTime": {
+              "Text": "7 min read"
+            },
+            "Image": {
+              "Paths": [],
+              "MediaTexts": [],
+              "Anchors": []
+            },
+            "Tags": {
+              "TaxonomyContentItemId": "4cjjtn6m0rvpay8qh54yzwy0ds",
+              "TermContentItemIds": [
+                "4p8m2r7k1t9v3n5b6c2d8g4h1q"
+              ]
+            }
+          },
+          "MarkdownBodyPart": {
+            "Markdown": "Track production velocity, reuse, and time-to-publish.\\r\\n\\r\\nPair these with pipeline and revenue metrics."
+          }
+        },
+        {
+          "ContentItemId": "vpz9e6uvyctz01m1fn8s90qxun",
+          "ContentItemVersionId": "[js:uuid()]",
+          "ContentType": "BlogPost",
+          "DisplayText": "Information architecture for complex offerings",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2024-09-22T00:00:00Z",
+          "PublishedUtc": "2024-09-22T00:00:00Z",
+          "CreatedUtc": "2024-09-22T00:00:00Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "TitlePart": {
+            "Title": "Information architecture for complex offerings"
+          },
+          "AutoroutePart": {
+            "SetHomepage": false,
+            "Disabled": false,
+            "RouteContainedItems": false,
+            "Absolute": false,
+            "Path": "blog/information-architecture-for-complex-offerings"
+          },
+          "ContainedPart": {
+            "ListContentItemId": "47acgkkt1r84dznmwe115w1ydq",
+            "ListContentType": "Blog",
+            "Order": 12
+          },
+          "BlogPost": {
+            "Excerpt": {
+              "Text": "Complex offerings need clear navigation and naming. A strong IA keeps prospects from getting lost."
+            },
+            "ReadTime": {
+              "Text": "8 min read"
+            },
+            "Image": {
+              "Paths": [],
+              "MediaTexts": [],
+              "Anchors": []
+            },
+            "Tags": {
+              "TaxonomyContentItemId": "4cjjtn6m0rvpay8qh54yzwy0ds",
+              "TermContentItemIds": [
+                "4s2xgk8j4k9p7c6b1n3m2q5r8t",
+                "4m8v1c2q9t7b5h3n6p4r8s1k2x"
+              ]
+            }
+          },
+          "MarkdownBodyPart": {
+            "Markdown": "Start with customer language, then map pages to decisions.\\r\\n\\r\\nUse hubs and leaf pages to keep structure clear."
+          }
+        },
+        {
+          "ContentItemId": "e3ukd77lke7d2czllu417716we",
+          "ContentItemVersionId": "[js:uuid()]",
+          "ContentType": "BlogPost",
+          "DisplayText": "Planning content migrations with stakeholders",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2024-09-14T00:00:00Z",
+          "PublishedUtc": "2024-09-14T00:00:00Z",
+          "CreatedUtc": "2024-09-14T00:00:00Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "TitlePart": {
+            "Title": "Planning content migrations with stakeholders"
+          },
+          "AutoroutePart": {
+            "SetHomepage": false,
+            "Disabled": false,
+            "RouteContainedItems": false,
+            "Absolute": false,
+            "Path": "blog/planning-content-migrations-with-stakeholders"
+          },
+          "ContainedPart": {
+            "ListContentItemId": "47acgkkt1r84dznmwe115w1ydq",
+            "ListContentType": "Blog",
+            "Order": 13
+          },
+          "BlogPost": {
+            "Excerpt": {
+              "Text": "Migration success depends on alignment. Bring stakeholders in early with clear timelines and roles."
+            },
+            "ReadTime": {
+              "Text": "6 min read"
+            },
+            "Image": {
+              "Paths": [],
+              "MediaTexts": [],
+              "Anchors": []
+            },
+            "Tags": {
+              "TaxonomyContentItemId": "4cjjtn6m0rvpay8qh54yzwy0ds",
+              "TermContentItemIds": [
+                "4t6p1n9r2k7s3m8v5b4c2d6g9x",
+                "4p8m2r7k1t9v3n5b6c2d8g4h1q"
+              ]
+            }
+          },
+          "MarkdownBodyPart": {
+            "Markdown": "Define owners for each content area and schedule reviews.\\r\\n\\r\\nTransparency prevents last-minute surprises."
+          }
+        },
+        {
+          "ContentItemId": "ywal8v5gs100jqxxz05l3a954t",
+          "ContentItemVersionId": "[js:uuid()]",
+          "ContentType": "BlogPost",
+          "DisplayText": "What to document before switching CMS",
+          "Latest": true,
+          "Published": true,
+          "ModifiedUtc": "2024-09-06T00:00:00Z",
+          "PublishedUtc": "2024-09-06T00:00:00Z",
+          "CreatedUtc": "2024-09-06T00:00:00Z",
+          "Owner": "admin",
+          "Author": "admin",
+          "TitlePart": {
+            "Title": "What to document before switching CMS"
+          },
+          "AutoroutePart": {
+            "SetHomepage": false,
+            "Disabled": false,
+            "RouteContainedItems": false,
+            "Absolute": false,
+            "Path": "blog/what-to-document-before-switching-cms"
+          },
+          "ContainedPart": {
+            "ListContentItemId": "47acgkkt1r84dznmwe115w1ydq",
+            "ListContentType": "Blog",
+            "Order": 14
+          },
+          "BlogPost": {
+            "Excerpt": {
+              "Text": "The right documentation reduces migration risk. Capture content rules, redirects, and ownership now."
+            },
+            "ReadTime": {
+              "Text": "5 min read"
+            },
+            "Image": {
+              "Paths": [],
+              "MediaTexts": [],
+              "Anchors": []
+            },
+            "Tags": {
+              "TaxonomyContentItemId": "4cjjtn6m0rvpay8qh54yzwy0ds",
+              "TermContentItemIds": [
+                "4t6p1n9r2k7s3m8v5b4c2d6g9x"
+              ]
+            }
+          },
+          "MarkdownBodyPart": {
+            "Markdown": "Document page inventories, metadata standards, and redirect plans.\\r\\n\\r\\nThis prevents content loss and SEO dips."
+          }
+        }
+      ]
+    }
+  ]
+}

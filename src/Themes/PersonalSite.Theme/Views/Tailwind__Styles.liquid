@@ -141,6 +141,17 @@ summary::-webkit-details-marker {
     @apply theme-dark-blue:bg-white/5 theme-dark-blue:border-white/10 theme-dark-panel:bg-white/5 theme-dark-panel:border-white/10;
   }
 
+  .faq-answer {
+    @apply overflow-hidden max-h-0 opacity-0 pt-0 pb-0;
+    @apply border-t border-transparent;
+    @apply transition-[max-height,opacity,padding] duration-200 ease-out;
+  }
+
+  .faq-answer.is-open {
+    @apply max-h-[500px] opacity-100 pt-4 pb-4;
+    @apply theme-dark-blue:border-white/10 theme-dark-panel:border-white/10 theme-light-gray:border-gray-200 theme-white:border-gray-200;
+  }
+
   .card-dark {
     @apply bg-white/5 border border-white/10 rounded-xl p-6 transition-colors duration-300 hover:bg-white/10;
   }
@@ -205,6 +216,13 @@ summary::-webkit-details-marker {
 
   .rich-text strong {
     @apply font-semibold;
+  }
+
+  .rich-text h1 strong,
+  .rich-text h2 strong,
+  .rich-text h3 strong,
+  .rich-text h4 strong {
+    @apply font-bold;
   }
 
   .rich-text em {

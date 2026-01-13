@@ -1,0 +1,13 @@
+{% assign widget_items = Model.ContentItem.Content.Widgets.ContentItems %}
+
+{% if widget_items %}
+    <section class="pt-40 pb-24" data-theme="dark-blue">
+        <div class="page-container max-w-3xl">
+            <div class="flex flex-col items-center text-center gap-8">
+                {% for item in widget_items %}
+                    {{ item | shape_build_display: "Detail" | shape_render }}
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endif %}
