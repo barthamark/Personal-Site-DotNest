@@ -1,0 +1,10 @@
+{% assign input_text = Model.Source | default: "" %}
+{% assign normalized_text = input_text | replace: "\r", " " | replace: "\n", " " %}
+{% assign word_count = normalized_text | split: " " | size %}
+{% assign read_time_minutes = 0 %}
+{% if word_count > 0 %}
+    {% assign read_time_minutes = word_count | plus: 199 | divided_by: 200 %}
+{% endif %}
+{% if read_time_minutes > 0 %}
+    {{ read_time_minutes | append: " min read" }}
+{% endif %}

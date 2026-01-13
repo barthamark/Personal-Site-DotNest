@@ -2,7 +2,8 @@
 {% assign blog_post = content_item.Content.BlogPost %}
 {% assign title = content_item.DisplayText %}
 {% assign excerpt = blog_post.Excerpt.Text %}
-{% assign read_time = blog_post.ReadTime.Text %}
+{% assign body_markdown = content_item.Content.MarkdownBodyPart.Markdown | default: "" %}
+{% assign read_time_label = "ReadTime" | shape_new: source: body_markdown | shape_stringify %}
 {% assign published_date = content_item.PublishedUtc | default: content_item.CreatedUtc %}
 {% assign tag_terms = blog_post.Tags | taxonomy_terms %}
 {% assign blog_container = content_item | container %}
@@ -41,7 +42,7 @@
             </h1>
         {% endif %}
 
-        {% if content_item.Author or published_date or read_time != blank %}
+{% if content_item.Author or published_date or read_time_label != blank %}
             <div class="flex flex-wrap items-center gap-6 text-sm text-light-text/60 font-mono">
                 {% if content_item.Author %}
                     <div class="flex items-center">
@@ -55,10 +56,10 @@
                         {{ published_date | local | date: "%b %d, %Y" }}
                     </div>
                 {% endif %}
-                {% if read_time != blank %}
+                {% if read_time_label != blank %}
                     <div class="flex items-center">
                         <i data-lucide="clock" class="w-4 h-4 mr-2" aria-hidden="true"></i>
-                        {{ read_time }}
+                        {{ read_time_label }}
                     </div>
                 {% endif %}
             </div>
@@ -74,7 +75,6 @@
             </p>
         {% endif %}
 
-        {% assign body_markdown = content_item.Content.MarkdownBodyPart.Markdown %}
         {% if body_markdown != blank %}
             <div class="rich-text text-dark-blue text-pretty">
                 {{ body_markdown | markdownify | shortcode | raw }}

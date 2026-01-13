@@ -42,9 +42,6 @@
             "Excerpt": {
               "Text": "Most B2B companies start with a simple website. But as you grow, that website becomes a bottleneck. Here is how to recognize the signs and what to do next."
             },
-            "ReadTime": {
-              "Text": "8 min read"
-            },
             "Image": {
               "Paths": [],
               "MediaTexts": [],
@@ -91,9 +88,6 @@
           "BlogPost": {
             "Excerpt": {
               "Text": "Case studies are powerful, but only if structured correctly. Learn the framework that converts prospects into qualified leads."
-            },
-            "ReadTime": {
-              "Text": "6 min read"
             },
             "Image": {
               "Paths": [],
@@ -142,9 +136,6 @@
             "Excerpt": {
               "Text": "These terms are often used interchangeably, but they serve different purposes. Here is how to decide what your team needs."
             },
-            "ReadTime": {
-              "Text": "7 min read"
-            },
             "Image": {
               "Paths": [],
               "MediaTexts": [],
@@ -192,9 +183,6 @@
             "Excerpt": {
               "Text": "Migrating your CMS does not have to be a nightmare. Follow this phased approach to minimize risk and downtime."
             },
-            "ReadTime": {
-              "Text": "10 min read"
-            },
             "Image": {
               "Paths": [],
               "MediaTexts": [],
@@ -241,9 +229,6 @@
           "BlogPost": {
             "Excerpt": {
               "Text": "Before rebuilding your website, you need to know what you have. Use this checklist to audit your content effectively."
-            },
-            "ReadTime": {
-              "Text": "5 min read"
             },
             "Image": {
               "Paths": [],
@@ -293,9 +278,6 @@
             "Excerpt": {
               "Text": "Support teams waste hours answering the same questions. A knowledge hub changes that. Here is how to build one."
             },
-            "ReadTime": {
-              "Text": "6 min read"
-            },
             "Image": {
               "Paths": [],
               "MediaTexts": [],
@@ -342,9 +324,6 @@
           "BlogPost": {
             "Excerpt": {
               "Text": "A predictable editorial workflow helps teams publish on time without sacrificing quality."
-            },
-            "ReadTime": {
-              "Text": "7 min read"
             },
             "Image": {
               "Paths": [],
@@ -393,9 +372,6 @@
             "Excerpt": {
               "Text": "Service pages should clarify outcomes, scope, and proof instead of hiding behind vague claims."
             },
-            "ReadTime": {
-              "Text": "6 min read"
-            },
             "Image": {
               "Paths": [],
               "MediaTexts": [],
@@ -443,9 +419,6 @@
             "Excerpt": {
               "Text": "Great implementation starts with a clear brief. Define the content model before anyone writes code."
             },
-            "ReadTime": {
-              "Text": "8 min read"
-            },
             "Image": {
               "Paths": [],
               "MediaTexts": [],
@@ -492,9 +465,6 @@
           "BlogPost": {
             "Excerpt": {
               "Text": "As content grows, your site must move beyond static pages. Here is a roadmap to evolve without a rebuild."
-            },
-            "ReadTime": {
-              "Text": "9 min read"
             },
             "Image": {
               "Paths": [],
@@ -544,9 +514,6 @@
             "Excerpt": {
               "Text": "A scalable FAQ library reduces support load and increases trust. Structure and governance make it work."
             },
-            "ReadTime": {
-              "Text": "5 min read"
-            },
             "Image": {
               "Paths": [],
               "MediaTexts": [],
@@ -594,9 +561,6 @@
             "Excerpt": {
               "Text": "Content teams need leading indicators, not vanity metrics. Choose KPIs that map to outcomes."
             },
-            "ReadTime": {
-              "Text": "7 min read"
-            },
             "Image": {
               "Paths": [],
               "MediaTexts": [],
@@ -643,9 +607,6 @@
           "BlogPost": {
             "Excerpt": {
               "Text": "Complex offerings need clear navigation and naming. A strong IA keeps prospects from getting lost."
-            },
-            "ReadTime": {
-              "Text": "8 min read"
             },
             "Image": {
               "Paths": [],
@@ -695,9 +656,6 @@
             "Excerpt": {
               "Text": "Migration success depends on alignment. Bring stakeholders in early with clear timelines and roles."
             },
-            "ReadTime": {
-              "Text": "6 min read"
-            },
             "Image": {
               "Paths": [],
               "MediaTexts": [],
@@ -745,9 +703,6 @@
           "BlogPost": {
             "Excerpt": {
               "Text": "The right documentation reduces migration risk. Capture content rules, redirects, and ownership now."
-            },
-            "ReadTime": {
-              "Text": "5 min read"
             },
             "Image": {
               "Paths": [],

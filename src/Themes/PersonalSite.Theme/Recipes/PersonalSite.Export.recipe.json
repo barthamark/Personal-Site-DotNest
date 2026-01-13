@@ -1782,22 +1782,12 @@
               }
             },
             {
-              "FieldName": "TextField",
-              "Name": "ReadTime",
-              "Settings": {
-                "ContentPartFieldSettings": {
-                  "DisplayName": "Read time",
-                  "Position": "1"
-                }
-              }
-            },
-            {
               "FieldName": "MediaField",
               "Name": "Image",
               "Settings": {
                 "ContentPartFieldSettings": {
                   "DisplayName": "Banner Image",
-                  "Position": "2"
+                  "Position": "1"
                 },
                 "LuceneContentIndexSettings": {
                   "Included": false,
@@ -1818,7 +1808,7 @@
                   "DisplayName": "Tags",
                   "Editor": "Tags",
                   "DisplayMode": "Tags",
-                  "Position": "3"
+                  "Position": "2"
                 },
                 "TaxonomyFieldSettings": {
                   "Required": false,

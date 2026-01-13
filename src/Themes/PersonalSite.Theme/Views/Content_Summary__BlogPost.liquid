@@ -2,13 +2,14 @@
 {% assign blog_post = content_item.Content.BlogPost %}
 {% assign title = content_item.DisplayText %}
 {% assign excerpt = blog_post.Excerpt.Text %}
-{% assign read_time = blog_post.ReadTime.Text %}
 {% assign image_path = "" %}
 {% if blog_post.Image and blog_post.Image.Paths %}
     {% assign image_path = blog_post.Image.Paths[0] %}
 {% endif %}
 {% assign tag_terms = blog_post.Tags | taxonomy_terms %}
 {% assign published_date = content_item.PublishedUtc | default: content_item.CreatedUtc %}
+{% assign body_markdown = content_item.Content.MarkdownBodyPart.Markdown | default: "" %}
+{% assign read_time_label = "ReadTime" | shape_new: source: body_markdown | shape_stringify %}
 {% assign list_style = HttpContext.Items.blog_list_style | default: "Default" %}
 {% assign list_style_key = list_style | downcase %}
 
@@ -32,7 +33,7 @@
             </div>
 
             <div class="p-6 flex flex-col flex-1">
-                {% if published_date or read_time != blank %}
+                {% if published_date or read_time_label != blank %}
                     <div class="flex items-center text-xs text-gray-500 mb-3 space-x-4 font-mono">
                         {% if published_date %}
                             <div class="flex items-center">
@@ -40,10 +41,10 @@
                                 {{ published_date | local | date: "%b %d, %Y" }}
                             </div>
                         {% endif %}
-                        {% if read_time != blank %}
+                        {% if read_time_label != blank %}
                             <div class="flex items-center">
                                 <i data-lucide="clock" class="w-3 h-3 mr-1.5" aria-hidden="true"></i>
-                                {{ read_time }}
+                                {{ read_time_label }}
                             </div>
                         {% endif %}
                     </div>
@@ -83,7 +84,7 @@
                 </div>
             {% endif %}
 
-            {% if published_date or read_time != blank %}
+            {% if published_date or read_time_label != blank %}
                 <div class="flex flex-wrap items-center text-xs text-gray-500 mb-3 gap-4 font-mono">
                     {% if published_date %}
                         <div class="flex items-center">
@@ -91,10 +92,10 @@
                             {{ published_date | local | date: "%b %d, %Y" }}
                         </div>
                     {% endif %}
-                    {% if read_time != blank %}
+                    {% if read_time_label != blank %}
                         <div class="flex items-center">
                             <i data-lucide="clock" class="w-3 h-3 mr-1.5" aria-hidden="true"></i>
-                            {{ read_time }}
+                            {{ read_time_label }}
                         </div>
                     {% endif %}
                 </div>
