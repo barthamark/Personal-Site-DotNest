@@ -1,7 +1,11 @@
 {% assign content_item = Model.ContentItem %}
 {% assign title = content_item.DisplayText %}
 {% assign intro_markdown = content_item.Content.Blog.Summary.Markdown %}
-{% httpcontext_add_items blog_context: title %}
+{% assign list_style = "Default" %}
+{% if content_item.Content.Blog.PostListStyle and content_item.Content.Blog.PostListStyle.Text != blank %}
+    {% assign list_style = content_item.Content.Blog.PostListStyle.Text %}
+{% endif %}
+{% httpcontext_add_items blog_list_style: list_style %}
 
 <section class="hero-backdrop w-full pt-32 pb-20" data-theme="dark-blue">
     <div class="page-container relative z-10">
@@ -24,4 +28,5 @@
 </section>
 
 {% shape_remove_item Model.Content "Blog-Summary" %}
+{% shape_remove_item Model.Content "Blog-PostListStyle" %}
 {{ Model.Content | shape_render }}

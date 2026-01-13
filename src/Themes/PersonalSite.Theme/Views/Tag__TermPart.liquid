@@ -1,26 +1,30 @@
 <section class="py-20" data-theme="light-gray">
-    <div class="page-container">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {% for content_item in Model.ContentItems %}
-                {{ content_item | shape_build_display: "Summary" | shape_render }}
-            {% endfor %}
-        </div>
-
-        {% if Model.Pager %}
-            <div class="mt-12 flex items-center justify-center">
-                {% assign previousText = "Newer Posts" | t %}
-                {% assign nextText = "Older Posts" | t %}
-                {% assign previousClass = "btn btn-outline btn-sm" %}
-                {% assign nextClass = "btn btn-outline btn-sm" %}
-
-                {% shape_pager Model.Pager
-                    previous_text: previousText,
-                    next_text: nextText,
-                    previous_class: previousClass,
-                    next_class: nextClass
-                %}
-                {{ Model.Pager | shape_render }}
+    <div class="page-container max-w-5xl">
+        {% if Model.ContentItems and Model.ContentItems.size > 0 %}
+            <div class="flex flex-col gap-6">
+                {% for content_item in Model.ContentItems %}
+                    {{ content_item | shape_build_display: "Summary" | shape_render }}
+                {% endfor %}
             </div>
+
+            {% if Model.Pager %}
+                <div class="mt-12 flex items-center justify-center">
+                    {% assign previousText = "Newer Posts" | t %}
+                    {% assign nextText = "Older Posts" | t %}
+                    {% assign previousClass = "btn btn-outline btn-sm" %}
+                    {% assign nextClass = "btn btn-outline btn-sm" %}
+
+                    {% shape_pager Model.Pager
+                        previous_text: previousText,
+                        next_text: nextText,
+                        previous_class: previousClass,
+                        next_class: nextClass
+                    %}
+                    {{ Model.Pager | shape_render }}
+                </div>
+            {% endif %}
+        {% else %}
+            <p class="text-sm text-gray-500">The list is empty.</p>
         {% endif %}
     </div>
 </section>

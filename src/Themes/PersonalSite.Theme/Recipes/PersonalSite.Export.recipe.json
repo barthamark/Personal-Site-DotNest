@@ -1739,6 +1739,31 @@
                   "SanitizeHtml": true
                 }
               }
+            },
+            {
+              "FieldName": "TextField",
+              "Name": "PostListStyle",
+              "Settings": {
+                "ContentPartFieldSettings": {
+                  "DisplayName": "List style",
+                  "Editor": "PredefinedList",
+                  "Position": "2"
+                },
+                "TextFieldPredefinedListEditorSettings": {
+                  "Options": [
+                    {
+                      "name": "Default",
+                      "value": "Default"
+                    },
+                    {
+                      "name": "Cards",
+                      "value": "Cards"
+                    }
+                  ],
+                  "Editor": 1,
+                  "DefaultValue": "Default"
+                }
+              }
             }
           ]
         },
@@ -4647,6 +4672,9 @@
           "Blog": {
             "Summary": {
               "Markdown": "Practical guides on building content platforms, managing B2B websites, and scaling your knowledge hub."
+            },
+            "PostListStyle": {
+              "Text": "Default"
             },
             "Image": {
               "Paths": [],
