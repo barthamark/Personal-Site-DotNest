@@ -27,6 +27,8 @@
         "OrchardCore.Deployment.Remote",
         "OrchardCore.Diagnostics",
         "OrchardCore.DynamicCache",
+        "OrchardCore.Email",
+        "OrchardCore.Email.Smtp",
         "OrchardCore.Features",
         "OrchardCore.Feeds",
         "OrchardCore.Flows",
@@ -74,6 +76,25 @@
         "TheAdmin",
         "PersonalSite.Theme"
       ]
+    },
+    {
+      "name": "settings",
+      "EmailSettings": {
+        "DefaultProviderName": "SMTP"
+      },
+      "SmtpSettings": {
+        "Host": "127.0.01",
+        "Port": 25,
+        "AutoSelectEncryption": false,
+        "RequireCredentials": false,
+        "UseDefaultCredentials": false,
+        "EncryptionMethod": "None",
+        "ProxyPort": 0,
+        "IgnoreInvalidSslCertificate": false,
+        "DeliveryMethod": "Network",
+        "IsEnabled": true,
+        "DefaultSender": "test@test.com"
+      }
     },
     {
       "name": "themes",
