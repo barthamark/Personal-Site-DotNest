@@ -3204,7 +3204,9 @@
                 "Hero": {
                   "Image": {
                     "Anchors": [],
-                    "Paths": [],
+                    "Paths": [
+                      "Site/mark_bartha_dark_close.jpg"
+                    ],
                     "MediaTexts": []
                   },
                   "BackgroundLabel": {
@@ -5262,7 +5264,12 @@
     },
     {
       "name": "media",
-      "Files": []
+      "Files": [
+        {
+          "TargetPath": "Site/mark_bartha_dark_close.jpg",
+          "SourcePath": "Media/Site/mark_bartha_dark_close.jpg"
+        }
+      ]
     },
     {
       "name": "Placements",
