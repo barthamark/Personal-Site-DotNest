@@ -1,0 +1,37 @@
+{% assign element_id = Model.ContentItem.Content.FormElementPart.Id %}
+{% assign field_name = Model.ContentItem.Content.FormInputElementPart.Name %}
+{% assign field_id = element_id %}
+{% if field_id == blank and field_name != blank %}
+    {% assign field_id = field_name %}
+{% endif %}
+
+{% assign label_part = Model.ContentItem.Content.FormElementLabelPart %}
+{% assign label_text = label_part.Label %}
+{% assign label_option = label_part.Option %}
+{% assign widget_classes = Model.Classes | join: " " | strip %}
+
+<div class="space-y-2{% if widget_classes != blank %} {{ widget_classes }}{% endif %}">
+    {% if label_text != blank %}
+        {% assign is_required = label_text contains "*" %}
+        {% assign clean_label = label_text | replace: "*", "" | strip %}
+
+        {% if label_option == 2 or label_option == "ScreenReaders" %}
+            <label for="{{ field_id }}" class="sr-only">{{ clean_label }}</label>
+        {% elsif label_option != 0 and label_option != "None" %}
+            <label for="{{ field_id }}" class="form-label">
+                {{ clean_label }}
+                {% if is_required %}
+                    <span class="text-red-500">*</span>
+                {% endif %}
+            </label>
+        {% endif %}
+    {% endif %}
+
+    {% if Model.Content.InputPart %}
+        {{ Model.Content.InputPart | shape_render }}
+    {% endif %}
+
+    {% if Model.Content.FormElementValidationPart %}
+        {{ Model.Content.FormElementValidationPart | shape_render }}
+    {% endif %}
+</div>

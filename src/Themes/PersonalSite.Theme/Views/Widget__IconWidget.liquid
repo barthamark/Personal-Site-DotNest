@@ -1,6 +1,7 @@
 {% assign icon_name = Model.ContentItem.Content.IconWidget.Icon.Text %}
 {% assign size_value = Model.ContentItem.Content.IconWidget.Size.Text | default: "Large" %}
 {% assign accent_value = Model.ContentItem.Content.IconWidget.Accent.Text | default: "Green" %}
+{% assign widget_classes = Model.Classes | join: " " | strip %}
 
 {% assign size_class = "w-20 h-20" %}
 {% assign icon_class = "w-10 h-10" %}
@@ -29,7 +30,7 @@
     {% assign text_class = "text-violet-400" %}
 {% endif %}
 
-<div class="inline-flex items-center justify-center rounded-full border-2 {{ size_class }} {{ bg_class }} {{ border_class }}">
+<div class="inline-flex items-center justify-center rounded-full border-2 {{ size_class }} {{ bg_class }} {{ border_class }}{% if widget_classes != blank %} {{ widget_classes }}{% endif %}">
     {% if icon_name != blank %}
         <i data-lucide="{{ icon_name }}" class="{{ icon_class }} {{ text_class }}" aria-hidden="true"></i>
     {% endif %}

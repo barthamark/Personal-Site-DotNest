@@ -2,8 +2,9 @@
 {% assign name = Model.ContentItem.Content.Testimonial.Name.Text %}
 {% assign role = Model.ContentItem.Content.Testimonial.Role.Text %}
 {% assign company = Model.ContentItem.Content.Testimonial.Company.Text %}
+{% assign widget_classes = Model.Classes | join: " " | strip %}
 
-<div class="card p-8">
+<div class="card p-8{% if widget_classes != blank %} {{ widget_classes }}{% endif %}">
     <i data-lucide="quote" class="w-8 h-8 text-light-blue/20 mb-4" aria-hidden="true"></i>
 
     {% if quote_markdown != blank %}

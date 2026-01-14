@@ -30,6 +30,7 @@
         "OrchardCore.Features",
         "OrchardCore.Feeds",
         "OrchardCore.Flows",
+        "OrchardCore.Forms",
         "OrchardCore.HealthChecks",
         "OrchardCore.HomeRoute",
         "OrchardCore.Html",

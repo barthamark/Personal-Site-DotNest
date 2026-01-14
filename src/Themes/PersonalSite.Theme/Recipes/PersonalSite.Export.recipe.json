@@ -109,7 +109,7 @@
                   "Blog",
                   "BlogPost",
                   "BulletItem",
-                  "Button",
+                  "ActionButton",
                   "ButtonGroup",
                   "Callout",
                   "FaqItem",
@@ -612,11 +612,26 @@
             },
             {
               "PartName": "BagPart",
+              "Name": "Form",
+              "Settings": {
+                "ContentTypePartSettings": {
+                  "DisplayName": "Form",
+                  "Position": "3"
+                },
+                "BagPartSettings": {
+                  "ContainedContentTypes": [
+                    "Form"
+                  ]
+                }
+              }
+            },
+            {
+              "PartName": "BagPart",
               "Name": "After",
               "Settings": {
                 "ContentTypePartSettings": {
                   "DisplayName": "After",
-                  "Position": "3"
+                  "Position": "4"
                 },
                 "BagPartSettings": {
                   "ContainedStereotypes": [
@@ -631,7 +646,7 @@
               "Settings": {
                 "ContentTypePartSettings": {
                   "DisplayName": "Form Settings",
-                  "Position": "4"
+                  "Position": "5"
                 }
               }
             }
@@ -1543,7 +1558,7 @@
                 },
                 "BagPartSettings": {
                   "ContainedContentTypes": [
-                    "Button"
+                    "ActionButton"
                   ]
                 }
               }
@@ -1551,8 +1566,8 @@
           ]
         },
         {
-          "Name": "Button",
-          "DisplayName": "Button",
+          "Name": "ActionButton",
+          "DisplayName": "Action Button",
           "Settings": {
             "ContentTypeSettings": {
               "Creatable": false,
@@ -2955,7 +2970,7 @@
                           {
                             "ContentItemId": "[js:uuid()]",
                             "ContentItemVersionId": "[js:uuid()]",
-                            "ContentType": "Button",
+                            "ContentType": "ActionButton",
                             "DisplayText": "Contact me",
                             "Latest": true,
                             "Published": true,
@@ -2976,7 +2991,7 @@
                           {
                             "ContentItemId": "[js:uuid()]",
                             "ContentItemVersionId": "[js:uuid()]",
-                            "ContentType": "Button",
+                            "ContentType": "ActionButton",
                             "DisplayText": "See case studies",
                             "Latest": true,
                             "Published": true,
@@ -3478,7 +3493,7 @@
                           {
                             "ContentItemId": "[js:uuid()]",
                             "ContentItemVersionId": "[js:uuid()]",
-                            "ContentType": "Button",
+                            "ContentType": "ActionButton",
                             "DisplayText": "Contact me",
                             "Latest": true,
                             "Published": true,
@@ -3499,7 +3514,7 @@
                           {
                             "ContentItemId": "[js:uuid()]",
                             "ContentItemVersionId": "[js:uuid()]",
-                            "ContentType": "Button",
+                            "ContentType": "ActionButton",
                             "DisplayText": "See case studies",
                             "Latest": true,
                             "Published": true,
@@ -3809,7 +3824,7 @@
                           {
                             "ContentItemId": "[js:uuid()]",
                             "ContentItemVersionId": "[js:uuid()]",
-                            "ContentType": "Button",
+                            "ContentType": "ActionButton",
                             "DisplayText": "Contact me",
                             "Latest": true,
                             "Published": true,
@@ -3830,7 +3845,7 @@
                           {
                             "ContentItemId": "[js:uuid()]",
                             "ContentItemVersionId": "[js:uuid()]",
-                            "ContentType": "Button",
+                            "ContentType": "ActionButton",
                             "DisplayText": "Learn more about me",
                             "Latest": true,
                             "Published": true,
@@ -4007,6 +4022,223 @@
                   "Text": {
                     "Markdown": "# Let's talk about your ==content platform==\n\nBook a strategy call or send me a message. I reply within 1 business day."
                   }
+                }
+              }
+            ]
+          },
+          "Form": {
+            "ContentItems": [
+              {
+                "ContentItemId": "[js:uuid()]",
+                "ContentItemVersionId": "[js:uuid()]",
+                "ContentType": "Form",
+                "DisplayText": "Contact Form",
+                "Latest": true,
+                "Published": true,
+                "TitlePart": {
+                  "Title": "Contact Form"
+                },
+                "FormElementPart": {
+                  "Id": "contact-form"
+                },
+                "FormPart": {
+                  "Action": "",
+                  "Method": "POST",
+                  "EncType": "application/x-www-form-urlencoded",
+                  "EnableAntiForgeryToken": true,
+                  "SaveFormLocation": true
+                },
+                "FlowPart": {
+                  "Widgets": [
+                    {
+                      "ContentItemId": "[js:uuid()]",
+                      "ContentItemVersionId": "[js:uuid()]",
+                      "ContentType": "Input",
+                      "DisplayText": "Name",
+                      "Latest": true,
+                      "Published": true,
+                      "FormInputElementPart": {
+                        "Name": "name"
+                      },
+                      "FormElementPart": {
+                        "Id": "name"
+                      },
+                      "FormElementLabelPart": {
+                        "Option": 1,
+                        "Label": "Name *"
+                      },
+                      "InputPart": {
+                        "Type": "text",
+                        "DefaultValue": "",
+                        "Placeholder": "John Doe"
+                      },
+                      "FormElementValidationPart": {
+                        "Option": 1
+                      },
+                      "FlowMetadata": {
+                        "Alignment": 3,
+                        "Size": 50
+                      }
+                    },
+                    {
+                      "ContentItemId": "[js:uuid()]",
+                      "ContentItemVersionId": "[js:uuid()]",
+                      "ContentType": "Input",
+                      "DisplayText": "Work Email",
+                      "Latest": true,
+                      "Published": true,
+                      "FormInputElementPart": {
+                        "Name": "email"
+                      },
+                      "FormElementPart": {
+                        "Id": "email"
+                      },
+                      "FormElementLabelPart": {
+                        "Option": 1,
+                        "Label": "Work Email *"
+                      },
+                      "InputPart": {
+                        "Type": "email",
+                        "DefaultValue": "",
+                        "Placeholder": "john@company.com"
+                      },
+                      "FormElementValidationPart": {
+                        "Option": 1
+                      },
+                      "FlowMetadata": {
+                        "Alignment": 3,
+                        "Size": 50
+                      }
+                    },
+                    {
+                      "ContentItemId": "[js:uuid()]",
+                      "ContentItemVersionId": "[js:uuid()]",
+                      "ContentType": "Input",
+                      "DisplayText": "Company",
+                      "Latest": true,
+                      "Published": true,
+                      "FormInputElementPart": {
+                        "Name": "company"
+                      },
+                      "FormElementPart": {
+                        "Id": "company"
+                      },
+                      "FormElementLabelPart": {
+                        "Option": 1,
+                        "Label": "Company *"
+                      },
+                      "InputPart": {
+                        "Type": "text",
+                        "DefaultValue": "",
+                        "Placeholder": "Company Name Ltd."
+                      },
+                      "FormElementValidationPart": {
+                        "Option": 1
+                      },
+                      "FlowMetadata": {
+                        "Alignment": 3,
+                        "Size": 100
+                      }
+                    },
+                    {
+                      "ContentItemId": "[js:uuid()]",
+                      "ContentItemVersionId": "[js:uuid()]",
+                      "ContentType": "Select",
+                      "DisplayText": "Interest",
+                      "Latest": true,
+                      "Published": true,
+                      "FormInputElementPart": {
+                        "Name": "interest"
+                      },
+                      "FormElementPart": {
+                        "Id": "interest"
+                      },
+                      "FormElementLabelPart": {
+                        "Option": 1,
+                        "Label": "What are you looking for?"
+                      },
+                      "SelectPart": {
+                        "DefaultValue": "",
+                        "Options": [
+                          {
+                            "Text": "Select an option",
+                            "Value": ""
+                          },
+                          {
+                            "Text": "Website Rebuild",
+                            "Value": "website"
+                          },
+                          {
+                            "Text": "Knowledge Hub / Help Center",
+                            "Value": "knowledge-hub"
+                          },
+                          {
+                            "Text": "Content Architecture and Roadmap",
+                            "Value": "roadmap"
+                          },
+                          {
+                            "Text": "Other",
+                            "Value": "other"
+                          }
+                        ]
+                      },
+                      "FlowMetadata": {
+                        "Alignment": 3,
+                        "Size": 100
+                      }
+                    },
+                    {
+                      "ContentItemId": "[js:uuid()]",
+                      "ContentItemVersionId": "[js:uuid()]",
+                      "ContentType": "TextArea",
+                      "DisplayText": "Message",
+                      "Latest": true,
+                      "Published": true,
+                      "FormInputElementPart": {
+                        "Name": "message"
+                      },
+                      "FormElementPart": {
+                        "Id": "message"
+                      },
+                      "FormElementLabelPart": {
+                        "Option": 1,
+                        "Label": "Message *"
+                      },
+                      "TextAreaPart": {
+                        "Placeholder": "Tell me about your project goals and timeline...",
+                        "Rows": 5
+                      },
+                      "FormElementValidationPart": {
+                        "Option": 1
+                      },
+                      "FlowMetadata": {
+                        "Alignment": 3,
+                        "Size": 100
+                      }
+                    },
+                    {
+                      "ContentItemId": "[js:uuid()]",
+                      "ContentItemVersionId": "[js:uuid()]",
+                      "ContentType": "Button",
+                      "DisplayText": "Send Message",
+                      "Latest": true,
+                      "Published": true,
+                      "FormInputElementPart": {
+                        "Name": "submit"
+                      },
+                      "FormElementPart": {
+                        "Id": "submit"
+                      },
+                      "ButtonPart": {
+                        "Text": "Send Message",
+                        "Type": "submit"
+                      },
+                      "FlowMetadata": {
+                        "Alignment": 3,
+                        "Size": 100
+                      }
+                    }
+                  ]
                 }
               }
             ]
@@ -4209,7 +4441,7 @@
                     {
                       "ContentItemId": "[js:uuid()]",
                       "ContentItemVersionId": "[js:uuid()]",
-                      "ContentType": "Button",
+                      "ContentType": "ActionButton",
                       "DisplayText": "Back to home",
                       "Latest": true,
                       "Published": true,
@@ -4230,7 +4462,7 @@
                     {
                       "ContentItemId": "[js:uuid()]",
                       "ContentItemVersionId": "[js:uuid()]",
-                      "ContentType": "Button",
+                      "ContentType": "ActionButton",
                       "DisplayText": "Read insights",
                       "Latest": true,
                       "Published": true,
@@ -4330,7 +4562,7 @@
                     {
                       "ContentItemId": "[js:uuid()]",
                       "ContentItemVersionId": "[js:uuid()]",
-                      "ContentType": "Button",
+                      "ContentType": "ActionButton",
                       "DisplayText": "Back to home",
                       "Latest": true,
                       "Published": true,
@@ -4351,7 +4583,7 @@
                     {
                       "ContentItemId": "[js:uuid()]",
                       "ContentItemVersionId": "[js:uuid()]",
-                      "ContentType": "Button",
+                      "ContentType": "ActionButton",
                       "DisplayText": "Contact",
                       "Latest": true,
                       "Published": true,
@@ -4451,7 +4683,7 @@
                     {
                       "ContentItemId": "[js:uuid()]",
                       "ContentItemVersionId": "[js:uuid()]",
-                      "ContentType": "Button",
+                      "ContentType": "ActionButton",
                       "DisplayText": "Back to home",
                       "Latest": true,
                       "Published": true,
@@ -4472,7 +4704,7 @@
                     {
                       "ContentItemId": "[js:uuid()]",
                       "ContentItemVersionId": "[js:uuid()]",
-                      "ContentType": "Button",
+                      "ContentType": "ActionButton",
                       "DisplayText": "Contact me",
                       "Latest": true,
                       "Published": true,
@@ -4902,7 +5134,7 @@
           {
             "place": "Parts:0#Properties;0",
             "contentType": [
-              "Button"
+              "ActionButton"
             ],
             "differentiator": "Button-Type"
           },
@@ -4967,7 +5199,7 @@
                 {
                   "$type": "OrchardCore.AdminMenu.AdminNodes.LinkAdminNode, OrchardCore.AdminMenu",
                   "LinkText": "Landing Pages",
-                  "LinkUrl": "~/Admin/Contents/ContentItems?contentTypeId=Page",
+                  "LinkUrl": "~/Admin/Contents/ContentItems/Page",
                   "IconClass": "far fa-file",
                   "PermissionNames": [],
                   "UniqueId": "a726d64589d3498e956dc0f95c72104d",
@@ -4981,7 +5213,7 @@
                 {
                   "$type": "OrchardCore.AdminMenu.AdminNodes.LinkAdminNode, OrchardCore.AdminMenu",
                   "LinkText": "Contact Page",
-                  "LinkUrl": "~/Admin/Contents/ContentItems/4t9n2c7k1m8r5p3v6s0b2q9w1x/Display",
+                  "LinkUrl": "~/Admin/Contents/ContentItems/4t9n2c7k1m8r5p3v6s0b2q9w1x/Edit",
                   "IconClass": "far fa-envelope",
                   "PermissionNames": [],
                   "UniqueId": "090ba30f2dbf43cda39623416fa75498",
@@ -4995,7 +5227,7 @@
                 {
                   "$type": "OrchardCore.AdminMenu.AdminNodes.LinkAdminNode, OrchardCore.AdminMenu",
                   "LinkText": "Status Pages",
-                  "LinkUrl": "~/Admin/Contents/ContentItems?contentTypeId=StatusPage",
+                  "LinkUrl": "~/Admin/Contents/ContentItems/StatusPage",
                   "IconClass": "far fa-flag",
                   "PermissionNames": [],
                   "UniqueId": "119f49584bb54bf0bf738e719e428986",

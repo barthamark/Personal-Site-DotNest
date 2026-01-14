@@ -1,4 +1,5 @@
 {% assign link = Model.ContentItem.Content.ArrowLink.Link %}
+{% assign widget_classes = Model.Classes | join: " " | strip %}
 
 {% if link and link.Url != blank %}
     {% assign raw_url = link.Url %}
@@ -15,7 +16,7 @@
         {% assign link_text = link_url %}
     {% endif %}
 
-    <a href="{{ link_url }}" class="inline-flex items-center text-sm font-medium transition-colors group theme-dark-blue:text-light-text theme-dark-panel:text-light-text theme-light-gray:text-dark-blue theme-white:text-dark-blue hover:text-light-blue"{% if link.Target %} target="{{ link.Target }}"{% endif %}>
+    <a href="{{ link_url }}" class="inline-flex items-center text-sm font-medium transition-colors group theme-dark-blue:text-light-text theme-dark-panel:text-light-text theme-light-gray:text-dark-blue theme-white:text-dark-blue hover:text-light-blue{% if widget_classes != blank %} {{ widget_classes }}{% endif %}"{% if link.Target %} target="{{ link.Target }}"{% endif %}>
         {{ link_text }}
         <i data-lucide="arrow-right" class="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" aria-hidden="true"></i>
     </a>

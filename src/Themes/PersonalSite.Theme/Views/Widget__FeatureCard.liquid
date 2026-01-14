@@ -1,8 +1,9 @@
 {% assign icon = Model.ContentItem.Content.FeatureCard.Icon.Text %}
 {% assign title = Model.ContentItem.Content.FeatureCard.Title.Text %}
 {% assign body_markdown = Model.ContentItem.Content.FeatureCard.Body.Markdown %}
+{% assign widget_classes = Model.Classes | join: " " | strip %}
 
-<div class="card-surface p-6">
+<div class="card-surface p-6{% if widget_classes != blank %} {{ widget_classes }}{% endif %}">
     {% if icon != blank %}
         <div class="w-12 h-12 bg-light-blue/10 rounded-lg flex items-center justify-center mb-4">
             <i data-lucide="{{ icon }}" class="w-6 h-6 text-light-blue" aria-hidden="true"></i>

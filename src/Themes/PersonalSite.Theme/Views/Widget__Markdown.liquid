@@ -1,7 +1,8 @@
 {% assign markdown_text = Model.ContentItem.Content.Markdown.Text.Markdown %}
+{% assign widget_classes = Model.Classes | join: " " | strip %}
 
 {% if markdown_text != blank %}
-    <div class="rich-text">
+    <div class="rich-text{% if widget_classes != blank %} {{ widget_classes }}{% endif %}">
         {{ markdown_text | markdownify | shortcode | raw }}
     </div>
 {% endif %}

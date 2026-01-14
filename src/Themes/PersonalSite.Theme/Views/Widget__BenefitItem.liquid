@@ -1,7 +1,8 @@
 {% assign icon = Model.ContentItem.Content.BenefitItem.Icon.Text %}
 {% assign text = Model.ContentItem.Content.BenefitItem.Text.Text %}
+{% assign widget_classes = Model.Classes | join: " " | strip %}
 
-<div class="flex items-center">
+<div class="flex items-center{% if widget_classes != blank %} {{ widget_classes }}{% endif %}">
     <div class="w-12 h-12 bg-light-blue/10 rounded-full flex items-center justify-center mr-6 flex-shrink-0 theme-dark-blue:bg-white/10 theme-dark-panel:bg-white/10">
         {% if icon != blank %}
             <i data-lucide="{{ icon }}" class="w-6 h-6 text-light-blue" aria-hidden="true"></i>

@@ -1,5 +1,6 @@
 {% assign badge_text = Model.ContentItem.Content.Badge.Text.Text %}
+{% assign widget_classes = Model.Classes | join: " " | strip %}
 
 {% if badge_text != blank %}
-    <span class="pill self-start">{{ badge_text }}</span>
+    <span class="pill self-start{% if widget_classes != blank %} {{ widget_classes }}{% endif %}">{{ badge_text }}</span>
 {% endif %}

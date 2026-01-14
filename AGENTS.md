@@ -33,6 +33,7 @@ This repo is a DotNest Core SDK Orchard Core site with a custom Liquid theme and
 - `PersonalSite.Development.Setup` runs `PersonalSite.Export` (source of truth for content types and content items) and `PersonalSite.MediaTheme`.
 - Content item IDs must be `[js:uuid()]` or 26-character lowercase alphanumeric strings when stable IDs are required; do not use GUIDs.
 - DisplayText is the reliable title; `TitlePart.Title` is for UI only and must not be used for display in templates.
+- AdminMenu parent items must use `PlaceholderAdminNode`; content-type list links use `~/Admin/Contents/ContentItems/{ContentTypeId}`; singleton links should point to `.../Edit` instead of `.../Display`.
 - Page BagPart uses `ContainedStereotypes: ["Block"]`.
 - BlockCommon part stores the theme (PredefinedList): `DarkBlue`, `DarkPanel`, `LightGray`, `White`, mapped to `data-theme` values `dark-blue`, `dark-panel`, `light-gray`, `white`.
 - ButtonGroup supports alignment via `ButtonGroup.Alignment` (Left/Center).

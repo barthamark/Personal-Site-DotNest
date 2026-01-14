@@ -1,7 +1,8 @@
 {% assign title = Model.ContentItem.Content.HighlightCard.Title.Text %}
 {% assign body_markdown = Model.ContentItem.Content.HighlightCard.Body.Markdown %}
+{% assign widget_classes = Model.Classes | join: " " | strip %}
 
-<div class="card-surface p-6">
+<div class="card-surface p-6{% if widget_classes != blank %} {{ widget_classes }}{% endif %}">
     {% if title != blank %}
         <h3 class="font-bold text-xl mb-2 theme-dark-blue:text-white theme-dark-panel:text-white">{{ title }}</h3>
     {% endif %}

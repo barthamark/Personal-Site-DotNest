@@ -1,0 +1,9 @@
+{% assign widget_classes = Model.Classes | join: " " | strip %}
+
+{% if widget_classes != blank %}
+    <div class="{{ widget_classes }}">
+        {{ Model.Content | shape_render }}
+    </div>
+{% else %}
+    {{ Model.Content | shape_render }}
+{% endif %}

@@ -1,0 +1,7 @@
+{% assign widget_classes = Model.Classes | join: " " | strip %}
+
+<div class="pt-2{% if widget_classes != blank %} {{ widget_classes }}{% endif %}">
+    {% if Model.Content.ButtonPart %}
+        {{ Model.Content.ButtonPart | shape_render }}
+    {% endif %}
+</div>

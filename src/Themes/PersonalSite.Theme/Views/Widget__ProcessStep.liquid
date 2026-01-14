@@ -1,8 +1,9 @@
 {% assign number = Model.ContentItem.Content.ProcessStep.Number.Text %}
 {% assign title = Model.ContentItem.Content.ProcessStep.Title.Text %}
 {% assign body_markdown = Model.ContentItem.Content.ProcessStep.Body.Markdown %}
+{% assign widget_classes = Model.Classes | join: " " | strip %}
 
-<div class="relative mt-6">
+<div class="relative mt-6{% if widget_classes != blank %} {{ widget_classes }}{% endif %}">
     {% if number != blank %}
         <div class="text-6xl font-mono font-bold theme-dark-blue:text-white/5 theme-dark-panel:text-white/5 text-dark-blue/5 mb-4 absolute -top-8 -left-4 select-none">
             {{ number }}

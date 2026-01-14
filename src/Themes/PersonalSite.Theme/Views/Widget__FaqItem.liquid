@@ -1,8 +1,9 @@
 {% assign question = Model.ContentItem.Content.FaqItem.Question.Text %}
 {% assign answer_markdown = Model.ContentItem.Content.FaqItem.Answer.Markdown %}
+{% assign widget_classes = Model.Classes | join: " " | strip %}
 
 {% if question != blank %}
-    <div class="space-y-2">
+    <div class="space-y-2{% if widget_classes != blank %} {{ widget_classes }}{% endif %}">
         <h4 class="font-medium theme-dark-blue:text-white theme-dark-panel:text-white theme-light-gray:text-dark-blue theme-white:text-dark-blue">
             {{ question }}
         </h4>

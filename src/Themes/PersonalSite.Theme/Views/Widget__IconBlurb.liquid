@@ -3,6 +3,7 @@
 {% assign body_markdown = Model.ContentItem.Content.IconBlurb.Body.Markdown %}
 {% assign icon_position = Model.ContentItem.Content.IconBlurb.IconPosition.Text | default: "Left" %}
 {% assign style = Model.ContentItem.Content.IconBlurb.Style.Text | default: "Plain" %}
+{% assign widget_classes = Model.Classes | join: " " | strip %}
 
 {% assign wrapper_class = "" %}
 {% if style == "Card" %}
@@ -14,7 +15,7 @@
     {% assign layout_class = "flex flex-col gap-4 items-start" %}
 {% endif %}
 
-<div class="{{ wrapper_class }}">
+<div class="{{ wrapper_class }}{% if widget_classes != blank %} {{ widget_classes }}{% endif %}">
     <div class="{{ layout_class }}">
         {% if icon != blank %}
             <div class="flex-shrink-0">

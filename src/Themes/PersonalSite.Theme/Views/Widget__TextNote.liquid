@@ -1,7 +1,8 @@
 {% assign note_text = Model.ContentItem.Content.TextNote.Text.Text %}
+{% assign widget_classes = Model.Classes | join: " " | strip %}
 
 {% if note_text != blank %}
-    <p class="text-sm theme-dark-blue:text-light-text/60 theme-dark-panel:text-light-text/60 theme-light-gray:text-dark-blue/50 theme-white:text-dark-blue/50">
+    <p class="text-sm theme-dark-blue:text-light-text/60 theme-dark-panel:text-light-text/60 theme-light-gray:text-dark-blue/50 theme-white:text-dark-blue/50{% if widget_classes != blank %} {{ widget_classes }}{% endif %}">
         {{ note_text }}
     </p>
 {% endif %}

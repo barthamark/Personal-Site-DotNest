@@ -1,8 +1,9 @@
 {% assign icon = Model.ContentItem.Content.IconText.Icon.Text %}
 {% assign text = Model.ContentItem.Content.IconText.Text.Text %}
+{% assign widget_classes = Model.Classes | join: " " | strip %}
 
 {% if text != blank %}
-    <div class="flex items-center gap-2">
+    <div class="flex items-center gap-2{% if widget_classes != blank %} {{ widget_classes }}{% endif %}">
         {% if icon != blank %}
             <i data-lucide="{{ icon }}" class="w-4 h-4 text-light-blue flex-shrink-0" aria-hidden="true"></i>
         {% endif %}

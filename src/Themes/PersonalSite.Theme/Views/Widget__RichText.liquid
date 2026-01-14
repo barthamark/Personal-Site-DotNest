@@ -1,7 +1,8 @@
 {% assign rich_text = Model.ContentItem.Content.RichText.Text.Html %}
+{% assign widget_classes = Model.Classes | join: " " | strip %}
 
 {% if rich_text != blank %}
-    <div class="rich-text">
+    <div class="rich-text{% if widget_classes != blank %} {{ widget_classes }}{% endif %}">
         {{ rich_text | raw }}
     </div>
 {% endif %}

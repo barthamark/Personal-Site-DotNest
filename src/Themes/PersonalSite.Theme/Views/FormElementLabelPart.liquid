@@ -1,0 +1,31 @@
+{% assign element_id = Model.ContentItem.Content.FormElementPart.Id %}
+{% assign field_name = Model.ContentItem.Content.FormInputElementPart.Name %}
+{% assign field_id = element_id %}
+{% if field_id == blank and field_name != blank %}
+    {% assign field_id = field_name %}
+{% endif %}
+
+{% assign label_text = Model.Label %}
+{% assign label_option = Model.Option %}
+{% if label_text == blank and Model.ContentItem.Content.FormElementLabelPart %}
+    {% assign label_text = Model.ContentItem.Content.FormElementLabelPart.Label %}
+    {% assign label_option = Model.ContentItem.Content.FormElementLabelPart.Option %}
+{% endif %}
+
+{% if label_text != blank %}
+    {% assign is_required = label_text contains "*" %}
+    {% assign clean_label = label_text | replace: "*", "" | strip %}
+
+    {% if label_option == 0 or label_option == "None" %}
+        {% assign clean_label = "" %}
+    {% elsif label_option == 2 or label_option == "ScreenReaders" %}
+        <label for="{{ field_id }}" class="sr-only">{{ clean_label }}</label>
+    {% else %}
+        <label for="{{ field_id }}" class="form-label">
+            {{ clean_label }}
+            {% if is_required %}
+                <span class="text-red-500">*</span>
+            {% endif %}
+        </label>
+    {% endif %}
+{% endif %}

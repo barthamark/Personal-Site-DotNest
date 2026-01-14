@@ -1,8 +1,9 @@
 {% assign heading = Model.ContentItem.Content.FaqList.Heading.Text %}
 {% assign items = Model.ContentItem.Content.Items.ContentItems %}
+{% assign widget_classes = Model.Classes | join: " " | strip %}
 
 {% if heading != blank or items %}
-    <div class="w-full max-w-4xl mx-auto" data-faq-root>
+    <div class="w-full max-w-4xl mx-auto{% if widget_classes != blank %} {{ widget_classes }}{% endif %}" data-faq-root>
         {% if heading != blank %}
             <h3 class="text-xl font-bold mb-8 text-center theme-dark-blue:text-white theme-dark-panel:text-white theme-light-gray:text-dark-blue theme-white:text-dark-blue">
                 {{ heading }}

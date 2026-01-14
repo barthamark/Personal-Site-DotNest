@@ -1,7 +1,8 @@
 {% assign value = Model.ContentItem.Content.Stat.Value.Text %}
 {% assign label = Model.ContentItem.Content.Stat.Label.Text %}
+{% assign widget_classes = Model.Classes | join: " " | strip %}
 
-<div class="text-center">
+<div class="text-center{% if widget_classes != blank %} {{ widget_classes }}{% endif %}">
     {% if value != blank %}
         <div class="text-4xl md:text-5xl font-bold text-light-blue mb-2 font-mono">{{ value }}</div>
     {% endif %}

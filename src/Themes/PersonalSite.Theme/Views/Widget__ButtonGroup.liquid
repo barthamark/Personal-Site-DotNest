@@ -2,13 +2,14 @@
 {% assign alignment = Model.ContentItem.Content.ButtonGroup.Alignment.Text %}
 {% assign wrapper_class = "flex flex-col sm:flex-row gap-4" %}
 {% assign button_extra_class = "" %}
+{% assign widget_classes = Model.Classes | join: " " | strip %}
 {% if alignment == "Center" %}
     {% assign wrapper_class = "flex flex-col items-center gap-4 sm:flex-row sm:justify-center" %}
     {% assign button_extra_class = "w-full sm:w-auto" %}
 {% endif %}
 
 {% if buttons %}
-    <div class="{{ wrapper_class }}">
+    <div class="{{ wrapper_class }}{% if widget_classes != blank %} {{ widget_classes }}{% endif %}">
         {% for button in buttons %}
             {% assign button_part = button.Button %}
             {% if button_part and button_part.Content and button_part.Content.Url != blank %}

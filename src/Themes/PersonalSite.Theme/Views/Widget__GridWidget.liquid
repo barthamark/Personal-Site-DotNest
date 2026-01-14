@@ -1,5 +1,6 @@
 {% assign items = Model.ContentItem.Content.Items.ContentItems %}
 {% assign columns = Model.ContentItem.Content.GridWidget.Columns.Text %}
+{% assign widget_classes = Model.Classes | join: " " | strip %}
 
 {% assign grid_class = "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" %}
 {% case columns %}
@@ -10,7 +11,7 @@
 {% endcase %}
 
 {% if items %}
-    <div class="w-full text-left">
+    <div class="w-full text-left{% if widget_classes != blank %} {{ widget_classes }}{% endif %}">
         <div class="{{ grid_class }}">
             {% for item in items %}
                 {{ item | shape_build_display: "Detail" | shape_render }}

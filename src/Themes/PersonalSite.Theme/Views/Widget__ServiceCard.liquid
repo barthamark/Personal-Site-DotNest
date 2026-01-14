@@ -3,8 +3,9 @@
 {% assign link = Model.ContentItem.Content.ServiceCard.Link %}
 {% assign has_link = link and link.Url != blank %}
 {% assign bullets = Model.ContentItem.Content.Bullets.ContentItems %}
+{% assign widget_classes = Model.Classes | join: " " | strip %}
 
-<div class="card-surface p-8 flex flex-col h-full">
+<div class="card-surface p-8 flex flex-col h-full{% if widget_classes != blank %} {{ widget_classes }}{% endif %}">
 {% if title != blank %}
     <h3 class="text-xl font-bold mb-3 min-h-12 theme-dark-blue:text-white theme-dark-panel:text-white">{{ title }}</h3>
 {% endif %}
