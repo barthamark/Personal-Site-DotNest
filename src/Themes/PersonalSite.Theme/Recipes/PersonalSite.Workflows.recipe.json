@@ -1,0 +1,302 @@
+{
+  "name": "PersonalSite.Workflows",
+  "displayName": "Personal Site - Workflows",
+  "description": "Workflow definitions for the Personal Site.",
+  "author": "Mark Bartha",
+  "website": "https://markbartha.com",
+  "version": "1.0",
+  "categories": [],
+  "tags": [],
+  "steps": [
+    {
+      "name": "WorkflowType",
+      "data": [
+        {
+          "WorkflowTypeId": "42jq8z0sad70t68bwy6dsjd7m8",
+          "Name": "Contact",
+          "IsEnabled": true,
+          "IsSingleton": false,
+          "LockTimeout": 0,
+          "LockExpiration": 0,
+          "DeleteFinishedWorkflows": false,
+          "Activities": [
+            {
+              "ActivityId": "473zr3wpsz6k02k31vsz06w9x8",
+              "Name": "HttpRequestEvent",
+              "X": 0,
+              "Y": 0,
+              "IsStart": true,
+              "Properties": {
+                "ActivityMetadata": {
+                  "Title": "Contact Form Submitted"
+                },
+                "HttpMethod": "POST",
+                "Url": "/workflows/Invoke?token=replace-on-import",
+                "ValidateAntiforgeryToken": true,
+                "TokenLifeSpan": 0,
+                "FormLocationKey": ""
+              }
+            },
+            {
+              "ActivityId": "4pvap6eyxzy1yym63ez3mqf65f",
+              "Name": "BindModelStateTask",
+              "X": 320,
+              "Y": 0,
+              "IsStart": false,
+              "Properties": {
+                "ActivityMetadata": {
+                  "Title": "Bind Form Model State"
+                }
+              }
+            },
+            {
+              "ActivityId": "438kjrbgxsc6srax9emm2jc1mk",
+              "Name": "ForkTask",
+              "X": 620,
+              "Y": 0,
+              "IsStart": false,
+              "Properties": {
+                "ActivityMetadata": {
+                  "Title": "Validate Form Fields"
+                },
+                "Forks": [
+                  "Name",
+                  "Email",
+                  "Company",
+                  "Message"
+                ]
+              }
+            },
+            {
+              "ActivityId": "4edczjjfsjj21znj6fm4rqtx4k",
+              "Name": "ValidateFormFieldTask",
+              "X": 370,
+              "Y": 220,
+              "IsStart": false,
+              "Properties": {
+                "ActivityMetadata": {
+                  "Title": "Validate Name"
+                },
+                "FieldName": "name",
+                "ErrorMessage": "Please enter your name."
+              }
+            },
+            {
+              "ActivityId": "499ad2gswwcm01sd9yrwz2k5dn",
+              "Name": "ValidateFormFieldTask",
+              "X": 650,
+              "Y": 220,
+              "IsStart": false,
+              "Properties": {
+                "ActivityMetadata": {
+                  "Title": "Validate Email"
+                },
+                "FieldName": "email",
+                "ErrorMessage": "Please enter your work email."
+              }
+            },
+            {
+              "ActivityId": "47m8x2bmxv7cr0p6xn5p1t6wd3",
+              "Name": "ValidateFormFieldTask",
+              "X": 1130,
+              "Y": 220,
+              "IsStart": false,
+              "Properties": {
+                "ActivityMetadata": {
+                  "Title": "Validate Company"
+                },
+                "FieldName": "company",
+                "ErrorMessage": "Please enter your company name."
+              }
+            },
+            {
+              "ActivityId": "4pdfg4jjanyt408593ngekstc6",
+              "Name": "ValidateFormFieldTask",
+              "X": 900,
+              "Y": 220,
+              "IsStart": false,
+              "Properties": {
+                "ActivityMetadata": {
+                  "Title": "Validate Message"
+                },
+                "FieldName": "message",
+                "ErrorMessage": "Please enter your message."
+              }
+            },
+            {
+              "ActivityId": "4a5dpqczcxay8yte0jcn19wbwm",
+              "Name": "JoinTask",
+              "X": 520,
+              "Y": 390,
+              "IsStart": false,
+              "Properties": {
+                "ActivityMetadata": {
+                  "Title": "Join"
+                },
+                "Mode": "WaitAll"
+              }
+            },
+            {
+              "ActivityId": "40yxbqr3cnc3k7mzxvpja33ewx",
+              "Name": "ValidateFormTask",
+              "X": 520,
+              "Y": 560,
+              "IsStart": false,
+              "Properties": {
+                "ActivityMetadata": {}
+              }
+            },
+            {
+              "ActivityId": "4gb86w3pcm2v7wg68brkfax1d6",
+              "Name": "HttpRedirectTask",
+              "X": 200,
+              "Y": 550,
+              "IsStart": false,
+              "Properties": {
+                "ActivityMetadata": {
+                  "Title": "Display Form Errors"
+                },
+                "Location": {
+                  "Expression": "/contact"
+                },
+                "Permanent": false
+              }
+            },
+            {
+              "ActivityId": "4acqnabn4kv22yajqmkfjdke5j",
+              "Name": "EmailTask",
+              "X": 860,
+              "Y": 580,
+              "IsStart": false,
+              "Properties": {
+                "Sender": {},
+                "Author": {},
+                "Recipients": {
+                  "Expression": "hello@markbartha.com"
+                },
+                "ReplyTo": {
+                  "Expression": "{{ Request.Form.email }}"
+                },
+                "Subject": {
+                  "Expression": "New contact request from {{ Request.Form.name }}"
+                },
+                "Body": {
+                  "Expression": "<p>New contact form submission from markbartha.com.</p>\r\n<p>Name: {{ Request.Form.name }}</p>\r\n<p>Email: {{ Request.Form.email }}</p>\r\n<p>Company: {{ Request.Form.company }}</p>\r\n<p>Message:</p>\r\n<p>{{ Request.Form.message }}</p>"
+                },
+                "IsHtmlBody": true,
+                "Bcc": {},
+                "Cc": {},
+                "ActivityMetadata": {
+                  "Title": "Send Email"
+                }
+              }
+            },
+            {
+              "ActivityId": "41sggd2h702fg7v0gz2c03mnm3",
+              "Name": "HttpRedirectTask",
+              "X": 1150,
+              "Y": 400,
+              "IsStart": false,
+              "Properties": {
+                "ActivityMetadata": {
+                  "Title": "Display Success"
+                },
+                "Location": {
+                  "Expression": "/message-sent"
+                },
+                "Permanent": false
+              }
+            }
+          ],
+          "Transitions": [
+            {
+              "Id": 0,
+              "SourceActivityId": "473zr3wpsz6k02k31vsz06w9x8",
+              "SourceOutcomeName": "Done",
+              "DestinationActivityId": "4pvap6eyxzy1yym63ez3mqf65f"
+            },
+            {
+              "Id": 0,
+              "SourceActivityId": "4pvap6eyxzy1yym63ez3mqf65f",
+              "SourceOutcomeName": "Done",
+              "DestinationActivityId": "438kjrbgxsc6srax9emm2jc1mk"
+            },
+            {
+              "Id": 0,
+              "SourceActivityId": "438kjrbgxsc6srax9emm2jc1mk",
+              "SourceOutcomeName": "Name",
+              "DestinationActivityId": "4edczjjfsjj21znj6fm4rqtx4k"
+            },
+            {
+              "Id": 0,
+              "SourceActivityId": "438kjrbgxsc6srax9emm2jc1mk",
+              "SourceOutcomeName": "Email",
+              "DestinationActivityId": "499ad2gswwcm01sd9yrwz2k5dn"
+            },
+            {
+              "Id": 0,
+              "SourceActivityId": "438kjrbgxsc6srax9emm2jc1mk",
+              "SourceOutcomeName": "Company",
+              "DestinationActivityId": "47m8x2bmxv7cr0p6xn5p1t6wd3"
+            },
+            {
+              "Id": 0,
+              "SourceActivityId": "438kjrbgxsc6srax9emm2jc1mk",
+              "SourceOutcomeName": "Message",
+              "DestinationActivityId": "4pdfg4jjanyt408593ngekstc6"
+            },
+            {
+              "Id": 0,
+              "SourceActivityId": "4edczjjfsjj21znj6fm4rqtx4k",
+              "SourceOutcomeName": "Done",
+              "DestinationActivityId": "4a5dpqczcxay8yte0jcn19wbwm"
+            },
+            {
+              "Id": 0,
+              "SourceActivityId": "499ad2gswwcm01sd9yrwz2k5dn",
+              "SourceOutcomeName": "Done",
+              "DestinationActivityId": "4a5dpqczcxay8yte0jcn19wbwm"
+            },
+            {
+              "Id": 0,
+              "SourceActivityId": "47m8x2bmxv7cr0p6xn5p1t6wd3",
+              "SourceOutcomeName": "Done",
+              "DestinationActivityId": "4a5dpqczcxay8yte0jcn19wbwm"
+            },
+            {
+              "Id": 0,
+              "SourceActivityId": "4pdfg4jjanyt408593ngekstc6",
+              "SourceOutcomeName": "Done",
+              "DestinationActivityId": "4a5dpqczcxay8yte0jcn19wbwm"
+            },
+            {
+              "Id": 0,
+              "SourceActivityId": "4a5dpqczcxay8yte0jcn19wbwm",
+              "SourceOutcomeName": "Joined",
+              "DestinationActivityId": "40yxbqr3cnc3k7mzxvpja33ewx"
+            },
+            {
+              "Id": 0,
+              "SourceActivityId": "40yxbqr3cnc3k7mzxvpja33ewx",
+              "SourceOutcomeName": "Invalid",
+              "DestinationActivityId": "4gb86w3pcm2v7wg68brkfax1d6"
+            },
+            {
+              "Id": 0,
+              "SourceActivityId": "40yxbqr3cnc3k7mzxvpja33ewx",
+              "SourceOutcomeName": "Valid",
+              "DestinationActivityId": "4acqnabn4kv22yajqmkfjdke5j"
+            },
+            {
+              "Id": 0,
+              "SourceActivityId": "4acqnabn4kv22yajqmkfjdke5j",
+              "SourceOutcomeName": "Done",
+              "DestinationActivityId": "41sggd2h702fg7v0gz2c03mnm3"
+            }
+          ],
+          "Properties": {}
+        }
+      ]
+    }
+  ]
+}

@@ -133,6 +133,10 @@
         },
         {
           "executionid": "PersonalSite.Theme",
+          "name": "PersonalSite.Workflows"
+        },
+        {
+          "executionid": "PersonalSite.Theme",
           "name": "PersonalSite.SampleContent"
         }
 //        {

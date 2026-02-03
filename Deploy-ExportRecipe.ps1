@@ -100,6 +100,13 @@ try {
         Copy-Item -Path $RecipePath -Destination $recipeDestinationPath -Force
     }
 
+    $recipeDirectory = Split-Path -Path $RecipePath -Parent
+    $mediaSourcePath = Join-Path -Path $recipeDirectory -ChildPath "Media"
+    if (Test-Path -Path $mediaSourcePath) {
+        $mediaDestinationPath = Join-Path -Path $deploymentDirectory -ChildPath "Media"
+        Copy-Item -Path $mediaSourcePath -Destination $mediaDestinationPath -Recurse -Force
+    }
+
     $zipFilePath = "$deploymentDirectory.zip"
     [System.IO.Compression.ZipFile]::CreateFromDirectory($deploymentDirectory, $zipFilePath)
 

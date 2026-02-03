@@ -20,6 +20,7 @@ build/
 site/
 *.sln.cache
 log.xml
+logs/
 profiling/
 *.orig
 .vs/
