@@ -2,6 +2,13 @@
 {% assign heading = options_part.Heading.Text %}
 {% assign note = options_part.Note.Text %}
 {% assign options = Model.ContentItem.Content.Options.ContentItems %}
+{% assign option_count = options | size %}
+{% assign options_grid_classes = "grid grid-cols-1 gap-6" %}
+{% if option_count == 2 %}
+    {% assign options_grid_classes = "grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto" %}
+{% elsif option_count >= 3 %}
+    {% assign options_grid_classes = "grid grid-cols-1 md:grid-cols-3 gap-6" %}
+{% endif %}
 
 <section class="px-4 pb-24 pt-16">
     <div class="max-w-2xl mx-auto">
@@ -11,7 +18,7 @@
             {% endif %}
 
             {% if options %}
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="{{ options_grid_classes }}">
                     {% for option in options %}
                         {{ option | shape_build_display: "Detail" | shape_render }}
                     {% endfor %}

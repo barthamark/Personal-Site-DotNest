@@ -2903,6 +2903,11 @@
                 "DisplayText": "Hero",
                 "Latest": true,
                 "Published": true,
+                "ModifiedUtc": "2025-01-01T00:00:00Z",
+                "PublishedUtc": "2025-01-01T00:00:00Z",
+                "CreatedUtc": "2025-01-01T00:00:00Z",
+                "Owner": "mark.bartha",
+                "Author": "mark.bartha",
                 "TitlePart": {
                   "Title": "Hero"
                 },
@@ -2913,11 +2918,18 @@
                 },
                 "Hero": {
                   "Image": {
-                    "Anchors": [],
+                    "Anchors": [
+                      {
+                        "X": 0.5,
+                        "Y": 0.5
+                      }
+                    ],
                     "Paths": [
                       "Site/mark_bartha_dark_close.jpg"
                     ],
-                    "MediaTexts": []
+                    "MediaTexts": [
+                      ""
+                    ]
                   },
                   "BackgroundLabel": {
                     "Text": "Background & Expertise"
@@ -2932,6 +2944,11 @@
                       "DisplayText": "Independent B2B Software Partner",
                       "Latest": true,
                       "Published": true,
+                      "ModifiedUtc": "2025-01-01T00:00:00Z",
+                      "PublishedUtc": "2025-01-01T00:00:00Z",
+                      "CreatedUtc": "2025-01-01T00:00:00Z",
+                      "Owner": "mark.bartha",
+                      "Author": "mark.bartha",
                       "Badge": {
                         "Text": {
                           "Text": "Independent B2B Software Partner"
@@ -2945,9 +2962,14 @@
                       "DisplayText": "Hero Copy",
                       "Latest": true,
                       "Published": true,
+                      "ModifiedUtc": "2025-01-01T00:00:00Z",
+                      "PublishedUtc": "2025-01-01T00:00:00Z",
+                      "CreatedUtc": "2025-01-01T00:00:00Z",
+                      "Owner": "mark.bartha",
+                      "Author": "mark.bartha",
                       "Markdown": {
                         "Text": {
-                          "Markdown": "# Build a ==content platform== your team can actually run.\n\nI help B2B teams move beyond \"just a website\" with scalable marketing sites, landing pages, and content platforms. Add a knowledge hub when needed. AI features are available if they're a real fit."
+                          "Markdown": "# Build a ==content platform== your team can actually run.\r\n\r\nI help B2B teams move beyond \"just a website\" with scalable marketing sites, landing pages, and content platforms. Add a knowledge hub when needed. AI features are available if they're a real fit."
                         }
                       }
                     },
@@ -2958,6 +2980,11 @@
                       "DisplayText": "Hero Buttons",
                       "Latest": true,
                       "Published": true,
+                      "ModifiedUtc": "2025-01-01T00:00:00Z",
+                      "PublishedUtc": "2025-01-01T00:00:00Z",
+                      "CreatedUtc": "2025-01-01T00:00:00Z",
+                      "Owner": "mark.bartha",
+                      "Author": "mark.bartha",
                       "ButtonGroup": {
                         "Alignment": {
                           "Text": "Left"
@@ -2972,6 +2999,11 @@
                             "DisplayText": "Contact me",
                             "Latest": true,
                             "Published": true,
+                            "ModifiedUtc": "2025-01-01T00:00:00Z",
+                            "PublishedUtc": "2025-01-01T00:00:00Z",
+                            "CreatedUtc": "2025-01-01T00:00:00Z",
+                            "Owner": "mark.bartha",
+                            "Author": "mark.bartha",
                             "Button": {
                               "Content": {
                                 "Url": "/contact",
@@ -2993,14 +3025,19 @@
                             "DisplayText": "See case studies",
                             "Latest": true,
                             "Published": true,
+                            "ModifiedUtc": "2025-01-01T00:00:00Z",
+                            "PublishedUtc": "2025-01-01T00:00:00Z",
+                            "CreatedUtc": "2025-01-01T00:00:00Z",
+                            "Owner": "mark.bartha",
+                            "Author": "mark.bartha",
                             "Button": {
                               "Content": {
-                                "Url": "#work",
-                                "Text": "See case studies",
+                                "Url": "/blog",
+                                "Text": "Read my blog",
                                 "Target": null
                               },
                               "Icon": {
-                                "Text": ""
+                                "Text": null
                               },
                               "Type": {
                                 "Text": "Secondary"
@@ -3021,6 +3058,11 @@
                       "DisplayText": "10+ years building .NET web platforms",
                       "Latest": true,
                       "Published": true,
+                      "ModifiedUtc": "2025-01-01T00:00:00Z",
+                      "PublishedUtc": "2025-01-01T00:00:00Z",
+                      "CreatedUtc": "2025-01-01T00:00:00Z",
+                      "Owner": "mark.bartha",
+                      "Author": "mark.bartha",
                       "IconText": {
                         "Icon": {
                           "Text": "code-2"
@@ -3037,6 +3079,11 @@
                       "DisplayText": "Deep CMS + content modeling expertise",
                       "Latest": true,
                       "Published": true,
+                      "ModifiedUtc": "2025-01-01T00:00:00Z",
+                      "PublishedUtc": "2025-01-01T00:00:00Z",
+                      "CreatedUtc": "2025-01-01T00:00:00Z",
+                      "Owner": "mark.bartha",
+                      "Author": "mark.bartha",
                       "IconText": {
                         "Icon": {
                           "Text": "database"
@@ -3053,6 +3100,11 @@
                       "DisplayText": "Content-heavy B2B sites + knowledge hubs",
                       "Latest": true,
                       "Published": true,
+                      "ModifiedUtc": "2025-01-01T00:00:00Z",
+                      "PublishedUtc": "2025-01-01T00:00:00Z",
+                      "CreatedUtc": "2025-01-01T00:00:00Z",
+                      "Owner": "mark.bartha",
+                      "Author": "mark.bartha",
                       "IconText": {
                         "Icon": {
                           "Text": "book-open"
@@ -3069,6 +3121,11 @@
                       "DisplayText": "Long-term maintainability focus",
                       "Latest": true,
                       "Published": true,
+                      "ModifiedUtc": "2025-01-01T00:00:00Z",
+                      "PublishedUtc": "2025-01-01T00:00:00Z",
+                      "CreatedUtc": "2025-01-01T00:00:00Z",
+                      "Owner": "mark.bartha",
+                      "Author": "mark.bartha",
                       "IconText": {
                         "Icon": {
                           "Text": "wrench"
@@ -3088,12 +3145,22 @@
                 "DisplayText": "What I Build Section",
                 "Latest": true,
                 "Published": true,
+                "ModifiedUtc": "2025-01-01T00:00:00Z",
+                "PublishedUtc": "2025-01-01T00:00:00Z",
+                "CreatedUtc": "2025-01-01T00:00:00Z",
+                "Owner": "mark.bartha",
+                "Author": "mark.bartha",
                 "TitlePart": {
                   "Title": "What I Build Section"
                 },
                 "BlockCommon": {
                   "Theme": {
                     "Text": "LightGray"
+                  }
+                },
+                "StackSection": {
+                  "HeaderAlignment": {
+                    "Text": "Center"
                   }
                 },
                 "Header": {
@@ -3105,9 +3172,14 @@
                       "DisplayText": "What I Build Section Header",
                       "Latest": true,
                       "Published": true,
+                      "ModifiedUtc": "2025-01-01T00:00:00Z",
+                      "PublishedUtc": "2025-01-01T00:00:00Z",
+                      "CreatedUtc": "2025-01-01T00:00:00Z",
+                      "Owner": "mark.bartha",
+                      "Author": "mark.bartha",
                       "Markdown": {
                         "Text": {
-                          "Markdown": "## What I build for B2B teams\n\nPractical, content-heavy websites and knowledge hubs that stay easy to manage as you grow. AI features are optional and only added when they improve the workflow."
+                          "Markdown": "## What I build for B2B teams\r\n\r\nPractical, content-heavy websites and knowledge hubs that stay easy to manage as you grow. AI features are optional and only added when they improve the workflow."
                         }
                       }
                     }
@@ -3122,6 +3194,11 @@
                       "DisplayText": "What I Build Grid",
                       "Latest": true,
                       "Published": true,
+                      "ModifiedUtc": "2025-01-01T00:00:00Z",
+                      "PublishedUtc": "2025-01-01T00:00:00Z",
+                      "CreatedUtc": "2025-01-01T00:00:00Z",
+                      "Owner": "mark.bartha",
+                      "Author": "mark.bartha",
                       "GridWidget": {
                         "Columns": {
                           "Text": "Three"
@@ -3136,16 +3213,21 @@
                             "DisplayText": "Marketing websites + landing pages",
                             "Latest": true,
                             "Published": true,
+                            "ModifiedUtc": "2025-01-01T00:00:00Z",
+                            "PublishedUtc": "2025-01-01T00:00:00Z",
+                            "CreatedUtc": "2025-01-01T00:00:00Z",
+                            "Owner": "mark.bartha",
+                            "Author": "mark.bartha",
                             "ServiceCard": {
                               "Title": {
-                                "Text": "Marketing websites + landing pages"
+                                "Text": "Marketing websites"
                               },
                               "Summary": {
-                                "Markdown": "Clear messaging, fast pages, and a CMS your team won't fight."
+                                "Markdown": "Clear positioning, fast pages, and a CMS your team can actually live with."
                               },
                               "Link": {
-                                "Url": "",
-                                "Text": "",
+                                "Url": null,
+                                "Text": null,
                                 "Target": null
                               }
                             },
@@ -3158,9 +3240,14 @@
                                   "DisplayText": "Modular sections you can reuse",
                                   "Latest": true,
                                   "Published": true,
+                                  "ModifiedUtc": "2025-01-01T00:00:00Z",
+                                  "PublishedUtc": "2025-01-01T00:00:00Z",
+                                  "CreatedUtc": "2025-01-01T00:00:00Z",
+                                  "Owner": "mark.bartha",
+                                  "Author": "mark.bartha",
                                   "BulletItem": {
                                     "Text": {
-                                      "Text": "Modular sections you can reuse"
+                                      "Text": "Reusable sections for quick page updates"
                                     }
                                   }
                                 },
@@ -3171,6 +3258,11 @@
                                   "DisplayText": "SEO-friendly structure and performance",
                                   "Latest": true,
                                   "Published": true,
+                                  "ModifiedUtc": "2025-01-01T00:00:00Z",
+                                  "PublishedUtc": "2025-01-01T00:00:00Z",
+                                  "CreatedUtc": "2025-01-01T00:00:00Z",
+                                  "Owner": "mark.bartha",
+                                  "Author": "mark.bartha",
                                   "BulletItem": {
                                     "Text": {
                                       "Text": "SEO-friendly structure and performance"
@@ -3184,6 +3276,11 @@
                                   "DisplayText": "Built for iteration, not one-off launches",
                                   "Latest": true,
                                   "Published": true,
+                                  "ModifiedUtc": "2025-01-01T00:00:00Z",
+                                  "PublishedUtc": "2025-01-01T00:00:00Z",
+                                  "CreatedUtc": "2025-01-01T00:00:00Z",
+                                  "Owner": "mark.bartha",
+                                  "Author": "mark.bartha",
                                   "BulletItem": {
                                     "Text": {
                                       "Text": "Built for iteration, not one-off launches"
@@ -3200,16 +3297,21 @@
                             "DisplayText": "Content platforms",
                             "Latest": true,
                             "Published": true,
+                            "ModifiedUtc": "2025-01-01T00:00:00Z",
+                            "PublishedUtc": "2025-01-01T00:00:00Z",
+                            "CreatedUtc": "2025-01-01T00:00:00Z",
+                            "Owner": "mark.bartha",
+                            "Author": "mark.bartha",
                             "ServiceCard": {
                               "Title": {
                                 "Text": "Content platforms"
                               },
                               "Summary": {
-                                "Markdown": "For teams publishing regularly and needing structure, workflow, and governance."
+                                "Markdown": "For teams publishing at scale: structured content, editorial workflow, and a knowledge hub that stays navigable."
                               },
                               "Link": {
-                                "Url": "",
-                                "Text": "",
+                                "Url": null,
+                                "Text": null,
                                 "Target": null
                               }
                             },
@@ -3222,9 +3324,14 @@
                                   "DisplayText": "Structured content types and reusable blocks",
                                   "Latest": true,
                                   "Published": true,
+                                  "ModifiedUtc": "2025-01-01T00:00:00Z",
+                                  "PublishedUtc": "2025-01-01T00:00:00Z",
+                                  "CreatedUtc": "2025-01-01T00:00:00Z",
+                                  "Owner": "mark.bartha",
+                                  "Author": "mark.bartha",
                                   "BulletItem": {
                                     "Text": {
-                                      "Text": "Structured content types and reusable blocks"
+                                      "Text": "Structured and reusable content types"
                                     }
                                   }
                                 },
@@ -3235,9 +3342,14 @@
                                   "DisplayText": "Editorial workflow that fits your team",
                                   "Latest": true,
                                   "Published": true,
+                                  "ModifiedUtc": "2025-01-01T00:00:00Z",
+                                  "PublishedUtc": "2025-01-01T00:00:00Z",
+                                  "CreatedUtc": "2025-01-01T00:00:00Z",
+                                  "Owner": "mark.bartha",
+                                  "Author": "mark.bartha",
                                   "BulletItem": {
                                     "Text": {
-                                      "Text": "Editorial workflow that fits your team"
+                                      "Text": "Categories designed for findability"
                                     }
                                   }
                                 },
@@ -3248,9 +3360,14 @@
                                   "DisplayText": "Taxonomy and content organization that scales",
                                   "Latest": true,
                                   "Published": true,
+                                  "ModifiedUtc": "2025-01-01T00:00:00Z",
+                                  "PublishedUtc": "2025-01-01T00:00:00Z",
+                                  "CreatedUtc": "2025-01-01T00:00:00Z",
+                                  "Owner": "mark.bartha",
+                                  "Author": "mark.bartha",
                                   "BulletItem": {
                                     "Text": {
-                                      "Text": "Taxonomy and content organization that scales"
+                                      "Text": "Workflow that fits your team"
                                     }
                                   }
                                 }
@@ -3264,16 +3381,21 @@
                             "DisplayText": "Knowledge hubs",
                             "Latest": true,
                             "Published": true,
+                            "ModifiedUtc": "2025-01-01T00:00:00Z",
+                            "PublishedUtc": "2025-01-01T00:00:00Z",
+                            "CreatedUtc": "2025-01-01T00:00:00Z",
+                            "Owner": "mark.bartha",
+                            "Author": "mark.bartha",
                             "ServiceCard": {
                               "Title": {
-                                "Text": "Knowledge hubs"
+                                "Text": "AI integration"
                               },
                               "Summary": {
-                                "Markdown": "Help centers and resource libraries that reduce support load and make content easy to find."
+                                "Markdown": "Practical AI add-ons that make content easier to find and maintain, only when they genuinely improve the workflow."
                               },
                               "Link": {
-                                "Url": "",
-                                "Text": "",
+                                "Url": null,
+                                "Text": null,
                                 "Target": null
                               }
                             },
@@ -3286,9 +3408,14 @@
                                   "DisplayText": "Information architecture + navigation",
                                   "Latest": true,
                                   "Published": true,
+                                  "ModifiedUtc": "2025-01-01T00:00:00Z",
+                                  "PublishedUtc": "2025-01-01T00:00:00Z",
+                                  "CreatedUtc": "2025-01-01T00:00:00Z",
+                                  "Owner": "mark.bartha",
+                                  "Author": "mark.bartha",
                                   "BulletItem": {
                                     "Text": {
-                                      "Text": "Information architecture + navigation"
+                                      "Text": "Auto-tagging and content classification"
                                     }
                                   }
                                 },
@@ -3299,9 +3426,14 @@
                                   "DisplayText": "Search that actually works",
                                   "Latest": true,
                                   "Published": true,
+                                  "ModifiedUtc": "2025-01-01T00:00:00Z",
+                                  "PublishedUtc": "2025-01-01T00:00:00Z",
+                                  "CreatedUtc": "2025-01-01T00:00:00Z",
+                                  "Owner": "mark.bartha",
+                                  "Author": "mark.bartha",
                                   "BulletItem": {
                                     "Text": {
-                                      "Text": "Search that actually works"
+                                      "Text": "AI-assisted drafts and internal linking"
                                     }
                                   }
                                 },
@@ -3312,9 +3444,14 @@
                                   "DisplayText": "Optional AI search/chat grounded in your content",
                                   "Latest": true,
                                   "Published": true,
+                                  "ModifiedUtc": "2025-01-01T00:00:00Z",
+                                  "PublishedUtc": "2025-01-01T00:00:00Z",
+                                  "CreatedUtc": "2025-01-01T00:00:00Z",
+                                  "Owner": "mark.bartha",
+                                  "Author": "mark.bartha",
                                   "BulletItem": {
                                     "Text": {
-                                      "Text": "Optional AI search/chat grounded in your content"
+                                      "Text": "\u201cAsk the docs\u201d chat with grounded answers"
                                     }
                                   }
                                 }
@@ -3331,6 +3468,11 @@
                       "DisplayText": "What I Build Link",
                       "Latest": true,
                       "Published": true,
+                      "ModifiedUtc": "2025-01-01T00:00:00Z",
+                      "PublishedUtc": "2025-01-01T00:00:00Z",
+                      "CreatedUtc": "2025-01-01T00:00:00Z",
+                      "Owner": "mark.bartha",
+                      "Author": "mark.bartha",
                       "ArrowLink": {
                         "Link": {
                           "Url": "/contact",
@@ -3340,11 +3482,6 @@
                       }
                     }
                   ]
-                },
-                "StackSection": {
-                  "HeaderAlignment": {
-                    "Text": "Center"
-                  }
                 }
               },
               {
@@ -3354,12 +3491,22 @@
                 "DisplayText": "How It Works Section",
                 "Latest": true,
                 "Published": true,
+                "ModifiedUtc": "2025-01-01T00:00:00Z",
+                "PublishedUtc": "2025-01-01T00:00:00Z",
+                "CreatedUtc": "2025-01-01T00:00:00Z",
+                "Owner": "mark.bartha",
+                "Author": "mark.bartha",
                 "TitlePart": {
                   "Title": "How It Works Section"
                 },
                 "BlockCommon": {
                   "Theme": {
                     "Text": "DarkBlue"
+                  }
+                },
+                "StackSection": {
+                  "HeaderAlignment": {
+                    "Text": "Center"
                   }
                 },
                 "Header": {
@@ -3371,9 +3518,14 @@
                       "DisplayText": "How It Works Section Header",
                       "Latest": true,
                       "Published": true,
+                      "ModifiedUtc": "2025-01-01T00:00:00Z",
+                      "PublishedUtc": "2025-01-01T00:00:00Z",
+                      "CreatedUtc": "2025-01-01T00:00:00Z",
+                      "Owner": "mark.bartha",
+                      "Author": "mark.bartha",
                       "Markdown": {
                         "Text": {
-                          "Markdown": "## How it works\n\nA straightforward process that keeps scope under control and makes progress visible."
+                          "Markdown": "## How it works\r\n\r\nA straightforward process that keeps scope under control and makes progress visible."
                         }
                       }
                     }
@@ -3388,6 +3540,11 @@
                       "DisplayText": "Process Grid",
                       "Latest": true,
                       "Published": true,
+                      "ModifiedUtc": "2025-01-01T00:00:00Z",
+                      "PublishedUtc": "2025-01-01T00:00:00Z",
+                      "CreatedUtc": "2025-01-01T00:00:00Z",
+                      "Owner": "mark.bartha",
+                      "Author": "mark.bartha",
                       "GridWidget": {
                         "Columns": {
                           "Text": "Four"
@@ -3402,6 +3559,11 @@
                             "DisplayText": "Align on goals and content reality",
                             "Latest": true,
                             "Published": true,
+                            "ModifiedUtc": "2025-01-01T00:00:00Z",
+                            "PublishedUtc": "2025-01-01T00:00:00Z",
+                            "CreatedUtc": "2025-01-01T00:00:00Z",
+                            "Owner": "mark.bartha",
+                            "Author": "mark.bartha",
                             "ProcessStep": {
                               "Number": {
                                 "Text": "01"
@@ -3421,6 +3583,11 @@
                             "DisplayText": "Design the content model and structure",
                             "Latest": true,
                             "Published": true,
+                            "ModifiedUtc": "2025-01-01T00:00:00Z",
+                            "PublishedUtc": "2025-01-01T00:00:00Z",
+                            "CreatedUtc": "2025-01-01T00:00:00Z",
+                            "Owner": "mark.bartha",
+                            "Author": "mark.bartha",
                             "ProcessStep": {
                               "Number": {
                                 "Text": "02"
@@ -3440,6 +3607,11 @@
                             "DisplayText": "Build and ship in increments",
                             "Latest": true,
                             "Published": true,
+                            "ModifiedUtc": "2025-01-01T00:00:00Z",
+                            "PublishedUtc": "2025-01-01T00:00:00Z",
+                            "CreatedUtc": "2025-01-01T00:00:00Z",
+                            "Owner": "mark.bartha",
+                            "Author": "mark.bartha",
                             "ProcessStep": {
                               "Number": {
                                 "Text": "03"
@@ -3459,6 +3631,11 @@
                             "DisplayText": "Polish, train, and hand over",
                             "Latest": true,
                             "Published": true,
+                            "ModifiedUtc": "2025-01-01T00:00:00Z",
+                            "PublishedUtc": "2025-01-01T00:00:00Z",
+                            "CreatedUtc": "2025-01-01T00:00:00Z",
+                            "Owner": "mark.bartha",
+                            "Author": "mark.bartha",
                             "ProcessStep": {
                               "Number": {
                                 "Text": "04"
@@ -3481,6 +3658,11 @@
                       "DisplayText": "Process Buttons",
                       "Latest": true,
                       "Published": true,
+                      "ModifiedUtc": "2025-01-01T00:00:00Z",
+                      "PublishedUtc": "2025-01-01T00:00:00Z",
+                      "CreatedUtc": "2025-01-01T00:00:00Z",
+                      "Owner": "mark.bartha",
+                      "Author": "mark.bartha",
                       "ButtonGroup": {
                         "Alignment": {
                           "Text": "Center"
@@ -3495,6 +3677,11 @@
                             "DisplayText": "Contact me",
                             "Latest": true,
                             "Published": true,
+                            "ModifiedUtc": "2025-01-01T00:00:00Z",
+                            "PublishedUtc": "2025-01-01T00:00:00Z",
+                            "CreatedUtc": "2025-01-01T00:00:00Z",
+                            "Owner": "mark.bartha",
+                            "Author": "mark.bartha",
                             "Button": {
                               "Content": {
                                 "Url": "/contact",
@@ -3502,7 +3689,7 @@
                                 "Target": null
                               },
                               "Icon": {
-                                "Text": ""
+                                "Text": null
                               },
                               "Type": {
                                 "Text": "Primary"
@@ -3516,14 +3703,19 @@
                             "DisplayText": "See case studies",
                             "Latest": true,
                             "Published": true,
+                            "ModifiedUtc": "2025-01-01T00:00:00Z",
+                            "PublishedUtc": "2025-01-01T00:00:00Z",
+                            "CreatedUtc": "2025-01-01T00:00:00Z",
+                            "Owner": "mark.bartha",
+                            "Author": "mark.bartha",
                             "Button": {
                               "Content": {
-                                "Url": "#work",
-                                "Text": "See case studies",
+                                "Url": "/blog",
+                                "Text": "Read my blog",
                                 "Target": null
                               },
                               "Icon": {
-                                "Text": ""
+                                "Text": null
                               },
                               "Type": {
                                 "Text": "Secondary"
@@ -3534,11 +3726,6 @@
                       }
                     }
                   ]
-                },
-                "StackSection": {
-                  "HeaderAlignment": {
-                    "Text": "Center"
-                  }
                 }
               },
               {
@@ -3548,12 +3735,22 @@
                 "DisplayText": "Why Work Section",
                 "Latest": true,
                 "Published": true,
+                "ModifiedUtc": "2025-01-01T00:00:00Z",
+                "PublishedUtc": "2025-01-01T00:00:00Z",
+                "CreatedUtc": "2025-01-01T00:00:00Z",
+                "Owner": "mark.bartha",
+                "Author": "mark.bartha",
                 "TitlePart": {
                   "Title": "Why Work Section"
                 },
                 "BlockCommon": {
                   "Theme": {
                     "Text": "LightGray"
+                  }
+                },
+                "StackSection": {
+                  "HeaderAlignment": {
+                    "Text": "Center"
                   }
                 },
                 "Header": {
@@ -3565,9 +3762,14 @@
                       "DisplayText": "Why Work Section Header",
                       "Latest": true,
                       "Published": true,
+                      "ModifiedUtc": "2025-01-01T00:00:00Z",
+                      "PublishedUtc": "2025-01-01T00:00:00Z",
+                      "CreatedUtc": "2025-01-01T00:00:00Z",
+                      "Owner": "mark.bartha",
+                      "Author": "mark.bartha",
                       "Markdown": {
                         "Text": {
-                          "Markdown": "## Why work with an independent consultant?\n\nYou get senior expertise with direct collaboration-no agency overhead, no hand-offs."
+                          "Markdown": "## Why work with an independent consultant?\r\n\r\nYou get senior expertise with direct collaboration, fewer layers, and a steady pace of delivery."
                         }
                       }
                     }
@@ -3582,6 +3784,11 @@
                       "DisplayText": "Why Work Grid",
                       "Latest": true,
                       "Published": true,
+                      "ModifiedUtc": "2025-01-01T00:00:00Z",
+                      "PublishedUtc": "2025-01-01T00:00:00Z",
+                      "CreatedUtc": "2025-01-01T00:00:00Z",
+                      "Owner": "mark.bartha",
+                      "Author": "mark.bartha",
                       "GridWidget": {
                         "Columns": {
                           "Text": "Two"
@@ -3596,15 +3803,20 @@
                             "DisplayText": "Direct access, faster decisions",
                             "Latest": true,
                             "Published": true,
+                            "ModifiedUtc": "2025-01-01T00:00:00Z",
+                            "PublishedUtc": "2025-01-01T00:00:00Z",
+                            "CreatedUtc": "2025-01-01T00:00:00Z",
+                            "Owner": "mark.bartha",
+                            "Author": "mark.bartha",
                             "IconBlurb": {
                               "Icon": {
                                 "Text": "check-circle-2"
                               },
                               "Title": {
-                                "Text": "Direct access, faster decisions"
+                                "Text": "Direct access and quick alignment"
                               },
                               "Body": {
-                                "Markdown": "No account managers or hand-offs. You work directly with me, which means faster feedback loops and clearer communication."
+                                "Markdown": "No account managers or handoffs. You work with me directly, so feedback loops stay short and decisions are clearer."
                               },
                               "IconPosition": {
                                 "Text": "Left"
@@ -3621,15 +3833,20 @@
                             "DisplayText": "Senior expertise without agency overhead",
                             "Latest": true,
                             "Published": true,
+                            "ModifiedUtc": "2025-01-01T00:00:00Z",
+                            "PublishedUtc": "2025-01-01T00:00:00Z",
+                            "CreatedUtc": "2025-01-01T00:00:00Z",
+                            "Owner": "mark.bartha",
+                            "Author": "mark.bartha",
                             "IconBlurb": {
                               "Icon": {
                                 "Text": "check-circle-2"
                               },
                               "Title": {
-                                "Text": "Senior expertise without agency overhead"
+                                "Text": "Senior experience, simple setup"
                               },
                               "Body": {
-                                "Markdown": "You get enterprise-level experience at a fraction of agency costs. No junior developers learning on your project."
+                                "Markdown": "You get hands-on experience without building a large team around the work."
                               },
                               "IconPosition": {
                                 "Text": "Left"
@@ -3646,15 +3863,20 @@
                             "DisplayText": "Long-term thinking, not just launch day",
                             "Latest": true,
                             "Published": true,
+                            "ModifiedUtc": "2025-01-01T00:00:00Z",
+                            "PublishedUtc": "2025-01-01T00:00:00Z",
+                            "CreatedUtc": "2025-01-01T00:00:00Z",
+                            "Owner": "mark.bartha",
+                            "Author": "mark.bartha",
                             "IconBlurb": {
                               "Icon": {
                                 "Text": "check-circle-2"
                               },
                               "Title": {
-                                "Text": "Long-term thinking, not just launch day"
+                                "Text": "Built for the long run, not just launch"
                               },
                               "Body": {
-                                "Markdown": "I build platforms that your team can maintain and evolve. Training and documentation are included, not afterthoughts."
+                                "Markdown": "I build platforms your team can maintain and evolve. Documentation and training are part of the work."
                               },
                               "IconPosition": {
                                 "Text": "Left"
@@ -3671,15 +3893,20 @@
                             "DisplayText": "Focused capacity means better quality",
                             "Latest": true,
                             "Published": true,
+                            "ModifiedUtc": "2025-01-01T00:00:00Z",
+                            "PublishedUtc": "2025-01-01T00:00:00Z",
+                            "CreatedUtc": "2025-01-01T00:00:00Z",
+                            "Owner": "mark.bartha",
+                            "Author": "mark.bartha",
                             "IconBlurb": {
                               "Icon": {
                                 "Text": "check-circle-2"
                               },
                               "Title": {
-                                "Text": "Focused capacity means better quality"
+                                "Text": "Focused capacity, consistent quality"
                               },
                               "Body": {
-                                "Markdown": "I limit concurrent projects to 2-3 at a time. Your project gets the attention it deserves, not divided focus."
+                                "Markdown": "I keep a small number of concurrent projects so your work gets steady attention and predictable progress."
                               },
                               "IconPosition": {
                                 "Text": "Left"
@@ -3699,6 +3926,11 @@
                       "DisplayText": "Why Work Testimonials",
                       "Latest": true,
                       "Published": true,
+                      "ModifiedUtc": "2025-01-01T00:00:00Z",
+                      "PublishedUtc": "2025-01-01T00:00:00Z",
+                      "CreatedUtc": "2025-01-01T00:00:00Z",
+                      "Owner": "mark.bartha",
+                      "Author": "mark.bartha",
                       "GridWidget": {
                         "Columns": {
                           "Text": "Two"
@@ -3710,21 +3942,26 @@
                             "ContentItemId": "[js:uuid()]",
                             "ContentItemVersionId": "[js:uuid()]",
                             "ContentType": "Testimonial",
-                            "DisplayText": "Testimonial TechCorp",
+                            "DisplayText": "Testimonial Judit Sug\u00e1r",
                             "Latest": true,
                             "Published": true,
+                            "ModifiedUtc": "2025-01-01T00:00:00Z",
+                            "PublishedUtc": "2025-01-01T00:00:00Z",
+                            "CreatedUtc": "2025-01-01T00:00:00Z",
+                            "Owner": "mark.bartha",
+                            "Author": "mark.bartha",
                             "Testimonial": {
                               "Quote": {
-                                "Markdown": "\"Mark didn't just build us a website-he built us a system we can actually maintain. Our marketing team finally feels confident making updates without breaking things.\""
+                                "Markdown": "M\u00e1rk didn't just build my website. He came up with creative, site-ready solutions for every idea I had, even the occasionally crazy ones. Working together was incredibly smooth and well-structured, and the end result is exactly what I envisioned: a modern website that's easy to use and manage."
                               },
                               "Name": {
-                                "Text": "Sarah Chen"
+                                "Text": "Judit Sug\u00e1r"
                               },
                               "Role": {
-                                "Text": "VP of Marketing"
+                                "Text": "Marketing Strategist"
                               },
                               "Company": {
-                                "Text": "TechCorp"
+                                "Text": ""
                               },
                               "Avatar": {
                                 "Anchors": [],
@@ -3737,15 +3974,20 @@
                             "ContentItemId": "[js:uuid()]",
                             "ContentItemVersionId": "[js:uuid()]",
                             "ContentType": "Testimonial",
-                            "DisplayText": "Testimonial CloudSolutions",
+                            "DisplayText": "Testimonial CloudSolutions (Sample)",
                             "Latest": true,
                             "Published": true,
+                            "ModifiedUtc": "2025-01-01T00:00:00Z",
+                            "PublishedUtc": "2025-01-01T00:00:00Z",
+                            "CreatedUtc": "2025-01-01T00:00:00Z",
+                            "Owner": "mark.bartha",
+                            "Author": "mark.bartha",
                             "Testimonial": {
                               "Quote": {
                                 "Markdown": "\"The knowledge hub Mark built reduced our support load significantly. More importantly, he trained our team so well that we've been able to expand it ourselves.\""
                               },
                               "Name": {
-                                "Text": "James Wilson"
+                                "Text": "James Wilson (Sample)"
                               },
                               "Role": {
                                 "Text": "Head of Customer Success"
@@ -3764,11 +4006,6 @@
                       }
                     }
                   ]
-                },
-                "StackSection": {
-                  "HeaderAlignment": {
-                    "Text": "Center"
-                  }
                 }
               },
               {
@@ -3778,12 +4015,22 @@
                 "DisplayText": "CTA Section",
                 "Latest": true,
                 "Published": true,
+                "ModifiedUtc": "2025-01-01T00:00:00Z",
+                "PublishedUtc": "2025-01-01T00:00:00Z",
+                "CreatedUtc": "2025-01-01T00:00:00Z",
+                "Owner": "mark.bartha",
+                "Author": "mark.bartha",
                 "TitlePart": {
                   "Title": "CTA Section"
                 },
                 "BlockCommon": {
                   "Theme": {
                     "Text": "DarkBlue"
+                  }
+                },
+                "StackSection": {
+                  "HeaderAlignment": {
+                    "Text": "Center"
                   }
                 },
                 "Header": {
@@ -3795,9 +4042,14 @@
                       "DisplayText": "CTA Section Header",
                       "Latest": true,
                       "Published": true,
+                      "ModifiedUtc": "2025-01-01T00:00:00Z",
+                      "PublishedUtc": "2025-01-01T00:00:00Z",
+                      "CreatedUtc": "2025-01-01T00:00:00Z",
+                      "Owner": "mark.bartha",
+                      "Author": "mark.bartha",
                       "Markdown": {
                         "Text": {
-                          "Markdown": "## Ready to build a content platform that actually works?\n\nLet's talk about your content challenges and what success looks like. No pressure, no sales pitch-just a straightforward conversation."
+                          "Markdown": "## Ready to build a content platform that actually works?\r\n\r\nLet's talk about your content challenges and what success looks like. No pressure, no sales pitch-just a straightforward conversation."
                         }
                       }
                     }
@@ -3812,6 +4064,11 @@
                       "DisplayText": "CTA Buttons",
                       "Latest": true,
                       "Published": true,
+                      "ModifiedUtc": "2025-01-01T00:00:00Z",
+                      "PublishedUtc": "2025-01-01T00:00:00Z",
+                      "CreatedUtc": "2025-01-01T00:00:00Z",
+                      "Owner": "mark.bartha",
+                      "Author": "mark.bartha",
                       "ButtonGroup": {
                         "Alignment": {
                           "Text": "Center"
@@ -3826,6 +4083,11 @@
                             "DisplayText": "Contact me",
                             "Latest": true,
                             "Published": true,
+                            "ModifiedUtc": "2025-01-01T00:00:00Z",
+                            "PublishedUtc": "2025-01-01T00:00:00Z",
+                            "CreatedUtc": "2025-01-01T00:00:00Z",
+                            "Owner": "mark.bartha",
+                            "Author": "mark.bartha",
                             "Button": {
                               "Content": {
                                 "Url": "/contact",
@@ -3833,7 +4095,7 @@
                                 "Target": null
                               },
                               "Icon": {
-                                "Text": ""
+                                "Text": null
                               },
                               "Type": {
                                 "Text": "Primary"
@@ -3847,6 +4109,11 @@
                             "DisplayText": "Learn more about me",
                             "Latest": true,
                             "Published": true,
+                            "ModifiedUtc": "2025-01-01T00:00:00Z",
+                            "PublishedUtc": "2025-01-01T00:00:00Z",
+                            "CreatedUtc": "2025-01-01T00:00:00Z",
+                            "Owner": "mark.bartha",
+                            "Author": "mark.bartha",
                             "Button": {
                               "Content": {
                                 "Url": "/about",
@@ -3854,7 +4121,7 @@
                                 "Target": null
                               },
                               "Icon": {
-                                "Text": ""
+                                "Text": null
                               },
                               "Type": {
                                 "Text": "Secondary"
@@ -3871,6 +4138,11 @@
                       "DisplayText": "FAQ List",
                       "Latest": true,
                       "Published": true,
+                      "ModifiedUtc": "2025-01-01T00:00:00Z",
+                      "PublishedUtc": "2025-01-01T00:00:00Z",
+                      "CreatedUtc": "2025-01-01T00:00:00Z",
+                      "Owner": "mark.bartha",
+                      "Author": "mark.bartha",
                       "FaqList": {
                         "Heading": {
                           "Text": "Common questions"
@@ -3885,6 +4157,11 @@
                             "DisplayText": "How do you handle project scope and pricing?",
                             "Latest": true,
                             "Published": true,
+                            "ModifiedUtc": "2025-01-01T00:00:00Z",
+                            "PublishedUtc": "2025-01-01T00:00:00Z",
+                            "CreatedUtc": "2025-01-01T00:00:00Z",
+                            "Owner": "mark.bartha",
+                            "Author": "mark.bartha",
                             "FaqItem": {
                               "Question": {
                                 "Text": "How do you handle project scope and pricing?"
@@ -3901,6 +4178,11 @@
                             "DisplayText": "What's your typical timeline?",
                             "Latest": true,
                             "Published": true,
+                            "ModifiedUtc": "2025-01-01T00:00:00Z",
+                            "PublishedUtc": "2025-01-01T00:00:00Z",
+                            "CreatedUtc": "2025-01-01T00:00:00Z",
+                            "Owner": "mark.bartha",
+                            "Author": "mark.bartha",
                             "FaqItem": {
                               "Question": {
                                 "Text": "What's your typical timeline?"
@@ -3917,6 +4199,11 @@
                             "DisplayText": "Do you work with internal teams?",
                             "Latest": true,
                             "Published": true,
+                            "ModifiedUtc": "2025-01-01T00:00:00Z",
+                            "PublishedUtc": "2025-01-01T00:00:00Z",
+                            "CreatedUtc": "2025-01-01T00:00:00Z",
+                            "Owner": "mark.bartha",
+                            "Author": "mark.bartha",
                             "FaqItem": {
                               "Question": {
                                 "Text": "Do you work with internal teams?"
@@ -3933,6 +4220,11 @@
                             "DisplayText": "What if we need ongoing support?",
                             "Latest": true,
                             "Published": true,
+                            "ModifiedUtc": "2025-01-01T00:00:00Z",
+                            "PublishedUtc": "2025-01-01T00:00:00Z",
+                            "CreatedUtc": "2025-01-01T00:00:00Z",
+                            "Owner": "mark.bartha",
+                            "Author": "mark.bartha",
                             "FaqItem": {
                               "Question": {
                                 "Text": "What if we need ongoing support?"
@@ -3949,6 +4241,11 @@
                             "DisplayText": "How many projects do you take at once?",
                             "Latest": true,
                             "Published": true,
+                            "ModifiedUtc": "2025-01-01T00:00:00Z",
+                            "PublishedUtc": "2025-01-01T00:00:00Z",
+                            "CreatedUtc": "2025-01-01T00:00:00Z",
+                            "Owner": "mark.bartha",
+                            "Author": "mark.bartha",
                             "FaqItem": {
                               "Question": {
                                 "Text": "How many projects do you take at once?"
@@ -3962,11 +4259,6 @@
                       }
                     }
                   ]
-                },
-                "StackSection": {
-                  "HeaderAlignment": {
-                    "Text": "Center"
-                  }
                 }
               }
             ]
@@ -4003,6 +4295,11 @@
                 "DisplayText": "Get in touch",
                 "Latest": true,
                 "Published": true,
+                "ModifiedUtc": "2025-01-01T00:00:00Z",
+                "PublishedUtc": "2025-01-01T00:00:00Z",
+                "CreatedUtc": "2025-01-01T00:00:00Z",
+                "Owner": "mark.bartha",
+                "Author": "mark.bartha",
                 "Badge": {
                   "Text": {
                     "Text": "Get in touch"
@@ -4016,9 +4313,14 @@
                 "DisplayText": "Contact Hero Copy",
                 "Latest": true,
                 "Published": true,
+                "ModifiedUtc": "2025-01-01T00:00:00Z",
+                "PublishedUtc": "2025-01-01T00:00:00Z",
+                "CreatedUtc": "2025-01-01T00:00:00Z",
+                "Owner": "mark.bartha",
+                "Author": "mark.bartha",
                 "Markdown": {
                   "Text": {
-                    "Markdown": "# Let's talk about your ==content platform==\n\nBook a strategy call or send me a message. I reply within 1 business day."
+                    "Markdown": "# Let's talk about your ==content platform==\r\n\r\nBook a strategy call or send me a message. I reply within 1 business day."
                   }
                 }
               }
@@ -4033,6 +4335,11 @@
                 "DisplayText": "Contact Form",
                 "Latest": true,
                 "Published": true,
+                "ModifiedUtc": "2025-01-01T00:00:00Z",
+                "PublishedUtc": "2025-01-01T00:00:00Z",
+                "CreatedUtc": "2025-01-01T00:00:00Z",
+                "Owner": "mark.bartha",
+                "Author": "mark.bartha",
                 "TitlePart": {
                   "Title": "Contact Form"
                 },
@@ -4040,11 +4347,12 @@
                   "Id": "contact-form"
                 },
                 "FormPart": {
-                  "Action": "",
+                  "EnableAntiForgeryToken": true,
+                  "SaveFormLocation": true,
                   "Method": "POST",
                   "EncType": "application/x-www-form-urlencoded",
-                  "EnableAntiForgeryToken": true,
-                  "SaveFormLocation": true
+                  "Action": null,
+                  "WorkflowTypeId": null
                 },
                 "FlowPart": {
                   "Widgets": [
@@ -4052,9 +4360,14 @@
                       "ContentItemId": "[js:uuid()]",
                       "ContentItemVersionId": "[js:uuid()]",
                       "ContentType": "Input",
-                      "DisplayText": "Name",
+                      "DisplayText": "name",
                       "Latest": true,
                       "Published": true,
+                      "ModifiedUtc": "2025-01-01T00:00:00Z",
+                      "PublishedUtc": "2025-01-01T00:00:00Z",
+                      "CreatedUtc": "2025-01-01T00:00:00Z",
+                      "Owner": "mark.bartha",
+                      "Author": "mark.bartha",
                       "FormInputElementPart": {
                         "Name": "name"
                       },
@@ -4062,19 +4375,19 @@
                         "Id": "name"
                       },
                       "FormElementLabelPart": {
-                        "Option": 1,
+                        "Option": "Standard",
                         "Label": "Name *"
                       },
                       "InputPart": {
                         "Type": "text",
-                        "DefaultValue": "",
-                        "Placeholder": "John Doe"
+                        "Placeholder": "John Doe",
+                        "DefaultValue": null
                       },
                       "FormElementValidationPart": {
-                        "Option": 1
+                        "Option": "Standard"
                       },
                       "FlowMetadata": {
-                        "Alignment": 3,
+                        "Alignment": "Justify",
                         "Size": 50
                       }
                     },
@@ -4082,9 +4395,14 @@
                       "ContentItemId": "[js:uuid()]",
                       "ContentItemVersionId": "[js:uuid()]",
                       "ContentType": "Input",
-                      "DisplayText": "Work Email",
+                      "DisplayText": "email",
                       "Latest": true,
                       "Published": true,
+                      "ModifiedUtc": "2025-01-01T00:00:00Z",
+                      "PublishedUtc": "2025-01-01T00:00:00Z",
+                      "CreatedUtc": "2025-01-01T00:00:00Z",
+                      "Owner": "mark.bartha",
+                      "Author": "mark.bartha",
                       "FormInputElementPart": {
                         "Name": "email"
                       },
@@ -4092,19 +4410,19 @@
                         "Id": "email"
                       },
                       "FormElementLabelPart": {
-                        "Option": 1,
+                        "Option": "Standard",
                         "Label": "Work Email *"
                       },
                       "InputPart": {
                         "Type": "email",
-                        "DefaultValue": "",
-                        "Placeholder": "john@company.com"
+                        "Placeholder": "john@company.com",
+                        "DefaultValue": null
                       },
                       "FormElementValidationPart": {
-                        "Option": 1
+                        "Option": "Standard"
                       },
                       "FlowMetadata": {
-                        "Alignment": 3,
+                        "Alignment": "Justify",
                         "Size": 50
                       }
                     },
@@ -4112,9 +4430,14 @@
                       "ContentItemId": "[js:uuid()]",
                       "ContentItemVersionId": "[js:uuid()]",
                       "ContentType": "Input",
-                      "DisplayText": "Company",
+                      "DisplayText": "company",
                       "Latest": true,
                       "Published": true,
+                      "ModifiedUtc": "2025-01-01T00:00:00Z",
+                      "PublishedUtc": "2025-01-01T00:00:00Z",
+                      "CreatedUtc": "2025-01-01T00:00:00Z",
+                      "Owner": "mark.bartha",
+                      "Author": "mark.bartha",
                       "FormInputElementPart": {
                         "Name": "company"
                       },
@@ -4122,19 +4445,19 @@
                         "Id": "company"
                       },
                       "FormElementLabelPart": {
-                        "Option": 1,
+                        "Option": "Standard",
                         "Label": "Company *"
                       },
                       "InputPart": {
                         "Type": "text",
-                        "DefaultValue": "",
-                        "Placeholder": "Company Name Ltd."
+                        "Placeholder": "Company Name Ltd.",
+                        "DefaultValue": null
                       },
                       "FormElementValidationPart": {
-                        "Option": 1
+                        "Option": "Standard"
                       },
                       "FlowMetadata": {
-                        "Alignment": 3,
+                        "Alignment": "Justify",
                         "Size": 100
                       }
                     },
@@ -4142,9 +4465,14 @@
                       "ContentItemId": "[js:uuid()]",
                       "ContentItemVersionId": "[js:uuid()]",
                       "ContentType": "TextArea",
-                      "DisplayText": "Message",
+                      "DisplayText": "message",
                       "Latest": true,
                       "Published": true,
+                      "ModifiedUtc": "2025-01-01T00:00:00Z",
+                      "PublishedUtc": "2025-01-01T00:00:00Z",
+                      "CreatedUtc": "2025-01-01T00:00:00Z",
+                      "Owner": "mark.bartha",
+                      "Author": "mark.bartha",
                       "FormInputElementPart": {
                         "Name": "message"
                       },
@@ -4152,18 +4480,19 @@
                         "Id": "message"
                       },
                       "FormElementLabelPart": {
-                        "Option": 1,
+                        "Option": "Standard",
                         "Label": "Message *"
                       },
                       "TextAreaPart": {
                         "Placeholder": "Tell me about your project goals and timeline...",
-                        "Rows": 5
+                        "Rows": 5,
+                        "DefaultValue": null
                       },
                       "FormElementValidationPart": {
-                        "Option": 1
+                        "Option": "Standard"
                       },
                       "FlowMetadata": {
-                        "Alignment": 3,
+                        "Alignment": "Justify",
                         "Size": 100
                       }
                     },
@@ -4171,9 +4500,14 @@
                       "ContentItemId": "[js:uuid()]",
                       "ContentItemVersionId": "[js:uuid()]",
                       "ContentType": "Button",
-                      "DisplayText": "Send Message",
+                      "DisplayText": "submit",
                       "Latest": true,
                       "Published": true,
+                      "ModifiedUtc": "2025-01-01T00:00:00Z",
+                      "PublishedUtc": "2025-01-01T00:00:00Z",
+                      "CreatedUtc": "2025-01-01T00:00:00Z",
+                      "Owner": "mark.bartha",
+                      "Author": "mark.bartha",
                       "FormInputElementPart": {
                         "Name": "submit"
                       },
@@ -4185,7 +4519,7 @@
                         "Type": "submit"
                       },
                       "FlowMetadata": {
-                        "Alignment": 3,
+                        "Alignment": "Justify",
                         "Size": 100
                       }
                     }
@@ -4203,6 +4537,11 @@
                 "DisplayText": "Contact Options",
                 "Latest": true,
                 "Published": true,
+                "ModifiedUtc": "2025-01-01T00:00:00Z",
+                "PublishedUtc": "2025-01-01T00:00:00Z",
+                "CreatedUtc": "2025-01-01T00:00:00Z",
+                "Owner": "mark.bartha",
+                "Author": "mark.bartha",
                 "TitlePart": {
                   "Title": "Contact Options"
                 },
@@ -4228,17 +4567,22 @@
                       "DisplayText": "Email Me",
                       "Latest": true,
                       "Published": true,
+                      "ModifiedUtc": "2025-01-01T00:00:00Z",
+                      "PublishedUtc": "2025-01-01T00:00:00Z",
+                      "CreatedUtc": "2025-01-01T00:00:00Z",
+                      "Owner": "mark.bartha",
+                      "Author": "mark.bartha",
                       "ContactOption": {
                         "Link": {
-                          "Url": "mailto:hello@markbartha.com",
-                          "Text": "",
+                          "Url": "#",
+                          "Text": null,
                           "Target": null
                         },
                         "Title": {
                           "Text": "Email Me"
                         },
                         "Subtitle": {
-                          "Text": "hello@markbartha.com"
+                          "Text": "mark@markbartha.com"
                         },
                         "Icon": {
                           "Text": "mail"
@@ -4255,10 +4599,15 @@
                       "DisplayText": "LinkedIn",
                       "Latest": true,
                       "Published": true,
+                      "ModifiedUtc": "2025-01-01T00:00:00Z",
+                      "PublishedUtc": "2025-01-01T00:00:00Z",
+                      "CreatedUtc": "2025-01-01T00:00:00Z",
+                      "Owner": "mark.bartha",
+                      "Author": "mark.bartha",
                       "ContactOption": {
                         "Link": {
-                          "Url": "#",
-                          "Text": "",
+                          "Url": "https://www.linkedin.com/in/markbartha",
+                          "Text": null,
                           "Target": null
                         },
                         "Title": {
@@ -4274,33 +4623,6 @@
                           "Text": "Blue"
                         }
                       }
-                    },
-                    {
-                      "ContentItemId": "[js:uuid()]",
-                      "ContentItemVersionId": "[js:uuid()]",
-                      "ContentType": "ContactOption",
-                      "DisplayText": "Book a Call",
-                      "Latest": true,
-                      "Published": true,
-                      "ContactOption": {
-                        "Link": {
-                          "Url": "#",
-                          "Text": "",
-                          "Target": null
-                        },
-                        "Title": {
-                          "Text": "Book a Call"
-                        },
-                        "Subtitle": {
-                          "Text": "15-min intro chat"
-                        },
-                        "Icon": {
-                          "Text": "calendar"
-                        },
-                        "Accent": {
-                          "Text": "Violet"
-                        }
-                      }
                     }
                   ]
                 }
@@ -4309,13 +4631,13 @@
           },
           "ContactForm": {
             "PostUrl": {
-              "Text": ""
+              "Text": null
             },
             "SubmitText": {
               "Text": "Send Message"
             },
             "PrivacyText": {
-              "Markdown": "I respect your privacy. No spam, ever."
+              "Markdown": null
             }
           }
         },
@@ -4399,12 +4721,12 @@
                       "Button": {
                         "Content": {
                           "Url": "/",
-                        "Text": "Back to home",
-                        "Target": null
-                      },
-                      "Icon": {
-                        "Text": ""
-                      },
+                          "Text": "Back to home",
+                          "Target": null
+                        },
+                        "Icon": {
+                          "Text": ""
+                        },
                         "Type": {
                           "Text": "Primary"
                         }
@@ -4420,12 +4742,12 @@
                       "Button": {
                         "Content": {
                           "Url": "/blog",
-                        "Text": "Read insights",
-                        "Target": null
-                      },
-                      "Icon": {
-                        "Text": ""
-                      },
+                          "Text": "Read insights",
+                          "Target": null
+                        },
+                        "Icon": {
+                          "Text": ""
+                        },
                         "Type": {
                           "Text": "Secondary"
                         }
@@ -4881,9 +5203,32 @@
                 "ContentItemId": "[js:uuid()]",
                 "ContentItemVersionId": "[js:uuid()]",
                 "ContentType": "LinkMenuItem",
+                "DisplayText": "Blog",
+                "Latest": true,
+                "Published": true,
+                "ModifiedUtc": "2025-01-01T00:00:00Z",
+                "PublishedUtc": "2025-01-01T00:00:00Z",
+                "CreatedUtc": "2025-01-01T00:00:00Z",
+                "Owner": "mark.bartha",
+                "Author": "mark.bartha",
+                "LinkMenuItemPart": {
+                  "Url": "/blog",
+                  "Target": null
+                },
+                "LinkMenuItem": {}
+              },
+              {
+                "ContentItemId": "[js:uuid()]",
+                "ContentItemVersionId": "[js:uuid()]",
+                "ContentType": "LinkMenuItem",
                 "DisplayText": "Contact",
                 "Latest": true,
                 "Published": true,
+                "ModifiedUtc": "2025-01-01T00:00:00Z",
+                "PublishedUtc": "2025-01-01T00:00:00Z",
+                "CreatedUtc": "2025-01-01T00:00:00Z",
+                "Owner": "mark.bartha",
+                "Author": "mark.bartha",
                 "TitlePart": {
                   "Title": "Contact"
                 },
